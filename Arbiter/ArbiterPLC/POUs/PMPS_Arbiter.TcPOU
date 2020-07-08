@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PMPS_Arbiter" Id="{91ae890b-11cc-4d41-83ec-edc5b802c784}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PMPS_Arbiter
+VAR
+
+    fbBPRequestor : FB_BPRequestor; // Updates global PMPS RequestedBeamParams
+
+    fbPhotonEnergyWatcher	:	FB_PhotonEnergyWatcher;
+    {attribute 'pytmc' := '
+    pv: @(PREFIX)BeamClassOutputs
+    '}
+    fbMPSInterface	:	FB_BeamClassOutputs;
+    {attribute 'pytmc' := '
+    pv: @(PREFIX)CuRateOutputs
+    '}
+    fbCuInterface	:	FB_CTLS_Outputs;
+
+    // Stoppers
+
+    {attribute 'TcLinkTo' := '
+                .i_StopperInLS:=TIIB[PPS_Stoppers]^Channel 1^ST1L0_PPS_IN;
+                .i_StopperOutLS:=TIIB[PPS_Stoppers]^Channel 2^ST1L0_PPS_OUT;
+                .q_StopperOUT_Relay:=TIIB[MPS_Relay]^Channel 1^ST1L0_RELAY_OUT;
+                .q_StopperIN_Relay:=TIIB[MPS_Relay]^Channel 2^ST1L0_RELAY_IN;
+                                '}
+    st1l0Watcher : FB_LStopper(
+        PMPS.K_Stopper.ST1,
+        'ST1L0');
+
+    (* Subsystem requests use this FB and a pragma link to pass their requests to the arbiter.
+    The fb is called on each cycle and updates the arbiter with the current BP set requested
+    from the subsystem PLC.*)
+    //<TODO> make this so it does input and output to the IF
+    (*{attribute 'pytmc' := '
+    pv: @(PREFIX):PLC1
+    '}*)
+    {attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-lfe-motion]^IO Inputs^RequestedBP;
+                                .o_CurrentBP:=TIIB[plc-lfe-motion]^IO Outputs^CurrentBP;
+                                .i_Connected:=TIIB[plc-lfe-motion]^SYNC Inputs^External device not connected;
+                                .i_WcState:=TIIB[plc-lfe-motion]^WcState^WcStateIn;
+                                .i_TxPDOState:=TIIB[plc-lfe-motion]^SYNC Inputs^TxPDO state;
+                                '}
+    plc_lfe_motion_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#FF0F);
+	
+	    {attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-lfe-optics]^IO Inputs^RequestedBP;
+                                .o_CurrentBP:=TIIB[plc-lfe-optics]^IO Outputs^CurrentBP;
+                                .i_Connected:=TIIB[plc-lfe-optics]^SYNC Inputs^External device not connected;
+                                .i_WcState:=TIIB[plc-lfe-optics]^WcState^WcStateIn;
+                                .i_TxPDOState:=TIIB[plc-lfe-optics]^SYNC Inputs^TxPDO state;
+                                '}
+    plc_lfe_optics_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#FF10);
+
+	
+	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-lfe-vacuum]^IO Inputs^RequestedBP;
+								.o_CurrentBP:=TIIB[plc-lfe-vacuum]^IO Outputs^CurrentBP;
+								.i_Connected:=TIIB[plc-lfe-vacuum]^SYNC Inputs^External device not connected;
+								.i_WcState:=TIIB[plc-lfe-vacuum]^WcState^WcStateIn;
+								.i_TxPDOState:=TIIB[plc-lfe-vacuum]^SYNC Inputs^TxPDO state;
+								'}
+    plc_lfe_vac_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#FF11);
+	
+		{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-lfe-gatt]^IO Inputs^RequestedBP;
+								.o_CurrentBP:=TIIB[plc-lfe-gatt]^IO Outputs^CurrentBP;
+								.i_Connected:=TIIB[plc-lfe-gatt]^SYNC Inputs^External device not connected;
+								.i_WcState:=TIIB[plc-lfe-gatt]^WcState^WcStateIn;
+								.i_TxPDOState:=TIIB[plc-lfe-gatt]^SYNC Inputs^TxPDO state;
+								'}
+    plc_lfe_gatt_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#FF12);
+	
+    (*{attribute 'pytmc' := '
+    pv: @(PREFIX)SubSysIO:PLC2
+    '}*)
+    {attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[SubSysPLC2]^IO Inputs^RequestedBP;
+                                .i_xNewRequest:=TIIB[SubSysPLC2]^IO Inputs^xNewRequest;
+                                .o_CurrentBP:=TIIB[SubSysPLC2]^IO Outputs^CurrentBP;
+                                .i_Connected:=TIIB[SubSysPLC2]^SYNC Inputs^External device not connected;
+                                .i_WcState:=TIIB[SubSysPLC2]^WcState^WcState;
+                                .i_TxPDOState:=TIIB[SubSysPLC2]^SYNC Inputs^TxPDO state;
+                                .i_TxPDOToggle:=TIIB[SubSysPLC2]^SYNC Inputs^TxPDO toggle;
+                                '}
+    //fbSubSys2_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#FF10);
+
+(* caget IOC:BSY0:MP01:BYKIK_RATE
+IOC:BSY0:MP01:BYKIK_RATE       10 Hz *)
+
+    {attribute 'pytmc' := '
+        pv: KDes
+        link: KDes
+    '}
+
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+// Watching and relaying stopper statuses
+st1l0Watcher(stCurrentBP := PMPS_GVL.stCurrentBeamParameters);
+
+// Updating arbiter with subsystem requests.
+plc_lfe_motion_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
+plc_lfe_optics_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
+plc_lfe_vac_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
+plc_lfe_gatt_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
+
+
+// Beam parameter requestor
+fbBPRequestor(Arbiter:=GVL.g_fbArbiter1, q_ReqBP => PMPS_GVL.stRequestedBeamParameters);
+
+// Request beam class
+fbMPSInterface(BP := PMPS_GVL.stRequestedBeamParameters);
+
+// Request Cu beam rate
+fbCuInterface(BP := PMPS_GVL.stRequestedBeamParameters);
+
+
+// Keep an eye on the photon energy
+fbPhotonEnergyWatcher(i_stCurrentBeamParams	:= PMPS_GVL.stCurrentBeamParameters,
+                    i_stRequestedBeamParams := PMPS_GVL.stRequestedBeamParameters,
+                    io_fbFFHWO:= GVL.g_FastFaultOutput1,
+                    i_xReset := GVL.AttemptReset);
+
+// Evaluate fast fault vetos
+g_FastFaultOutput1.EvaluateOverrides();
+
+// Send fast fault logs
+g_FastFaultOutput1.ExecuteLogging();
+
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="PMPS_Arbiter">
+      <LineId Id="3" Count="5" />
+      <LineId Id="104" Count="0" />
+      <LineId Id="192" Count="0" />
+      <LineId Id="201" Count="0" />
+      <LineId Id="13" Count="17" />
+      <LineId Id="107" Count="3" />
+      <LineId Id="35" Count="2" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
