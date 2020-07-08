@@ -28,10 +28,10 @@
 			<BaseType GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</BaseType>
 		</DataType>
 		<DataType>
-			<Name GUID="{FE32F9A9-7E7A-413D-8D77-0C99C34D8CD9}">ST_PMPS_Attenuator_IO</Name>
+			<Name GUID="{D01709AA-9B4A-464A-B4D1-4BF476CFE7DE}">ST_PMPS_Attenuator_IO</Name>
 			<BitSize>32</BitSize>
 			<SubItem>
-				<Name>nAtt</Name>
+				<Name>nTran</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
 				<BitSize>16</BitSize>
 				<BitOffs>0</BitOffs>
@@ -45,6 +45,7 @@
 			<Hides>
 				<Hide GUID="{76269EAC-36F0-4513-B811-3725FD02409A}"/>
 				<Hide GUID="{E96BEA56-6301-4A6A-BF6A-F08340C87594}"/>
+				<Hide GUID="{FE32F9A9-7E7A-413D-8D77-0C99C34D8CD9}"/>
 			</Hides>
 		</DataType>
 		<DataType>
@@ -102,15 +103,15 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{41059C79-1015-4C2C-AFF4-697A824775D7}">ST_BeamParams_IO</Name>
+			<Name GUID="{80E871EC-0C36-49B0-AD5D-F1F0FB351299}">ST_BeamParams_IO</Name>
 			<BitSize>1216</BitSize>
 			<SubItem>
-				<Name>fAtt</Name>
-				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<Name>nTran</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
 				<Comment>
 					<![CDATA[  Requested pre-optic attenuation %  ]]>
 				</Comment>
-				<BitSize>32</BitSize>
+				<BitSize>16</BitSize>
 				<BitOffs>0</BitOffs>
 				<Default>
 					<Value>100</Value>
@@ -186,7 +187,7 @@
 			</SubItem>
 			<SubItem>
 				<Name>astAttenuators</Name>
-				<Type GUID="{FE32F9A9-7E7A-413D-8D77-0C99C34D8CD9}">ST_PMPS_Attenuator_IO</Type>
+				<Type GUID="{D01709AA-9B4A-464A-B4D1-4BF476CFE7DE}">ST_PMPS_Attenuator_IO</Type>
 				<ArrayInfo>
 					<LBound>1</LBound>
 					<Elements>16</Elements>
@@ -275,6 +276,11 @@
 					</Property>
 				</Properties>
 			</SubItem>
+			<Hides>
+				<Hide GUID="{ADE62DDD-CAE3-4FE3-BE11-F358D7D0CDD8}"/>
+				<Hide GUID="{729DFDAA-EB68-494E-B247-D86DA3C0AE5E}"/>
+				<Hide GUID="{41059C79-1015-4C2C-AFF4-697A824775D7}"/>
+			</Hides>
 		</DataType>
 		<DataType>
 			<Name GUID="{151D7251-619F-AE55-6E9D-9E71EAB7FCB9}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..8] OF BOOL</Name>
@@ -374,9 +380,9 @@
 					<Comment>
 						<![CDATA[ Requested BP from subsystem]]>
 					</Comment>
-					<Type GUID="{41059C79-1015-4C2C-AFF4-697A824775D7}">ST_BeamParams_IO</Type>
+					<Type GUID="{80E871EC-0C36-49B0-AD5D-F1F0FB351299}">ST_BeamParams_IO</Type>
 					<SubVar>
-						<Name>fAtt</Name>
+						<Name>nTran</Name>
 						<Comment>
 							<![CDATA[  Requested pre-optic attenuation %  ]]>
 						</Comment>
@@ -535,9 +541,9 @@
 					<Comment>
 						<![CDATA[ Requested BP from subsystem]]>
 					</Comment>
-					<Type GUID="{41059C79-1015-4C2C-AFF4-697A824775D7}">ST_BeamParams_IO</Type>
+					<Type GUID="{80E871EC-0C36-49B0-AD5D-F1F0FB351299}">ST_BeamParams_IO</Type>
 					<SubVar>
-						<Name>fAtt</Name>
+						<Name>nTran</Name>
 						<Comment>
 							<![CDATA[  Requested pre-optic attenuation %  ]]>
 						</Comment>
@@ -696,9 +702,9 @@
 					<Comment>
 						<![CDATA[ Requested BP from subsystem]]>
 					</Comment>
-					<Type GUID="{41059C79-1015-4C2C-AFF4-697A824775D7}">ST_BeamParams_IO</Type>
+					<Type GUID="{80E871EC-0C36-49B0-AD5D-F1F0FB351299}">ST_BeamParams_IO</Type>
 					<SubVar>
-						<Name>fAtt</Name>
+						<Name>nTran</Name>
 						<Comment>
 							<![CDATA[  Requested pre-optic attenuation %  ]]>
 						</Comment>
@@ -857,9 +863,9 @@
 					<Comment>
 						<![CDATA[ Requested BP from subsystem]]>
 					</Comment>
-					<Type GUID="{41059C79-1015-4C2C-AFF4-697A824775D7}">ST_BeamParams_IO</Type>
+					<Type GUID="{80E871EC-0C36-49B0-AD5D-F1F0FB351299}">ST_BeamParams_IO</Type>
 					<SubVar>
-						<Name>fAtt</Name>
+						<Name>nTran</Name>
 						<Comment>
 							<![CDATA[  Requested pre-optic attenuation %  ]]>
 						</Comment>
@@ -1040,9 +1046,9 @@
 					<Comment>
 						<![CDATA[ Current BP set]]>
 					</Comment>
-					<Type GUID="{41059C79-1015-4C2C-AFF4-697A824775D7}">ST_BeamParams_IO</Type>
+					<Type GUID="{80E871EC-0C36-49B0-AD5D-F1F0FB351299}">ST_BeamParams_IO</Type>
 					<SubVar>
-						<Name>fAtt</Name>
+						<Name>nTran</Name>
 						<Comment>
 							<![CDATA[  Requested pre-optic attenuation %  ]]>
 						</Comment>
@@ -1173,9 +1179,9 @@
 					<Comment>
 						<![CDATA[ Current BP set]]>
 					</Comment>
-					<Type GUID="{41059C79-1015-4C2C-AFF4-697A824775D7}">ST_BeamParams_IO</Type>
+					<Type GUID="{80E871EC-0C36-49B0-AD5D-F1F0FB351299}">ST_BeamParams_IO</Type>
 					<SubVar>
-						<Name>fAtt</Name>
+						<Name>nTran</Name>
 						<Comment>
 							<![CDATA[  Requested pre-optic attenuation %  ]]>
 						</Comment>
@@ -1306,9 +1312,9 @@
 					<Comment>
 						<![CDATA[ Current BP set]]>
 					</Comment>
-					<Type GUID="{41059C79-1015-4C2C-AFF4-697A824775D7}">ST_BeamParams_IO</Type>
+					<Type GUID="{80E871EC-0C36-49B0-AD5D-F1F0FB351299}">ST_BeamParams_IO</Type>
 					<SubVar>
-						<Name>fAtt</Name>
+						<Name>nTran</Name>
 						<Comment>
 							<![CDATA[  Requested pre-optic attenuation %  ]]>
 						</Comment>
@@ -1439,9 +1445,9 @@
 					<Comment>
 						<![CDATA[ Current BP set]]>
 					</Comment>
-					<Type GUID="{41059C79-1015-4C2C-AFF4-697A824775D7}">ST_BeamParams_IO</Type>
+					<Type GUID="{80E871EC-0C36-49B0-AD5D-F1F0FB351299}">ST_BeamParams_IO</Type>
 					<SubVar>
-						<Name>fAtt</Name>
+						<Name>nTran</Name>
 						<Comment>
 							<![CDATA[  Requested pre-optic attenuation %  ]]>
 						</Comment>
@@ -1694,7 +1700,7 @@
 				<Link VarA="PlcTask Inputs^MAIN.fbEcatDiag.nEcMasterSlaveCountCfg" VarB="InfoData^CfgSlaveCount" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^MAIN.fbEcatDiag.wFrmXWcState" VarB="Inputs^Frm1WcState" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 12 (EK1200)^E3 (EK1122)^950-101W-R4-MPS-1^PPS_Stoppers">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 12 (EK1200)^E3 (EK1122)^950-101W-R4-MPS-2^PPS_Stoppers">
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.st1l0Watcher.i_StopperInLS" VarB="Channel 1^ST1L0_PPS_IN" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.st1l0Watcher.i_StopperOutLS" VarB="Channel 2^ST1L0_PPS_OUT" AutoLink="true"/>
 			</OwnerB>
