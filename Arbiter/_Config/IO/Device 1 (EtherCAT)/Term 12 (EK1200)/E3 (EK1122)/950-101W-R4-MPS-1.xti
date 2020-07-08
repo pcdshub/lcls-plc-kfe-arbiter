@@ -13,14 +13,8 @@
 		<Box File="Term 15 (EL1008).xti" Id="15">
 			<EtherCAT PortABoxInfo="#x0100000e"/>
 		</Box>
-		<Box File="MPS_Relay.xti" Id="16">
-			<EtherCAT PortABoxInfo="#x0100000f"/>
-		</Box>
-		<Box File="Term 17 (EL2004).xti" Id="17">
-			<EtherCAT PortABoxInfo="#x01000010"/>
-		</Box>
 		<Box File="Term 30 (EL9011).xti" Id="30">
-			<EtherCAT PortABoxInfo="#x01000011"/>
+			<EtherCAT PortABoxInfo="#x0100000f"/>
 		</Box>
 	</Box>
 </TcSmItem>

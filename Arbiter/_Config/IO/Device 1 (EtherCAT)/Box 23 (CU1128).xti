@@ -9,30 +9,48 @@
 		<Name>__FILENAME__</Name>
 		<ImageId>1000</ImageId>
 		<EtherCAT SlaveType="1" PdiType="#x0d00" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x04685432" RevisionNo="#x00010000" PortPhys="4881" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="CU1128 6x EtherCAT junction" Desc="CU1128"/>
-		<Box File="plc-lfe-optics.xti" Id="24">
+		<Box File="Box 19 (EL6695-0002).xti" Id="19">
 			<EtherCAT PortABoxInfo="#x03000017"/>
 		</Box>
-		<Box File="plc-lfe-motion.xti" Id="25">
-			<EtherCAT PortABoxInfo="#x01000018"/>
+		<Box File="Box 20 (EL6695-0002).xti" Id="20">
+			<EtherCAT PortABoxInfo="#x01000013"/>
 		</Box>
-		<Box File="plc-lfe-vacuum.xti" Id="26">
-			<EtherCAT PortABoxInfo="#x01000019"/>
+		<Box File="Box 21 (EL6695-0002).xti" Id="21">
+			<EtherCAT PortABoxInfo="#x01000014"/>
 		</Box>
-		<Box File="plc-lfe-gatt.xti" Id="27">
-			<EtherCAT PortABoxInfo="#x0100001a"/>
+		<Box File="Box 32 (EL6692).xti" Id="32">
+			<EtherCAT PortABoxInfo="#x01000015"/>
+		</Box>
+		<Box File="Box 33 (EL6692).xti" Id="33">
+			<EtherCAT PortABoxInfo="#x01000020"/>
+		</Box>
+		<Box File="Box 34 (EL6692).xti" Id="34">
+			<EtherCAT PortABoxInfo="#x01000017"/>
+		</Box>
+		<Box File="Box 35 (EL6695-0002).xti" Id="35">
+			<EtherCAT PortABoxInfo="#x01000022"/>
+		</Box>
+		<Box File="Box 36 (EL6692).xti" Id="36">
+			<EtherCAT PortABoxInfo="#x01000023"/>
 		</Box>
 		<Box BoxType="9099" Id="28">
 			<Name>Term 28 (CU1128-B)</Name>
 			<ImageId>1001</ImageId>
 			<EtherCAT SlaveType="1" PdiType="#x0d00" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x04685432" RevisionNo="#x00010001" PortPhys="4883" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="CU1128 6x EtherCAT junction - Dev A" Desc="CU1128-B" PortABoxInfo="#x02000017"/>
+			<Box File="Box 38 (EL6695-0002).xti" Id="38">
+				<EtherCAT PortABoxInfo="#x0300001c"/>
+			</Box>
+			<Box File="Box 39 (EL6695-0002).xti" Id="39">
+				<EtherCAT PortABoxInfo="#x01000026"/>
+			</Box>
+			<Box File="Box 40 (EL6695-0002).xti" Id="40">
+				<EtherCAT PortABoxInfo="#x01000027"/>
+			</Box>
 		</Box>
 		<Box BoxType="9099" Id="29">
 			<Name>Term 29 (CU1128-C)</Name>
 			<ImageId>1002</ImageId>
 			<EtherCAT SlaveType="1" PdiType="#x0d00" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x04685432" RevisionNo="#x00010002" PortPhys="4371" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="CU1128 6x EtherCAT junction - Dev B" Desc="CU1128-C" PortABoxInfo="#x0200001c"/>
-		</Box>
-		<Box File="Term 31 (EL9010).xti" Id="31">
-			<EtherCAT/>
 		</Box>
 	</Box>
 </TcSmItem>
