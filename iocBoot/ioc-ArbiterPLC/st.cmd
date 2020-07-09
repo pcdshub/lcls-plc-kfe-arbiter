@@ -6,7 +6,7 @@ epicsEnvSet("ADS_IOC_TOP", "$(TOP)" )
 
 epicsEnvSet("IOCNAME", "ioc-ArbiterPLC" )
 epicsEnvSet("ENGINEER", "awallace" )
-epicsEnvSet("LOCATION", "PMPS:LFE" )
+epicsEnvSet("LOCATION", "PMPS:KFE" )
 epicsEnvSet("IOCSH_PS1", "$(IOCNAME)> " )
 
 # Run common startup commands for linux soft IOC's
@@ -17,8 +17,8 @@ dbLoadDatabase("$(ADS_IOC_TOP)/dbd/adsIoc.dbd")
 adsIoc_registerRecordDeviceDriver(pdbbase)
 
 epicsEnvSet("ASYN_PORT",        "ASYN_PLC")
-epicsEnvSet("IPADDR",           "172.21.88.66")
-epicsEnvSet("AMSID",            "172.21.88.66.1.1")
+epicsEnvSet("IPADDR",           "172.21.92.73")
+epicsEnvSet("AMSID",            "172.21.92.73.1.1")
 epicsEnvSet("AMS_PORT",         "851")
 epicsEnvSet("ADS_MAX_PARAMS",   "10000")
 epicsEnvSet("ADS_SAMPLE_MS",    "50")
@@ -54,8 +54,8 @@ adsAsynPortDriverConfigure("$(ASYN_PORT)", "$(IPADDR)", "$(AMSID)", "$(AMS_PORT)
 cd "$(ADS_IOC_TOP)/db"
 
 
-dbLoadRecords("iocSoft.db", "IOC=PMPS:LFE")
-dbLoadRecords("save_restoreStatus.db", "P=PMPS:LFE:")
+dbLoadRecords("iocSoft.db", "IOC=PMPS:KFE")
+dbLoadRecords("save_restoreStatus.db", "P=PMPS:KFE:")
 
 cd "$(IOC_TOP)"
 
@@ -67,7 +67,7 @@ cd "$(IOC_TOP)"
 set_savefile_path( "$(IOC_DATA)/$(IOC)/autosave" )
 set_requestfile_path( "$(IOC_TOP)/autosave" )
 
-save_restoreSet_status_prefix( "PMPS:LFE:" )
+save_restoreSet_status_prefix( "PMPS:KFE:" )
 save_restoreSet_IncompleteSetsOk( 1 )
 save_restoreSet_DatedBackupFiles( 1 )
 set_pass0_restoreFile( "info_positions.sav" )

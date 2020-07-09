@@ -9,6 +9,6 @@ PROJECT_PATH := ../../Arbiter/Arbiter.tsproj
 PLC := ArbiterPLC
 
 PYTMC_OPTS := 
-PREFIX := PMPS:LFE
+PREFIX := PMPS:KFE
 
 include $(IOC_TOP)/iocBoot/templates/Makefile.base
