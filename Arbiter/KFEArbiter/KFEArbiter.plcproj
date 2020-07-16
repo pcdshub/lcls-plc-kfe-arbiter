@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{4bcb16ef-5d13-4917-90a8-513a58e8b784}</ProjectGuid>
     <SubObjectsSortedByName>True</SubObjectsSortedByName>
-    <Name>ArbiterPLC</Name>
+    <Name>KFEArbiter</Name>
     <ProgramVersion>3.1.4022.7</ProgramVersion>
     <Application>{d5b473b5-0550-4512-be23-b2b0a3cbcfa6}</Application>
     <TypeSystem>{a7d49d62-9414-4220-a4c3-719f7c81ffc9}</TypeSystem>
@@ -35,15 +35,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="PlcTask.TcTTO">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Accelerator\FB_Hgvpu.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Accelerator\FB_SXU.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Accelerator\FB_UndulatorSegment.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\CurrentBPUpdate.TcPOU">
@@ -87,7 +78,6 @@
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
     <Folder Include="ImplicitChecks" />
-    <Folder Include="POUs\Accelerator" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>
@@ -121,12 +111,12 @@
     <LibraryReference Include="LCLS General,newest,SLAC">
       <Namespace>LCLS_General</Namespace>
     </LibraryReference>
-    <LibraryReference Include="PMPS,0.5.0,SLAC - LCLS">
+    <LibraryReference Include="PMPS,0.0.0,SLAC - LCLS">
       <Namespace>PMPS</Namespace>
     </LibraryReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ArbiterPLC.tmc">
+    <None Include="KFEArbiter.tmc">
       <SubType>Content</SubType>
     </None>
   </ItemGroup>

@@ -103,7 +103,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{80E871EC-0C36-49B0-AD5D-F1F0FB351299}">ST_BeamParams_IO</Name>
+			<Name GUID="{5FC92061-002A-45B0-B954-CD8F28B5CE49}">ST_BeamParams_IO</Name>
 			<BitSize>1216</BitSize>
 			<SubItem>
 				<Name>nTran</Name>
@@ -209,7 +209,7 @@
 				<Name>astApertures</Name>
 				<Type GUID="{67AC048F-B785-4A4D-B941-B11E2213F502}">ST_PMPS_Aperture_IO</Type>
 				<ArrayInfo>
-					<LBound>0</LBound>
+					<LBound>1</LBound>
 					<Elements>4</Elements>
 				</ArrayInfo>
 				<BitSize>384</BitSize>
@@ -280,6 +280,7 @@
 				<Hide GUID="{ADE62DDD-CAE3-4FE3-BE11-F358D7D0CDD8}"/>
 				<Hide GUID="{729DFDAA-EB68-494E-B247-D86DA3C0AE5E}"/>
 				<Hide GUID="{41059C79-1015-4C2C-AFF4-697A824775D7}"/>
+				<Hide GUID="{80E871EC-0C36-49B0-AD5D-F1F0FB351299}"/>
 			</Hides>
 		</DataType>
 		<DataType>
@@ -301,9 +302,9 @@
 			</ArrayInfo>
 		</DataType>
 	</DataTypes>
-	<Project GUID="{4BCB16EF-5D13-4917-90A8-513A58E8B784}" Name="ArbiterPLC" PrjFilePath="..\..\ArbiterPLC\ArbiterPLC.plcproj" TmcFilePath="..\..\ArbiterPLC\ArbiterPLC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e">
+	<Project GUID="{4BCB16EF-5D13-4917-90A8-513A58E8B784}" Name="KFEArbiter" PrjFilePath="..\..\KFEArbiter\KFEArbiter.plcproj" TmcFilePath="..\..\KFEArbiter\KFEArbiter.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e">
 		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="ArbiterPLC\ArbiterPLC.tmc">
-			<Name>ArbiterPLC Instance</Name>
+			<Name>KFEArbiter Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="2">
 				<Name>FFOTask Outputs</Name>
@@ -376,11 +377,11 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.plc_lfe_motion_PMPS_IO.i_RequestedBP</Name>
+					<Name>PMPS_Arbiter.plc_kfe_motion_PMPS_IO.i_RequestedBP</Name>
 					<Comment>
 						<![CDATA[ Requested BP from subsystem]]>
 					</Comment>
-					<Type GUID="{80E871EC-0C36-49B0-AD5D-F1F0FB351299}">ST_BeamParams_IO</Type>
+					<Type GUID="{5FC92061-002A-45B0-B954-CD8F28B5CE49}">ST_BeamParams_IO</Type>
 					<SubVar>
 						<Name>nTran</Name>
 						<Comment>
@@ -409,24 +410,6 @@
 						<Name>astAttenuators</Name>
 						<Comment>
 							<![CDATA[ Beamline attenuators ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[0]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[0]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[0]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
 						</Comment>
 					</SubVar>
 					<SubVar>
@@ -484,6 +467,24 @@
 						</Comment>
 					</SubVar>
 					<SubVar>
+						<Name>astApertures^astApertures[4]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
 						<Name>aStoppers</Name>
 						<Comment>
 							<![CDATA[ Stopper statuses ]]>
@@ -509,39 +510,39 @@
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.plc_lfe_motion_PMPS_IO.i_Connected</Name>
+					<Name>PMPS_Arbiter.plc_kfe_motion_PMPS_IO.i_Connected</Name>
 					<Comment>
 						<![CDATA[ SYNC Inputs^External device not connected !!! Doesn't really work.]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.plc_lfe_motion_PMPS_IO.i_WcState</Name>
+					<Name>PMPS_Arbiter.plc_kfe_motion_PMPS_IO.i_WcState</Name>
 					<Comment>
 						<![CDATA[ WcState^WcState]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.plc_lfe_motion_PMPS_IO.i_TxPDOState</Name>
+					<Name>PMPS_Arbiter.plc_kfe_motion_PMPS_IO.i_TxPDOState</Name>
 					<Comment>
 						<![CDATA[ SYNC Inputs^TxPDO state]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.plc_lfe_motion_PMPS_IO.i_TxPDOToggle</Name>
+					<Name>PMPS_Arbiter.plc_kfe_motion_PMPS_IO.i_TxPDOToggle</Name>
 					<Comment>
 						<![CDATA[ TxPDO toggle]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.plc_lfe_optics_PMPS_IO.i_RequestedBP</Name>
+					<Name>PMPS_Arbiter.plc_kfe_optics_PMPS_IO.i_RequestedBP</Name>
 					<Comment>
 						<![CDATA[ Requested BP from subsystem]]>
 					</Comment>
-					<Type GUID="{80E871EC-0C36-49B0-AD5D-F1F0FB351299}">ST_BeamParams_IO</Type>
+					<Type GUID="{5FC92061-002A-45B0-B954-CD8F28B5CE49}">ST_BeamParams_IO</Type>
 					<SubVar>
 						<Name>nTran</Name>
 						<Comment>
@@ -570,24 +571,6 @@
 						<Name>astAttenuators</Name>
 						<Comment>
 							<![CDATA[ Beamline attenuators ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[0]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[0]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[0]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
 						</Comment>
 					</SubVar>
 					<SubVar>
@@ -645,6 +628,24 @@
 						</Comment>
 					</SubVar>
 					<SubVar>
+						<Name>astApertures^astApertures[4]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
 						<Name>aStoppers</Name>
 						<Comment>
 							<![CDATA[ Stopper statuses ]]>
@@ -670,39 +671,39 @@
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.plc_lfe_optics_PMPS_IO.i_Connected</Name>
+					<Name>PMPS_Arbiter.plc_kfe_optics_PMPS_IO.i_Connected</Name>
 					<Comment>
 						<![CDATA[ SYNC Inputs^External device not connected !!! Doesn't really work.]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.plc_lfe_optics_PMPS_IO.i_WcState</Name>
+					<Name>PMPS_Arbiter.plc_kfe_optics_PMPS_IO.i_WcState</Name>
 					<Comment>
 						<![CDATA[ WcState^WcState]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.plc_lfe_optics_PMPS_IO.i_TxPDOState</Name>
+					<Name>PMPS_Arbiter.plc_kfe_optics_PMPS_IO.i_TxPDOState</Name>
 					<Comment>
 						<![CDATA[ SYNC Inputs^TxPDO state]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.plc_lfe_optics_PMPS_IO.i_TxPDOToggle</Name>
+					<Name>PMPS_Arbiter.plc_kfe_optics_PMPS_IO.i_TxPDOToggle</Name>
 					<Comment>
 						<![CDATA[ TxPDO toggle]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.plc_lfe_vac_PMPS_IO.i_RequestedBP</Name>
+					<Name>PMPS_Arbiter.plc_kfe_vac_PMPS_IO.i_RequestedBP</Name>
 					<Comment>
 						<![CDATA[ Requested BP from subsystem]]>
 					</Comment>
-					<Type GUID="{80E871EC-0C36-49B0-AD5D-F1F0FB351299}">ST_BeamParams_IO</Type>
+					<Type GUID="{5FC92061-002A-45B0-B954-CD8F28B5CE49}">ST_BeamParams_IO</Type>
 					<SubVar>
 						<Name>nTran</Name>
 						<Comment>
@@ -731,24 +732,6 @@
 						<Name>astAttenuators</Name>
 						<Comment>
 							<![CDATA[ Beamline attenuators ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[0]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[0]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[0]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
 						</Comment>
 					</SubVar>
 					<SubVar>
@@ -806,6 +789,24 @@
 						</Comment>
 					</SubVar>
 					<SubVar>
+						<Name>astApertures^astApertures[4]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
 						<Name>aStoppers</Name>
 						<Comment>
 							<![CDATA[ Stopper statuses ]]>
@@ -831,39 +832,39 @@
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.plc_lfe_vac_PMPS_IO.i_Connected</Name>
+					<Name>PMPS_Arbiter.plc_kfe_vac_PMPS_IO.i_Connected</Name>
 					<Comment>
 						<![CDATA[ SYNC Inputs^External device not connected !!! Doesn't really work.]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.plc_lfe_vac_PMPS_IO.i_WcState</Name>
+					<Name>PMPS_Arbiter.plc_kfe_vac_PMPS_IO.i_WcState</Name>
 					<Comment>
 						<![CDATA[ WcState^WcState]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.plc_lfe_vac_PMPS_IO.i_TxPDOState</Name>
+					<Name>PMPS_Arbiter.plc_kfe_vac_PMPS_IO.i_TxPDOState</Name>
 					<Comment>
 						<![CDATA[ SYNC Inputs^TxPDO state]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.plc_lfe_vac_PMPS_IO.i_TxPDOToggle</Name>
+					<Name>PMPS_Arbiter.plc_kfe_vac_PMPS_IO.i_TxPDOToggle</Name>
 					<Comment>
 						<![CDATA[ TxPDO toggle]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.plc_lfe_gatt_PMPS_IO.i_RequestedBP</Name>
+					<Name>PMPS_Arbiter.plc_kfe_gatt_PMPS_IO.i_RequestedBP</Name>
 					<Comment>
 						<![CDATA[ Requested BP from subsystem]]>
 					</Comment>
-					<Type GUID="{80E871EC-0C36-49B0-AD5D-F1F0FB351299}">ST_BeamParams_IO</Type>
+					<Type GUID="{5FC92061-002A-45B0-B954-CD8F28B5CE49}">ST_BeamParams_IO</Type>
 					<SubVar>
 						<Name>nTran</Name>
 						<Comment>
@@ -892,24 +893,6 @@
 						<Name>astAttenuators</Name>
 						<Comment>
 							<![CDATA[ Beamline attenuators ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[0]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[0]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[0]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
 						</Comment>
 					</SubVar>
 					<SubVar>
@@ -967,6 +950,24 @@
 						</Comment>
 					</SubVar>
 					<SubVar>
+						<Name>astApertures^astApertures[4]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
 						<Name>aStoppers</Name>
 						<Comment>
 							<![CDATA[ Stopper statuses ]]>
@@ -992,28 +993,28 @@
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.plc_lfe_gatt_PMPS_IO.i_Connected</Name>
+					<Name>PMPS_Arbiter.plc_kfe_gatt_PMPS_IO.i_Connected</Name>
 					<Comment>
 						<![CDATA[ SYNC Inputs^External device not connected !!! Doesn't really work.]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.plc_lfe_gatt_PMPS_IO.i_WcState</Name>
+					<Name>PMPS_Arbiter.plc_kfe_gatt_PMPS_IO.i_WcState</Name>
 					<Comment>
 						<![CDATA[ WcState^WcState]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.plc_lfe_gatt_PMPS_IO.i_TxPDOState</Name>
+					<Name>PMPS_Arbiter.plc_kfe_gatt_PMPS_IO.i_TxPDOState</Name>
 					<Comment>
 						<![CDATA[ SYNC Inputs^TxPDO state]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.plc_lfe_gatt_PMPS_IO.i_TxPDOToggle</Name>
+					<Name>PMPS_Arbiter.plc_kfe_gatt_PMPS_IO.i_TxPDOToggle</Name>
 					<Comment>
 						<![CDATA[ TxPDO toggle]]>
 					</Comment>
@@ -1042,11 +1043,11 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.plc_lfe_motion_PMPS_IO.o_CurrentBP</Name>
+					<Name>PMPS_Arbiter.plc_kfe_motion_PMPS_IO.o_CurrentBP</Name>
 					<Comment>
 						<![CDATA[ Current BP set]]>
 					</Comment>
-					<Type GUID="{80E871EC-0C36-49B0-AD5D-F1F0FB351299}">ST_BeamParams_IO</Type>
+					<Type GUID="{5FC92061-002A-45B0-B954-CD8F28B5CE49}">ST_BeamParams_IO</Type>
 					<SubVar>
 						<Name>nTran</Name>
 						<Comment>
@@ -1075,24 +1076,6 @@
 						<Name>astAttenuators</Name>
 						<Comment>
 							<![CDATA[ Beamline attenuators ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[0]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[0]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[0]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
 						</Comment>
 					</SubVar>
 					<SubVar>
@@ -1145,6 +1128,24 @@
 					</SubVar>
 					<SubVar>
 						<Name>astApertures^astApertures[3]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^xOK</Name>
 						<Comment>
 							<![CDATA[ status of aperture, false if error or in motion]]>
 						</Comment>
@@ -1175,11 +1176,11 @@
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.plc_lfe_optics_PMPS_IO.o_CurrentBP</Name>
+					<Name>PMPS_Arbiter.plc_kfe_optics_PMPS_IO.o_CurrentBP</Name>
 					<Comment>
 						<![CDATA[ Current BP set]]>
 					</Comment>
-					<Type GUID="{80E871EC-0C36-49B0-AD5D-F1F0FB351299}">ST_BeamParams_IO</Type>
+					<Type GUID="{5FC92061-002A-45B0-B954-CD8F28B5CE49}">ST_BeamParams_IO</Type>
 					<SubVar>
 						<Name>nTran</Name>
 						<Comment>
@@ -1208,24 +1209,6 @@
 						<Name>astAttenuators</Name>
 						<Comment>
 							<![CDATA[ Beamline attenuators ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[0]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[0]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[0]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
 						</Comment>
 					</SubVar>
 					<SubVar>
@@ -1278,6 +1261,24 @@
 					</SubVar>
 					<SubVar>
 						<Name>astApertures^astApertures[3]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^xOK</Name>
 						<Comment>
 							<![CDATA[ status of aperture, false if error or in motion]]>
 						</Comment>
@@ -1308,11 +1309,11 @@
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.plc_lfe_vac_PMPS_IO.o_CurrentBP</Name>
+					<Name>PMPS_Arbiter.plc_kfe_vac_PMPS_IO.o_CurrentBP</Name>
 					<Comment>
 						<![CDATA[ Current BP set]]>
 					</Comment>
-					<Type GUID="{80E871EC-0C36-49B0-AD5D-F1F0FB351299}">ST_BeamParams_IO</Type>
+					<Type GUID="{5FC92061-002A-45B0-B954-CD8F28B5CE49}">ST_BeamParams_IO</Type>
 					<SubVar>
 						<Name>nTran</Name>
 						<Comment>
@@ -1341,24 +1342,6 @@
 						<Name>astAttenuators</Name>
 						<Comment>
 							<![CDATA[ Beamline attenuators ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[0]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[0]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[0]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
 						</Comment>
 					</SubVar>
 					<SubVar>
@@ -1411,6 +1394,24 @@
 					</SubVar>
 					<SubVar>
 						<Name>astApertures^astApertures[3]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^xOK</Name>
 						<Comment>
 							<![CDATA[ status of aperture, false if error or in motion]]>
 						</Comment>
@@ -1441,11 +1442,11 @@
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.plc_lfe_gatt_PMPS_IO.o_CurrentBP</Name>
+					<Name>PMPS_Arbiter.plc_kfe_gatt_PMPS_IO.o_CurrentBP</Name>
 					<Comment>
 						<![CDATA[ Current BP set]]>
 					</Comment>
-					<Type GUID="{80E871EC-0C36-49B0-AD5D-F1F0FB351299}">ST_BeamParams_IO</Type>
+					<Type GUID="{5FC92061-002A-45B0-B954-CD8F28B5CE49}">ST_BeamParams_IO</Type>
 					<SubVar>
 						<Name>nTran</Name>
 						<Comment>
@@ -1474,24 +1475,6 @@
 						<Name>astAttenuators</Name>
 						<Comment>
 							<![CDATA[ Beamline attenuators ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[0]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[0]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[0]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
 						</Comment>
 					</SubVar>
 					<SubVar>
@@ -1544,6 +1527,24 @@
 					</SubVar>
 					<SubVar>
 						<Name>astApertures^astApertures[3]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^xOK</Name>
 						<Comment>
 							<![CDATA[ status of aperture, false if error or in motion]]>
 						</Comment>
@@ -1691,7 +1692,7 @@
 		</Instance>
 	</Project>
 	<Mappings>
-		<OwnerA Name="ArbiterPLC Instance">
+		<OwnerA Name="KFEArbiter Instance">
 			<OwnerB Name="TIID^Device 1 (EtherCAT)">
 				<Link VarA="PlcTask Inputs^MAIN.fbEcatDiag.arrEcMasterNetId" VarB="InfoData^AmsNetId" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^MAIN.fbEcatDiag.nEcMasterDevState" VarB="Inputs^DevState" AutoLink="true"/>
@@ -1699,6 +1700,17 @@
 				<Link VarA="PlcTask Inputs^MAIN.fbEcatDiag.nEcMasterSlaveCount" VarB="Inputs^SlaveCount" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^MAIN.fbEcatDiag.nEcMasterSlaveCountCfg" VarB="InfoData^CfgSlaveCount" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^MAIN.fbEcatDiag.wFrmXWcState" VarB="Inputs^Frm1WcState" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-gatt">
+				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_kfe_gatt_PMPS_IO.i_Connected" VarB="SYNC Inputs^External device not connected" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_kfe_gatt_PMPS_IO.i_TxPDOState" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-motion">
+				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_kfe_motion_PMPS_IO.i_Connected" VarB="SYNC Inputs^External device not connected" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_kfe_motion_PMPS_IO.i_RequestedBP" VarB="IO Inputs^RequestedBP" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_kfe_motion_PMPS_IO.i_TxPDOState" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_kfe_motion_PMPS_IO.i_WcState" VarB="WcState^WcStateIn" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.plc_kfe_motion_PMPS_IO.o_CurrentBP" VarB="IO Outputs^CurrentBP" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^E0 (EK1200)^FFO">
 				<Link VarA="FFOTask Outputs^GVL.g_FastFaultOutput1.q_xFastFaultOut" VarB="Channel 1^Output" AutoLink="true"/>
