@@ -16,7 +16,7 @@ VAR
     fbHgvpu : FB_Hgvpu;
 *)
     {attribute 'pytmc' := '
-        pv: @(PREFIX)
+        pv: @(PREFIX)PE
     '}
 	fbLPhotonEnergy : FB_LPhotonEnergy;
 
