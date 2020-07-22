@@ -8,11 +8,17 @@ VAR
     fbLogHandler : FB_LogHandler;
     fbEcatDiag : FB_EcatDiagWrapper;
 
+(*
     {attribute 'pytmc' := '
         pv: @(PREFIX)Link:HGVPU
         link: USEG:UNDH:
     '}
     fbHgvpu : FB_Hgvpu;
+*)
+    {attribute 'pytmc' := '
+        pv: @(PREFIX)
+    '}
+	fbLPhotonEnergy : FB_LPhotonEnergy;
 
     {attribute 'pytmc' := '
         pv: @(PREFIX)Link:SXU
@@ -56,7 +62,7 @@ MachineSimulation();
 
 fbAcceleratorLinks();
 
-fbHgvpu(fbElectronEnergy:=fbAcceleratorLinks.fbHgvpuElectronEnergy);
+fbLPhotonEnergy(BP:=PMPS_GVL.stCurrentBeamParameters);
 fbSxu(fbElectronEnergy:=fbAcceleratorLinks.fbSxuElectronEnergy);
 
 fbEPICSLRate(BP:=PMPS_GVL.stCurrentBeamParameters);
