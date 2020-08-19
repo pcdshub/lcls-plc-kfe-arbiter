@@ -160,7 +160,8 @@ fbPhotonEnergyWatcher(i_stCurrentBeamParams	:= PMPS_GVL.stCurrentBeamParameters,
 					
 
 // Evaluate fast fault vetos
-g_FastFaultOutput1.Execute();
+g_FastFaultOutput1.EvaluateOverrides();
+g_FastFaultOutput1.ExecuteLogging();
 
 
 ]]></ST>
