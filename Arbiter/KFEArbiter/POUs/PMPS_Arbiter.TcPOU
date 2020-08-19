@@ -4,6 +4,8 @@
     <Declaration><![CDATA[PROGRAM PMPS_Arbiter
 VAR
 
+	fbSetPE	:	PE_Ranges;
+
     fbBPRequestor : FB_BPRequestor; // Updates global PMPS RequestedBeamParams
     {attribute 'pytmc' := '
     pv: @(PREFIX)PhotonEnergyWatcher
@@ -54,15 +56,15 @@ VAR
     plc_kfe_optics_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#FF10);
 
 	
-	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-kfe-vacuum]^IO Inputs^RequestedBP;
-								.o_CurrentBP:=TIIB[plc-kfe-vacuum]^IO Outputs^CurrentBP;
-								.i_Connected:=TIIB[plc-kfe-vacuum]^SYNC Inputs^External device not connected;
-								.i_WcState:=TIIB[plc-kfe-vacuum]^WcState^WcStateIn;
-								.i_TxPDOState:=TIIB[plc-kfe-vacuum]^SYNC Inputs^TxPDO state;
+	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-kfe-vac]^IO Inputs^RequestedBP;
+								.o_CurrentBP:=TIIB[plc-kfe-vac]^IO Outputs^CurrentBP;
+								.i_Connected:=TIIB[plc-kfe-vac]^SYNC Inputs^External device not connected;
+								.i_WcState:=TIIB[plc-kfe-vac]^WcState^WcStateIn;
+								.i_TxPDOState:=TIIB[plc-kfe-vac]^SYNC Inputs^TxPDO state;
 								'}
     plc_kfe_vac_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#FF11);
 	
-		{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-kfe-gatt]^IO Inputs^RequestedBP;
+	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-kfe-gatt]^IO Inputs^RequestedBP;
 								.o_CurrentBP:=TIIB[plc-kfe-gatt]^IO Outputs^CurrentBP;
 								.i_Connected:=TIIB[plc-kfe-gatt]^SYNC Inputs^External device not connected;
 								.i_WcState:=TIIB[plc-kfe-gatt]^WcState^WcStateIn;
@@ -70,39 +72,76 @@ VAR
 								'}
     plc_kfe_gatt_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#FF12);
 	
-    (*{attribute 'pytmc' := '
-    pv: @(PREFIX)SubSysIO:PLC2
-    '}*)
-    {attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[SubSysPLC2]^IO Inputs^RequestedBP;
-                                .i_xNewRequest:=TIIB[SubSysPLC2]^IO Inputs^xNewRequest;
-                                .o_CurrentBP:=TIIB[SubSysPLC2]^IO Outputs^CurrentBP;
-                                .i_Connected:=TIIB[SubSysPLC2]^SYNC Inputs^External device not connected;
-                                .i_WcState:=TIIB[SubSysPLC2]^WcState^WcState;
-                                .i_TxPDOState:=TIIB[SubSysPLC2]^SYNC Inputs^TxPDO state;
-                                .i_TxPDOToggle:=TIIB[SubSysPLC2]^SYNC Inputs^TxPDO toggle;
+	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-kfe-gmd-vac-01]^IO Inputs^RequestedBP;
+								.o_CurrentBP:=TIIB[plc-kfe-gmd-vac-01]^IO Outputs^CurrentBP;
+								.i_Connected:=TIIB[plc-kfe-gmd-vac-01]^SYNC Inputs^External device not connected;
+								.i_WcState:=TIIB[plc-kfe-gmd-vac-01]^WcState^WcStateIn;
+								.i_TxPDOState:=TIIB[plc-kfe-gmd-vac-01]^SYNC Inputs^TxPDO state;
+								'}
+    plc_kfe_gmd_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#FF13);
+	
+	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-kfe-xgmd-vac-01]^IO Inputs^RequestedBP;
+								.o_CurrentBP:=TIIB[plc-kfe-xgmd-vac-01]^IO Outputs^CurrentBP;
+								.i_Connected:=TIIB[plc-kfe-xgmd-vac-01]^SYNC Inputs^External device not connected;
+								.i_WcState:=TIIB[plc-kfe-xgmd-vac-01]^WcState^WcStateIn;
+								.i_TxPDOState:=TIIB[plc-kfe-xgmd-vac-01]^SYNC Inputs^TxPDO state;
+								'}
+    plc_kfe_xgmd_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#FF14);
+	
+	
+	
+	//////////////////////////////////////////////
+	// TMO PLCs
+	/////////////////////////////////////////////
+	
+	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-tmo-mot]^IO Inputs^RequestedBP;
+                                .o_CurrentBP:=TIIB[plc-tmo-mot]^IO Outputs^CurrentBP;
+                                .i_Connected:=TIIB[plc-tmo-mot]^SYNC Inputs^External device not connected;
+                                .i_WcState:=TIIB[plc-tmo-mot]^WcState^WcStateIn;
+                                .i_TxPDOState:=TIIB[plc-tmo-mot]^SYNC Inputs^TxPDO state;
                                 '}
-    //fbSubSys2_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#FF10);
+    plc_tmo_motion_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#F100);
+	
+	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-tmo-optics]^IO Inputs^RequestedBP;
+                                .o_CurrentBP:=TIIB[plc-tmo-optics]^IO Outputs^CurrentBP;
+                                .i_Connected:=TIIB[plc-tmo-optics]^SYNC Inputs^External device not connected;
+                                .i_WcState:=TIIB[plc-tmo-optics]^WcState^WcStateIn;
+                                .i_TxPDOState:=TIIB[plc-tmo-optics]^SYNC Inputs^TxPDO state;
+                                '}
+    plc_tmo_optics_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#F101);
 
-(* caget IOC:BSY0:MP01:BYKIK_RATE
-IOC:BSY0:MP01:BYKIK_RATE       10 Hz *)
-
-    
-
+	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-tmo-vac]^IO Inputs^RequestedBP;
+                                .o_CurrentBP:=TIIB[plc-tmo-vac]^IO Outputs^CurrentBP;
+                                .i_Connected:=TIIB[plc-tmo-vac]^SYNC Inputs^External device not connected;
+                                .i_WcState:=TIIB[plc-tmo-vac]^WcState^WcStateIn;
+                                .i_TxPDOState:=TIIB[plc-tmo-vac]^SYNC Inputs^TxPDO state;
+                                '}
+    plc_tmo_vacuum_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#F102);	
+	
 
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
-// Watching and relaying stopper statuses
-st1l0Watcher(stCurrentBP := PMPS_GVL.stCurrentBeamParameters);
-
 // Updating arbiter with subsystem requests.
-plc_kfe_motion_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
-plc_kfe_optics_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
-plc_kfe_vac_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
-plc_kfe_gatt_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
+
+///////////////////////////
+// KFE
+	plc_kfe_motion_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
+	plc_kfe_optics_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
+	plc_kfe_vac_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
+	plc_kfe_gatt_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
 
 
+///////////////////////////
+// TMO
+	plc_tmo_motion_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
+	plc_tmo_motion_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
+	plc_tmo_vacuum_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
+
+	
+	
+////////////////////////////	
 // Beam parameter requestor
 fbBPRequestor(Arbiter:=GVL.g_fbArbiter1, q_ReqBP => PMPS_GVL.stRequestedBeamParameters);
 
@@ -121,25 +160,10 @@ fbPhotonEnergyWatcher(i_stCurrentBeamParams	:= PMPS_GVL.stCurrentBeamParameters,
 					
 
 // Evaluate fast fault vetos
-g_FastFaultOutput1.EvaluateOverrides();
-
-// Send fast fault logs
-g_FastFaultOutput1.ExecuteLogging();
+g_FastFaultOutput1.Execute();
 
 
 ]]></ST>
     </Implementation>
-    <LineIds Name="PMPS_Arbiter">
-      <LineId Id="3" Count="5" />
-      <LineId Id="104" Count="0" />
-      <LineId Id="192" Count="0" />
-      <LineId Id="201" Count="0" />
-      <LineId Id="13" Count="16" />
-      <LineId Id="299" Count="0" />
-      <LineId Id="30" Count="0" />
-      <LineId Id="107" Count="3" />
-      <LineId Id="35" Count="2" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
