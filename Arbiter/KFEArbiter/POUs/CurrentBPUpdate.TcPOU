@@ -4,16 +4,17 @@
     <Declaration><![CDATA[PROGRAM CurrentBPUpdate
 VAR
 	{attribute 'pytmc' := '
-		pv: @(PREFIX)MPS:KickerPermRate
-		link: IOC:BSY0:MP01:BYKIK_RATE
-	'}
-	nBeamRate : INT;
+        pv: L:Rate
+        link: IOC:BSY0:MP01:BYKIK_RATE
+        field: EGU RateEnum
+    '}
+    fbBYKIK_Rate : FB_LREALFromEPICS;
 	
 	
 	{attribute 'pytmc' := '
         pv: @(PREFIX)
     '}
-	fbEPICSLRate : FB_LRateFromEPICS;
+	fbEPICS_KRate : FB_RateFromEPICS;
 	
 	{attribute 'pytmc' := '
         pv: @(PREFIX)PE
@@ -24,6 +25,9 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
+
+fbEPICS_KRate(BP:=PMPS_GVL.stCurrentBeamParameters, fbBYKIK_Rate:=fbBYKIK_Rate);
+
 fbKPhotonEnergy(BP:=PMPS_GVL.stCurrentBeamParameters);]]></ST>
     </Implementation>
   </POU>

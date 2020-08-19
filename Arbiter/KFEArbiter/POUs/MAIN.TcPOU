@@ -32,23 +32,13 @@ MachineSimulation();
 //Testing();
 ///////////////////////////////////////////////////
 
-fbAcceleratorLinks();
-
-fbLPhotonEnergy(BP:=PMPS_GVL.stCurrentBeamParameters);
-fbSxu(fbElectronEnergy:=fbAcceleratorLinks.fbSxuElectronEnergy);
-
-fbEPICSLRate(BP:=PMPS_GVL.stCurrentBeamParameters);
-
 // Dummy device for controling pmps beam parameters
 fbBPControl(Arbiter:=g_fbArbiter1);
 
-//Update current BP
-CurrentBPUpdate();
-
 // PMPS Functionality
 CurrentBPUpdate();
-PMPS_Arbiter();
 
+PMPS_Arbiter();
 
 fbLogHandler();]]></ST>
     </Implementation>

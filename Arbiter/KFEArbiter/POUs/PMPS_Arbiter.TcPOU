@@ -123,9 +123,6 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
-// Watching and relaying stopper statuses
-st1l0Watcher(stCurrentBP := PMPS_GVL.stCurrentBeamParameters);
-
 // Updating arbiter with subsystem requests.
 
 ///////////////////////////
@@ -163,10 +160,7 @@ fbPhotonEnergyWatcher(i_stCurrentBeamParams	:= PMPS_GVL.stCurrentBeamParameters,
 					
 
 // Evaluate fast fault vetos
-g_FastFaultOutput1.EvaluateOverrides();
-
-// Send fast fault logs
-g_FastFaultOutput1.ExecuteLogging();
+g_FastFaultOutput1.Execute();
 
 
 ]]></ST>
