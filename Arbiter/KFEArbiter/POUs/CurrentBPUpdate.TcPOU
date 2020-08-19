@@ -8,13 +8,23 @@ VAR
 		link: IOC:BSY0:MP01:BYKIK_RATE
 	'}
 	nBeamRate : INT;
+	
+	
+	{attribute 'pytmc' := '
+        pv: @(PREFIX)
+    '}
+	fbEPICSLRate : FB_LRateFromEPICS;
+	
+	{attribute 'pytmc' := '
+        pv: @(PREFIX)PE
+    '}
+	fbKPhotonEnergy : FB_KPhotonEnergy;
+	
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[
+fbKPhotonEnergy(BP:=PMPS_GVL.stCurrentBeamParameters);]]></ST>
     </Implementation>
-    <LineIds Name="CurrentBPUpdate">
-      <LineId Id="5" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
