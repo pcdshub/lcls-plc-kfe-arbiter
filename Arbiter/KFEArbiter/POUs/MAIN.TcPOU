@@ -12,6 +12,8 @@ VAR
     pv: @(PREFIX)BeamParamCntl
     '}
     fbBPControl : FB_BPControlDevice(nID:=10);
+	
+	PERanges : PE_Ranges;
 
 END_VAR
 ]]></Declaration>
