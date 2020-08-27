@@ -38,9 +38,6 @@
 		<Image Id="1" AddrType="9" ImageType="3">
 			<Name>Image</Name>
 		</Image>
-		<Image Id="3" AddrType="10" ImageType="3">
-			<Name>Image-2</Name>
-		</Image>
 		<Box File="E0 (EK1200).xti" Id="5">
 			<EtherCAT PortABoxInfo="#x00ffffff"/>
 		</Box>
@@ -49,7 +46,7 @@
 		</Box>
 		<EtherCAT EnableVirtualSwitch="true" MaxSwitchPorts="12" MaxSwitchFrames="320">
 			<Redundancy Mode="2" AdapterReference="true" PreviousPort="33554461"/>
-			<SyncUnit Name="alt" NoDeleteIfUnused="true"/>
+			<SyncUnit Name="rix" NoDeleteIfUnused="true"/>
 			<SyncUnit Name="kfe" NoDeleteIfUnused="true"/>
 			<SyncUnit Name="tmo" NoDeleteIfUnused="true"/>
 		</EtherCAT>

@@ -7,12 +7,12 @@
 			<SyncMan>001001000000010004000000000000000100001000010000</SyncMan>
 			<Fmmu>0000000000000000001000010100000002000000000000000000000000000000</Fmmu>
 			<Pdo Name="Channel 1" Index="#x1a00" Flags="#x0011" SyncMan="0">
-				<Entry Name="ST1L0_PPS_IN" Index="#x6000" Sub="#x01">
+				<Entry Name="ST3K4 IN" Index="#x6000" Sub="#x01">
 					<Type>BIT</Type>
 				</Entry>
 			</Pdo>
 			<Pdo Name="Channel 2" Index="#x1a01" Flags="#x0011" SyncMan="0">
-				<Entry Name="ST1L0_PPS_OUT" Index="#x6010" Sub="#x01">
+				<Entry Name="ST3K4 OUT" Index="#x6010" Sub="#x01">
 					<Type>BIT</Type>
 				</Entry>
 			</Pdo>

@@ -37,6 +37,15 @@
 			<Name>B940-009-R07-MPS-1 CU1-ESC2</Name>
 			<ImageId>1001</ImageId>
 			<EtherCAT SlaveType="1" PdiType="#x0d00" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x04685432" RevisionNo="#x00010001" PortPhys="4883" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="CU1128 6x EtherCAT junction - Dev A" Desc="CU1128-B" PortABoxInfo="#x02000017"/>
+			<Box File="Box 39 (EL6695-0002).xti" Id="39">
+				<EtherCAT PortABoxInfo="#x0300001c"/>
+			</Box>
+			<Box File="Box 40 (EL6695-0002).xti" Id="40">
+				<EtherCAT PortABoxInfo="#x01000027"/>
+			</Box>
+			<Box File="Box 41 (EL6695-0002).xti" Id="41">
+				<EtherCAT PortABoxInfo="#x01000028"/>
+			</Box>
 		</Box>
 		<Box BoxType="9099" Id="29">
 			<Name>B940-009-R07-MPS-1 CU1-ESC3</Name>
