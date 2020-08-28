@@ -41,7 +41,7 @@
 				<EtherCAT PortABoxInfo="#x0300001c"/>
 			</Box>
 			<Box File="plc-rix-vac.xti" Id="39">
-				<EtherCAT PortABoxInfo="#x0100001c"/>
+				<EtherCAT PortABoxInfo="#x01000026"/>
 			</Box>
 			<Box File="plc-rix-optics.xti" Id="40">
 				<EtherCAT PortABoxInfo="#x01000027"/>
