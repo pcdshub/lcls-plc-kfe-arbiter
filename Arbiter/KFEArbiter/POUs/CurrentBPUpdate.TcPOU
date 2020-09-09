@@ -21,6 +21,10 @@ VAR
     '}
 	fbKPhotonEnergy : FB_KPhotonEnergy;
 	
+	// Photon energy for the masses
+	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-gatt]^IO Outputs^rPhotonEnergy'}
+	q_rPhotonEnergy AT %Q* : REAL;
+	
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -28,7 +32,9 @@ END_VAR
 
 fbEPICS_KRate(BP:=PMPS_GVL.stCurrentBeamParameters, fbBYKIK_Rate:=fbBYKIK_Rate);
 
-fbKPhotonEnergy(BP:=PMPS_GVL.stCurrentBeamParameters);]]></ST>
+fbKPhotonEnergy(BP:=PMPS_GVL.stCurrentBeamParameters);
+
+q_rPhotonEnergy := LREAL_TO_REAL(fbKPhotonEnergy.fbSXU.fCurrentPhotonEnergy);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
