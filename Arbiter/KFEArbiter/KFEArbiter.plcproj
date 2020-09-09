@@ -62,6 +62,9 @@
     <Compile Include="POUs\PMPS_Arbiter.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\P_AT1K0_SL1K0.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Testing.TcPOU">
       <SubType>Code</SubType>
     </Compile>

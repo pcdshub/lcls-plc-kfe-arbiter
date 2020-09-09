@@ -284,6 +284,36 @@
 			</Hides>
 		</DataType>
 		<DataType>
+			<Name GUID="{B0236749-C315-EC4D-D21C-B52A19E31F36}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..4] OF ST_PMPS_Aperture_IO</Name>
+			<BitSize>384</BitSize>
+			<BaseType GUID="{67AC048F-B785-4A4D-B941-B11E2213F502}">ST_PMPS_Aperture_IO</BaseType>
+			<ArrayInfo>
+				<LBound>1</LBound>
+				<Elements>4</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{D01709AA-9B4A-464A-B4D1-4BF476CFE7DE}">ST_PMPS_Attenuator_IO</Name>
+			<BitSize>32</BitSize>
+			<SubItem>
+				<Name>nTran</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>xAttOK</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<Hides>
+				<Hide GUID="{76269EAC-36F0-4513-B811-3725FD02409A}"/>
+				<Hide GUID="{E96BEA56-6301-4A6A-BF6A-F08340C87594}"/>
+				<Hide GUID="{FE32F9A9-7E7A-413D-8D77-0C99C34D8CD9}"/>
+			</Hides>
+		</DataType>
+		<DataType>
 			<Name GUID="{151D7251-619F-AE55-6E9D-9E71EAB7FCB9}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..8] OF BOOL</Name>
 			<BitSize>64</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
@@ -321,6 +351,13 @@
 						<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
 					</Comment>
 					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
+				</Var>
+				<Var>
+					<Name>P_AT1K0_SL1K0.i_bWcStateOut_AT1K0</Name>
+					<Comment>
+						<![CDATA[ plc-kfe-gatt interface diagnostics]]>
+					</Comment>
+					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>MAIN.fbEcatDiag.wFrmXWcState</Name>
@@ -365,11 +402,34 @@
 					<Type>UINT</Type>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.st1l0Watcher.i_StopperOutLS</Name>
+					<Name>P_AT1K0_SL1K0.i_bWcStateIn_AT1K0</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.st1l0Watcher.i_StopperInLS</Name>
+					<Name>P_AT1K0_SL1K0.i_bWcStateOut_KFEMOT</Name>
+					<Comment>
+						<![CDATA[ plc-kfe-motion interface diagnostics]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>P_AT1K0_SL1K0.i_nState_AT1K0</Name>
+					<Type>UINT</Type>
+				</Var>
+				<Var>
+					<Name>P_AT1K0_SL1K0.i_bWcStateIn_KFEMOT</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>P_AT1K0_SL1K0.i_nState_KFEMOT</Name>
+					<Type>UINT</Type>
+				</Var>
+				<Var>
+					<Name>PMPS_Arbiter.st3k4Watcher.i_StopperOutLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PMPS_Arbiter.st3k4Watcher.i_StopperInLS</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -1821,6 +1881,89 @@
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
+				<Var>
+					<Name>P_AT1K0_SL1K0.i_stAptArrayStat</Name>
+					<Type GUID="{B0236749-C315-EC4D-D21C-B52A19E31F36}">ARRAY [1..4] OF ST_PMPS_Aperture_IO</Type>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[1]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[1]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[1]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[2]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[2]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[2]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[3]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[3]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[3]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[4]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[4]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[4]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>P_AT1K0_SL1K0.i_nTranToAT1K0Stat</Name>
+					<Comment>
+						<![CDATA[ Transmission request to AT1K0]]>
+					</Comment>
+					<Type GUID="{D01709AA-9B4A-464A-B4D1-4BF476CFE7DE}">ST_PMPS_Attenuator_IO</Type>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
 				<Name>PlcTask Outputs</Name>
@@ -1836,11 +1979,11 @@
 					<Type GUID="{A5AC38E6-0DC4-889C-DC96-B6E74C453976}">ARRAY [1..3] OF BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.st1l0Watcher.q_StopperOUT_Relay</Name>
+					<Name>PMPS_Arbiter.st3k4Watcher.q_StopperOUT_Relay</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>PMPS_Arbiter.st1l0Watcher.q_StopperIN_Relay</Name>
+					<Name>PMPS_Arbiter.st3k4Watcher.q_StopperIN_Relay</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -3041,8 +3184,101 @@
 					</SubVar>
 				</Var>
 				<Var>
+					<Name>P_AT1K0_SL1K0.q_stAptArrayReq</Name>
+					<Comment>
+						<![CDATA[ Apterure request and status to plc-kfe-motion]]>
+					</Comment>
+					<Type GUID="{B0236749-C315-EC4D-D21C-B52A19E31F36}">ARRAY [1..4] OF ST_PMPS_Aperture_IO</Type>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[1]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[1]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[1]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[2]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[2]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[2]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[3]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[3]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[3]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[4]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[4]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[4]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
 					<Name>GVL.g_FastFaultOutput1.q_xFastFaultOut</Name>
 					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>CurrentBPUpdate.q_rPhotonEnergy</Name>
+					<Comment>
+						<![CDATA[ Photon energy for the masses]]>
+					</Comment>
+					<Type>REAL</Type>
+				</Var>
+				<Var>
+					<Name>P_AT1K0_SL1K0.q_nTranToAT1K0Req</Name>
+					<Comment>
+						<![CDATA[ Transmission request to AT1K0]]>
+					</Comment>
+					<Type GUID="{D01709AA-9B4A-464A-B4D1-4BF476CFE7DE}">ST_PMPS_Attenuator_IO</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="8">
@@ -3155,6 +3391,18 @@
 					</OwnerB>
 				</OwnerA>
 			</UnrestoredVarLinks>
+			<UnrestoredVarLinks ImportTime="2020-09-09T14:48:46">
+				<OwnerA Name="InputDst" Prefix="TIPC^KFEArbiter^KFEArbiter Instance" Type="1">
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-gatt">
+						<Link VarA="P_AT1K0_SL1K0.i_nTranToAT1K0Stat" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="IO Inputs^Current Transmission" AutoLink="true" Size="16" RestoreInfo="TypeMismatch" OldTypeA="UINT" OldGuidA="{18071995-0000-0000-0000-000000000005}" NewTypeA="ST_PMPS_Attenuator_IO" NewGuidA="{D01709AA-9B4A-464A-B4D1-4BF476CFE7DE}"/>
+					</OwnerB>
+				</OwnerA>
+				<OwnerA Name="OutputSrc" Prefix="TIPC^KFEArbiter^KFEArbiter Instance" Type="2">
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-gatt">
+						<Link VarA="P_AT1K0_SL1K0.q_nTranToAT1K0Req" TypeA="UINT" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="IO Outputs^Requested Transmission" AutoLink="true" Size="16" RestoreInfo="TypeMismatch" OldTypeA="UINT" OldGuidA="{18071995-0000-0000-0000-000000000005}" NewTypeA="ST_PMPS_Attenuator_IO" NewGuidA="{D01709AA-9B4A-464A-B4D1-4BF476CFE7DE}"/>
+					</OwnerB>
+				</OwnerA>
+			</UnrestoredVarLinks>
 			<TaskPouOids>
 				<TaskPouOid Prio="2" OTCID="#x08502002"/>
 				<TaskPouOid Prio="1" OTCID="#x08502001"/>
@@ -3176,7 +3424,13 @@
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_kfe_gatt_PMPS_IO.i_RequestedBP" VarB="IO Inputs^RequestedBP" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_kfe_gatt_PMPS_IO.i_TxPDOState" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_kfe_gatt_PMPS_IO.i_WcState" VarB="WcState^WcStateIn" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^P_AT1K0_SL1K0.i_bWcStateIn_AT1K0" VarB="WcState^WcStateIn" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^P_AT1K0_SL1K0.i_bWcStateOut_AT1K0" VarB="WcState^WcStateOut" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^P_AT1K0_SL1K0.i_nState_AT1K0" VarB="InfoData^State" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^P_AT1K0_SL1K0.i_nTranToAT1K0Stat" VarB="IO Inputs^Current Transmission" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^CurrentBPUpdate.q_rPhotonEnergy" VarB="IO Outputs^rPhotonEnergy" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^PMPS_Arbiter.plc_kfe_gatt_PMPS_IO.o_CurrentBP" VarB="IO Outputs^CurrentBP" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^P_AT1K0_SL1K0.q_nTranToAT1K0Req" VarB="IO Outputs^Requested Transmission" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-gmd-vac-01">
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_kfe_gmd_PMPS_IO.i_Connected" VarB="SYNC Inputs^External device not connected" AutoLink="true"/>
@@ -3190,14 +3444,16 @@
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_kfe_motion_PMPS_IO.i_RequestedBP" VarB="IO Inputs^RequestedBP" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_kfe_motion_PMPS_IO.i_TxPDOState" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_kfe_motion_PMPS_IO.i_WcState" VarB="WcState^WcStateIn" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^P_AT1K0_SL1K0.i_bWcStateIn_KFEMOT" VarB="WcState^WcStateIn" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^P_AT1K0_SL1K0.i_bWcStateOut_KFEMOT" VarB="WcState^WcStateOut" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^P_AT1K0_SL1K0.i_nState_KFEMOT" VarB="InfoData^State" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^P_AT1K0_SL1K0.i_stAptArrayStat" VarB="IO Inputs^AptArrayStatus" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^PMPS_Arbiter.plc_kfe_motion_PMPS_IO.o_CurrentBP" VarB="IO Outputs^CurrentBP" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^P_AT1K0_SL1K0.q_stAptArrayReq" VarB="IO Outputs^AptArrayReq" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-vac">
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_kfe_vac_PMPS_IO.i_Connected" VarB="SYNC Inputs^External device not connected" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_kfe_vac_PMPS_IO.i_RequestedBP" VarB="IO Inputs^RequestedBP" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_kfe_vac_PMPS_IO.i_TxPDOState" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_kfe_vac_PMPS_IO.i_WcState" VarB="WcState^WcStateIn" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^PMPS_Arbiter.plc_kfe_vac_PMPS_IO.o_CurrentBP" VarB="IO Outputs^CurrentBP" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-xgmd-vac-01">
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_kfe_xgmd_PMPS_IO.i_Connected" VarB="SYNC Inputs^External device not connected" AutoLink="true"/>
@@ -3226,6 +3482,10 @@
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_tmo_vacuum_PMPS_IO.i_TxPDOState" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_tmo_vacuum_PMPS_IO.i_WcState" VarB="WcState^WcStateIn" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^PMPS_Arbiter.plc_tmo_vacuum_PMPS_IO.o_CurrentBP" VarB="IO Outputs^CurrentBP" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^E0 (EK1200)^E3 (EK1122)^950-101W-R4-MPS-2^PPS Stoppers 1">
+				<Link VarA="PlcTask Inputs^PMPS_Arbiter.st3k4Watcher.i_StopperInLS" VarB="Channel 1^ST3K4 IN" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PMPS_Arbiter.st3k4Watcher.i_StopperOutLS" VarB="Channel 2^ST3K4 OUT" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^E0 (EK1200)^FFO">
 				<Link VarA="FFOTask Outputs^GVL.g_FastFaultOutput2.q_xFastFaultOut" VarB="Channel 2^Output" AutoLink="true"/>

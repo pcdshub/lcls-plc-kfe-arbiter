@@ -42,6 +42,8 @@ CurrentBPUpdate();
 
 PMPS_Arbiter();
 
+P_AT1K0_SL1K0();
+
 fbLogHandler();]]></ST>
     </Implementation>
     <Action Name="Initialize" Id="{b0ee480a-3d4b-001d-04c4-43cdc47895c8}">
