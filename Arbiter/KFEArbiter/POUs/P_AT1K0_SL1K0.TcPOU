@@ -65,10 +65,10 @@ ffKFEGattConnection(io_fbFFHWO := g_FastFaultOutput1);
 IF i_bWcStateIn_KFEMOT = 0 AND i_bWcStateOut_KFEMOT = 0 AND i_nState_KFEMOT = 8 THEN
 	
 	// Send request from this arbiter to kfe-mot
-	MEMCPY( ADR(q_stAptArrayReq) , ADR(PMPS_GVL.stRequestedBeamParameters.astApertures) , SIZEOF(ST_PMPS_Aperture_IO) );
+	MEMCPY( ADR(q_stAptArrayReq) , ADR(PMPS_GVL.stRequestedBeamParameters.astApertures) , PMPS_GVL.MAX_APERTURES * SIZEOF(ST_PMPS_Aperture_IO) );
 	
 	// 	Recieve current apreture state for broadcast
-	MEMCPY( ADR(PMPS_GVL.stCurrentBeamParameters.astApertures) , ADR(i_stAptArrayStat) , SIZEOF(ST_PMPS_Aperture_IO) );
+	MEMCPY( ADR(PMPS_GVL.stCurrentBeamParameters.astApertures) , ADR(i_stAptArrayStat) , PMPS_GVL.MAX_APERTURES * SIZEOF(ST_PMPS_Aperture_IO) );
 	
 	ffKFEMotConnection.i_xOK := TRUE;
 	
