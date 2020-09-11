@@ -293,27 +293,6 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{D01709AA-9B4A-464A-B4D1-4BF476CFE7DE}">ST_PMPS_Attenuator_IO</Name>
-			<BitSize>32</BitSize>
-			<SubItem>
-				<Name>nTran</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
-				<BitSize>16</BitSize>
-				<BitOffs>0</BitOffs>
-			</SubItem>
-			<SubItem>
-				<Name>xAttOK</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
-				<BitSize>16</BitSize>
-				<BitOffs>16</BitOffs>
-			</SubItem>
-			<Hides>
-				<Hide GUID="{76269EAC-36F0-4513-B811-3725FD02409A}"/>
-				<Hide GUID="{E96BEA56-6301-4A6A-BF6A-F08340C87594}"/>
-				<Hide GUID="{FE32F9A9-7E7A-413D-8D77-0C99C34D8CD9}"/>
-			</Hides>
-		</DataType>
-		<DataType>
 			<Name GUID="{151D7251-619F-AE55-6E9D-9E71EAB7FCB9}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..8] OF BOOL</Name>
 			<BitSize>64</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
@@ -402,27 +381,11 @@
 					<Type>UINT</Type>
 				</Var>
 				<Var>
-					<Name>P_AT1K0_SL1K0.i_bWcStateIn_AT1K0</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>P_AT1K0_SL1K0.i_bWcStateOut_KFEMOT</Name>
+					<Name>P_AT1K0_SL1K0.i_nTranToAT1K0Stat</Name>
 					<Comment>
-						<![CDATA[ plc-kfe-motion interface diagnostics]]>
+						<![CDATA[ Transmission request to AT1K0]]>
 					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>P_AT1K0_SL1K0.i_nState_AT1K0</Name>
-					<Type>UINT</Type>
-				</Var>
-				<Var>
-					<Name>P_AT1K0_SL1K0.i_bWcStateIn_KFEMOT</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>P_AT1K0_SL1K0.i_nState_KFEMOT</Name>
-					<Type>UINT</Type>
+					<Type GUID="{D01709AA-9B4A-464A-B4D1-4BF476CFE7DE}">ST_PMPS_Attenuator_IO</Type>
 				</Var>
 				<Var>
 					<Name>PMPS_Arbiter.st3k4Watcher.i_StopperOutLS</Name>
@@ -1882,6 +1845,21 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>P_AT1K0_SL1K0.i_bWcStateIn_AT1K0</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>P_AT1K0_SL1K0.i_bWcStateOut_KFEMOT</Name>
+					<Comment>
+						<![CDATA[ plc-kfe-motion interface diagnostics]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>P_AT1K0_SL1K0.i_nState_AT1K0</Name>
+					<Type>UINT</Type>
+				</Var>
+				<Var>
 					<Name>P_AT1K0_SL1K0.i_stAptArrayStat</Name>
 					<Type GUID="{B0236749-C315-EC4D-D21C-B52A19E31F36}">ARRAY [1..4] OF ST_PMPS_Aperture_IO</Type>
 					<SubVar>
@@ -1958,15 +1936,30 @@
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>P_AT1K0_SL1K0.i_nTranToAT1K0Stat</Name>
+					<Name>P_AT1K0_SL1K0.i_bWcStateIn_KFEMOT</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>P_AT1K0_SL1K0.i_nState_KFEMOT</Name>
+					<Type>UINT</Type>
+				</Var>
+			</Vars>
+			<Vars VarGrpType="2">
+				<Name>PlcTask Outputs</Name>
+				<Var>
+					<Name>CurrentBPUpdate.q_rPhotonEnergy</Name>
+					<Comment>
+						<![CDATA[ Photon energy for the masses]]>
+					</Comment>
+					<Type>REAL</Type>
+				</Var>
+				<Var>
+					<Name>P_AT1K0_SL1K0.q_nTranToAT1K0Req</Name>
 					<Comment>
 						<![CDATA[ Transmission request to AT1K0]]>
 					</Comment>
 					<Type GUID="{D01709AA-9B4A-464A-B4D1-4BF476CFE7DE}">ST_PMPS_Attenuator_IO</Type>
 				</Var>
-			</Vars>
-			<Vars VarGrpType="2">
-				<Name>PlcTask Outputs</Name>
 				<Var>
 					<Name>PMPS_Arbiter.fbMPSInterface.q_BC_ASSERTION_LINES</Name>
 					<Comment>
@@ -3261,20 +3254,6 @@
 							<![CDATA[ status of aperture, false if error or in motion]]>
 						</Comment>
 					</SubVar>
-				</Var>
-				<Var>
-					<Name>CurrentBPUpdate.q_rPhotonEnergy</Name>
-					<Comment>
-						<![CDATA[ Photon energy for the masses]]>
-					</Comment>
-					<Type>REAL</Type>
-				</Var>
-				<Var>
-					<Name>P_AT1K0_SL1K0.q_nTranToAT1K0Req</Name>
-					<Comment>
-						<![CDATA[ Transmission request to AT1K0]]>
-					</Comment>
-					<Type GUID="{D01709AA-9B4A-464A-B4D1-4BF476CFE7DE}">ST_PMPS_Attenuator_IO</Type>
 				</Var>
 				<Var>
 					<Name>GVL.g_FastFaultOutput1.q_xFastFaultOut</Name>

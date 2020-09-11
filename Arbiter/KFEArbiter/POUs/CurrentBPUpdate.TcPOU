@@ -4,8 +4,8 @@
     <Declaration><![CDATA[PROGRAM CurrentBPUpdate
 VAR
 	{attribute 'pytmc' := '
-        pv: L:Rate
-        link: IOC:BSY0:MP01:BYKIK_RATE
+        pv: K:Rate
+        link: IOC:BSY0:MP01:BYKIKS_RATE
         field: EGU RateEnum
     '}
     fbBYKIK_Rate : FB_LREALFromEPICS;
