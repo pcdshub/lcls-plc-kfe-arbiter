@@ -116,6 +116,7 @@ VAR
                                 '}
     plc_tmo_vacuum_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#F102);	
 	
+	count : CTU;
 
 END_VAR
 ]]></Declaration>

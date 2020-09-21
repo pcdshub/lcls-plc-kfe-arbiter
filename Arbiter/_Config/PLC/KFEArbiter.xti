@@ -291,6 +291,9 @@
 				<LBound>1</LBound>
 				<Elements>4</Elements>
 			</ArrayInfo>
+			<Hides>
+				<Hide GUID="{1C5B6FFE-5600-8C40-85B0-B61070AA3AFB}"/>
+			</Hides>
 		</DataType>
 		<DataType>
 			<Name GUID="{151D7251-619F-AE55-6E9D-9E71EAB7FCB9}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..8] OF BOOL</Name>
