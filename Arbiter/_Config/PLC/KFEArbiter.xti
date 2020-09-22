@@ -291,6 +291,9 @@
 				<LBound>1</LBound>
 				<Elements>4</Elements>
 			</ArrayInfo>
+			<Hides>
+				<Hide GUID="{1C5B6FFE-5600-8C40-85B0-B61070AA3AFB}"/>
+			</Hides>
 		</DataType>
 		<DataType>
 			<Name GUID="{151D7251-619F-AE55-6E9D-9E71EAB7FCB9}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..8] OF BOOL</Name>
@@ -335,6 +338,17 @@
 					<Name>P_AT1K0_SL1K0.i_bWcStateOut_AT1K0</Name>
 					<Comment>
 						<![CDATA[ plc-kfe-gatt interface diagnostics]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>P_AT1K0_SL1K0.i_bWcStateIn_AT1K0</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>P_AT1K0_SL1K0.i_bWcStateOut_KFEMOT</Name>
+					<Comment>
+						<![CDATA[ plc-kfe-motion interface diagnostics]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -1845,19 +1859,12 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>P_AT1K0_SL1K0.i_bWcStateIn_AT1K0</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>P_AT1K0_SL1K0.i_bWcStateOut_KFEMOT</Name>
-					<Comment>
-						<![CDATA[ plc-kfe-motion interface diagnostics]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>P_AT1K0_SL1K0.i_nState_AT1K0</Name>
 					<Type>UINT</Type>
+				</Var>
+				<Var>
+					<Name>P_AT1K0_SL1K0.i_bWcStateIn_KFEMOT</Name>
+					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>P_AT1K0_SL1K0.i_stAptArrayStat</Name>
@@ -1934,10 +1941,6 @@
 							<![CDATA[ status of aperture, false if error or in motion]]>
 						</Comment>
 					</SubVar>
-				</Var>
-				<Var>
-					<Name>P_AT1K0_SL1K0.i_bWcStateIn_KFEMOT</Name>
-					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>P_AT1K0_SL1K0.i_nState_KFEMOT</Name>

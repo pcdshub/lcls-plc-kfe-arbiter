@@ -17,7 +17,7 @@ fbMachine(
     iq_stMachineParams := PMPS_GVL.stCurrentBeamParameters,
     i_xFault	:= NOT GVL.g_FastFaultOutput1.q_xFastFaultOut,
 	xEnableAtt := TRUE,
-	xEnablePE := FALSE,
+	xEnablePE := true,
 	xEnableRate := false
     );
 
