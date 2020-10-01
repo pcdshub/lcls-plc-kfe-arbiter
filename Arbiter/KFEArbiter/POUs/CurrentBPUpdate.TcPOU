@@ -30,7 +30,7 @@ END_VAR
     <Implementation>
       <ST><![CDATA[
 
-fbEPICS_KRate(BP:=PMPS_GVL.stCurrentBeamParameters, fbBYKIK_Rate:=fbBYKIK_Rate);
+fbEPICS_KRate(BP:=PMPS_GVL.stCurrentBeamParameters, fbBYKIK_Rate:=fbBYKIK_Rate, FFO:=GVL.g_FastFaultOutput1);
 
 fbKPhotonEnergy(BP:=PMPS_GVL.stCurrentBeamParameters);
 
