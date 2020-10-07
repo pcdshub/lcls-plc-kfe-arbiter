@@ -10,6 +10,7 @@
 			<SyncMan>000f01004400010003000000000000000100000f44090000</SyncMan>
 			<SyncMan>010f01004400010003000000000000000100010f44090000</SyncMan>
 			<Fmmu>0000000000000000000f00020100000001000000000000000000000000000000</Fmmu>
+			<SuName>kfe</SuName>
 			<Pdo Name="Channel 1" Index="#x1600" InOut="1" Flags="#x0011" SyncMan="0">
 				<Entry Name="Output" Index="#x7000" Sub="#x01">
 					<Type>BIT</Type>
