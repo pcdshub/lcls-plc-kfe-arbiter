@@ -4,7 +4,7 @@
     <Declaration><![CDATA[PROGRAM CurrentBPUpdate
 VAR
 	{attribute 'pytmc' := '
-        pv: K:Rate
+        pv: @(PREFIX)K:Rate
         link: IOC:BSY0:MP01:BYKIKS_RATE
         field: EGU RateEnum
     '}
@@ -16,6 +16,8 @@ VAR
     '}
 	fbEPICS_KRate : FB_RateFromEPICS;
 	
+	
+	
 	{attribute 'pytmc' := '
         pv: @(PREFIX)PE
     '}
@@ -25,16 +27,29 @@ VAR
 	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-gatt]^IO Outputs^rPhotonEnergy'}
 	q_rPhotonEnergy AT %Q* : REAL;
 	
+	
+    // Stoppers
+
+    {attribute 'TcLinkTo' := '
+                .i_StopperInLS:=TIIB[PPS Stoppers 1]^Channel 1^ST3K4 IN;
+                .i_StopperOutLS:=TIIB[PPS Stoppers 1]^Channel 2^ST3K4 OUT;
+                                '}
+    st3k4Watcher : FB_KStopper(
+        PMPS.K_Stopper.ST3K4,
+        'ST3K4');
+	
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
-
 fbEPICS_KRate(BP:=PMPS_GVL.stCurrentBeamParameters, fbBYKIK_Rate:=fbBYKIK_Rate, FFO:=GVL.g_FastFaultOutput1);
 
 fbKPhotonEnergy(BP:=PMPS_GVL.stCurrentBeamParameters);
 
-q_rPhotonEnergy := LREAL_TO_REAL(fbKPhotonEnergy.fbSXU.fCurrentPhotonEnergy);]]></ST>
+q_rPhotonEnergy := LREAL_TO_REAL(fbKPhotonEnergy.fbSXU.fCurrentPhotonEnergy);
+
+// Stopper readbacks
+st3k4Watcher(stCurrentBP:=PMPS_GVL.stCurrentBeamParameters);	]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
