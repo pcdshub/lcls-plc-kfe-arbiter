@@ -3485,6 +3485,7 @@
 				<Link VarA="PlcTask Outputs^GVL.g_FastFaultOutput1.q_xFastFaultOut" VarB="Channel 1^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^E0 (EK1200)^PMPS_Premp">
+				<Link VarA="PlcTask Outputs^CurrentBPUpdate.st3k4Watcher.q_StopperIN_Relay" VarB="Channel 12^ST3K4 RELAY IN" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[1]" VarB="Channel 9^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[2]" VarB="Channel 10^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[3]" VarB="Channel 11^Output" AutoLink="true"/>

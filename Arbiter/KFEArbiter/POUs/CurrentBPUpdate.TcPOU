@@ -34,6 +34,7 @@ VAR
     {attribute 'TcLinkTo' := '
                 .i_StopperInLS:=TIIB[PPS Stoppers 1]^Channel 1^ST3K4 IN;
                 .i_StopperOutLS:=TIIB[PPS Stoppers 1]^Channel 2^ST3K4 OUT;
+				.q_StopperIN_Relay:=TIIB[PMPS_Premp]^Channel 12^ST3K4 RELAY IN;
                                 '}
     st3k4Watcher : FB_KStopper(
         PMPS.K_Stopper.ST3K4,
