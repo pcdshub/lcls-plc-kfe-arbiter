@@ -20,16 +20,6 @@ VAR
     '}
     fbCuInterface	:	FB_CTLS_Outputs;
 
-    // Stoppers
-
-    {attribute 'TcLinkTo' := '
-                .i_StopperInLS:=TIIB[PPS Stoppers 1]^Channel 1^ST3K4 IN;
-                .i_StopperOutLS:=TIIB[PPS Stoppers 1]^Channel 2^ST3K4 OUT;
-                                '}
-    st3k4Watcher : FB_KStopper(
-        PMPS.K_Stopper.ST3K4,
-        'ST3K4');
-
     (* Subsystem requests use this FB and a pragma link to pass their requests to the arbiter.
     The fb is called on each cycle and updates the arbiter with the current BP set requested
     from the subsystem PLC.*)
@@ -135,7 +125,7 @@ END_VAR
 ///////////////////////////
 // TMO
 	plc_tmo_motion_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
-	plc_tmo_motion_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
+	//plc_tmo_motion_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
 	plc_tmo_vacuum_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
 
 	
@@ -155,10 +145,7 @@ fbCuInterface(BP := PMPS_GVL.stRequestedBeamParameters);
 fbPhotonEnergyWatcher(i_stCurrentBeamParams	:= PMPS_GVL.stCurrentBeamParameters,
                     i_stRequestedBeamParams := PMPS_GVL.stRequestedBeamParameters,
                     io_fbFFHWO:= GVL.g_FastFaultOutput1,
-                    i_xReset := GVL.AttemptReset);
-
-// Stopper readbacks
-st3k4Watcher(stCurrentBP:=PMPS_GVL.stCurrentBeamParameters);				
+                    i_xReset := GVL.AttemptReset);			
 
 // Evaluate fast fault vetos
 g_FastFaultOutput1.Execute();
