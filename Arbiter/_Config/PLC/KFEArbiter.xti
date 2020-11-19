@@ -395,6 +395,14 @@
 					<Type>UINT</Type>
 				</Var>
 				<Var>
+					<Name>CurrentBPUpdate.st3k4Watcher.i_StopperOutLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>CurrentBPUpdate.st3k4Watcher.i_StopperInLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>P_AT1K0_SL1K0.i_nTranToAT1K0Stat</Name>
 					<Comment>
 						<![CDATA[ Transmission request to AT1K0]]>
@@ -1938,14 +1946,6 @@
 					<Name>P_AT1K0_SL1K0.i_nState_KFEMOT</Name>
 					<Type>UINT</Type>
 				</Var>
-				<Var>
-					<Name>CurrentBPUpdate.st3k4Watcher.i_StopperOutLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>CurrentBPUpdate.st3k4Watcher.i_StopperInLS</Name>
-					<Type>BOOL</Type>
-				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
 				<Name>PlcTask Outputs</Name>
@@ -1955,6 +1955,14 @@
 						<![CDATA[ Photon energy for the masses]]>
 					</Comment>
 					<Type>REAL</Type>
+				</Var>
+				<Var>
+					<Name>CurrentBPUpdate.st3k4Watcher.q_StopperOUT_Relay</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>CurrentBPUpdate.st3k4Watcher.q_StopperIN_Relay</Name>
+					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>P_AT1K0_SL1K0.q_nTranToAT1K0Req</Name>
@@ -3252,14 +3260,6 @@
 				</Var>
 				<Var>
 					<Name>GVL.g_FastFaultOutput1.q_xFastFaultOut</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>CurrentBPUpdate.st3k4Watcher.q_StopperOUT_Relay</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>CurrentBPUpdate.st3k4Watcher.q_StopperIN_Relay</Name>
 					<Type>BOOL</Type>
 				</Var>
 			</Vars>
