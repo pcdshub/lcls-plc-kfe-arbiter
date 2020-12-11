@@ -78,9 +78,9 @@ VAR
 	
 	
 	
-	//////////////////////////////////////////////
-	// TMO PLCs
-	/////////////////////////////////////////////
+//////////////////////////////////////////////
+// TMO PLCs
+/////////////////////////////////////////////
 	
 	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-tmo-mot]^IO Inputs^RequestedBP;
                                 .o_CurrentBP:=TIIB[plc-tmo-mot]^IO Outputs^CurrentBP;
@@ -107,7 +107,33 @@ VAR
     plc_tmo_vacuum_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#F102);	
 	
 	count : CTU;
+//////////////////////////////////////////////
+// RIX PLCs
+/////////////////////////////////////////////	
+	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-rix-vac]^IO Inputs^RequestedBP;
+                                .o_CurrentBP:=TIIB[plc-rix-vac]^IO Outputs^CurrentBP;
+                                .i_Connected:=TIIB[plc-rix-vac]^SYNC Inputs^External device not connected;
+                                .i_WcState:=TIIB[plc-rix-vac]^WcState^WcStateIn;
+                                .i_TxPDOState:=TIIB[plc-rix-vac]^SYNC Inputs^TxPDO state;
+                                '}
+    plc_rix_vac_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#F200);
 
+	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-rix-optics]^IO Inputs^RequestedBP;
+                                .o_CurrentBP:=TIIB[plc-rix-optics]^IO Outputs^CurrentBP;
+                                .i_Connected:=TIIB[plc-rix-optics]^SYNC Inputs^External device not connected;
+                                .i_WcState:=TIIB[plc-rix-optics]^WcState^WcStateIn;
+                                .i_TxPDOState:=TIIB[plc-rix-optics]^SYNC Inputs^TxPDO state;
+                                '}
+    plc_rix_optics_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#F201);
+	
+	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-rix-mot]^IO Inputs^RequestedBP;
+                                .o_CurrentBP:=TIIB[plc-rix-mot]^IO Outputs^CurrentBP;
+                                .i_Connected:=TIIB[plc-rix-mot]^SYNC Inputs^External device not connected;
+                                .i_WcState:=TIIB[plc-rix-mot]^WcState^WcStateIn;
+                                .i_TxPDOState:=TIIB[plc-rix-mot]^SYNC Inputs^TxPDO state;
+                                '}
+    plc_rix_mot_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#F202);	
+	
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -127,8 +153,13 @@ END_VAR
 	plc_tmo_motion_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
 	plc_tmo_optics_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
 	plc_tmo_vacuum_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
+//////////////////////////
 
-	
+// RIX
+	plc_rix_mot_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
+	plc_rix_vac_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
+	plc_rix_optics_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
+///////////////////////////
 	
 ////////////////////////////	
 // Beam parameter requestor

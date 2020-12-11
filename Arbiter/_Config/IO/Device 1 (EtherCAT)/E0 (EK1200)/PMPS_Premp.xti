@@ -72,7 +72,7 @@
 				</Entry>
 			</Pdo>
 			<Pdo Name="Channel 13" Index="#x160c" InOut="1" Flags="#x0011" SyncMan="1">
-				<Entry Name="Output" Index="#x70c0" Sub="#x01">
+				<Entry Name="MR1K1 IN" Index="#x70c0" Sub="#x01">
 					<Type>BIT</Type>
 				</Entry>
 			</Pdo>
