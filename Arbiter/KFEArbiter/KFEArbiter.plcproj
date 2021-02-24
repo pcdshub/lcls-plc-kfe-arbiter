@@ -53,6 +53,9 @@
     <Compile Include="POUs\Fast_Faults_Evaluate.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\FB_BeamClassOutputs.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\MachineSimulation.TcPOU">
       <SubType>Code</SubType>
     </Compile>

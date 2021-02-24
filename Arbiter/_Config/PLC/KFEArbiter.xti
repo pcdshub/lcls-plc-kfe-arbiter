@@ -346,13 +346,6 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>P_AT1K0_SL1K0.i_bWcStateOut_KFEMOT</Name>
-					<Comment>
-						<![CDATA[ plc-kfe-motion interface diagnostics]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>MAIN.fbEcatDiag.wFrmXWcState</Name>
 					<Comment>
 						<![CDATA[ link to task related ethercat frame state (Frm1WcState)]]>
@@ -393,6 +386,13 @@
 						<![CDATA[ link to CfgSlaveCount of EtherCAT Master (InfoData)]]>
 					</Comment>
 					<Type>UINT</Type>
+				</Var>
+				<Var>
+					<Name>CurrentBPUpdate.i_MR1K1_ENC</Name>
+					<Comment>
+						<![CDATA[/////////////////////]]>
+					</Comment>
+					<Type>UDINT</Type>
 				</Var>
 				<Var>
 					<Name>CurrentBPUpdate.st3k4Watcher.i_StopperOutLS</Name>
@@ -2346,6 +2346,13 @@
 					<Type>UINT</Type>
 				</Var>
 				<Var>
+					<Name>P_AT1K0_SL1K0.i_bWcStateOut_KFEMOT</Name>
+					<Comment>
+						<![CDATA[ plc-kfe-motion interface diagnostics]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>P_AT1K0_SL1K0.i_bWcStateIn_KFEMOT</Name>
 					<Type>BOOL</Type>
 				</Var>
@@ -2429,16 +2436,16 @@
 					<Name>P_AT1K0_SL1K0.i_nState_KFEMOT</Name>
 					<Type>UINT</Type>
 				</Var>
-				<Var>
-					<Name>CurrentBPUpdate.i_MR1K1_ENC</Name>
-					<Comment>
-						<![CDATA[/////////////////////]]>
-					</Comment>
-					<Type>UDINT</Type>
-				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
 				<Name>PlcTask Outputs</Name>
+				<Var>
+					<Name>CurrentBPUpdate.q_MR1K1_VETO</Name>
+					<Comment>
+						<![CDATA[ Signal to accel. MPS that MR1K1 is in]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
 				<Var>
 					<Name>CurrentBPUpdate.q_rPhotonEnergy</Name>
 					<Comment>
@@ -4152,9 +4159,9 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>CurrentBPUpdate.q_MR1K1_VETO</Name>
+					<Name>MAIN.bM1K1_OUT_Override</Name>
 					<Comment>
-						<![CDATA[ Signal to accel. MPS that MR1K1 is in]]>
+						<![CDATA[ Using this book to completely overrule the last bit of the BC interface.]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -4405,6 +4412,7 @@
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^E0 (EK1200)^PMPS_Premp">
 				<Link VarA="PlcTask Outputs^CurrentBPUpdate.q_MR1K1_VETO" VarB="Channel 13^MR1K1 IN" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^CurrentBPUpdate.st3k4Watcher.q_StopperIN_Relay" VarB="Channel 12^ST3K4 RELAY IN" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^MAIN.bM1K1_OUT_Override" VarB="Channel 8^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[1]" VarB="Channel 9^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[2]" VarB="Channel 10^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[3]" VarB="Channel 11^Output" AutoLink="true"/>
@@ -4415,7 +4423,6 @@
 				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbMPSInterface.q_BC_ASSERTION_LINES[5]" VarB="Channel 5^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbMPSInterface.q_BC_ASSERTION_LINES[6]" VarB="Channel 6^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbMPSInterface.q_BC_ASSERTION_LINES[7]" VarB="Channel 7^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbMPSInterface.q_BC_ASSERTION_LINES[8]" VarB="Channel 8^Output" AutoLink="true"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>

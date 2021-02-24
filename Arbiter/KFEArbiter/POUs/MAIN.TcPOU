@@ -14,6 +14,8 @@ VAR
     fbBPControl : FB_BPControlDevice(nID:=10);
 	
 	PERanges : PE_Ranges;
+	{attribute 'TcLinkTo' := 'TIIB[PMPS_Premp]^Channel 8^Output;'}
+	bM1K1_OUT_Override AT %Q* : BOOL; // Using this book to completely overrule the last bit of the BC interface.
 
 END_VAR
 ]]></Declaration>
@@ -45,6 +47,8 @@ fbBPControl(Arbiter:=g_fbArbiter1);
 PMPS_Arbiter();
 
 P_AT1K0_SL1K0();
+
+bM1K1_OUT_Override := PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.K_Stopper.MR1K1_OUT];
 
 fbLogHandler();]]></ST>
     </Implementation>
