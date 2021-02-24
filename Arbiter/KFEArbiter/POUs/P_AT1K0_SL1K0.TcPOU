@@ -51,10 +51,11 @@ END_VAR
 IF i_bWcStateOut_AT1K0 = 0 AND i_bWcStateIn_AT1K0 = 0 AND i_nState_AT1K0 = 8 THEN
 	
 	// Send request from this arbiter to the gas attenuator
-	q_nTranToAT1K0Req.nTran := PMPS_GVL.stRequestedBeamParameters.nTran;
+	q_nTranToAT1K0Req.nTran := PMPS_GVL.stRequestedBeamParameters.nTran*100;
 	q_nTranToAT1K0Req.xAttOK := 16#FF;
 	
-	PMPS_GVL.stCurrentBeamParameters.nTran := i_nTranToAT1K0Stat.nTran;
+	//Update 
+	PMPS_GVL.stCurrentBeamParameters.nTran := REAL_TO_UINT(UINT_TO_REAL(i_nTranToAT1K0Stat.nTran)*0.01);
 
 	ffKFEGattConnection.i_xOK := TRUE;
 ELSE
