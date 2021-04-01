@@ -9,21 +9,13 @@ VAR
     fbEcatDiag : FB_EcatDiagWrapper;
 
     {attribute 'pytmc' := '
-        pv: Arbiter:Link:HGVPU
-        link: USEG:UNDH:
-    '}
-    fbHgvpu : FB_Hgvpu;
-
-    {attribute 'pytmc' := '
-        pv: Arbiter:Link:SXU
-        link: USEG:UNDS:
-    '}
-    fbSxu : FB_SXU;
-
-    {attribute 'pytmc' := '
     pv: @(PREFIX)BeamParamCntl
     '}
     fbBPControl : FB_BPControlDevice(nID:=10);
+	
+	PERanges : PE_Ranges;
+	{attribute 'TcLinkTo' := 'TIIB[PMPS_Premp]^Channel 8^Output;'}
+	bM1K1_OUT_Override AT %Q* : BOOL; // Using this book to completely overrule the last bit of the BC interface.
 
 END_VAR
 ]]></Declaration>
@@ -37,6 +29,9 @@ END_IF
 // Ethercat Diagnostics
 fbEcatDiag();
 
+// PMPS Functionality
+CurrentBPUpdate();
+
 ///////////////////////////////////////////////////
 // This code should be disabled or removed in deployment
 // Might have a switch to change to simulation mode
@@ -44,19 +39,16 @@ MachineSimulation();
 //Testing();
 ///////////////////////////////////////////////////
 
-fbHgvpu();
-fbSxu();
-
 // Dummy device for controling pmps beam parameters
 fbBPControl(Arbiter:=g_fbArbiter1);
 
-//Update current BP
-CurrentBPUpdate();
 
-// PMPS Functionality
-CurrentBPUpdate();
+
 PMPS_Arbiter();
 
+P_AT1K0_SL1K0();
+
+bM1K1_OUT_Override := PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.K_Stopper.MR1K1_OUT];
 
 fbLogHandler();]]></ST>
     </Implementation>
@@ -65,14 +57,5 @@ fbLogHandler();]]></ST>
         <ST><![CDATA[]]></ST>
       </Implementation>
     </Action>
-    <LineIds Name="MAIN">
-      <LineId Id="3" Count="25" />
-      <LineId Id="57" Count="0" />
-      <LineId Id="29" Count="2" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="MAIN.Initialize">
-      <LineId Id="1" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

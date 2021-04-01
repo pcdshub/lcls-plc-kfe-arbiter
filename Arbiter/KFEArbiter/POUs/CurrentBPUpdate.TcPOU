@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="CurrentBPUpdate" Id="{8b324aa8-068c-4257-be00-af3f86b96ed0}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM CurrentBPUpdate
+VAR
+	{attribute 'pytmc' := '
+        pv: @(PREFIX)K:Rate
+        link: IOC:BSY0:MP01:BYKIKS_RATE
+        field: EGU RateEnum
+    '}
+    fbBYKIK_Rate : FB_LREALFromEPICS := (
+		iMaximumValidSeverity := 2);
+	
+	
+	{attribute 'pytmc' := '
+        pv: @(PREFIX)
+    '}
+	fbEPICS_KRate : FB_RateFromEPICS;
+	
+	
+	
+	{attribute 'pytmc' := '
+        pv: @(PREFIX)PE
+    '}
+	fbKPhotonEnergy : FB_KPhotonEnergy;
+	
+	// Photon energy for the masses
+	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-gatt]^IO Outputs^rPhotonEnergy'}
+	q_rPhotonEnergy AT %Q* : REAL;
+	
+	
+    // Stoppers
+
+    {attribute 'TcLinkTo' := '
+                .i_StopperInLS:=TIIB[PPS Stoppers 1]^Channel 1^ST3K4 IN;
+                .i_StopperOutLS:=TIIB[PPS Stoppers 1]^Channel 2^ST3K4 OUT;
+				.q_StopperIN_Relay:=TIIB[PMPS_Premp]^Channel 12^ST3K4 RELAY IN;
+                                '}
+    st3k4Watcher : FB_KStopper(
+        PMPS.K_Stopper.ST3K4,
+        'ST3K4');
+	
+	// MR1K1 Veto
+	////////////////////////
+	  	{attribute 'TcLinkTo' := 'TIIB[plc-rix-optics]^IO Inputs^MR1K1_Y_ENC'}
+		i_MR1K1_ENC AT %I* : UDINT; // MR1K1 encoder from the rix optics system
+		cMR1K1_IN_UpperLimit : UDINT := 33411000;
+		cMR1K1_IN_LowerLimit : UDINT := 29911000;
+		cMR1K1_OUT_UpperLimit : UDINT := 14173400;
+		{attribute 'TcLinkTo' := 'TIIB[PMPS_Premp]^Channel 13^MR1K1 IN'}
+		q_MR1K1_VETO AT %Q* : BOOL; // Signal to accel. MPS that MR1K1 is in
+		fbMR1K1VetoDevice : FB_KVetoDevice(
+			eVetoDeviceIN := K_Stopper.MR1K1_IN,
+			eVetoDeviceOUT := K_Stopper.MR1K1_OUT,
+			sVetoDeviceName := 'MR1K1');
+		
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+fbEPICS_KRate(BP:=PMPS_GVL.stCurrentBeamParameters, fbBYKIK_Rate:=fbBYKIK_Rate, FFO:=GVL.g_FastFaultOutput1);
+
+fbKPhotonEnergy(BP:=PMPS_GVL.stCurrentBeamParameters);
+
+q_rPhotonEnergy := LREAL_TO_REAL(fbKPhotonEnergy.fbSXU.fCurrentPhotonEnergy);
+
+// Stopper readbacks
+st3k4Watcher(stCurrentBP:=PMPS_GVL.stCurrentBeamParameters);
+
+// MR1K1 Veto
+////////////////////////
+	fbMR1K1VetoDevice(
+		i_bIn := cMR1K1_IN_LowerLimit < i_MR1K1_ENC	AND i_MR1K1_ENC < cMR1K1_IN_UpperLimit,
+		i_bOut := i_MR1K1_ENC < cMR1K1_OUT_UpperLimit,
+		q_bIN => q_MR1K1_VETO, 
+		stCurrentBP:= PMPS_GVL.stCurrentBeamParameters);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
