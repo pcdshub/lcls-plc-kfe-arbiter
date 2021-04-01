@@ -3,8 +3,8 @@ Boxes
 -----
 
 
-Term 12 (EK1200)
-^^^^^^^^^^^^^^^^
+E0 (EK1200)
+^^^^^^^^^^^
 
 
 .. raw:: html
@@ -16,7 +16,7 @@ Term 12 (EK1200)
     :header: Name, Data
     :align: center
 
-    Name, Term 12 (EK1200)
+    Name, E0 (EK1200)
     ID, 5
 
 
@@ -208,7 +208,7 @@ PDO Channel 12 (Index #x160b, Flags #x0011, SyncMan 1)
     :header: Name, Comment, BitLen, Index, Type
     :align: center
 
-        "Output", "", , "#x70b0", "BIT"
+        "ST3K4 RELAY IN", "", , "#x70b0", "BIT"
 
 
 
@@ -218,7 +218,7 @@ PDO Channel 13 (Index #x160c, Flags #x0011, SyncMan 1)
     :header: Name, Comment, BitLen, Index, Type
     :align: center
 
-        "Output", "", , "#x70c0", "BIT"
+        "MR1K1 IN", "", , "#x70c0", "BIT"
 
 
 
@@ -278,7 +278,7 @@ E3 (EK1122)
    </details>
 
 
-950-101W-R4-MPS-1
+950-101W-R4-MPS-2
 ^^^^^^^^^^^^^^^^^
 
 
@@ -291,7 +291,7 @@ E3 (EK1122)
     :header: Name, Data
     :align: center
 
-    Name, 950-101W-R4-MPS-1
+    Name, 950-101W-R4-MPS-2
     ID, 13
 
 
@@ -300,8 +300,8 @@ E3 (EK1122)
    </details>
 
 
-PPS_Stoppers
-^^^^^^^^^^^^
+PPS Stoppers 1
+^^^^^^^^^^^^^^
 
 
 .. raw:: html
@@ -313,7 +313,7 @@ PPS_Stoppers
     :header: Name, Data
     :align: center
 
-    Name, PPS_Stoppers
+    Name, PPS Stoppers 1
     ID, 14
         SyncMan, 001001000000010004000000000000000100001000010000
         Fmmu, 0000000000000000001000010100000002000000000000000000000000000000
@@ -326,7 +326,7 @@ PDO Channel 1 (Index #x1a00, Flags #x0011, SyncMan 0)
     :header: Name, Comment, BitLen, Index, Type
     :align: center
 
-        "ST1L0_PPS_IN", "", , "#x6000", "BIT"
+        "ST3K4 IN", "", , "#x6000", "BIT"
 
 
 
@@ -336,7 +336,7 @@ PDO Channel 2 (Index #x1a01, Flags #x0011, SyncMan 0)
     :header: Name, Comment, BitLen, Index, Type
     :align: center
 
-        "ST1L0_PPS_OUT", "", , "#x6010", "BIT"
+        "ST3K4 OUT", "", , "#x6010", "BIT"
 
 
 
@@ -404,8 +404,8 @@ PDO Channel 8 (Index #x1a07, Flags #x0011, SyncMan 0)
    </details>
 
 
-Term 15 (EL1008)
-^^^^^^^^^^^^^^^^
+PPS Stoppers 2
+^^^^^^^^^^^^^^
 
 
 .. raw:: html
@@ -417,7 +417,7 @@ Term 15 (EL1008)
     :header: Name, Data
     :align: center
 
-    Name, Term 15 (EL1008)
+    Name, PPS Stoppers 2
     ID, 15
         SyncMan, 001001000000010004000000000000000100001000010000
         Fmmu, 0000000000000000001000010100000002000000000000000000000000000000
@@ -508,8 +508,8 @@ PDO Channel 8 (Index #x1a07, Flags #x0011, SyncMan 0)
    </details>
 
 
-Box 19 (EL6695-0002)
-^^^^^^^^^^^^^^^^^^^^
+plc-kfe-motion
+^^^^^^^^^^^^^^
 
 
 .. raw:: html
@@ -521,14 +521,14 @@ Box 19 (EL6695-0002)
     :header: Name, Data
     :align: center
 
-    Name, Box 19 (EL6695-0002)
+    Name, plc-kfe-motion
     ID, 19
         BootStrapData, 0010140200141402
         SyncMan, 0010000426000100010000008000da050004001026010000
         SyncMan, 0016000422000100020000008000da050004001622010000
-        SyncMan, 001c00006400000003000000000000000000001c64010000
-        SyncMan, 008e02002000010004000000000000000200008e20010000
-        Fmmu, 0000000000000000000000020000000001000000000000000000000000000000
+        SyncMan, 001cc8006400010003000000000000000000001c64010000
+        SyncMan, 008eca002000010004000000000000000200008e20010000
+        Fmmu, 0000000000000000001c00020100000001000000000000000000000000000000
         Fmmu, 0000000000000000008e00010100000002000000000000000000000000000000
         Fmmu, 00000000000000000d0800010100000003000000000000000000000000000000
         CoeProfile, 5001
@@ -597,9 +597,23 @@ PDO FOE Info (Index #x1a05, Flags #x0020, SyncMan )
 
 PDO IO Inputs (Index #x1a08, Flags #x0020, SyncMan 3)
 
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "RequestedBP", "", , "#x6000", "ST_BeamParams_IO"
+        "AptArrayStatus", "", , "#x6000", "ARRAY [1..4] OF ST_PMPS_Aperture_IO"
+
 
 
 PDO IO Outputs (Index #x1608, Flags #x0020, SyncMan 2)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "CurrentBP", "", , "#x7000", "ST_BeamParams_IO"
+        "AptArrayReq", "", , "#x7000", "ARRAY [1..4] OF ST_PMPS_Aperture_IO"
 
 
 .. raw:: html
@@ -607,8 +621,8 @@ PDO IO Outputs (Index #x1608, Flags #x0020, SyncMan 2)
    </details>
 
 
-Box 20 (EL6695-0002)
-^^^^^^^^^^^^^^^^^^^^
+plc-kfe-gmd-vac-01
+^^^^^^^^^^^^^^^^^^
 
 
 .. raw:: html
@@ -620,14 +634,14 @@ Box 20 (EL6695-0002)
     :header: Name, Data
     :align: center
 
-    Name, Box 20 (EL6695-0002)
+    Name, plc-kfe-gmd-vac-01
     ID, 20
         BootStrapData, 0010140200141402
         SyncMan, 0010000426000100010000008000da050004001026010000
         SyncMan, 0016000422000100020000008000da050004001622010000
-        SyncMan, 001c00006400000003000000000000000000001c64010000
-        SyncMan, 008e02002000010004000000000000000200008e20010000
-        Fmmu, 0000000000000000000000020000000001000000000000000000000000000000
+        SyncMan, 001c01006400010003000000000000000000001c64010000
+        SyncMan, 008e03002000010004000000000000000200008e20010000
+        Fmmu, 0000000000000000001c00020100000001000000000000000000000000000000
         Fmmu, 0000000000000000008e00010100000002000000000000000000000000000000
         Fmmu, 00000000000000000d0800010100000003000000000000000000000000000000
         CoeProfile, 5001
@@ -696,9 +710,21 @@ PDO FOE Info (Index #x1a05, Flags #x0020, SyncMan )
 
 PDO IO Inputs (Index #x1a08, Flags #x0020, SyncMan 3)
 
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "RequestedBP", "", , "#x6000", "BYTE"
+
 
 
 PDO IO Outputs (Index #x1608, Flags #x0020, SyncMan 2)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "CurrentBP", "", , "#x7000", "BYTE"
 
 
 .. raw:: html
@@ -706,8 +732,8 @@ PDO IO Outputs (Index #x1608, Flags #x0020, SyncMan 2)
    </details>
 
 
-Box 21 (EL6695-0002)
-^^^^^^^^^^^^^^^^^^^^
+plc-kfe-xgmd-vac-01
+^^^^^^^^^^^^^^^^^^^
 
 
 .. raw:: html
@@ -719,14 +745,14 @@ Box 21 (EL6695-0002)
     :header: Name, Data
     :align: center
 
-    Name, Box 21 (EL6695-0002)
+    Name, plc-kfe-xgmd-vac-01
     ID, 21
         BootStrapData, 0010140200141402
         SyncMan, 0010000426000100010000008000da050004001026010000
         SyncMan, 0016000422000100020000008000da050004001622010000
-        SyncMan, 001c00006400000003000000000000000000001c64010000
-        SyncMan, 008e02002000010004000000000000000200008e20010000
-        Fmmu, 0000000000000000000000020000000001000000000000000000000000000000
+        SyncMan, 001c01006400010003000000000000000000001c64010000
+        SyncMan, 008e03002000010004000000000000000200008e20010000
+        Fmmu, 0000000000000000001c00020100000001000000000000000000000000000000
         Fmmu, 0000000000000000008e00010100000002000000000000000000000000000000
         Fmmu, 00000000000000000d0800010100000003000000000000000000000000000000
         CoeProfile, 5001
@@ -795,9 +821,21 @@ PDO FOE Info (Index #x1a05, Flags #x0020, SyncMan )
 
 PDO IO Inputs (Index #x1a08, Flags #x0020, SyncMan 3)
 
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "RequestedBP", "", , "#x6000", "BYTE"
+
 
 
 PDO IO Outputs (Index #x1608, Flags #x0020, SyncMan 2)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "CurrentBP", "", , "#x7000", "BYTE"
 
 
 .. raw:: html
@@ -827,8 +865,8 @@ Term 22 (EK1110)
    </details>
 
 
-Box 23 (CU1128)
-^^^^^^^^^^^^^^^
+B940-009-R07-MPS-1 CU1-ESC1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 .. raw:: html
@@ -840,7 +878,7 @@ Box 23 (CU1128)
     :header: Name, Data
     :align: center
 
-    Name, Box 23 (CU1128)
+    Name, B940-009-R07-MPS-1 CU1-ESC1
     ID, 23
 
 
@@ -849,8 +887,8 @@ Box 23 (CU1128)
    </details>
 
 
-Term 28 (CU1128-B)
-^^^^^^^^^^^^^^^^^^
+B940-009-R07-MPS-1 CU1-ESC2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 .. raw:: html
@@ -862,7 +900,7 @@ Term 28 (CU1128-B)
     :header: Name, Data
     :align: center
 
-    Name, Term 28 (CU1128-B)
+    Name, B940-009-R07-MPS-1 CU1-ESC2
     ID, 28
 
 
@@ -871,8 +909,8 @@ Term 28 (CU1128-B)
    </details>
 
 
-Term 29 (CU1128-C)
-^^^^^^^^^^^^^^^^^^
+B940-009-R07-MPS-1 CU1-ESC3
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 .. raw:: html
@@ -884,7 +922,7 @@ Term 29 (CU1128-C)
     :header: Name, Data
     :align: center
 
-    Name, Term 29 (CU1128-C)
+    Name, B940-009-R07-MPS-1 CU1-ESC3
     ID, 29
 
 
@@ -893,8 +931,8 @@ Term 29 (CU1128-C)
    </details>
 
 
-Term 30 (EL9011)
-^^^^^^^^^^^^^^^^
+950-101W-R4-MPS-2-E3 (EL9011)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 .. raw:: html
@@ -906,7 +944,7 @@ Term 30 (EL9011)
     :header: Name, Data
     :align: center
 
-    Name, Term 30 (EL9011)
+    Name, 950-101W-R4-MPS-2-E3 (EL9011)
     ID, 30
 
 
@@ -915,8 +953,8 @@ Term 30 (EL9011)
    </details>
 
 
-Box 32 (EL6692)
-^^^^^^^^^^^^^^^
+plc-kfe-vac
+^^^^^^^^^^^
 
 
 .. raw:: html
@@ -928,13 +966,13 @@ Box 32 (EL6692)
     :header: Name, Data
     :align: center
 
-    Name, Box 32 (EL6692)
+    Name, plc-kfe-vac
     ID, 32
         SyncMan, 001000012600010001000000800000040001001026010000
         SyncMan, 001400012200010002000000800000040001001422010000
-        SyncMan, 001800002400000003000000000000000000001824010000
-        SyncMan, 001e02002000010004000000000000000200001e20010000
-        Fmmu, 0000000000000000000000020000000001000000000000000000000000000000
+        SyncMan, 001898002400010003000000000000000000001824010000
+        SyncMan, 001e9a002000010004000000000000000200001e20010000
+        Fmmu, 0000000000000000001800020100000001000000000000000000000000000000
         Fmmu, 0000000000000000001e00010100000002000000000000000000000000000000
         Fmmu, 00000000000000000d0800010100000003000000000000000000000000000000
         CoeProfile, 5001
@@ -1000,9 +1038,21 @@ PDO SYNC Inputs (Index #x1a03, Flags #x0010, SyncMan )
 
 PDO IO Inputs (Index #x1a00, Flags #x0021, SyncMan 3)
 
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "RequestedBP", "", , "#x6000", "ST_BeamParams_IO"
+
 
 
 PDO IO Outputs (Index #x1600, Flags #x0021, SyncMan 2)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "CurrentBP", "", , "#x7000", "ST_BeamParams_IO"
 
 
 .. raw:: html
@@ -1010,8 +1060,8 @@ PDO IO Outputs (Index #x1600, Flags #x0021, SyncMan 2)
    </details>
 
 
-Box 33 (EL6692)
-^^^^^^^^^^^^^^^
+plc-kfe-gatt
+^^^^^^^^^^^^
 
 
 .. raw:: html
@@ -1023,13 +1073,13 @@ Box 33 (EL6692)
     :header: Name, Data
     :align: center
 
-    Name, Box 33 (EL6692)
+    Name, plc-kfe-gatt
     ID, 33
         SyncMan, 001000012600010001000000800000040001001026010000
         SyncMan, 001400012200010002000000800000040001001422010000
-        SyncMan, 001800002400000003000000000000000000001824010000
-        SyncMan, 001e02002000010004000000000000000200001e20010000
-        Fmmu, 0000000000000000000000020000000001000000000000000000000000000000
+        SyncMan, 0018a0002400010003000000000000000000001824010000
+        SyncMan, 001e9f002000010004000000000000000200001e20010000
+        Fmmu, 0000000000000000001800020100000001000000000000000000000000000000
         Fmmu, 0000000000000000001e00010100000002000000000000000000000000000000
         Fmmu, 00000000000000000d0800010100000003000000000000000000000000000000
         CoeProfile, 5001
@@ -1095,9 +1145,25 @@ PDO SYNC Inputs (Index #x1a03, Flags #x0010, SyncMan )
 
 PDO IO Inputs (Index #x1a00, Flags #x0021, SyncMan 3)
 
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "RequestedBP", "", , "#x6000", "ST_BeamParams_IO"
+        "Current Transmission", "", , "#x6000", "ST_PMPS_Attenuator_IO"
+        "bGattStatus", "", , "#x6000", "BYTE"
+
 
 
 PDO IO Outputs (Index #x1600, Flags #x0021, SyncMan 2)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "CurrentBP", "", , "#x7000", "ST_BeamParams_IO"
+        "Requested Transmission", "", , "#x7000", "ST_PMPS_Attenuator_IO"
+        "rPhotonEnergy", "", , "#x7000", "REAL"
 
 
 .. raw:: html
@@ -1105,8 +1171,8 @@ PDO IO Outputs (Index #x1600, Flags #x0021, SyncMan 2)
    </details>
 
 
-Box 34 (EL6692)
-^^^^^^^^^^^^^^^
+plc-tmo-mot
+^^^^^^^^^^^
 
 
 .. raw:: html
@@ -1118,13 +1184,13 @@ Box 34 (EL6692)
     :header: Name, Data
     :align: center
 
-    Name, Box 34 (EL6692)
+    Name, plc-tmo-mot
     ID, 34
         SyncMan, 001000012600010001000000800000040001001026010000
         SyncMan, 001400012200010002000000800000040001001422010000
-        SyncMan, 001800002400000003000000000000000000001824010000
-        SyncMan, 001e02002000010004000000000000000200001e20010000
-        Fmmu, 0000000000000000000000020000000001000000000000000000000000000000
+        SyncMan, 001898002400010003000000000000000000001824010000
+        SyncMan, 001e9a002000010004000000000000000200001e20010000
+        Fmmu, 0000000000000000001800020100000001000000000000000000000000000000
         Fmmu, 0000000000000000001e00010100000002000000000000000000000000000000
         Fmmu, 00000000000000000d0800010100000003000000000000000000000000000000
         CoeProfile, 5001
@@ -1190,9 +1256,21 @@ PDO SYNC Inputs (Index #x1a03, Flags #x0010, SyncMan )
 
 PDO IO Inputs (Index #x1a00, Flags #x0021, SyncMan 3)
 
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "RequestedBP", "", , "#x6000", "ST_BeamParams_IO"
+
 
 
 PDO IO Outputs (Index #x1600, Flags #x0021, SyncMan 2)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "CurrentBP", "", , "#x7000", "ST_BeamParams_IO"
 
 
 .. raw:: html
@@ -1200,8 +1278,8 @@ PDO IO Outputs (Index #x1600, Flags #x0021, SyncMan 2)
    </details>
 
 
-Box 35 (EL6695-0002)
-^^^^^^^^^^^^^^^^^^^^
+plc-tmo-optics
+^^^^^^^^^^^^^^
 
 
 .. raw:: html
@@ -1213,14 +1291,14 @@ Box 35 (EL6695-0002)
     :header: Name, Data
     :align: center
 
-    Name, Box 35 (EL6695-0002)
+    Name, plc-tmo-optics
     ID, 35
         BootStrapData, 0010140200141402
         SyncMan, 0010000426000100010000008000da050004001026010000
         SyncMan, 0016000422000100020000008000da050004001622010000
-        SyncMan, 001c00006400000003000000000000000000001c64010000
-        SyncMan, 008e02002000010004000000000000000200008e20010000
-        Fmmu, 0000000000000000000000020000000001000000000000000000000000000000
+        SyncMan, 001c98006400010003000000000000000000001c64010000
+        SyncMan, 008e9a002000010004000000000000000200008e20010000
+        Fmmu, 0000000000000000001c00020100000001000000000000000000000000000000
         Fmmu, 0000000000000000008e00010100000002000000000000000000000000000000
         Fmmu, 00000000000000000d0800010100000003000000000000000000000000000000
         CoeProfile, 5001
@@ -1289,9 +1367,21 @@ PDO FOE Info (Index #x1a05, Flags #x0020, SyncMan )
 
 PDO IO Inputs (Index #x1a08, Flags #x0020, SyncMan 3)
 
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "RequestedBP", "", , "#x6000", "ST_BeamParams_IO"
+
 
 
 PDO IO Outputs (Index #x1608, Flags #x0020, SyncMan 2)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "CurrentBP", "", , "#x7000", "ST_BeamParams_IO"
 
 
 .. raw:: html
@@ -1299,8 +1389,8 @@ PDO IO Outputs (Index #x1608, Flags #x0020, SyncMan 2)
    </details>
 
 
-Box 36 (EL6692)
-^^^^^^^^^^^^^^^
+plc-tmo-vac
+^^^^^^^^^^^
 
 
 .. raw:: html
@@ -1312,13 +1402,13 @@ Box 36 (EL6692)
     :header: Name, Data
     :align: center
 
-    Name, Box 36 (EL6692)
+    Name, plc-tmo-vac
     ID, 36
         SyncMan, 001000012600010001000000800000040001001026010000
         SyncMan, 001400012200010002000000800000040001001422010000
-        SyncMan, 001800002400000003000000000000000000001824010000
-        SyncMan, 001e02002000010004000000000000000200001e20010000
-        Fmmu, 0000000000000000000000020000000001000000000000000000000000000000
+        SyncMan, 001898002400010003000000000000000000001824010000
+        SyncMan, 001e9a002000010004000000000000000200001e20010000
+        Fmmu, 0000000000000000001800020100000001000000000000000000000000000000
         Fmmu, 0000000000000000001e00010100000002000000000000000000000000000000
         Fmmu, 00000000000000000d0800010100000003000000000000000000000000000000
         CoeProfile, 5001
@@ -1384,18 +1474,30 @@ PDO SYNC Inputs (Index #x1a03, Flags #x0010, SyncMan )
 
 PDO IO Inputs (Index #x1a00, Flags #x0021, SyncMan 3)
 
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "RequestedBP", "", , "#x6000", "ST_BeamParams_IO"
+
 
 
 PDO IO Outputs (Index #x1600, Flags #x0021, SyncMan 2)
 
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "CurrentBP", "", , "#x7000", "ST_BeamParams_IO"
+
 
 .. raw:: html
 
    </details>
 
 
-Box 38 (EL6695-0002)
-^^^^^^^^^^^^^^^^^^^^
+plc-rix-mot
+^^^^^^^^^^^
 
 
 .. raw:: html
@@ -1407,14 +1509,14 @@ Box 38 (EL6695-0002)
     :header: Name, Data
     :align: center
 
-    Name, Box 38 (EL6695-0002)
+    Name, plc-rix-mot
     ID, 38
         BootStrapData, 0010140200141402
         SyncMan, 0010000426000100010000008000da050004001026010000
         SyncMan, 0016000422000100020000008000da050004001622010000
-        SyncMan, 001c00006400000003000000000000000000001c64010000
-        SyncMan, 008e02002000010004000000000000000200008e20010000
-        Fmmu, 0000000000000000000000020000000001000000000000000000000000000000
+        SyncMan, 001c98006400010003000000000000000000001c64010000
+        SyncMan, 008e9a002000010004000000000000000200008e20010000
+        Fmmu, 0000000000000000001c00020100000001000000000000000000000000000000
         Fmmu, 0000000000000000008e00010100000002000000000000000000000000000000
         Fmmu, 00000000000000000d0800010100000003000000000000000000000000000000
         CoeProfile, 5001
@@ -1483,9 +1585,21 @@ PDO FOE Info (Index #x1a05, Flags #x0020, SyncMan )
 
 PDO IO Inputs (Index #x1a08, Flags #x0020, SyncMan 3)
 
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "RequestedBP", "", , "#x6000", "ST_BeamParams_IO"
+
 
 
 PDO IO Outputs (Index #x1608, Flags #x0020, SyncMan 2)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "CurrentBP", "", , "#x7000", "ST_BeamParams_IO"
 
 
 .. raw:: html
@@ -1493,8 +1607,8 @@ PDO IO Outputs (Index #x1608, Flags #x0020, SyncMan 2)
    </details>
 
 
-Box 39 (EL6695-0002)
-^^^^^^^^^^^^^^^^^^^^
+plc-rix-vac
+^^^^^^^^^^^
 
 
 .. raw:: html
@@ -1506,14 +1620,14 @@ Box 39 (EL6695-0002)
     :header: Name, Data
     :align: center
 
-    Name, Box 39 (EL6695-0002)
+    Name, plc-rix-vac
     ID, 39
         BootStrapData, 0010140200141402
         SyncMan, 0010000426000100010000008000da050004001026010000
         SyncMan, 0016000422000100020000008000da050004001622010000
-        SyncMan, 001c00006400000003000000000000000000001c64010000
-        SyncMan, 008e02002000010004000000000000000200008e20010000
-        Fmmu, 0000000000000000000000020000000001000000000000000000000000000000
+        SyncMan, 001c98006400010003000000000000000000001c64010000
+        SyncMan, 008e9a002000010004000000000000000200008e20010000
+        Fmmu, 0000000000000000001c00020100000001000000000000000000000000000000
         Fmmu, 0000000000000000008e00010100000002000000000000000000000000000000
         Fmmu, 00000000000000000d0800010100000003000000000000000000000000000000
         CoeProfile, 5001
@@ -1582,9 +1696,21 @@ PDO FOE Info (Index #x1a05, Flags #x0020, SyncMan )
 
 PDO IO Inputs (Index #x1a08, Flags #x0020, SyncMan 3)
 
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "RequestedBP", "", , "#x6000", "ST_BeamParams_IO"
+
 
 
 PDO IO Outputs (Index #x1608, Flags #x0020, SyncMan 2)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "CurrentBP", "", , "#x7000", "ST_BeamParams_IO"
 
 
 .. raw:: html
@@ -1592,8 +1718,8 @@ PDO IO Outputs (Index #x1608, Flags #x0020, SyncMan 2)
    </details>
 
 
-Box 40 (EL6695-0002)
-^^^^^^^^^^^^^^^^^^^^
+plc-rix-optics
+^^^^^^^^^^^^^^
 
 
 .. raw:: html
@@ -1605,14 +1731,14 @@ Box 40 (EL6695-0002)
     :header: Name, Data
     :align: center
 
-    Name, Box 40 (EL6695-0002)
+    Name, plc-rix-optics
     ID, 40
         BootStrapData, 0010140200141402
         SyncMan, 0010000426000100010000008000da050004001026010000
         SyncMan, 0016000422000100020000008000da050004001622010000
-        SyncMan, 001c00006400000003000000000000000000001c64010000
-        SyncMan, 008e02002000010004000000000000000200008e20010000
-        Fmmu, 0000000000000000000000020000000001000000000000000000000000000000
+        SyncMan, 001c98006400010003000000000000000000001c64010000
+        SyncMan, 008e9e002000010004000000000000000200008e20010000
+        Fmmu, 0000000000000000001c00020100000001000000000000000000000000000000
         Fmmu, 0000000000000000008e00010100000002000000000000000000000000000000
         Fmmu, 00000000000000000d0800010100000003000000000000000000000000000000
         CoeProfile, 5001
@@ -1681,9 +1807,22 @@ PDO FOE Info (Index #x1a05, Flags #x0020, SyncMan )
 
 PDO IO Inputs (Index #x1a08, Flags #x0020, SyncMan 3)
 
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "RequestedBP", "", , "#x6000", "ST_BeamParams_IO"
+        "MR1K1_Y_ENC", "", , "#x6000", "UDINT"
+
 
 
 PDO IO Outputs (Index #x1608, Flags #x0020, SyncMan 2)
+
+.. csv-table::
+    :header: Name, Comment, BitLen, Index, Type
+    :align: center
+
+        "CurrentBP", "", , "#x7000", "ST_BeamParams_IO"
 
 
 .. raw:: html

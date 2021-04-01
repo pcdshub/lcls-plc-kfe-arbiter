@@ -13,11 +13,11 @@ lcls-plc-kfe-arbiter
 
 .. toctree::
     :maxdepth: 2
-    :caption: ArbiterPLC
+    :caption: KFEArbiter
 
-    Arbiter_ArbiterPLC_summary
-    Arbiter_ArbiterPLC_epics
-    Arbiter_ArbiterPLC_source
+    Arbiter_KFEArbiter_summary
+    Arbiter_KFEArbiter_epics
+    Arbiter_KFEArbiter_source
 
 
 
