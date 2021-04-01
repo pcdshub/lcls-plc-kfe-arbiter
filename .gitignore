@@ -1,0 +1,12 @@
+_Boot
+_Libraries
+_CompileInfo
+*.suo
+*~
+*.tpy
+*.bak
+*.~u
+*.csv
+*.svd
+*.tclrs
+/Arbiter/ArbiterPLC/LineIDs.dbg

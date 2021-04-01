@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="MAIN" Id="{8a7bcfd2-1a2b-4363-aa47-c19391bf1f9c}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+    Initialize	:	BOOL := TRUE;
+
+    fbLogHandler : FB_LogHandler;
+    fbEcatDiag : FB_EcatDiagWrapper;
+
+    {attribute 'pytmc' := '
+    pv: @(PREFIX)BeamParamCntl
+    '}
+    fbBPControl : FB_BPControlDevice(nID:=10);
+	
+	PERanges : PE_Ranges;
+	{attribute 'TcLinkTo' := 'TIIB[PMPS_Premp]^Channel 8^Output;'}
+	bM1K1_OUT_Override AT %Q* : BOOL; // Using this book to completely overrule the last bit of the BC interface.
+
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//Arbiter PLC
+
+IF Initialize THEN
+    Initialize := FALSE;
+END_IF
+
+// Ethercat Diagnostics
+fbEcatDiag();
+
+// PMPS Functionality
+CurrentBPUpdate();
+
+///////////////////////////////////////////////////
+// This code should be disabled or removed in deployment
+// Might have a switch to change to simulation mode
+MachineSimulation();
+//Testing();
+///////////////////////////////////////////////////
+
+// Dummy device for controling pmps beam parameters
+fbBPControl(Arbiter:=g_fbArbiter1);
+
+
+
+PMPS_Arbiter();
+
+P_AT1K0_SL1K0();
+
+bM1K1_OUT_Override := PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.K_Stopper.MR1K1_OUT];
+
+fbLogHandler();]]></ST>
+    </Implementation>
+    <Action Name="Initialize" Id="{b0ee480a-3d4b-001d-04c4-43cdc47895c8}">
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Action>
+  </POU>
+</TcPlcObject>
