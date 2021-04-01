@@ -3,15 +3,19 @@ python: 3.7
 
 env:
   global:
-    # Doctr deploy key for pcdshub/lcls-plc-lfe-arbiter
-    - secure: "ebAoK21akyfOmGVG8dHknCJG9Wr+Fv35dM2WmcU1ipXOKYUCZxxRE9+uf+MMA5ZMvYyft1yTYlOIPf+8lsOQLnQUsBeUxKMhiL9hz+qsHQx/QkIoQfForxOhvL6Svdv8KxbyEwQ+lOcnmXN/JQAMcCdXrnhAH7ZrIhUO0TZgx06eY7+djkICfkPxwOnCvVgxR9i1YGZqEwV83AMLzAT5s0YkIxypMEJ6bF8r1Y8Lc12kOGRk2FRa3QWDcPvtdlQyH/STzdeHB4a40/PDJoVDI8TaSqJB4n7Cnf7eohefcdE6+aLco2sHujgZccpEOCzYoHpoJtgbyHz5rAzfSu/GqXX7bJigxHbJuAJiba+aY0YwK4U0+d/l5HTXvliyKEY0lXAZ7tG/O0cotNE+tOULOm+0M2F8ytbM+WqAAo+0qMO9zIriJhbtTixV2osYSpL7e+YRY9cABedhzGX0DXPiJxH9P5fgerjJAXSZrW+z/2t6ocaKkZIBI/byGaEzGjmsSP/He9XX4wqFMeLC8Jay3bdzigjkMGg2wLwSmBNVXFI1aLy4CnHUyGEKTADt2ruws2PVHZTH7jOAJ9p4h30meredoPXVB0pXcHAI+OMO9n/df502678J29FZgw9Eo/86XHnT08VNll/PSvo364qAH9xKqPpL4unRM/nmzlfc02Q="
+    # doctr generated secure variable for documentation upload
+    - secure: "hHs0DsKBKl+EZU2fNErPCxBTqOfJ8rpk0S3/BKerPImc4R1sLz5XtJ3bauUtGKcY0tWmnB6znfCSERGkq/nt75u4v/HyshJ/4tJofPwDixicIM8zz65sPFXYmb26GY8YeAGEzP5iCfj1nABw5A/sZduw3lS3O/iFNlT3/NLHEddkX9RHIPI906c1WyE0Cq7E6YtsqhXEqZkvAn7P738UXrrnSDxj0LSbEF8KJsXEzrEib7WKHby/V/2Bv/2VvdKC8XEpzLX5v3k672KxpF4K/YpTwUaMT2eHxJ4QjEGdCCPMnQS8dMPI4u/Npz6FGrvYYemi35rHUkg5pC0WWilwb1o59lALGKzgN/OkAgQ5GcDF9+suXzbp/nYS8pF6REthq0uQn+wMcWd7799V4Ge+gBwtyYHE3v7eUm49VFpa0n9F/Of5b5oJ/p6lpqOLH5f0u4CN9Xolu6j8YPVHOnHZIMn6pjqZMt4uwsNpeQi1Vn0YOjzTORkl6WLJtJ2NGmJl3xnw/0KiEjUP+wdd/0JO+ZkYIIdW3eg/V1pUeLEaqO2d8PUhnsu7PGZtd1/UlbE3CWEIqeVA+031gKXNihMq01/zoL7YoQISxvj/UROQVUKrjUry/j41syrLzgwzS4FkHuGKvyOiBq3xCObGZA8ULVOfm2Bz85RkM/CBLqikmPE="
     - TWINCAT_STYLE_EXCLUDE=
+    # If using a custom version of the CI helpers, change the following in
+    # addition to the `import` block elow:
+    # - CI_HELPER_URL=https://github.com/klauer/pcds-ci-helpers
+    # - CI_HELPER_BRANCH=twincat_shared_configs
 
 # Uncomment this block if you would like to make a test an allowed failure
-#jobs:
-#  allow_failures:
-#    - name: "Style Check"
-#    - name: "Pre-commit Checks"
+jobs:
+  allow_failures:
+    - name: "Style Check"
+    - name: "Pre-commit Checks"
 
 import:
   - pcdshub/pcds-ci-helpers:travis/shared_configs/twincat/standard.yml
