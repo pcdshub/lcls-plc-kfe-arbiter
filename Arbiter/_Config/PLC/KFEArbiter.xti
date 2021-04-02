@@ -284,6 +284,27 @@
 			</Hides>
 		</DataType>
 		<DataType>
+			<Name GUID="{D01709AA-9B4A-464A-B4D1-4BF476CFE7DE}">ST_PMPS_Attenuator_IO</Name>
+			<BitSize>32</BitSize>
+			<SubItem>
+				<Name>nTran</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>xAttOK</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<Hides>
+				<Hide GUID="{76269EAC-36F0-4513-B811-3725FD02409A}"/>
+				<Hide GUID="{E96BEA56-6301-4A6A-BF6A-F08340C87594}"/>
+				<Hide GUID="{FE32F9A9-7E7A-413D-8D77-0C99C34D8CD9}"/>
+			</Hides>
+		</DataType>
+		<DataType>
 			<Name GUID="{B0236749-C315-EC4D-D21C-B52A19E31F36}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..4] OF ST_PMPS_Aperture_IO</Name>
 			<BitSize>384</BitSize>
 			<BaseType GUID="{67AC048F-B785-4A4D-B941-B11E2213F502}">ST_PMPS_Aperture_IO</BaseType>
@@ -335,17 +356,6 @@
 					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 				</Var>
 				<Var>
-					<Name>P_AT1K0_SL1K0.i_bWcStateOut_AT1K0</Name>
-					<Comment>
-						<![CDATA[ plc-kfe-gatt interface diagnostics]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>P_AT1K0_SL1K0.i_bWcStateIn_AT1K0</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>MAIN.fbEcatDiag.wFrmXWcState</Name>
 					<Comment>
 						<![CDATA[ link to task related ethercat frame state (Frm1WcState)]]>
@@ -388,11 +398,15 @@
 					<Type>UINT</Type>
 				</Var>
 				<Var>
-					<Name>CurrentBPUpdate.i_MR1K1_ENC</Name>
+					<Name>P_AT1K0_SL1K0.i_bWcStateOut_AT1K0</Name>
 					<Comment>
-						<![CDATA[/////////////////////]]>
+						<![CDATA[ plc-kfe-gatt interface diagnostics]]>
 					</Comment>
-					<Type>UDINT</Type>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>P_AT1K0_SL1K0.i_bWcStateIn_AT1K0</Name>
+					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>CurrentBPUpdate.st3k4Watcher.i_StopperOutLS</Name>
@@ -403,11 +417,11 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>P_AT1K0_SL1K0.i_nTranToAT1K0Stat</Name>
+					<Name>CurrentBPUpdate.i_MR1K1_ENC</Name>
 					<Comment>
-						<![CDATA[ Transmission request to AT1K0]]>
+						<![CDATA[/////////////////////]]>
 					</Comment>
-					<Type GUID="{D01709AA-9B4A-464A-B4D1-4BF476CFE7DE}">ST_PMPS_Attenuator_IO</Type>
+					<Type>UDINT</Type>
 				</Var>
 				<Var>
 					<Name>PMPS_Arbiter.plc_kfe_motion_PMPS_IO.i_RequestedBP</Name>
@@ -2342,6 +2356,13 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>P_AT1K0_SL1K0.i_nTranToAT1K0Stat</Name>
+					<Comment>
+						<![CDATA[ Transmission request to AT1K0]]>
+					</Comment>
+					<Type GUID="{D01709AA-9B4A-464A-B4D1-4BF476CFE7DE}">ST_PMPS_Attenuator_IO</Type>
+				</Var>
+				<Var>
 					<Name>P_AT1K0_SL1K0.i_nState_AT1K0</Name>
 					<Type>UINT</Type>
 				</Var>
@@ -2440,6 +2461,13 @@
 			<Vars VarGrpType="2">
 				<Name>PlcTask Outputs</Name>
 				<Var>
+					<Name>MAIN.bM1K1_OUT_Override</Name>
+					<Comment>
+						<![CDATA[ Using this book to completely overrule the last bit of the BC interface.]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>CurrentBPUpdate.q_MR1K1_VETO</Name>
 					<Comment>
 						<![CDATA[ Signal to accel. MPS that MR1K1 is in]]>
@@ -2460,13 +2488,6 @@
 				<Var>
 					<Name>CurrentBPUpdate.st3k4Watcher.q_StopperIN_Relay</Name>
 					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>P_AT1K0_SL1K0.q_nTranToAT1K0Req</Name>
-					<Comment>
-						<![CDATA[ Transmission request to AT1K0]]>
-					</Comment>
-					<Type GUID="{D01709AA-9B4A-464A-B4D1-4BF476CFE7DE}">ST_PMPS_Attenuator_IO</Type>
 				</Var>
 				<Var>
 					<Name>PMPS_Arbiter.fbMPSInterface.q_BC_ASSERTION_LINES</Name>
@@ -4076,6 +4097,13 @@
 					</SubVar>
 				</Var>
 				<Var>
+					<Name>P_AT1K0_SL1K0.q_nTranToAT1K0Req</Name>
+					<Comment>
+						<![CDATA[ Transmission request to AT1K0]]>
+					</Comment>
+					<Type GUID="{D01709AA-9B4A-464A-B4D1-4BF476CFE7DE}">ST_PMPS_Attenuator_IO</Type>
+				</Var>
+				<Var>
 					<Name>P_AT1K0_SL1K0.q_stAptArrayReq</Name>
 					<Comment>
 						<![CDATA[ Apterure request and status to plc-kfe-motion]]>
@@ -4156,13 +4184,6 @@
 				</Var>
 				<Var>
 					<Name>GVL.g_FastFaultOutput1.q_xFastFaultOut</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.bM1K1_OUT_Override</Name>
-					<Comment>
-						<![CDATA[ Using this book to completely overrule the last bit of the BC interface.]]>
-					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 			</Vars>
@@ -4325,6 +4346,7 @@
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_rix_optics_PMPS_IO.i_RequestedBP" VarB="IO Inputs^RequestedBP" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_rix_optics_PMPS_IO.i_TxPDOState" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_rix_optics_PMPS_IO.i_WcState" VarB="WcState^WcStateIn" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^CurrentBPUpdate.q_rPhotonEnergy" VarB="IO Outputs^rPhotonEnergy"/>
 				<Link VarA="PlcTask Outputs^PMPS_Arbiter.plc_rix_optics_PMPS_IO.o_CurrentBP" VarB="IO Outputs^CurrentBP" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^B940-009-R07-MPS-1 CU1-ESC2^plc-rix-vac">
