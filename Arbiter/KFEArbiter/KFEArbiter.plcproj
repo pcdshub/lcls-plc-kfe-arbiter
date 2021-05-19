@@ -113,11 +113,6 @@
       <Namespace>PMPS</Namespace>
     </LibraryReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="KFEArbiter.tmc">
-      <SubType>Content</SubType>
-    </None>
-  </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>
       <XmlArchive>
