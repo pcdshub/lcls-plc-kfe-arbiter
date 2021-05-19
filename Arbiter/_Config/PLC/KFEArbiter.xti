@@ -4163,12 +4163,12 @@
 			<UnrestoredVarLinks ImportTime="2020-09-09T14:48:46">
 				<OwnerA Name="InputDst" Prefix="TIPC^KFEArbiter^KFEArbiter Instance" Type="1">
 					<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-gatt">
-						<Link VarA="P_AT1K0_SL1K0.i_nTranToAT1K0Stat" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="IO Inputs^Current Transmission" AutoLink="true" Size="16" OldTypeA="UINT" OldGuidA="{18071995-0000-0000-0000-000000000005}" NewTypeA="ST_PMPS_Attenuator_IO" NewGuidA="{7E016B85-166E-4B4F-AAC4-ECA8DDD44F13}" RestoreInfo="BNotFound"/>
+						<Link VarA="P_AT1K0_SL1K0.i_nTranToAT1K0Stat" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="IO Inputs^Current Transmission" AutoLink="true" Size="16" RestoreInfo="TypeMismatch" OldTypeA="UINT" OldGuidA="{18071995-0000-0000-0000-000000000005}" NewTypeA="ST_PMPS_Attenuator_IO" NewGuidA="{7E016B85-166E-4B4F-AAC4-ECA8DDD44F13}"/>
 					</OwnerB>
 				</OwnerA>
 				<OwnerA Name="OutputSrc" Prefix="TIPC^KFEArbiter^KFEArbiter Instance" Type="2">
 					<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-gatt">
-						<Link VarA="P_AT1K0_SL1K0.q_nTranToAT1K0Req" TypeA="UINT" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="IO Outputs^Requested Transmission" AutoLink="true" Size="16" OldTypeA="UINT" OldGuidA="{18071995-0000-0000-0000-000000000005}" NewTypeA="ST_PMPS_Attenuator_IO" NewGuidA="{7E016B85-166E-4B4F-AAC4-ECA8DDD44F13}" RestoreInfo="BNotFound"/>
+						<Link VarA="P_AT1K0_SL1K0.q_nTranToAT1K0Req" TypeA="UINT" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="IO Outputs^Requested Transmission" AutoLink="true" Size="16" RestoreInfo="TypeMismatch" OldTypeA="UINT" OldGuidA="{18071995-0000-0000-0000-000000000005}" NewTypeA="ST_PMPS_Attenuator_IO" NewGuidA="{7E016B85-166E-4B4F-AAC4-ECA8DDD44F13}"/>
 					</OwnerB>
 				</OwnerA>
 			</UnrestoredVarLinks>

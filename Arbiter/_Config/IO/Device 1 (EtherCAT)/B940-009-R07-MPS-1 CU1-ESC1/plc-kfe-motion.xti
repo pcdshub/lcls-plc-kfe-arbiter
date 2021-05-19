@@ -83,7 +83,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{1C5B6FFE-5600-8C40-85B0-B61070AA3AFB}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..4] OF ST_PMPS_Aperture_IO</Name>
+			<Name GUID="{1C5B6FFE-5600-8C40-85B0-B61070AA3AFB}" AutoDeleteType="true">ARRAY [1..4] OF ST_PMPS_Aperture_IO</Name>
 			<BitSize>384</BitSize>
 			<BaseType GUID="{67AC048F-B785-4A4D-B941-B11E2213F502}">ST_PMPS_Aperture_IO</BaseType>
 			<ArrayInfo>
