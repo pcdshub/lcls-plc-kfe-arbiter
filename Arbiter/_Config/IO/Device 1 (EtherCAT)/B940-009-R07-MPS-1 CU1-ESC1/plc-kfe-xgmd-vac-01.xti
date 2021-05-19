@@ -446,7 +446,7 @@
 				</Entry>
 			</Pdo>
 			<Pdo Name="IO Outputs" Index="#x1608" InOut="1" Flags="#x0020" SyncMan="2">
-				<Entry Name="RequestedBP" Index="#x7000" Sub="#x01">
+				<Entry Name="CurrentBP" Index="#x7000" Sub="#x01">
 					<Type GUID="{0C6A4924-E177-45F6-9AB0-6F9DB98D3474}">ST_BeamParams_IO</Type>
 				</Entry>
 			</Pdo>

@@ -19,7 +19,7 @@ VAR
 	
 	//System Time
 	 {attribute 'pytmc' := '
-        pv: SystemDT
+        pv: @(PREFIX)SystemDT
         io: i
      '}
 	SystemTime:DINT;
