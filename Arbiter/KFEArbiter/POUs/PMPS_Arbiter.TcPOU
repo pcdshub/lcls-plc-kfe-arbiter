@@ -35,13 +35,7 @@ VAR
                                 '}
     plc_kfe_motion_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#FF0F);
 	
-	    {attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-kfe-optics]^IO Inputs^RequestedBP;
-                                .o_CurrentBP:=TIIB[plc-kfe-optics]^IO Outputs^CurrentBP;
-                                .i_Connected:=TIIB[plc-kfe-optics]^SYNC Inputs^External device not connected;
-                                .i_WcState:=TIIB[plc-kfe-optics]^WcState^WcStateIn;
-                                .i_TxPDOState:=TIIB[plc-kfe-optics]^SYNC Inputs^TxPDO state;
-                                '}
-    plc_kfe_optics_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#FF10);
+	   
 
 	
 	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-kfe-vac]^IO Inputs^RequestedBP;
@@ -143,7 +137,6 @@ END_VAR
 ///////////////////////////
 // KFE
 	plc_kfe_motion_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'KFE MOTION');
-	plc_kfe_optics_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'KFE OPTICS');
 	plc_kfe_vac_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'KFE VACUUM');
 	plc_kfe_gatt_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'KFE GATT');
 
