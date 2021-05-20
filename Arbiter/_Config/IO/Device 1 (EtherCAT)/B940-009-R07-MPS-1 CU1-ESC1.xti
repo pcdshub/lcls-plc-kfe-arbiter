@@ -21,7 +21,7 @@
 		<Box File="plc-kfe-vac.xti" Id="32">
 			<EtherCAT PortABoxInfo="#x01000015"/>
 		</Box>
-		<Box File="plc-kfe-gatt.xti" Id="33">
+		<Box File="plc-kfe-gatt.xti" Id="2">
 			<EtherCAT PortABoxInfo="#x01000020"/>
 		</Box>
 		<Box File="plc-tmo-mot.xti" Id="34">
