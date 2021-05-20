@@ -86,6 +86,7 @@ Links
         KFEArbiter Instance, PlcTask Inputs^P_AT1K0_SL1K0.i_nTranToAT1K0Stat, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-gatt, IO Inputs^Current Transmission
         KFEArbiter Instance, PlcTask Inputs^P_AT1K0_SL1K0.i_stAptArrayStat, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-motion, IO Inputs^AptArrayStatus
         KFEArbiter Instance, PlcTask Outputs^CurrentBPUpdate.q_MR1K1_VETO, TIID^Device 1 (EtherCAT)^E0 (EK1200)^PMPS_Premp, Channel 13^MR1K1 IN
+        KFEArbiter Instance, PlcTask Outputs^CurrentBPUpdate.q_rPhotonEnergy, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^B940-009-R07-MPS-1 CU1-ESC2^plc-rix-optics, IO Outputs^rPhotonEnergy
         KFEArbiter Instance, PlcTask Outputs^CurrentBPUpdate.q_rPhotonEnergy, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-gatt, IO Outputs^rPhotonEnergy
         KFEArbiter Instance, PlcTask Outputs^CurrentBPUpdate.st3k4Watcher.q_StopperIN_Relay, TIID^Device 1 (EtherCAT)^E0 (EK1200)^PMPS_Premp, Channel 12^ST3K4 RELAY IN
         KFEArbiter Instance, PlcTask Outputs^GVL.g_FastFaultOutput1.q_xFastFaultOut, TIID^Device 1 (EtherCAT)^E0 (EK1200)^FFO, Channel 1^Output

@@ -416,7 +416,16 @@ MAIN
     	PERanges : PE_Ranges;
     	{attribute 'TcLinkTo' := 'TIIB[PMPS_Premp]^Channel 8^Output;'}
     	bM1K1_OUT_Override AT %Q* : BOOL; // Using this book to completely overrule the last bit of the BC interface.
-
+    	
+    	//System Time
+    	 {attribute 'pytmc' := '
+            pv: @(PREFIX)SystemDT
+            io: i
+         '}
+    	SystemTime:DINT;
+    	fbTime : FB_LocalSystemTime := ( bEnable := TRUE, dwCycle := 1 ); //Get current system time, used for override
+    	fbTime_to_UTC: FB_TzSpecificLocalTimeToSystemTime;
+    	fbGetTimeZone: FB_GetTimeZoneInformation;
     END_VAR
     //Arbiter PLC
 
@@ -446,11 +455,22 @@ MAIN
 
     P_AT1K0_SL1K0();
 
-    bM1K1_OUT_Override := PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.K_Stopper.MR1K1_OUT];
+    bM1K1_OUT_Override := PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT];
 
     fbLogHandler();
+    A_SystemTime();
 
     END_PROGRAM
+    ACTION A_SystemTime:
+    //Get local System Time
+    fbTime(sNetID:='');
+    //Get Time Zone
+    fbGetTimeZone(sNetID:='',bExecute:=TRUE,tTimeout:=T#10S);
+    //change local time to UTC to be compatible with unix time epoch widget
+    fbTime_to_UTC(in:= fbTime.systemTime , tzInfo:=fbGetTimeZone.tzInfo);
+
+    SystemTime:= TO_DINT(TO_DT(SystemTime_TO_DT(fbTime_to_UTC.out)));
+    END_ACTION
     ACTION Initialize:
 
     END_ACTION
@@ -508,18 +528,18 @@ P_AT1K0_SL1K0
     IF i_bWcStateOut_AT1K0 = 0 AND i_bWcStateIn_AT1K0 = 0 AND i_nState_AT1K0 = 8 THEN
     	
     	// Send request from this arbiter to the gas attenuator
-    	q_nTranToAT1K0Req.nTran := PMPS_GVL.stRequestedBeamParameters.nTran*100;
+    	q_nTranToAT1K0Req.nTran := PMPS_GVL.stRequestedBeamParameters.nTran*PMPS_GVL.TRANS_SCALING_FACTOR;
     	q_nTranToAT1K0Req.xAttOK := 16#FF;
     	
     	//Update 
-    	PMPS_GVL.stCurrentBeamParameters.nTran := REAL_TO_UINT(UINT_TO_REAL(i_nTranToAT1K0Stat.nTran)*0.01);
+    	PMPS_GVL.stCurrentBeamParameters.nTran := i_nTranToAT1K0Stat.nTran;//REAL_TO_UINT(UINT_TO_REAL(i_nTranToAT1K0Stat.nTran)*0.01);
 
     	ffKFEGattConnection.i_xOK := TRUE;
     ELSE
     	// Fast fault
     	ffKFEGattConnection.i_xOK := FALSE;
     	
-    	PMPS_GVL.stCurrentBeamParameters.nTran := 100;
+    	PMPS_GVL.stCurrentBeamParameters.nTran := PMPS_GVL.TRANS_SCALING_FACTOR;//100;
     	
     END_IF
 
@@ -591,13 +611,7 @@ PMPS_Arbiter
                                     '}
         plc_kfe_motion_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#FF0F);
     	
-    	    {attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-kfe-optics]^IO Inputs^RequestedBP;
-                                    .o_CurrentBP:=TIIB[plc-kfe-optics]^IO Outputs^CurrentBP;
-                                    .i_Connected:=TIIB[plc-kfe-optics]^SYNC Inputs^External device not connected;
-                                    .i_WcState:=TIIB[plc-kfe-optics]^WcState^WcStateIn;
-                                    .i_TxPDOState:=TIIB[plc-kfe-optics]^SYNC Inputs^TxPDO state;
-                                    '}
-        plc_kfe_optics_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#FF10);
+    	   
 
     	
     	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-kfe-vac]^IO Inputs^RequestedBP;
@@ -695,23 +709,22 @@ PMPS_Arbiter
 
     ///////////////////////////
     // KFE
-    	plc_kfe_motion_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
-    	plc_kfe_optics_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
-    	plc_kfe_vac_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
-    	plc_kfe_gatt_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
+    	plc_kfe_motion_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'KFE MOTION');
+    	plc_kfe_vac_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'KFE VACUUM');
+    	plc_kfe_gatt_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'KFE GATT');
 
 
     ///////////////////////////
     // TMO
-    	plc_tmo_motion_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
-    	plc_tmo_optics_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
-    	plc_tmo_vacuum_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
+    	plc_tmo_motion_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset , sName:= 'TMO MOTION');
+    	plc_tmo_optics_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'TMO OPTICS');
+    	plc_tmo_vacuum_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'TMO VACUUM');
     //////////////////////////
 
     // RIX
-    	plc_rix_mot_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
-    	plc_rix_vac_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
-    	plc_rix_optics_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset);
+    	plc_rix_mot_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'RIX MOTION');
+    	plc_rix_vac_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'RIX VACUUM');
+    	plc_rix_optics_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'RIX OPTICS');
     ///////////////////////////
     	
     ////////////////////////////	
