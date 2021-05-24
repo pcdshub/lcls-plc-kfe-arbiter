@@ -1,0 +1,21 @@
+
+Pragmas
+-------
+
+.. csv-table::
+    :header: PLC Name, Total Pragmas, Errors
+    :align: center
+
+    :ref:`KFEArbiter <KFEArbiter_overview_pragmas>`, 46, 0
+
+
+.. _KFEArbiter_overview_pragmas:
+
+
+KFEArbiter
+^^^^^^^^^^
+
+Total pragmas found: 46
+Total linter errors: 0
+
+
