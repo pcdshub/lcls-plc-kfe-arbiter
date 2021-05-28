@@ -431,6 +431,14 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>CurrentBPUpdate.st1k2Watcher.i_StopperOutLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>CurrentBPUpdate.st1k2Watcher.i_StopperInLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>PMPS_Arbiter.plc_kfe_motion_PMPS_IO.i_RequestedBP</Name>
 					<Comment>
 						<![CDATA[ Requested BP from subsystem]]>
@@ -2267,6 +2275,14 @@
 				</Var>
 				<Var>
 					<Name>CurrentBPUpdate.st3k4Watcher.q_StopperIN_Relay</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>CurrentBPUpdate.st1k2Watcher.q_StopperOUT_Relay</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>CurrentBPUpdate.st1k2Watcher.q_StopperIN_Relay</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
