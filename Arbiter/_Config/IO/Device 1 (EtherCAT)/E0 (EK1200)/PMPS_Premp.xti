@@ -77,7 +77,7 @@
 				</Entry>
 			</Pdo>
 			<Pdo Name="Channel 14" Index="#x160d" InOut="1" Flags="#x0011" SyncMan="1">
-				<Entry Name="Output" Index="#x70d0" Sub="#x01">
+				<Entry Name="ST1K2 RELAY IN" Index="#x70d0" Sub="#x01">
 					<Type>BIT</Type>
 				</Entry>
 			</Pdo>

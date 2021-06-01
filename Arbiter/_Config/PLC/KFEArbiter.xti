@@ -431,14 +431,6 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>CurrentBPUpdate.st1k2Watcher.i_StopperOutLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>CurrentBPUpdate.st1k2Watcher.i_StopperInLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>PMPS_Arbiter.plc_kfe_motion_PMPS_IO.i_RequestedBP</Name>
 					<Comment>
 						<![CDATA[ Requested BP from subsystem]]>
@@ -2245,6 +2237,14 @@
 					<Name>P_AT1K0_SL1K0.i_nState_KFEMOT</Name>
 					<Type>UINT</Type>
 				</Var>
+				<Var>
+					<Name>CurrentBPUpdate.st1k2Watcher.i_StopperOutLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>CurrentBPUpdate.st1k2Watcher.i_StopperInLS</Name>
+					<Type>BOOL</Type>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
 				<Name>PlcTask Outputs</Name>
@@ -2275,14 +2275,6 @@
 				</Var>
 				<Var>
 					<Name>CurrentBPUpdate.st3k4Watcher.q_StopperIN_Relay</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>CurrentBPUpdate.st1k2Watcher.q_StopperOUT_Relay</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>CurrentBPUpdate.st1k2Watcher.q_StopperIN_Relay</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -3783,6 +3775,14 @@
 					<Name>GVL.g_FastFaultOutput1.q_xFastFaultOut</Name>
 					<Type>BOOL</Type>
 				</Var>
+				<Var>
+					<Name>CurrentBPUpdate.st1k2Watcher.q_StopperOUT_Relay</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>CurrentBPUpdate.st1k2Watcher.q_StopperIN_Relay</Name>
+					<Type>BOOL</Type>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="8">
 				<Name>PlcTask Retains</Name>
@@ -4021,6 +4021,8 @@
 				<Link VarA="PlcTask Outputs^PMPS_Arbiter.plc_tmo_vacuum_PMPS_IO.o_CurrentBP" VarB="IO Outputs^CurrentBP" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^E0 (EK1200)^E3 (EK1122)^950-101W-R4-MPS-2^PPS Stoppers 1">
+				<Link VarA="PlcTask Inputs^CurrentBPUpdate.st1k2Watcher.i_StopperInLS" VarB="Channel 3^ST1K2 IN" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^CurrentBPUpdate.st1k2Watcher.i_StopperOutLS" VarB="Channel 4^ST1K2 OUT" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^CurrentBPUpdate.st3k4Watcher.i_StopperInLS" VarB="Channel 1^ST3K4 IN" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^CurrentBPUpdate.st3k4Watcher.i_StopperOutLS" VarB="Channel 2^ST3K4 OUT" AutoLink="true"/>
 			</OwnerB>
@@ -4030,6 +4032,7 @@
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^E0 (EK1200)^PMPS_Premp">
 				<Link VarA="PlcTask Outputs^CurrentBPUpdate.q_MR1K1_VETO" VarB="Channel 13^MR1K1 IN" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^CurrentBPUpdate.st1k2Watcher.q_StopperIN_Relay" VarB="Channel 14^ST1K2 RELAY IN" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^CurrentBPUpdate.st3k4Watcher.q_StopperIN_Relay" VarB="Channel 12^ST3K4 RELAY IN" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^MAIN.bM1K1_OUT_Override" VarB="Channel 8^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES[1]" VarB="Channel 9^Output" AutoLink="true"/>
