@@ -39,6 +39,15 @@ VAR
     st3k4Watcher : FB_KStopper(
         PMPS.K_Stopper.ST3K4,
         'ST3K4');
+		
+   {attribute 'TcLinkTo' := '
+                .i_StopperInLS:=TIIB[PPS Stoppers 1]^Channel 3^ST1K2 IN;
+                .i_StopperOutLS:=TIIB[PPS Stoppers 1]^Channel 4^ST1K2 OUT;
+				.q_StopperIN_Relay:=TIIB[PMPS_Premp]^Channel 14^ST1K2 RELAY IN;
+                                '}
+    st1k2Watcher : FB_KStopper(
+        PMPS.K_Stopper.ST1K2,
+        'ST1K2');
 	
 	// MR1K1 Veto
 	////////////////////////
@@ -66,7 +75,7 @@ q_rPhotonEnergy := LREAL_TO_REAL(fbKPhotonEnergy.fbSXU.fCurrentPhotonEnergy);
 
 // Stopper readbacks
 st3k4Watcher(stCurrentBP:=PMPS_GVL.stCurrentBeamParameters);
-
+st1k2Watcher(stCurrentBP:=PMPS_GVL.stCurrentBeamParameters);
 // MR1K1 Veto
 ////////////////////////
 	fbMR1K1VetoDevice(
