@@ -24,7 +24,7 @@ Settings
 Pragmas
 -------
 
-Total pragmas found: 43
+Total pragmas found: 44
 Total linter errors: 0
 
 
@@ -81,7 +81,7 @@ CurrentBPUpdate
 .. raw:: html
 
    <details>
-       <summary>15 Symbols</summary>
+       <summary>20 Symbols</summary>
 
 .. csv-table::
     :header: Symbol, Type, Offset/Size
@@ -97,6 +97,11 @@ CurrentBPUpdate
         CurrentBPUpdate.i_MR1K1_ENC, UDINT, 641634656 (32)
         CurrentBPUpdate.q_MR1K1_VETO, BOOL, 641518984 (8)
         CurrentBPUpdate.q_rPhotonEnergy, REAL, 641634624 (32)
+        CurrentBPUpdate.st1k2Watcher, FB_KStopper, 647661120 (84608)
+        CurrentBPUpdate.st1k2Watcher.i_StopperInLS, BOOL, 647661192 (8)
+        CurrentBPUpdate.st1k2Watcher.i_StopperOutLS, BOOL, 647661184 (8)
+        CurrentBPUpdate.st1k2Watcher.q_StopperIN_Relay, BOOL, 647661208 (8)
+        CurrentBPUpdate.st1k2Watcher.q_StopperOUT_Relay, BOOL, 647661200 (8)
         CurrentBPUpdate.st3k4Watcher, FB_KStopper, 641634688 (84608)
         CurrentBPUpdate.st3k4Watcher.i_StopperInLS, BOOL, 641634760 (8)
         CurrentBPUpdate.st3k4Watcher.i_StopperOutLS, BOOL, 641634752 (8)

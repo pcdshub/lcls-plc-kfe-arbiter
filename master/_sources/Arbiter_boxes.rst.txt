@@ -343,7 +343,7 @@ PDO Channel 14 (Index #x160d, Flags #x0011, SyncMan 1)
     :header: Name, Comment, BitLen, Index, Type
     :align: center
 
-        "Output", "", , "#x70d0", "BIT"
+        "ST1K2 RELAY IN", "", , "#x70d0", "BIT"
 
 
 
@@ -461,7 +461,7 @@ PDO Channel 3 (Index #x1a02, Flags #x0011, SyncMan 0)
     :header: Name, Comment, BitLen, Index, Type
     :align: center
 
-        "Input", "", , "#x6020", "BIT"
+        "ST1K2 IN", "", , "#x6020", "BIT"
 
 
 
@@ -471,7 +471,7 @@ PDO Channel 4 (Index #x1a03, Flags #x0011, SyncMan 0)
     :header: Name, Comment, BitLen, Index, Type
     :align: center
 
-        "Input", "", , "#x6030", "BIT"
+        "ST1K2 OUT", "", , "#x6030", "BIT"
 
 
 

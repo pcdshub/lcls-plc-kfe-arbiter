@@ -371,6 +371,15 @@
         <span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">ST3K4</span><span class="p">,</span>
         <span class="s1">&#39;ST3K4&#39;</span><span class="p">);</span>
 
+   <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+                <span class="o">.</span><span class="n">i_StopperInLS</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">PPS</span> <span class="n">Stoppers</span> <span class="mi">1</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">3</span><span class="o">^</span><span class="n">ST1K2</span> <span class="n">IN</span><span class="p">;</span>
+                <span class="o">.</span><span class="n">i_StopperOutLS</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">PPS</span> <span class="n">Stoppers</span> <span class="mi">1</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">4</span><span class="o">^</span><span class="n">ST1K2</span> <span class="n">OUT</span><span class="p">;</span>
+                            <span class="o">.</span><span class="n">q_StopperIN_Relay</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">PMPS_Premp</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">14</span><span class="o">^</span><span class="n">ST1K2</span> <span class="n">RELAY</span> <span class="n">IN</span><span class="p">;</span>
+                                <span class="s1">&#39;}</span>
+    <span class="n">st1k2Watcher</span> <span class="p">:</span> <span class="n">FB_KStopper</span><span class="p">(</span>
+        <span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">ST1K2</span><span class="p">,</span>
+        <span class="s1">&#39;ST1K2&#39;</span><span class="p">);</span>
+
     <span class="o">//</span> <span class="n">MR1K1</span> <span class="n">Veto</span>
     <span class="o">////////////////////////</span>
             <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[plc-rix-optics]^IO Inputs^MR1K1_Y_ENC&#39;</span><span class="p">}</span>
@@ -394,7 +403,7 @@
 
 <span class="o">//</span> <span class="n">Stopper</span> <span class="n">readbacks</span>
 <span class="n">st3k4Watcher</span><span class="p">(</span><span class="n">stCurrentBP</span><span class="o">:=</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="p">);</span>
-
+<span class="n">st1k2Watcher</span><span class="p">(</span><span class="n">stCurrentBP</span><span class="o">:=</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="p">);</span>
 <span class="o">//</span> <span class="n">MR1K1</span> <span class="n">Veto</span>
 <span class="o">////////////////////////</span>
     <span class="n">fbMR1K1VetoDevice</span><span class="p">(</span>
