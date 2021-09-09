@@ -431,6 +431,14 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
+					<Name>CurrentBPUpdate.st1k2Watcher.i_StopperOutLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>CurrentBPUpdate.st1k2Watcher.i_StopperInLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>PMPS_Arbiter.plc_kfe_motion_PMPS_IO.i_RequestedBP</Name>
 					<Comment>
 						<![CDATA[ Requested BP from subsystem]]>
@@ -2237,14 +2245,6 @@
 					<Name>P_AT1K0_SL1K0.i_nState_KFEMOT</Name>
 					<Type>UINT</Type>
 				</Var>
-				<Var>
-					<Name>CurrentBPUpdate.st1k2Watcher.i_StopperOutLS</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>CurrentBPUpdate.st1k2Watcher.i_StopperInLS</Name>
-					<Type>BOOL</Type>
-				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
 				<Name>PlcTask Outputs</Name>
@@ -2275,6 +2275,14 @@
 				</Var>
 				<Var>
 					<Name>CurrentBPUpdate.st3k4Watcher.q_StopperIN_Relay</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>CurrentBPUpdate.st1k2Watcher.q_StopperOUT_Relay</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>CurrentBPUpdate.st1k2Watcher.q_StopperIN_Relay</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -3775,14 +3783,6 @@
 					<Name>GVL.g_FastFaultOutput1.q_xFastFaultOut</Name>
 					<Type>BOOL</Type>
 				</Var>
-				<Var>
-					<Name>CurrentBPUpdate.st1k2Watcher.q_StopperOUT_Relay</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>CurrentBPUpdate.st1k2Watcher.q_StopperIN_Relay</Name>
-					<Type>BOOL</Type>
-				</Var>
 			</Vars>
 			<Vars VarGrpType="8">
 				<Name>PlcTask Retains</Name>
@@ -3935,6 +3935,7 @@
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_rix_mot_PMPS_IO.i_RequestedBP" VarB="IO Inputs^RequestedBP" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_rix_mot_PMPS_IO.i_TxPDOState" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_rix_mot_PMPS_IO.i_WcState" VarB="WcState^WcStateIn" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^CurrentBPUpdate.q_rPhotonEnergy" VarB="IO Outputs^rPhotonEnergy"/>
 				<Link VarA="PlcTask Outputs^PMPS_Arbiter.plc_rix_mot_PMPS_IO.o_CurrentBP" VarB="IO Outputs^CurrentBP" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^B940-009-R07-MPS-1 CU1-ESC2^plc-rix-optics">
