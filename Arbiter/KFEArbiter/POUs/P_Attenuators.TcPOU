@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="P_Attenuators" Id="{3925ea90-6cc3-452f-83ed-051c0e733393}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM P_Attenuators
+VAR
+	
+	// Transmisison request and status with plc-kfe-gatt
+	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-gatt]^IO Outputs^Requested Transmission'}
+	q_nTranToAT1K0Req AT %Q* : ST_PMPS_Attenuator_IO; // Transmission request to AT1K0
+	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-gatt]^IO Inputs^Current Transmission'}
+	i_nTranToAT1K0Stat AT %I* : ST_PMPS_Attenuator_IO; // Transmission request to AT1K0
+
+	// plc-kfe-gatt interface diagnostics
+	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-gatt]^WcState^WcStateOut'}
+	i_bWcStateOut_AT1K0 AT %I* : BOOL;
+	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-gatt]^WcState^WcStateIn'}
+	i_bWcStateIn_AT1K0 AT %I* : BOOL;
+	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-gatt]^InfoData^State'}
+	i_nState_AT1K0 AT %I* : UINT;
+	
+	// Apterure request and status to plc-kfe-motion
+	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-motion]^IO Outputs^AptArrayReq'}
+	q_stAptArrayReq AT %Q* : ARRAY [1..4] OF ST_PMPS_Aperture_IO;
+	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-motion]^IO Inputs^AptArrayStatus'}
+	i_stAptArrayStat AT %I* : ARRAY [1..4] OF ST_PMPS_Aperture_IO;
+	
+	// plc-kfe-motion interface diagnostics
+	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-motion]^WcState^WcStateOut'}
+	i_bWcStateOut_KFEMOT AT %I* : BOOL;
+	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-motion]^WcState^WcStateIn'}
+	i_bWcStateIn_KFEMOT AT %I* : BOOL;
+	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-motion]^InfoData^State'}
+	i_nState_KFEMOT AT %I* : UINT;
+
+	idx : UINT;
+	
+	ffKFEMotConnection : FB_FastFault := (
+		i_DevName := 'PMPS Arbiter',
+		i_Desc := 'EtherCAT interface watcher, for connection to KFE Motion systems for SL1K0 size requests. Very rare. Make a note, and if it can be reset, go ahead.',
+		i_TypeCode := 16#5);
+	ffKFEGattConnection : FB_FastFault := (
+		i_DevName := 'PMPS Arbiter',
+		i_Desc := 'EtherCAT interface watcher, for connection to KFE Gas Att. systems for Transmission requests. Very rare. Make a note, and if it can be reset, go ahead.',
+		i_TypeCode := 16#5);
+	bSimApt: BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+// If interface with plc-kfe-gatt OK carry out exchange
+IF i_bWcStateOut_AT1K0 = 0 AND i_bWcStateIn_AT1K0 = 0 AND i_nState_AT1K0 = 8 THEN
+	
+	// Send request from this arbiter to the gas attenuator
+	q_nTranToAT1K0Req.nTran := PMPS_GVL.stRequestedBeamParameters.nTran*PMPS_GVL.TRANS_SCALING_FACTOR;
+	q_nTranToAT1K0Req.xAttOK := 16#FF;
+	
+	//Update 
+	PMPS_GVL.stCurrentBeamParameters.nTran := i_nTranToAT1K0Stat.nTran;//REAL_TO_UINT(UINT_TO_REAL(i_nTranToAT1K0Stat.nTran)*0.01);
+
+	ffKFEGattConnection.i_xOK := TRUE;
+ELSE
+	// Fast fault
+	ffKFEGattConnection.i_xOK := FALSE;
+	
+	PMPS_GVL.stCurrentBeamParameters.nTran := PMPS_GVL.TRANS_SCALING_FACTOR;//100;
+	
+END_IF
+
+ffKFEGattConnection(io_fbFFHWO := g_FastFaultOutput1);
+
+// If interface with plc-kfe-motion OK, carry out exchange
+IF i_bWcStateIn_KFEMOT = 0 AND i_bWcStateOut_KFEMOT = 0 AND i_nState_KFEMOT = 8 THEN
+	
+	// Send request from this arbiter to kfe-mot
+	MEMCPY( ADR(q_stAptArrayReq) , ADR(PMPS_GVL.stRequestedBeamParameters.astApertures) , PMPS_GVL.MAX_APERTURES * SIZEOF(ST_PMPS_Aperture_IO) );
+	
+	// 	Recieve current apreture state for broadcast
+	MEMCPY( ADR(PMPS_GVL.stCurrentBeamParameters.astApertures) , ADR(i_stAptArrayStat) , PMPS_GVL.MAX_APERTURES * SIZEOF(ST_PMPS_Aperture_IO) );
+	
+	ffKFEMotConnection.i_xOK := TRUE;
+	
+ELSIF bSimApt THEN
+	PMPS_GVL.stCurrentBeamParameters.astApertures := PMPS_GVL.stRequestedBeamParameters.astApertures;
+ELSE
+	// Fast fault
+	ffKFEMotConnection.i_xOK := FALSE;
+	// Set broadcast apterture states to not OK
+	FOR idx := 1 TO PMPS_GVL.MAX_APERTURES DO
+		PMPS_GVL.stCurrentBeamParameters.astApertures[idx].xOK := FALSE;
+	END_FOR
+END_IF
+
+ffKFEMotConnection(io_fbFFHWO := g_FastFaultOutput1);
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

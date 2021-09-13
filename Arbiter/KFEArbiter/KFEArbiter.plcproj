@@ -73,6 +73,12 @@
     <Compile Include="POUs\P_AT1K0_SL1K0.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\P_Attenuators.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\P_SATT.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Testing.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -114,7 +120,7 @@
     <LibraryReference Include="LCLS General,2.4.2,SLAC">
       <Namespace>LCLS_General</Namespace>
     </LibraryReference>
-    <LibraryReference Include="PMPS,2.0.0,SLAC - LCLS">
+    <LibraryReference Include="PMPS,2.1.0,SLAC - LCLS">
       <Namespace>PMPS</Namespace>
     </LibraryReference>
   </ItemGroup>

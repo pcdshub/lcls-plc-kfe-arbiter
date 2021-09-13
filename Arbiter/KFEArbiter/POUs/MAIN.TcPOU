@@ -57,6 +57,8 @@ PMPS_Arbiter();
 
 P_AT1K0_SL1K0();
 
+P_SATT();
+
 bM1K1_OUT_Override := PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT];
 
 fbLogHandler();

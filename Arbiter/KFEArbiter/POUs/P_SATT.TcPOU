@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="P_SATT" Id="{905bbaad-b3f0-420e-b1b5-0ee74487c823}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM P_SATT
+VAR
+	//All Sold attenuators requests are summerrized into this one output
+	q_nTranSattReq AT %Q* : ARRAY [1..16] OF ST_PMPS_Attenuator_IO; // Transmission request to ALL PLCs
+	//Per PLC current satt trans
+	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-motion]^IO Inputs^SattArrayStatus'}
+	i_nTranToStat_KFE AT %I* : ARRAY [1..16] OF ST_PMPS_Attenuator_IO; // Transmission request to KFE MOT PLC
+		{attribute 'TcLinkTo' := 'TIIB[plc-rix-mot]^IO Inputs^SattArrayStatus'}
+	i_nTranToStat_RIX AT %I* : ARRAY [1..16] OF ST_PMPS_Attenuator_IO; // Transmission request to RIX MOT PLC
+	
+	// plc-tmo-mot interface diagnostics
+	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-motion]^WcState^WcStateOut'}
+	i_bWcStateOut_kfe_mot AT %I* : BOOL;
+	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-motion]^WcState^WcStateIn'}
+	i_bWcStateIn_kfe_mot AT %I* : BOOL;
+	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-motion]^InfoData^State'}
+	i_nState_kfe_mot AT %I* : UINT;
+	
+	// plc-rix-mot interface diagnostics
+	{attribute 'TcLinkTo' := 'TIIB[plc-rix-mot]^WcState^WcStateOut'}
+	i_bWcStateOut_rix_mot AT %I* : BOOL;
+	{attribute 'TcLinkTo' := 'TIIB[plc-rix-mot]^WcState^WcStateIn'}
+	i_bWcStateIn_rix_mot AT %I* : BOOL;
+	{attribute 'TcLinkTo' := 'TIIB[plc-rix-mot]^InfoData^State'}
+	i_nState_rix_mot AT %I* : UINT;
+	
+	//FFO Connection per PLC
+	ffkfeConnection : FB_FastFault := (
+		i_DevName := 'PMPS Arbiter',
+		i_Desc := 'EtherCAT interface watcher, for tmo-mot connection to systems for attenuation requests. Very rare. Make a note, and if it can be reset, go ahead.',
+		i_TypeCode := 16#5);
+	ffRixConnection : FB_FastFault := (
+		i_DevName := 'PMPS Arbiter',
+		i_Desc := 'EtherCAT interface watcher, for rix-mot connection to systems for attenuation requests. Very rare. Make a note, and if it can be reset, go ahead.',
+		i_TypeCode := 16#5);
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+
+// Send request from this arbiter to all satts
+MEMCPY( ADR(q_nTranSattReq) , ADR(PMPS_GVL.stRequestedBeamParameters.astAttenuators) , PMPS_GVL.AUX_ATTENUATORS * SIZEOF(ST_PMPS_Attenuator_IO) );
+	
+//TMO motion PLC SATT current trans update
+IF i_bWcStateIn_kfe_mot = 0 AND i_bWcStateOut_kfe_mot = 0 AND i_nState_kfe_mot = 8 THEN
+	// 	Recieve current transmission of the satt
+	PMPS_GVL.stCurrentBeamParameters.astAttenuators[PMPS.K_Attenuators.AT1K4].nTran :=  i_nTranToStat_KFE[PMPS.K_Attenuators.AT1K4].nTran;
+	PMPS_GVL.stCurrentBeamParameters.astAttenuators[PMPS.K_Attenuators.AT1K4].xAttOK :=  i_nTranToStat_KFE[PMPS.K_Attenuators.AT1K4].xAttOK;	
+	ffkfeConnection.i_xOK := TRUE;
+ELSE
+	// Fast fault
+	ffkfeConnection.i_xOK := FALSE;
+END_IF
+ffkfeConnection(io_fbFFHWO := g_FastFaultOutput1);
+
+//RIX motion PLC SATT current trans update
+IF i_bWcStateIn_rix_mot = 0 AND i_bWcStateOut_rix_mot = 0 AND i_nState_rix_mot = 8 THEN
+	
+	// 	Recieve current transmission of the satt
+	PMPS_GVL.stCurrentBeamParameters.astAttenuators[PMPS.K_Attenuators.AT1K2].nTran :=  i_nTranToStat_RIX[PMPS.K_Attenuators.AT1K2].nTran;
+	PMPS_GVL.stCurrentBeamParameters.astAttenuators[PMPS.K_Attenuators.AT1K2].xAttOK :=  i_nTranToStat_RIX[PMPS.K_Attenuators.AT1K2].xAttOK;	
+	PMPS_GVL.stCurrentBeamParameters.astAttenuators[PMPS.K_Attenuators.AT2K2].nTran :=  i_nTranToStat_RIX[PMPS.K_Attenuators.AT2K2].nTran;
+	PMPS_GVL.stCurrentBeamParameters.astAttenuators[PMPS.K_Attenuators.AT2K2].xAttOK :=  i_nTranToStat_RIX[PMPS.K_Attenuators.AT2K2].xAttOK;	
+	ffRixConnection.i_xOK := TRUE;	
+ELSE
+	// Fast fault
+	ffRixConnection.i_xOK := FALSE;
+END_IF
+ffRixConnection(io_fbFFHWO := g_FastFaultOutput1);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
