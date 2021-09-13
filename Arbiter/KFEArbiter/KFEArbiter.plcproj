@@ -73,9 +73,6 @@
     <Compile Include="POUs\P_AT1K0_SL1K0.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\P_Attenuators.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\P_SATT.TcPOU">
       <SubType>Code</SubType>
     </Compile>
