@@ -295,7 +295,7 @@
 			</Hides>
 		</DataType>
 		<DataType>
-			<Name GUID="{63B6CB02-1D33-B57D-1DC8-CC6DA3ED8E9B}" AutoDeleteType="true">ARRAY [1..16] OF ST_PMPS_Attenuator_IO</Name>
+			<Name GUID="{63B6CB02-1D33-B57D-1DC8-CC6DA3ED8E9B}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..16] OF ST_PMPS_Attenuator_IO</Name>
 			<BitSize>1024</BitSize>
 			<BaseType GUID="{7E016B85-166E-4B4F-AAC4-ECA8DDD44F13}">ST_PMPS_Attenuator_IO</BaseType>
 			<ArrayInfo>
@@ -486,12 +486,4 @@
 			<CoeProfile ProfileNo="5001"/>
 		</EtherCAT>
 	</Box>
-	<Mappings>
-		<OwnerA>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-motion">
-				<Link VarA="IO Inputs^SattArrayStatus" VarB="IO Outputs^SattArrayReq"/>
-				<Link VarA="IO Outputs^SattArrayReq" VarB="IO Inputs^SattArrayStatus"/>
-			</OwnerB>
-		</OwnerA>
-	</Mappings>
 </TcSmItem>
