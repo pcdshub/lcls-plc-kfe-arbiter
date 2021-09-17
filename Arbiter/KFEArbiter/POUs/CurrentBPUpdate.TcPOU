@@ -26,6 +26,8 @@ VAR
 	
 	// Photon energy for the masses
 	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-gatt]^IO Outputs^rPhotonEnergy'}
+	{attribute 'TcLinkTo' := 'TIIB[plc-rix-mot]^IO Outputs^rPhotonEnergy'}
+	{attribute 'TcLinkTo' := 'TIIB[plc-rix-optics]^IO Outputs^rPhotonEnergy'}
 	q_rPhotonEnergy AT %Q* : REAL;
 	
 	
