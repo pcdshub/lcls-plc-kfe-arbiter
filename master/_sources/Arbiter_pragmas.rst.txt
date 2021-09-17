@@ -6,7 +6,7 @@ Pragmas
     :header: PLC Name, Total Pragmas, Errors
     :align: center
 
-    :ref:`KFEArbiter <KFEArbiter_overview_pragmas>`, 44, 0
+    :ref:`KFEArbiter <KFEArbiter_overview_pragmas>`, 54, 0
 
 
 .. _KFEArbiter_overview_pragmas:
@@ -15,7 +15,7 @@ Pragmas
 KFEArbiter
 ^^^^^^^^^^
 
-Total pragmas found: 44
+Total pragmas found: 54
 Total linter errors: 0
 
 

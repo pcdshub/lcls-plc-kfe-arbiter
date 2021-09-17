@@ -45,6 +45,8 @@ GVL
     END_VAR
 
 
+
+
 GVL_CheckBounds
 ^^^^^^^^^^^^^^^
 
@@ -56,6 +58,8 @@ GVL_CheckBounds
         nTooHigh : UDINT;
         nDivByZero : UDINT;
     END_VAR
+
+
 
 
 POUs
@@ -106,6 +110,10 @@ CheckBounds
     END_FUNCTION
 
 
+Related:
+    * `GVL_CheckBounds`_
+
+
 CheckRangeSigned
 ^^^^^^^^^^^^^^^^
 
@@ -130,6 +138,8 @@ CheckRangeSigned
     END_FUNCTION
 
 
+
+
 CheckRangeUnsigned
 ^^^^^^^^^^^^^^^^^^
 
@@ -152,6 +162,8 @@ CheckRangeUnsigned
     {flow}
 
     END_FUNCTION
+
+
 
 
 CurrentBPUpdate
@@ -184,6 +196,8 @@ CurrentBPUpdate
     	
     	// Photon energy for the masses
     	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-gatt]^IO Outputs^rPhotonEnergy'}
+    	{attribute 'TcLinkTo' := 'TIIB[plc-rix-mot]^IO Outputs^rPhotonEnergy'}
+    	{attribute 'TcLinkTo' := 'TIIB[plc-rix-optics]^IO Outputs^rPhotonEnergy'}
     	q_rPhotonEnergy AT %Q* : REAL;
     	
     	
@@ -242,6 +256,10 @@ CurrentBPUpdate
     END_PROGRAM
 
 
+Related:
+    * `GVL`_
+
+
 CXDisplay
 ^^^^^^^^^
 
@@ -268,6 +286,8 @@ CXDisplay
     END_PROGRAM
 
 
+
+
 Fast_Faults_Evaluate
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -279,6 +299,8 @@ Fast_Faults_Evaluate
     g_FastFaultOutput2.EvaluateOutput(bAutoReset:=TRUE);
 
     END_PROGRAM
+
+
 
 
 FB_BeamClassOutputs
@@ -376,6 +398,8 @@ FB_BeamClassOutputs
     END_FUNCTION_BLOCK
 
 
+
+
 MachineSimulation
 ^^^^^^^^^^^^^^^^^
 
@@ -403,6 +427,10 @@ MachineSimulation
     //PMPS_GVL.stCurrentBeamParameters.neVRange := 0;
 
     END_PROGRAM
+
+
+Related:
+    * `GVL`_
 
 
 MAIN
@@ -464,10 +492,13 @@ MAIN
 
     P_AT1K0_SL1K0();
 
+    P_SATT();
+
     bM1K1_OUT_Override := PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT];
 
     fbLogHandler();
     A_SystemTime();
+    Fast_Faults_Evaluate();
 
     END_PROGRAM
     ACTION A_SystemTime:
@@ -483,6 +514,16 @@ MAIN
     ACTION Initialize:
 
     END_ACTION
+
+
+Related:
+    * `CurrentBPUpdate`_
+    * `Fast_Faults_Evaluate`_
+    * `MachineSimulation`_
+    * `PMPS_Arbiter`_
+    * `P_AT1K0_SL1K0`_
+    * `P_SATT`_
+    * `Testing`_
 
 
 P_AT1K0_SL1K0
@@ -579,6 +620,84 @@ P_AT1K0_SL1K0
     ffKFEMotConnection(io_fbFFHWO := g_FastFaultOutput1);
 
     END_PROGRAM
+
+
+
+
+P_SATT
+^^^^^^
+
+::
+
+    PROGRAM P_SATT
+    VAR
+    	//All Sold attenuators requests are summerrized into this one output
+    	q_SattArrayReq AT %Q* : ARRAY [1..PMPS_GVL.AUX_ATTENUATORS] OF ST_PMPS_Attenuator_IO; // Transmission request to ALL PLCs
+    	//Per PLC current satt trans
+    	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-motion]^IO Inputs^SattArrayStatus'}
+    	i_SattArrayStatus_KFE AT %I* : ARRAY [1..PMPS_GVL.AUX_ATTENUATORS] OF ST_PMPS_Attenuator_IO; // Transmission request to KFE MOT PLC
+    		{attribute 'TcLinkTo' := 'TIIB[plc-rix-mot]^IO Inputs^SattArrayStatus'}
+    	i_SattArrayStatus_RIX AT %I* : ARRAY [1..PMPS_GVL.AUX_ATTENUATORS] OF ST_PMPS_Attenuator_IO; // Transmission request to RIX MOT PLC
+    	
+    	// plc-tmo-mot interface diagnostics
+    	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-motion]^WcState^WcStateOut'}
+    	i_bWcStateOut_kfe_mot AT %I* : BOOL;
+    	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-motion]^WcState^WcStateIn'}
+    	i_bWcStateIn_kfe_mot AT %I* : BOOL;
+    	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-motion]^InfoData^State'}
+    	i_nState_kfe_mot AT %I* : UINT;
+    	
+    	// plc-rix-mot interface diagnostics
+    	{attribute 'TcLinkTo' := 'TIIB[plc-rix-mot]^WcState^WcStateOut'}
+    	i_bWcStateOut_rix_mot AT %I* : BOOL;
+    	{attribute 'TcLinkTo' := 'TIIB[plc-rix-mot]^WcState^WcStateIn'}
+    	i_bWcStateIn_rix_mot AT %I* : BOOL;
+    	{attribute 'TcLinkTo' := 'TIIB[plc-rix-mot]^InfoData^State'}
+    	i_nState_rix_mot AT %I* : UINT;
+    	
+    	//FFO Connection per PLC
+    	ffkfeConnection : FB_FastFault := (
+    		i_DevName := 'PMPS Arbiter',
+    		i_Desc := 'EtherCAT interface watcher, for tmo-mot connection to systems for attenuation requests. Very rare. Make a note, and if it can be reset, go ahead.',
+    		i_TypeCode := 16#5);
+    	ffRixConnection : FB_FastFault := (
+    		i_DevName := 'PMPS Arbiter',
+    		i_Desc := 'EtherCAT interface watcher, for rix-mot connection to systems for attenuation requests. Very rare. Make a note, and if it can be reset, go ahead.',
+    		i_TypeCode := 16#5);
+    END_VAR
+    // Send request from this arbiter to all satts
+    MEMCPY( ADR(q_SattArrayReq) , ADR(PMPS_GVL.stRequestedBeamParameters.astAttenuators) , PMPS_GVL.AUX_ATTENUATORS * SIZEOF(ST_PMPS_Attenuator_IO) );
+    	
+    //TMO motion PLC SATT current trans update
+    IF i_bWcStateIn_kfe_mot = 0 AND i_bWcStateOut_kfe_mot = 0 AND i_nState_kfe_mot = 8 THEN
+    	// 	Recieve current transmission of the satt
+    	PMPS_GVL.stCurrentBeamParameters.astAttenuators[PMPS.K_Attenuators.AT1K4].nTran :=  i_SattArrayStatus_KFE[PMPS.K_Attenuators.AT1K4].nTran;
+    	PMPS_GVL.stCurrentBeamParameters.astAttenuators[PMPS.K_Attenuators.AT1K4].xAttOK :=  i_SattArrayStatus_KFE[PMPS.K_Attenuators.AT1K4].xAttOK;	
+    	ffkfeConnection.i_xOK := TRUE;
+    ELSE
+    	// Fast fault
+    	ffkfeConnection.i_xOK := FALSE;
+    END_IF
+    ffkfeConnection(io_fbFFHWO := g_FastFaultOutput1);
+
+    //RIX motion PLC SATT current trans update
+    IF i_bWcStateIn_rix_mot = 0 AND i_bWcStateOut_rix_mot = 0 AND i_nState_rix_mot = 8 THEN
+    	
+    	// 	Recieve current transmission of the satt
+    	PMPS_GVL.stCurrentBeamParameters.astAttenuators[PMPS.K_Attenuators.AT1K2].nTran :=  i_SattArrayStatus_RIX[PMPS.K_Attenuators.AT1K2].nTran;
+    	PMPS_GVL.stCurrentBeamParameters.astAttenuators[PMPS.K_Attenuators.AT1K2].xAttOK :=  i_SattArrayStatus_RIX[PMPS.K_Attenuators.AT1K2].xAttOK;	
+    	PMPS_GVL.stCurrentBeamParameters.astAttenuators[PMPS.K_Attenuators.AT2K2].nTran :=  i_SattArrayStatus_RIX[PMPS.K_Attenuators.AT2K2].nTran;
+    	PMPS_GVL.stCurrentBeamParameters.astAttenuators[PMPS.K_Attenuators.AT2K2].xAttOK :=  i_SattArrayStatus_RIX[PMPS.K_Attenuators.AT2K2].xAttOK;	
+    	ffRixConnection.i_xOK := TRUE;	
+    ELSE
+    	// Fast fault
+    	ffRixConnection.i_xOK := FALSE;
+    END_IF
+    ffRixConnection(io_fbFFHWO := g_FastFaultOutput1);
+
+    END_PROGRAM
+
+
 
 
 PMPS_Arbiter
@@ -759,6 +878,11 @@ PMPS_Arbiter
     END_PROGRAM
 
 
+Related:
+    * `FB_BeamClassOutputs`_
+    * `GVL`_
+
+
 Testing
 ^^^^^^^
 
@@ -783,4 +907,9 @@ Testing
     gAttemptReset(IN:=GVL.g_FastFaultOutput1.xOK, Q=>GVL.g_FastFaultOutput1.i_xReset);
 
     END_PROGRAM
+
+
+Related:
+    * `GVL`_
+    * `PMPS_Arbiter`_
 
