@@ -44,7 +44,7 @@
 		<Box File="B940-009-R07-MPS-1 CU1-ESC1.xti" Id="23">
 			<EtherCAT PortABoxInfo="#x01000016"/>
 		</Box>
-		<EtherCAT EnableVirtualSwitch="true" MaxSwitchPorts="13" MaxSwitchFrames="340">
+		<EtherCAT EnableVirtualSwitch="true" MaxSwitchPorts="14" MaxSwitchFrames="360">
 			<Redundancy Mode="2" AdapterReference="true" PreviousPort="33554461"/>
 			<SyncUnit Name="rix" NoDeleteIfUnused="true"/>
 			<SyncUnit Name="kfe" NoDeleteIfUnused="true"/>

@@ -4,9 +4,6 @@
     <!--CycleTime in micro seconds.-->
     <CycleTime>1000</CycleTime>
     <Priority>1</Priority>
-    <PouCall>
-      <Name>Fast_Faults_Evaluate</Name>
-    </PouCall>
     <TaskFBGuid>{3ac96fc9-e421-4e8e-b84b-6fdf44701d5b}</TaskFBGuid>
     <Fb_init>{64972879-2cd2-45f7-8ca9-ad0055de69c4}</Fb_init>
     <Fb_exit>{3aac905e-82c5-4b70-97c8-39b9147f935f}</Fb_exit>
