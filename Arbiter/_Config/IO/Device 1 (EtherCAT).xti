@@ -49,6 +49,7 @@
 			<SyncUnit Name="rix" NoDeleteIfUnused="true"/>
 			<SyncUnit Name="kfe" NoDeleteIfUnused="true"/>
 			<SyncUnit Name="tmo" NoDeleteIfUnused="true"/>
+			<SyncUnit Name="crix" NoDeleteIfUnused="true"/>
 		</EtherCAT>
 	</Device>
 </TcSmItem>
