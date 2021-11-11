@@ -24,7 +24,7 @@ Settings
 Pragmas
 -------
 
-Total pragmas found: 54
+Total pragmas found: 56
 Total linter errors: 0
 
 
@@ -64,15 +64,15 @@ Constants
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        Constants.bFPUSupport, BOOL, 643943192 (8)
-        Constants.bLittleEndian, BOOL, 643943048 (8)
-        Constants.bSimulationMode, BOOL, 643943184 (8)
-        Constants.CompilerVersion, VERSION, 643943120 (64)
-        Constants.CompilerVersionNumeric, DWORD, 643943264 (32)
-        Constants.nPackMode, UINT, 643943216 (16)
-        Constants.nRegisterSize, WORD, 643943200 (16)
-        Constants.RuntimeVersion, VERSION, 643943056 (64)
-        Constants.RuntimeVersionNumeric, DWORD, 643943232 (32)
+        Constants.bFPUSupport, BOOL, 644055656 (8)
+        Constants.bLittleEndian, BOOL, 643065528 (8)
+        Constants.bSimulationMode, BOOL, 644055648 (8)
+        Constants.CompilerVersion, VERSION, 644055584 (64)
+        Constants.CompilerVersionNumeric, DWORD, 644055744 (32)
+        Constants.nPackMode, UINT, 644055680 (16)
+        Constants.nRegisterSize, WORD, 644055664 (16)
+        Constants.RuntimeVersion, VERSION, 644055520 (64)
+        Constants.RuntimeVersionNumeric, DWORD, 644055712 (32)
 
 
 CurrentBPUpdate
@@ -125,6 +125,19 @@ DefaultGlobals
         DefaultGlobals.stSys, ST_System, 4096000 (88)
 
 
+Fast_Faults_Evaluate
+^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Symbol, Type, Offset/Size
+    :align: center
+
+        Fast_Faults_Evaluate.ff2_crix_mot_link, FB_FastFault, 642571744 (25088)
+        Fast_Faults_Evaluate.ff2_crix_vac_link, FB_FastFault, 642546656 (25088)
+        Fast_Faults_Evaluate.i_xFastFaultOut_crix_mot, BOOL, 642496464 (8)
+        Fast_Faults_Evaluate.i_xFastFaultOut_crix_vac, BOOL, 642496440 (8)
+
+
 GVL
 ^^^
 
@@ -132,16 +145,16 @@ GVL
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        GVL.AttemptReset, BOOL, 642434168 (8)
-        GVL.g_FastFaultOutput1, FB_HardwareFFOutput, 642953088 (494912)
-        GVL.g_FastFaultOutput1.q_xFastFaultOut, BOOL, 642953352 (8)
-        GVL.g_FastFaultOutput2, FB_HardwareFFOutput, 643448000 (494912)
-        GVL.g_FastFaultOutput2.q_xFastFaultOut, BOOL, 643448264 (8)
-        GVL.g_fbArbiter1, FB_Arbiter, 642485056 (466304)
-        GVL.g_rTestingVelocity, LREAL, 643942912 (64)
-        GVL.MAX_FAST_FAULTS, UINT, 642434192 (16)
+        GVL.AttemptReset, BOOL, 642496472 (8)
+        GVL.g_FastFaultOutput1, FB_HardwareFFOutput, 643065536 (494912)
+        GVL.g_FastFaultOutput1.q_xFastFaultOut, BOOL, 643065800 (8)
+        GVL.g_FastFaultOutput2, FB_HardwareFFOutput, 643560448 (494912)
+        GVL.g_FastFaultOutput2.q_xFastFaultOut, BOOL, 643560712 (8)
+        GVL.g_fbArbiter1, FB_Arbiter, 642597504 (466304)
+        GVL.g_rTestingVelocity, LREAL, 644055360 (64)
+        GVL.MAX_FAST_FAULTS, UINT, 643065504 (16)
         GVL.nLangId_OnlineMonitoring, DINT, 4391328 (32)
-        GVL.ReqBP, ST_BeamParams, 642951360 (1696)
+        GVL.ReqBP, ST_BeamParams, 643063808 (1696)
 
 
 GVL_CheckBounds
@@ -151,9 +164,9 @@ GVL_CheckBounds
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        GVL_CheckBounds.nDivByZero, UDINT, 643943008 (32)
-        GVL_CheckBounds.nTooHigh, UDINT, 643942976 (32)
-        GVL_CheckBounds.nTooLow, UDINT, 642953056 (32)
+        GVL_CheckBounds.nDivByZero, UDINT, 644055488 (32)
+        GVL_CheckBounds.nTooHigh, UDINT, 644055456 (32)
+        GVL_CheckBounds.nTooLow, UDINT, 644055424 (32)
 
 
 GVL_INTERNAL
@@ -733,7 +746,7 @@ PMPS_Arbiter
 .. raw:: html
 
    <details>
-       <summary>85 Symbols</summary>
+       <summary>99 Symbols</summary>
 
 .. csv-table::
     :header: Symbol, Type, Offset/Size
@@ -747,6 +760,20 @@ PMPS_Arbiter
         PMPS_Arbiter.fbMPSInterface.q_BC_ASSERTION_LINES, BOOL, 642035392 (64)
         PMPS_Arbiter.fbPhotonEnergyWatcher, FB_PhotonEnergyWatcher, 641905280 (128320)
         PMPS_Arbiter.fbSetPE, PE_Ranges, 641804000 (32)
+        PMPS_Arbiter.plc_crix_mot_PMPS_IO, FB_ArbiterToSubSys_IO, 642379904 (31136)
+        PMPS_Arbiter.plc_crix_mot_PMPS_IO.i_Connected, BOOL, 642385792 (8)
+        PMPS_Arbiter.plc_crix_mot_PMPS_IO.i_RequestedBP, ST_BeamParams_IO, 642380704 (1696)
+        PMPS_Arbiter.plc_crix_mot_PMPS_IO.i_TxPDOState, BOOL, 642385808 (8)
+        PMPS_Arbiter.plc_crix_mot_PMPS_IO.i_TxPDOToggle, BOOL, 642385816 (8)
+        PMPS_Arbiter.plc_crix_mot_PMPS_IO.i_WcState, BOOL, 642385800 (8)
+        PMPS_Arbiter.plc_crix_mot_PMPS_IO.o_CurrentBP, ST_BeamParams_IO, 642384096 (1696)
+        PMPS_Arbiter.plc_crix_vac_PMPS_IO, FB_ArbiterToSubSys_IO, 642411040 (31136)
+        PMPS_Arbiter.plc_crix_vac_PMPS_IO.i_Connected, BOOL, 642416928 (8)
+        PMPS_Arbiter.plc_crix_vac_PMPS_IO.i_RequestedBP, ST_BeamParams_IO, 642411840 (1696)
+        PMPS_Arbiter.plc_crix_vac_PMPS_IO.i_TxPDOState, BOOL, 642416944 (8)
+        PMPS_Arbiter.plc_crix_vac_PMPS_IO.i_TxPDOToggle, BOOL, 642416952 (8)
+        PMPS_Arbiter.plc_crix_vac_PMPS_IO.i_WcState, BOOL, 642416936 (8)
+        PMPS_Arbiter.plc_crix_vac_PMPS_IO.o_CurrentBP, ST_BeamParams_IO, 642415232 (1696)
         PMPS_Arbiter.plc_kfe_gatt_PMPS_IO, FB_ArbiterToSubSys_IO, 642099552 (31136)
         PMPS_Arbiter.plc_kfe_gatt_PMPS_IO.i_Connected, BOOL, 642105440 (8)
         PMPS_Arbiter.plc_kfe_gatt_PMPS_IO.i_RequestedBP, ST_BeamParams_IO, 642100352 (1696)
@@ -907,20 +934,20 @@ P_AT1K0_SL1K0
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        P_AT1K0_SL1K0.bSimApt, BOOL, 642431040 (8)
-        P_AT1K0_SL1K0.ffKFEGattConnection, FB_FastFault, 642405952 (25088)
-        P_AT1K0_SL1K0.ffKFEMotConnection, FB_FastFault, 642380864 (25088)
+        P_AT1K0_SL1K0.bSimApt, BOOL, 642493312 (8)
+        P_AT1K0_SL1K0.ffKFEGattConnection, FB_FastFault, 642468224 (25088)
+        P_AT1K0_SL1K0.ffKFEMotConnection, FB_FastFault, 642443136 (25088)
         P_AT1K0_SL1K0.i_bWcStateIn_AT1K0, BOOL, 641519000 (8)
-        P_AT1K0_SL1K0.i_bWcStateIn_KFEMOT, BOOL, 642380056 (8)
+        P_AT1K0_SL1K0.i_bWcStateIn_KFEMOT, BOOL, 642442328 (8)
         P_AT1K0_SL1K0.i_bWcStateOut_AT1K0, BOOL, 641518992 (8)
-        P_AT1K0_SL1K0.i_bWcStateOut_KFEMOT, BOOL, 642380048 (8)
-        P_AT1K0_SL1K0.i_nState_AT1K0, UINT, 642380032 (16)
-        P_AT1K0_SL1K0.i_nState_KFEMOT, UINT, 642380832 (16)
-        P_AT1K0_SL1K0.i_nTranToAT1K0Stat, ST_PMPS_Attenuator_IO, 642379968 (64)
-        P_AT1K0_SL1K0.i_stAptArrayStat, ST_PMPS_Aperture_IO, 642380448 (384)
-        P_AT1K0_SL1K0.idx, UINT, 642380848 (16)
-        P_AT1K0_SL1K0.q_nTranToAT1K0Req, ST_PMPS_Attenuator_IO, 642379904 (64)
-        P_AT1K0_SL1K0.q_stAptArrayReq, ST_PMPS_Aperture_IO, 642380064 (384)
+        P_AT1K0_SL1K0.i_bWcStateOut_KFEMOT, BOOL, 642442320 (8)
+        P_AT1K0_SL1K0.i_nState_AT1K0, UINT, 642442304 (16)
+        P_AT1K0_SL1K0.i_nState_KFEMOT, UINT, 642443104 (16)
+        P_AT1K0_SL1K0.i_nTranToAT1K0Stat, ST_PMPS_Attenuator_IO, 642442240 (64)
+        P_AT1K0_SL1K0.i_stAptArrayStat, ST_PMPS_Aperture_IO, 642442720 (384)
+        P_AT1K0_SL1K0.idx, UINT, 642443120 (16)
+        P_AT1K0_SL1K0.q_nTranToAT1K0Req, ST_PMPS_Attenuator_IO, 642442176 (64)
+        P_AT1K0_SL1K0.q_stAptArrayReq, ST_PMPS_Aperture_IO, 642442336 (384)
 
 .. raw:: html
 
@@ -940,17 +967,17 @@ P_SATT
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        P_SATT.ffkfeConnection, FB_FastFault, 642434208 (25088)
-        P_SATT.ffRixConnection, FB_FastFault, 642459296 (25088)
-        P_SATT.i_bWcStateIn_kfe_mot, BOOL, 642431056 (8)
-        P_SATT.i_bWcStateIn_rix_mot, BOOL, 642434160 (8)
-        P_SATT.i_bWcStateOut_kfe_mot, BOOL, 642431048 (8)
-        P_SATT.i_bWcStateOut_rix_mot, BOOL, 642431064 (8)
-        P_SATT.i_nState_kfe_mot, UINT, 642434144 (16)
-        P_SATT.i_nState_rix_mot, UINT, 642434176 (16)
-        P_SATT.i_SattArrayStatus_KFE, ST_PMPS_Attenuator_IO, 642432096 (1024)
-        P_SATT.i_SattArrayStatus_RIX, ST_PMPS_Attenuator_IO, 642433120 (1024)
-        P_SATT.q_SattArrayReq, ST_PMPS_Attenuator_IO, 642431072 (1024)
+        P_SATT.ffkfeConnection, FB_FastFault, 642496480 (25088)
+        P_SATT.ffRixConnection, FB_FastFault, 642521568 (25088)
+        P_SATT.i_bWcStateIn_kfe_mot, BOOL, 642493328 (8)
+        P_SATT.i_bWcStateIn_rix_mot, BOOL, 642496432 (8)
+        P_SATT.i_bWcStateOut_kfe_mot, BOOL, 642493320 (8)
+        P_SATT.i_bWcStateOut_rix_mot, BOOL, 642493336 (8)
+        P_SATT.i_nState_kfe_mot, UINT, 642496416 (16)
+        P_SATT.i_nState_rix_mot, UINT, 642496448 (16)
+        P_SATT.i_SattArrayStatus_KFE, ST_PMPS_Attenuator_IO, 642494368 (1024)
+        P_SATT.i_SattArrayStatus_RIX, ST_PMPS_Attenuator_IO, 642495392 (1024)
+        P_SATT.q_SattArrayReq, ST_PMPS_Attenuator_IO, 642493344 (1024)
 
 .. raw:: html
 
@@ -975,7 +1002,7 @@ TC_EVENTS
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        TC_EVENTS.LCLSGeneralEventClass, LCLSGeneralEventClass, 643992576 (960)
+        TC_EVENTS.LCLSGeneralEventClass, LCLSGeneralEventClass, 644105056 (960)
 
 
 TC_EVENT_CLASSES
@@ -985,12 +1012,12 @@ TC_EVENT_CLASSES
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        TC_EVENT_CLASSES.LCLSGeneralEventClass, GUID, 643962240 (128)
-        TC_EVENT_CLASSES.TcGeneralAdsEventClass, GUID, 643961728 (128)
-        TC_EVENT_CLASSES.TcRouterEventClass, GUID, 643961856 (128)
-        TC_EVENT_CLASSES.TcRTimeEventClass, GUID, 643961984 (128)
-        TC_EVENT_CLASSES.TcSystemEventClass, GUID, 643961600 (128)
-        TC_EVENT_CLASSES.Win32EventClass, GUID, 643962112 (128)
+        TC_EVENT_CLASSES.LCLSGeneralEventClass, GUID, 644074720 (128)
+        TC_EVENT_CLASSES.TcGeneralAdsEventClass, GUID, 644074208 (128)
+        TC_EVENT_CLASSES.TcRouterEventClass, GUID, 644074336 (128)
+        TC_EVENT_CLASSES.TcRTimeEventClass, GUID, 644074464 (128)
+        TC_EVENT_CLASSES.TcSystemEventClass, GUID, 644074080 (128)
+        TC_EVENT_CLASSES.Win32EventClass, GUID, 644074592 (128)
 
 
 TwinCAT_SystemInfoVarList
@@ -1000,13 +1027,13 @@ TwinCAT_SystemInfoVarList
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        TwinCAT_SystemInfoVarList.__FFOTask, _Implicit_Task_Info, 643947520 (704)
-        TwinCAT_SystemInfoVarList.__PlcTask, _Implicit_Task_Info, 643948224 (704)
-        TwinCAT_SystemInfoVarList._AppInfo, PlcAppSystemInfo, 643943296 (2048)
-        TwinCAT_SystemInfoVarList._TaskInfo, PlcTaskSystemInfo, 643945344 (2048)
-        TwinCAT_SystemInfoVarList._TaskOid_FFOTask, OTCID, 643947424 (32)
-        TwinCAT_SystemInfoVarList._TaskOid_PlcTask, OTCID, 643947488 (32)
-        TwinCAT_SystemInfoVarList._TaskPouOid_FFOTask, OTCID, 643947392 (32)
-        TwinCAT_SystemInfoVarList._TaskPouOid_PlcTask, OTCID, 643947456 (32)
+        TwinCAT_SystemInfoVarList.__FFOTask, _Implicit_Task_Info, 644060000 (704)
+        TwinCAT_SystemInfoVarList.__PlcTask, _Implicit_Task_Info, 644060704 (704)
+        TwinCAT_SystemInfoVarList._AppInfo, PlcAppSystemInfo, 644055776 (2048)
+        TwinCAT_SystemInfoVarList._TaskInfo, PlcTaskSystemInfo, 644057856 (2048)
+        TwinCAT_SystemInfoVarList._TaskOid_FFOTask, OTCID, 644059904 (32)
+        TwinCAT_SystemInfoVarList._TaskOid_PlcTask, OTCID, 644059968 (32)
+        TwinCAT_SystemInfoVarList._TaskPouOid_FFOTask, OTCID, 644057824 (32)
+        TwinCAT_SystemInfoVarList._TaskPouOid_PlcTask, OTCID, 644059936 (32)
 
 
