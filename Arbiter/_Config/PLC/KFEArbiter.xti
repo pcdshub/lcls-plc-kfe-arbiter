@@ -2601,19 +2601,8 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>Fast_Faults_Evaluate.i_xFastFaultOut_crix_vac</Name>
-					<Comment>
-						<![CDATA[crix fault]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>P_SATT.i_nState_rix_mot</Name>
 					<Type>UINT</Type>
-				</Var>
-				<Var>
-					<Name>Fast_Faults_Evaluate.i_xFastFaultOut_crix_mot</Name>
-					<Type>BOOL</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
@@ -4564,6 +4553,16 @@
 					</OwnerB>
 				</OwnerA>
 			</UnrestoredVarLinks>
+			<UnrestoredVarLinks ImportTime="2022-04-13T10:18:55">
+				<OwnerA Name="InputDst" Prefix="TIPC^KFEArbiter^KFEArbiter Instance" Type="1">
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^B940-009-R07-MPS-1 CU1-ESC2^plc-crix-vac">
+						<Link VarA="Fast_Faults_Evaluate.i_xFastFaultOut_crix_vac" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="IO Inputs^FFO_Link" RestoreInfo="ANotFound"/>
+					</OwnerB>
+					<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^B940-009-R07-MPS-1 CU1-ESC3^plc-crix-mot">
+						<Link VarA="Fast_Faults_Evaluate.i_xFastFaultOut_crix_mot" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="IO Inputs^FFO_Link" RestoreInfo="ANotFound"/>
+					</OwnerB>
+				</OwnerA>
+			</UnrestoredVarLinks>
 			<TaskPouOids>
 				<TaskPouOid Prio="2" OTCID="#x08502002"/>
 				<TaskPouOid Prio="1" OTCID="#x08502001"/>
@@ -4581,7 +4580,6 @@
 				<Link VarA="PlcTask Inputs^MAIN.fbEcatDiag.wFrmXWcState" VarB="Inputs^Frm1WcState" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^B940-009-R07-MPS-1 CU1-ESC2^plc-crix-vac">
-				<Link VarA="PlcTask Inputs^Fast_Faults_Evaluate.i_xFastFaultOut_crix_vac" VarB="IO Inputs^FFO_Link"/>
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_crix_vac_PMPS_IO.i_Connected" VarB="SYNC Inputs^External device not connected" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_crix_vac_PMPS_IO.i_RequestedBP" VarB="IO Inputs^RequestedBP" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_crix_vac_PMPS_IO.i_TxPDOState" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
@@ -4618,7 +4616,6 @@
 				<Link VarA="PlcTask Outputs^PMPS_Arbiter.plc_rix_vac_PMPS_IO.o_CurrentBP" VarB="IO Outputs^CurrentBP" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^B940-009-R07-MPS-1 CU1-ESC3^plc-crix-mot">
-				<Link VarA="PlcTask Inputs^Fast_Faults_Evaluate.i_xFastFaultOut_crix_mot" VarB="IO Inputs^FFO_Link"/>
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_crix_mot_PMPS_IO.i_Connected" VarB="SYNC Inputs^External device not connected" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_crix_mot_PMPS_IO.i_RequestedBP" VarB="IO Inputs^RequestedBP" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_crix_mot_PMPS_IO.i_TxPDOState" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
