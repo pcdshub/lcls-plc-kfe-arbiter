@@ -368,22 +368,9 @@
 <h2>Fast_Faults_Evaluate<a class="headerlink" href="#fast-faults-evaluate" title="Permalink to this headline"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">Fast_Faults_Evaluate</span>
 <span class="n">VAR</span>
-    <span class="n">ff2_crix_vac_link</span><span class="p">:</span> <span class="n">FB_FastFault</span> <span class="o">:=</span> <span class="p">(</span><span class="n">i_xAutoReset</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">i_DevName</span> <span class="o">:=</span> <span class="s1">&#39;CRIX VAC Link&#39;</span><span class="p">,</span> <span class="n">i_Desc</span> <span class="o">:=</span> <span class="s1">&#39;This is virtual FF2 fault, Please check the faulting device below&#39;</span><span class="p">,</span> <span class="n">i_TypeCode</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#9999);</span>
-    <span class="n">ff2_crix_mot_link</span><span class="p">:</span> <span class="n">FB_FastFault</span> <span class="o">:=</span> <span class="p">(</span><span class="n">i_xAutoReset</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">i_DevName</span> <span class="o">:=</span> <span class="s1">&#39;CRIX MOT Link&#39;</span><span class="p">,</span> <span class="n">i_Desc</span> <span class="o">:=</span> <span class="s1">&#39;This is virtual FF2 fault, Please check the faulting device below&#39;</span><span class="p">,</span> <span class="n">i_TypeCode</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#9999);</span>
-    <span class="o">//</span><span class="n">crix</span> <span class="n">fault</span>
-    <span class="n">i_xFastFaultOut_crix_vac</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span><span class="p">:</span>        <span class="n">BOOL</span><span class="p">;</span>
-    <span class="n">i_xFastFaultOut_crix_mot</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span><span class="p">:</span>        <span class="n">BOOL</span><span class="p">;</span>
+
 <span class="n">END_VAR</span>
 <span class="n">g_FastFaultOutput2</span><span class="o">.</span><span class="n">EvaluateOutput</span><span class="p">(</span><span class="n">bAutoReset</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
-
-<span class="o">//</span><span class="n">routed</span> <span class="n">to</span> <span class="n">the</span> <span class="n">arbiter</span>
-<span class="n">ff2_crix_vac_link</span><span class="p">(</span>
-    <span class="n">io_fbFFHWO</span> <span class="o">:=</span> <span class="n">g_FastFaultOutput2</span><span class="p">,</span>
-    <span class="n">i_xOK</span> <span class="o">:=</span> <span class="n">i_xFastFaultOut_crix_vac</span><span class="p">);</span>
-
-<span class="n">ff2_crix_mot_link</span><span class="p">(</span>
-    <span class="n">io_fbFFHWO</span> <span class="o">:=</span> <span class="n">g_FastFaultOutput2</span><span class="p">,</span>
-    <span class="n">i_xOK</span> <span class="o">:=</span> <span class="n">i_xFastFaultOut_crix_mot</span><span class="p">);</span>
 
 <span class="n">END_PROGRAM</span>
 </pre></div>
@@ -580,6 +567,7 @@ END_FUNCTION_BLOCK
 <span class="n">Fast_Faults_Evaluate</span><span class="p">();</span>
 
 <span class="n">END_PROGRAM</span>
+
 <span class="n">ACTION</span> <span class="n">A_SystemTime</span><span class="p">:</span>
 <span class="o">//</span><span class="n">Get</span> <span class="n">local</span> <span class="n">System</span> <span class="n">Time</span>
 <span class="n">fbTime</span><span class="p">(</span><span class="n">sNetID</span><span class="o">:=</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
@@ -590,6 +578,7 @@ END_FUNCTION_BLOCK
 
 <span class="n">SystemTime</span><span class="o">:=</span> <span class="n">TO_DINT</span><span class="p">(</span><span class="n">TO_DT</span><span class="p">(</span><span class="n">SystemTime_TO_DT</span><span class="p">(</span><span class="n">fbTime_to_UTC</span><span class="o">.</span><span class="n">out</span><span class="p">)));</span>
 <span class="n">END_ACTION</span>
+
 <span class="n">ACTION</span> <span class="n">Initialize</span><span class="p">:</span>
 
 <span class="n">END_ACTION</span>
@@ -1018,7 +1007,7 @@ END_FUNCTION_BLOCK
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, SLAC National Accelerator Laboratory.</p>
+    <p>&#169; Copyright 2022, SLAC National Accelerator Laboratory.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

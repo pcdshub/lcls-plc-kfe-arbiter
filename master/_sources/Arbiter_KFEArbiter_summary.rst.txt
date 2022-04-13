@@ -36,12 +36,24 @@ Libraries
     :header: Library, Vendor, Default, Version
     :align: center
 
-        Tc2_MC2, Beckhoff Automation GmbH, Unset, Unset
-        Tc2_Standard, Beckhoff Automation GmbH, Unset, Unset
-        Tc2_System, Beckhoff Automation GmbH, Unset, Unset
-        Tc2_SystemCX, Beckhoff Automation GmbH, Unset, Unset
-        Tc2_Utilities, Beckhoff Automation GmbH, Unset, Unset
-        Tc3_Module, Beckhoff Automation GmbH, Unset, Unset
+        LCLS General, SLAC, , 2.4.2
+        SysDir, System, , 3.5.8.0
+        SysFile, System, , 3.5.9.0
+        Tc2_EtherCAT, Beckhoff Automation GmbH, , 3.3.15.0
+        Tc2_IoFunctions, Beckhoff Automation GmbH, , 3.3.13.0
+        Tc2_Math, Beckhoff Automation GmbH, , 3.3.1.0
+        Tc2_MC2, Beckhoff Automation GmbH, Unset, 3.3.42.0
+        Tc2_ModbusSrv, Beckhoff Automation GmbH, , 3.3.2.0
+        Tc2_SerialCom, Beckhoff Automation GmbH, , 3.3.7.0
+        Tc2_Standard, Beckhoff Automation GmbH, Unset, 3.3.3.0
+        Tc2_System, Beckhoff Automation GmbH, Unset, 3.4.24.0
+        Tc2_SystemCX, Beckhoff Automation GmbH, Unset, 3.3.6.0
+        Tc2_TcpIp, Beckhoff Automation GmbH, , 3.3.6.0
+        Tc2_Utilities, Beckhoff Automation GmbH, Unset, 3.3.41.0
+        Tc3_EventLogger, Beckhoff Automation GmbH, , 3.1.24.0
+        Tc3_JsonXml, Beckhoff Automation GmbH, , 3.3.14.0
+        Tc3_Module, Beckhoff Automation GmbH, Unset, 3.3.21.0
+        TcUnit, www.tcunit.org, , 1.1.0.0
 
 Symbols
 -------
@@ -92,7 +104,7 @@ CurrentBPUpdate
         CurrentBPUpdate.cMR1K1_OUT_UpperLimit, UDINT, 641803968 (32)
         CurrentBPUpdate.fbBYKIK_Rate, FB_LREALFromEPICS, 641549248 (960)
         CurrentBPUpdate.fbEPICS_KRate, FB_RateFromEPICS, 641550208 (25280)
-        CurrentBPUpdate.fbKPhotonEnergy, FB_KPhotonEnergy, 641575488 (59136)
+        CurrentBPUpdate.fbKPhotonEnergy, FB_KPhotonEnergy, 648316992 (59136)
         CurrentBPUpdate.fbMR1K1VetoDevice, FB_KVetoDevice, 641804032 (84672)
         CurrentBPUpdate.i_MR1K1_ENC, UDINT, 641634656 (32)
         CurrentBPUpdate.q_MR1K1_VETO, BOOL, 641518984 (8)
@@ -125,19 +137,6 @@ DefaultGlobals
         DefaultGlobals.stSys, ST_System, 4096000 (88)
 
 
-Fast_Faults_Evaluate
-^^^^^^^^^^^^^^^^^^^^
-
-.. csv-table::
-    :header: Symbol, Type, Offset/Size
-    :align: center
-
-        Fast_Faults_Evaluate.ff2_crix_mot_link, FB_FastFault, 642571744 (25088)
-        Fast_Faults_Evaluate.ff2_crix_vac_link, FB_FastFault, 642546656 (25088)
-        Fast_Faults_Evaluate.i_xFastFaultOut_crix_mot, BOOL, 642496464 (8)
-        Fast_Faults_Evaluate.i_xFastFaultOut_crix_vac, BOOL, 642496440 (8)
-
-
 GVL
 ^^^
 
@@ -150,7 +149,7 @@ GVL
         GVL.g_FastFaultOutput1.q_xFastFaultOut, BOOL, 643065800 (8)
         GVL.g_FastFaultOutput2, FB_HardwareFFOutput, 643560448 (494912)
         GVL.g_FastFaultOutput2.q_xFastFaultOut, BOOL, 643560712 (8)
-        GVL.g_fbArbiter1, FB_Arbiter, 642597504 (466304)
+        GVL.g_fbArbiter1, FB_Arbiter, 648376128 (468032)
         GVL.g_rTestingVelocity, LREAL, 644055360 (64)
         GVL.MAX_FAST_FAULTS, UINT, 643065504 (16)
         GVL.nLangId_OnlineMonitoring, DINT, 4391328 (32)
@@ -875,7 +874,6 @@ PMPS_GVL
         PMPS_GVL.cnMaxStateArrayLen, INT, 634583056 (16)
         PMPS_GVL.cst0RateBeam, ST_BeamParams, 634584768 (1696)
         PMPS_GVL.cstFullBeam, ST_BeamParams, 634583072 (1696)
-        PMPS_GVL.cstSafeBeam, ST_BeamParams, 634586464 (1696)
         PMPS_GVL.DUMMY_AUX_ATT_ARRAY, ST_PMPS_Attenuator, 634588192 (1024)
         PMPS_GVL.EXCLUDED_ASSERTION_ID, UDINT, 634582816 (32)
         PMPS_GVL.FAST_TEST_VELOCITY, LREAL, 634582912 (64)
@@ -888,6 +886,7 @@ PMPS_GVL
         PMPS_GVL.MAX_VETO_DEVICES, UINT, 634583040 (16)
         PMPS_GVL.PERange, PE_Ranges, 634582784 (32)
         PMPS_GVL.reVHyst, REAL, 634589248 (32)
+        PMPS_GVL.stAttenuators, ST_PMPS_Attenuator, 648316928 (64)
         PMPS_GVL.stCurrentBeamParameters, ST_BeamParams, 634580064 (1696)
         PMPS_GVL.stRequestedBeamParameters, ST_BeamParams, 634578368 (1696)
         PMPS_GVL.SuccessfulPreemption, UDINT, 3072000 (32)

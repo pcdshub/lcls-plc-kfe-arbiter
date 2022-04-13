@@ -295,22 +295,9 @@ Fast_Faults_Evaluate
 
     PROGRAM Fast_Faults_Evaluate
     VAR
-    	ff2_crix_vac_link: FB_FastFault := (i_xAutoReset := TRUE, i_DevName := 'CRIX VAC Link', i_Desc := 'This is virtual FF2 fault, Please check the faulting device below', i_TypeCode := 16#9999);
-    	ff2_crix_mot_link: FB_FastFault := (i_xAutoReset := TRUE, i_DevName := 'CRIX MOT Link', i_Desc := 'This is virtual FF2 fault, Please check the faulting device below', i_TypeCode := 16#9999);
-     	//crix fault
-     	i_xFastFaultOut_crix_vac AT %I*:        BOOL; 
-     	i_xFastFaultOut_crix_mot AT %I*:        BOOL; 
+
     END_VAR
     g_FastFaultOutput2.EvaluateOutput(bAutoReset:=TRUE);
-
-    //routed to the arbiter							   
-    ff2_crix_vac_link(
-    	io_fbFFHWO := g_FastFaultOutput2,
-        i_xOK := i_xFastFaultOut_crix_vac);
-
-    ff2_crix_mot_link(
-    	io_fbFFHWO := g_FastFaultOutput2,
-        i_xOK := i_xFastFaultOut_crix_mot);
 
     END_PROGRAM
 
@@ -515,6 +502,7 @@ MAIN
     Fast_Faults_Evaluate();
 
     END_PROGRAM
+
     ACTION A_SystemTime:
     //Get local System Time
     fbTime(sNetID:='');
@@ -525,6 +513,7 @@ MAIN
 
     SystemTime:= TO_DINT(TO_DT(SystemTime_TO_DT(fbTime_to_UTC.out)));
     END_ACTION
+
     ACTION Initialize:
 
     END_ACTION
