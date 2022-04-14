@@ -64,6 +64,14 @@ VAR
 			eVetoDeviceIN := K_Stopper.MR1K1_IN,
 			eVetoDeviceOUT := K_Stopper.MR1K1_OUT,
 			sVetoDeviceName := 'MR1K1');
+		{attribute 'TcLinkTo' := 'TIIB[plc-tmo-motion]^IO Inputs^bST4K4_IN'}
+		i_bST4K4_IN AT %I* : BOOL; // TMO ST4K4 Photon Terminator IN limit switch
+		{attribute 'TcLinkTo' := 'TIIB[plc-tmo-motion]^IO Inputs^bST4K4_OUT'}
+		i_bST4K4_OUT AT %I* : BOOL; // TMO ST4K4 Photon Terminator OUT limit switch
+		fbST4K4VetoDevice : FB_KVetoDevice(
+			eVetoDeviceIN := K_Stopper.ST4K4_IN,
+			eVetoDeviceOUT := K_Stopper.ST4K4_OUT,
+			sVetoDeviceName := 'ST4K4-TERM');
 		
 END_VAR
 ]]></Declaration>
@@ -84,6 +92,14 @@ st1k2Watcher(stCurrentBP:=PMPS_GVL.stCurrentBeamParameters);
 		i_bIn := cMR1K1_IN_LowerLimit < i_MR1K1_ENC	AND i_MR1K1_ENC < cMR1K1_IN_UpperLimit,
 		i_bOut := i_MR1K1_ENC < cMR1K1_OUT_UpperLimit,
 		q_bIN => q_MR1K1_VETO, 
+		stCurrentBP:= PMPS_GVL.stCurrentBeamParameters);
+		
+// ST4K4 Photon Terminator Veto
+////////////////////////
+	fbST4K4VetoDevice(
+		i_bIn := i_bST4K4_IN,
+		i_bOut := i_bST4K4_OUT,
+		q_bIN => , 
 		stCurrentBP:= PMPS_GVL.stCurrentBeamParameters);]]></ST>
     </Implementation>
   </POU>
