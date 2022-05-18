@@ -226,7 +226,7 @@ CurrentBPUpdate
     	  	{attribute 'TcLinkTo' := 'TIIB[plc-rix-optics]^IO Inputs^MR1K1_Y_ENC'}
     		i_MR1K1_ENC AT %I* : UDINT; // MR1K1 encoder from the rix optics system
     		cMR1K1_IN_UpperLimit : UDINT := 33411000;
-    		cMR1K1_IN_LowerLimit : UDINT := 29911000;
+    		cMR1K1_IN_LowerLimit : UDINT := 31911000;
     		cMR1K1_OUT_UpperLimit : UDINT := 14173400;
     		{attribute 'TcLinkTo' := 'TIIB[PMPS_Premp]^Channel 13^MR1K1 IN'}
     		q_MR1K1_VETO AT %Q* : BOOL; // Signal to accel. MPS that MR1K1 is in
