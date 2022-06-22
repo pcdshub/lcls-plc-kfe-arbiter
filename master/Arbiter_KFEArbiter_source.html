@@ -14,6 +14,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/doctr-versions-menu.js"></script>
     <script src="_static/js/theme.js"></script>
@@ -101,12 +102,12 @@
            <div itemprop="articleBody">
              
   <section id="duts">
-<h1>DUTs<a class="headerlink" href="#duts" title="Permalink to this headline"></a></h1>
+<h1>DUTs<a class="headerlink" href="#duts" title="Permalink to this heading"></a></h1>
 </section>
 <section id="gvls">
-<h1>GVLs<a class="headerlink" href="#gvls" title="Permalink to this headline"></a></h1>
+<h1>GVLs<a class="headerlink" href="#gvls" title="Permalink to this heading"></a></h1>
 <section id="gvl">
-<h2>GVL<a class="headerlink" href="#gvl" title="Permalink to this headline"></a></h2>
+<h2>GVL<a class="headerlink" href="#gvl" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">VAR_GLOBAL</span>
    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
     <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">PREFIX</span><span class="p">)</span><span class="n">Arbiter</span><span class="p">:</span><span class="mi">01</span>
@@ -141,7 +142,7 @@
 </div>
 </section>
 <section id="gvl-checkbounds">
-<h2>GVL_CheckBounds<a class="headerlink" href="#gvl-checkbounds" title="Permalink to this headline"></a></h2>
+<h2>GVL_CheckBounds<a class="headerlink" href="#gvl-checkbounds" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span>
     <span class="n">nTooLow</span> <span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span>
@@ -153,9 +154,9 @@
 </section>
 </section>
 <section id="pous">
-<h1>POUs<a class="headerlink" href="#pous" title="Permalink to this headline"></a></h1>
+<h1>POUs<a class="headerlink" href="#pous" title="Permalink to this heading"></a></h1>
 <section id="checkbounds">
-<h2>CheckBounds<a class="headerlink" href="#checkbounds" title="Permalink to this headline"></a></h2>
+<h2>CheckBounds<a class="headerlink" href="#checkbounds" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Implicitly</span> <span class="n">generated</span> <span class="n">code</span> <span class="p">:</span> <span class="n">DO</span> <span class="n">NOT</span> <span class="n">EDIT</span>
 <span class="n">FUNCTION</span> <span class="n">CheckBounds</span> <span class="p">:</span> <span class="n">DINT</span>
 <span class="n">VAR_INPUT</span>
@@ -203,7 +204,7 @@
 </dl>
 </section>
 <section id="checkrangesigned">
-<h2>CheckRangeSigned<a class="headerlink" href="#checkrangesigned" title="Permalink to this headline"></a></h2>
+<h2>CheckRangeSigned<a class="headerlink" href="#checkrangesigned" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Implicitly</span> <span class="n">generated</span> <span class="n">code</span> <span class="p">:</span> <span class="n">DO</span> <span class="n">NOT</span> <span class="n">EDIT</span>
 <span class="n">FUNCTION</span> <span class="n">CheckRangeSigned</span> <span class="p">:</span> <span class="n">DINT</span>
 <span class="n">VAR_INPUT</span>
@@ -225,7 +226,7 @@
 </div>
 </section>
 <section id="checkrangeunsigned">
-<h2>CheckRangeUnsigned<a class="headerlink" href="#checkrangeunsigned" title="Permalink to this headline"></a></h2>
+<h2>CheckRangeUnsigned<a class="headerlink" href="#checkrangeunsigned" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Implicitly</span> <span class="n">generated</span> <span class="n">code</span> <span class="p">:</span> <span class="n">DO</span> <span class="n">NOT</span> <span class="n">EDIT</span>
 <span class="n">FUNCTION</span> <span class="n">CheckRangeUnsigned</span> <span class="p">:</span> <span class="n">UDINT</span>
 <span class="n">VAR_INPUT</span>
@@ -247,7 +248,7 @@
 </div>
 </section>
 <section id="currentbpupdate">
-<h2>CurrentBPUpdate<a class="headerlink" href="#currentbpupdate" title="Permalink to this headline"></a></h2>
+<h2>CurrentBPUpdate<a class="headerlink" href="#currentbpupdate" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">CurrentBPUpdate</span>
 <span class="n">VAR</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
@@ -312,6 +313,15 @@
                     <span class="n">eVetoDeviceOUT</span> <span class="o">:=</span> <span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR1K1_OUT</span><span class="p">,</span>
                     <span class="n">sVetoDeviceName</span> <span class="o">:=</span> <span class="s1">&#39;MR1K1&#39;</span><span class="p">);</span>
 
+    <span class="o">//</span> <span class="n">ST4K4</span> <span class="n">Photon</span> <span class="n">Terminator</span> <span class="n">Veto</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+                <span class="o">.</span><span class="n">i_StopperInLS</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">plc</span><span class="o">-</span><span class="n">tmo</span><span class="o">-</span><span class="n">mot</span><span class="p">]</span><span class="o">^</span><span class="n">IO</span> <span class="n">Inputs</span><span class="o">^</span><span class="n">bST4K4_IN</span><span class="p">;</span>
+                <span class="o">.</span><span class="n">i_StopperOutLS</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">plc</span><span class="o">-</span><span class="n">tmo</span><span class="o">-</span><span class="n">mot</span><span class="p">]</span><span class="o">^</span><span class="n">IO</span> <span class="n">Inputs</span><span class="o">^</span><span class="n">bST4K4_OUT</span><span class="p">;</span>
+     <span class="s1">&#39;}</span>
+    <span class="n">st4k4Watcher</span> <span class="p">:</span> <span class="n">FB_KStopper</span><span class="p">(</span>
+        <span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">ST4K4</span><span class="p">,</span>
+        <span class="s1">&#39;ST4K4&#39;</span><span class="p">);</span>
+
 <span class="n">END_VAR</span>
 <span class="n">fbEPICS_KRate</span><span class="p">(</span><span class="n">BP</span><span class="o">:=</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="p">,</span> <span class="n">fbBYKIK_Rate</span><span class="o">:=</span><span class="n">fbBYKIK_Rate</span><span class="p">,</span> <span class="n">FFO</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="p">);</span>
 
@@ -329,6 +339,8 @@
             <span class="n">i_bOut</span> <span class="o">:=</span> <span class="n">i_MR1K1_ENC</span> <span class="o">&lt;</span> <span class="n">cMR1K1_OUT_UpperLimit</span><span class="p">,</span>
             <span class="n">q_bIN</span> <span class="o">=&gt;</span> <span class="n">q_MR1K1_VETO</span><span class="p">,</span>
             <span class="n">stCurrentBP</span><span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="p">);</span>
+<span class="o">//</span> <span class="n">ST4K4</span> <span class="n">Photon</span> <span class="n">Terminator</span> <span class="n">Veto</span>
+<span class="n">st4k4Watcher</span><span class="p">(</span><span class="n">stCurrentBP</span><span class="o">:=</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="p">);</span>
 
 <span class="n">END_PROGRAM</span>
 </pre></div>
@@ -341,7 +353,7 @@
 </dl>
 </section>
 <section id="cxdisplay">
-<h2>CXDisplay<a class="headerlink" href="#cxdisplay" title="Permalink to this headline"></a></h2>
+<h2>CXDisplay<a class="headerlink" href="#cxdisplay" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">CXDisplay</span>
 <span class="n">VAR</span>
     <span class="n">DisplayStats</span> <span class="p">:</span> <span class="n">FB_CXSetTextDisplayUSB</span> <span class="o">:=</span> <span class="p">(</span><span class="n">nPort</span><span class="o">:=</span><span class="mi">28928</span><span class="p">);</span>
@@ -365,7 +377,7 @@
 </div>
 </section>
 <section id="fast-faults-evaluate">
-<h2>Fast_Faults_Evaluate<a class="headerlink" href="#fast-faults-evaluate" title="Permalink to this headline"></a></h2>
+<h2>Fast_Faults_Evaluate<a class="headerlink" href="#fast-faults-evaluate" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">Fast_Faults_Evaluate</span>
 <span class="n">VAR</span>
 
@@ -377,7 +389,7 @@
 </div>
 </section>
 <section id="fb-beamclassoutputs">
-<h2>FB_BeamClassOutputs<a class="headerlink" href="#fb-beamclassoutputs" title="Permalink to this headline"></a></h2>
+<h2>FB_BeamClassOutputs<a class="headerlink" href="#fb-beamclassoutputs" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(*
 Sets the beam class assertion lines for a given beam class.
 *)
@@ -470,7 +482,7 @@ END_FUNCTION_BLOCK
 </div>
 </section>
 <section id="machinesimulation">
-<h2>MachineSimulation<a class="headerlink" href="#machinesimulation" title="Permalink to this headline"></a></h2>
+<h2>MachineSimulation<a class="headerlink" href="#machinesimulation" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">MachineSimulation</span>
 <span class="n">VAR</span>
     <span class="n">fbMachine</span>       <span class="p">:</span>       <span class="n">FB_MachineSimulator</span><span class="p">;</span> <span class="o">//</span><span class="n">Simulates</span> <span class="n">attenuator</span> <span class="k">as</span> <span class="n">well</span>
@@ -503,7 +515,7 @@ END_FUNCTION_BLOCK
 </dl>
 </section>
 <section id="main">
-<h2>MAIN<a class="headerlink" href="#main" title="Permalink to this headline"></a></h2>
+<h2>MAIN<a class="headerlink" href="#main" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">MAIN</span>
 <span class="n">VAR</span>
     <span class="n">Initialize</span>      <span class="p">:</span>       <span class="n">BOOL</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
@@ -598,7 +610,7 @@ END_FUNCTION_BLOCK
 </dl>
 </section>
 <section id="p-at1k0-sl1k0">
-<h2>P_AT1K0_SL1K0<a class="headerlink" href="#p-at1k0-sl1k0" title="Permalink to this headline"></a></h2>
+<h2>P_AT1K0_SL1K0<a class="headerlink" href="#p-at1k0-sl1k0" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">P_AT1K0_SL1K0</span>
 <span class="n">VAR</span>
 
@@ -692,7 +704,7 @@ END_FUNCTION_BLOCK
 </div>
 </section>
 <section id="p-satt">
-<h2>P_SATT<a class="headerlink" href="#p-satt" title="Permalink to this headline"></a></h2>
+<h2>P_SATT<a class="headerlink" href="#p-satt" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">P_SATT</span>
 <span class="n">VAR</span>
     <span class="o">//</span><span class="n">All</span> <span class="n">Sold</span> <span class="n">attenuators</span> <span class="n">requests</span> <span class="n">are</span> <span class="n">summerrized</span> <span class="n">into</span> <span class="n">this</span> <span class="n">one</span> <span class="n">output</span>
@@ -764,7 +776,7 @@ END_FUNCTION_BLOCK
 </div>
 </section>
 <section id="pmps-arbiter">
-<h2>PMPS_Arbiter<a class="headerlink" href="#pmps-arbiter" title="Permalink to this headline"></a></h2>
+<h2>PMPS_Arbiter<a class="headerlink" href="#pmps-arbiter" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PMPS_Arbiter</span>
 <span class="n">VAR</span>
 
@@ -965,7 +977,7 @@ END_FUNCTION_BLOCK
 </dl>
 </section>
 <section id="testing">
-<h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline"></a></h2>
+<h2>Testing<a class="headerlink" href="#testing" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">Testing</span>
 <span class="n">VAR</span>
     <span class="n">AttemptReset</span> <span class="p">:</span> <span class="n">TON</span> <span class="o">:=</span> <span class="p">(</span><span class="n">PT</span><span class="o">:=</span><span class="n">T</span><span class="c1">#1s);</span>

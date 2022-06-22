@@ -24,7 +24,7 @@ Settings
 Pragmas
 -------
 
-Total pragmas found: 56
+Total pragmas found: 57
 Total linter errors: 0
 
 
@@ -76,15 +76,15 @@ Constants
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        Constants.bFPUSupport, BOOL, 644055656 (8)
-        Constants.bLittleEndian, BOOL, 643065528 (8)
-        Constants.bSimulationMode, BOOL, 644055648 (8)
-        Constants.CompilerVersion, VERSION, 644055584 (64)
-        Constants.CompilerVersionNumeric, DWORD, 644055744 (32)
-        Constants.nPackMode, UINT, 644055680 (16)
-        Constants.nRegisterSize, WORD, 644055664 (16)
-        Constants.RuntimeVersion, VERSION, 644055520 (64)
-        Constants.RuntimeVersionNumeric, DWORD, 644055712 (32)
+        Constants.bFPUSupport, BOOL, 644090168 (8)
+        Constants.bLittleEndian, BOOL, 644090024 (8)
+        Constants.bSimulationMode, BOOL, 644090160 (8)
+        Constants.CompilerVersion, VERSION, 644090096 (64)
+        Constants.CompilerVersionNumeric, DWORD, 644090240 (32)
+        Constants.nPackMode, UINT, 644090192 (16)
+        Constants.nRegisterSize, WORD, 644090176 (16)
+        Constants.RuntimeVersion, VERSION, 644090032 (64)
+        Constants.RuntimeVersionNumeric, DWORD, 644090208 (32)
 
 
 CurrentBPUpdate
@@ -93,32 +93,37 @@ CurrentBPUpdate
 .. raw:: html
 
    <details>
-       <summary>20 Symbols</summary>
+       <summary>25 Symbols</summary>
 
 .. csv-table::
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        CurrentBPUpdate.cMR1K1_IN_LowerLimit, UDINT, 641803936 (32)
-        CurrentBPUpdate.cMR1K1_IN_UpperLimit, UDINT, 641803904 (32)
-        CurrentBPUpdate.cMR1K1_OUT_UpperLimit, UDINT, 641803968 (32)
-        CurrentBPUpdate.fbBYKIK_Rate, FB_LREALFromEPICS, 641549248 (960)
-        CurrentBPUpdate.fbEPICS_KRate, FB_RateFromEPICS, 641550208 (25280)
-        CurrentBPUpdate.fbKPhotonEnergy, FB_KPhotonEnergy, 648316992 (59136)
-        CurrentBPUpdate.fbMR1K1VetoDevice, FB_KVetoDevice, 641804032 (84672)
-        CurrentBPUpdate.i_MR1K1_ENC, UDINT, 641634656 (32)
-        CurrentBPUpdate.q_MR1K1_VETO, BOOL, 641518984 (8)
-        CurrentBPUpdate.q_rPhotonEnergy, REAL, 641634624 (32)
-        CurrentBPUpdate.st1k2Watcher, FB_KStopper, 641719296 (84608)
-        CurrentBPUpdate.st1k2Watcher.i_StopperInLS, BOOL, 641719368 (8)
-        CurrentBPUpdate.st1k2Watcher.i_StopperOutLS, BOOL, 641719360 (8)
-        CurrentBPUpdate.st1k2Watcher.q_StopperIN_Relay, BOOL, 641719384 (8)
-        CurrentBPUpdate.st1k2Watcher.q_StopperOUT_Relay, BOOL, 641719376 (8)
-        CurrentBPUpdate.st3k4Watcher, FB_KStopper, 641634688 (84608)
-        CurrentBPUpdate.st3k4Watcher.i_StopperInLS, BOOL, 641634760 (8)
-        CurrentBPUpdate.st3k4Watcher.i_StopperOutLS, BOOL, 641634752 (8)
-        CurrentBPUpdate.st3k4Watcher.q_StopperIN_Relay, BOOL, 641634776 (8)
-        CurrentBPUpdate.st3k4Watcher.q_StopperOUT_Relay, BOOL, 641634768 (8)
+        CurrentBPUpdate.cMR1K1_IN_LowerLimit, UDINT, 641802304 (32)
+        CurrentBPUpdate.cMR1K1_IN_UpperLimit, UDINT, 641802272 (32)
+        CurrentBPUpdate.cMR1K1_OUT_UpperLimit, UDINT, 641802336 (32)
+        CurrentBPUpdate.fbBYKIK_Rate, FB_LREALFromEPICS, 641547648 (960)
+        CurrentBPUpdate.fbEPICS_KRate, FB_RateFromEPICS, 641548608 (25280)
+        CurrentBPUpdate.fbKPhotonEnergy, FB_KPhotonEnergy, 641573888 (59136)
+        CurrentBPUpdate.fbMR1K1VetoDevice, FB_KVetoDevice, 641802368 (84672)
+        CurrentBPUpdate.i_MR1K1_ENC, UDINT, 641802240 (32)
+        CurrentBPUpdate.q_MR1K1_VETO, BOOL, 641517352 (8)
+        CurrentBPUpdate.q_rPhotonEnergy, REAL, 641547616 (32)
+        CurrentBPUpdate.st1k2Watcher, FB_KStopper, 641717632 (84608)
+        CurrentBPUpdate.st1k2Watcher.i_StopperInLS, BOOL, 641717704 (8)
+        CurrentBPUpdate.st1k2Watcher.i_StopperOutLS, BOOL, 641717696 (8)
+        CurrentBPUpdate.st1k2Watcher.q_StopperIN_Relay, BOOL, 641717720 (8)
+        CurrentBPUpdate.st1k2Watcher.q_StopperOUT_Relay, BOOL, 641717712 (8)
+        CurrentBPUpdate.st3k4Watcher, FB_KStopper, 641633024 (84608)
+        CurrentBPUpdate.st3k4Watcher.i_StopperInLS, BOOL, 641633096 (8)
+        CurrentBPUpdate.st3k4Watcher.i_StopperOutLS, BOOL, 641633088 (8)
+        CurrentBPUpdate.st3k4Watcher.q_StopperIN_Relay, BOOL, 641633112 (8)
+        CurrentBPUpdate.st3k4Watcher.q_StopperOUT_Relay, BOOL, 641633104 (8)
+        CurrentBPUpdate.st4k4Watcher, FB_KStopper, 641887040 (84608)
+        CurrentBPUpdate.st4k4Watcher.i_StopperInLS, BOOL, 641887112 (8)
+        CurrentBPUpdate.st4k4Watcher.i_StopperOutLS, BOOL, 641887104 (8)
+        CurrentBPUpdate.st4k4Watcher.q_StopperIN_Relay, BOOL, 641887128 (8)
+        CurrentBPUpdate.st4k4Watcher.q_StopperOUT_Relay, BOOL, 641887120 (8)
 
 .. raw:: html
 
@@ -254,12 +259,12 @@ Global_Variables
         Global_Variables.DBG_OUTPUT_NONE, DWORD, 4270240 (32)
         Global_Variables.DBG_OUTPUT_VISU, DWORD, 4270336 (32)
         Global_Variables.DEFAULT_ADS_TIMEOUT, TIME, 4186240 (32)
-        Global_Variables.DEFAULT_BACKLASHVALUE, LREAL, 634598976 (64)
+        Global_Variables.DEFAULT_BACKLASHVALUE, LREAL, 634597376 (64)
         Global_Variables.DEFAULT_CSV_FIELD_DOUBLE_QUOTE, BYTE, 4249784 (8)
         Global_Variables.DEFAULT_CSV_FIELD_SEP, BYTE, 4187808 (8)
         Global_Variables.DEFAULT_CSV_RECORD_SEP_CR, BYTE, 4386576 (8)
         Global_Variables.DEFAULT_CSV_RECORD_SEP_LF, BYTE, 4386584 (8)
-        Global_Variables.DEFAULT_HOME_POSITION, LREAL, 634598912 (64)
+        Global_Variables.DEFAULT_HOME_POSITION, LREAL, 634597312 (64)
         Global_Variables.EC_ADS_IGRP_CANOPEN_SDO, UDINT, 4180352 (32)
         Global_Variables.EC_ADS_IGRP_CANOPEN_SDO_LASTERROR, UDINT, 4180384 (32)
         Global_Variables.EC_ADS_IGRP_ECAT_SOE, UDINT, 4180000 (32)
@@ -497,7 +502,7 @@ Global_Variables
         Global_Variables.TCEVENTSTATE_RESET, WORD, 4186080 (16)
         Global_Variables.TCEVENTSTATE_RESETCON, WORD, 4186112 (16)
         Global_Variables.TCEVENTSTATE_SIGNALED, WORD, 4186064 (16)
-        Global_Variables.TcMcGlobal, _TCMCGLOBAL, 634591936 (6976)
+        Global_Variables.TcMcGlobal, _TCMCGLOBAL, 634590304 (6976)
         Global_Variables.TCPADS_IGR_ADAPTER_LINKSTATUS, UDINT, 4392128 (32)
         Global_Variables.TCPADS_IGR_CLOSEBYHDL, UDINT, 4391872 (32)
         Global_Variables.TCPADS_IGR_CONLIST, UDINT, 4391840 (32)
@@ -556,8 +561,8 @@ Global_Version
 
         Global_Version.stLibVersion_Tc2_EtherCAT, ST_LibVersion, 4178912 (288)
         Global_Version.stLibVersion_Tc2_IoFunctions, ST_LibVersion, 4390080 (288)
-        Global_Version.stLibVersion_Tc2_Math, ST_LibVersion, 634599040 (288)
-        Global_Version.stLibVersion_Tc2_MC2, ST_LibVersion, 634591648 (288)
+        Global_Version.stLibVersion_Tc2_Math, ST_LibVersion, 634597440 (288)
+        Global_Version.stLibVersion_Tc2_MC2, ST_LibVersion, 634590016 (288)
         Global_Version.stLibVersion_Tc2_ModbusSrv, ST_LibVersion, 4390368 (288)
         Global_Version.stLibVersion_Tc2_SerialCom, ST_LibVersion, 4390656 (288)
         Global_Version.stLibVersion_Tc2_Standard, ST_LibVersion, 4182272 (288)
@@ -581,16 +586,16 @@ GVL
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        GVL.AttemptReset, BOOL, 642496472 (8)
-        GVL.g_FastFaultOutput1, FB_HardwareFFOutput, 643065536 (494912)
-        GVL.g_FastFaultOutput1.q_xFastFaultOut, BOOL, 643065800 (8)
-        GVL.g_FastFaultOutput2, FB_HardwareFFOutput, 643560448 (494912)
-        GVL.g_FastFaultOutput2.q_xFastFaultOut, BOOL, 643560712 (8)
-        GVL.g_fbArbiter1, FB_Arbiter, 648376128 (468032)
-        GVL.g_rTestingVelocity, LREAL, 644055360 (64)
-        GVL.MAX_FAST_FAULTS, UINT, 643065504 (16)
+        GVL.AttemptReset, BOOL, 642579416 (8)
+        GVL.g_FastFaultOutput1, FB_HardwareFFOutput, 643100096 (494912)
+        GVL.g_FastFaultOutput1.q_xFastFaultOut, BOOL, 643100360 (8)
+        GVL.g_FastFaultOutput2, FB_HardwareFFOutput, 643595008 (494912)
+        GVL.g_FastFaultOutput2.q_xFastFaultOut, BOOL, 643595272 (8)
+        GVL.g_fbArbiter1, FB_Arbiter, 642630336 (468032)
+        GVL.g_rTestingVelocity, LREAL, 644089920 (64)
+        GVL.MAX_FAST_FAULTS, UINT, 642579440 (16)
         GVL.nLangId_OnlineMonitoring, DINT, 4391328 (32)
-        GVL.ReqBP, ST_BeamParams, 643063808 (1696)
+        GVL.ReqBP, ST_BeamParams, 643098368 (1696)
 
 
 GVL_CheckBounds
@@ -600,9 +605,9 @@ GVL_CheckBounds
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        GVL_CheckBounds.nDivByZero, UDINT, 644055488 (32)
-        GVL_CheckBounds.nTooHigh, UDINT, 644055456 (32)
-        GVL_CheckBounds.nTooLow, UDINT, 644055424 (32)
+        GVL_CheckBounds.nDivByZero, UDINT, 644089984 (32)
+        GVL_CheckBounds.nTooHigh, UDINT, 643100064 (32)
+        GVL_CheckBounds.nTooLow, UDINT, 642630304 (32)
 
 
 GVL_INTERNAL
@@ -700,8 +705,8 @@ MachineSimulation
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        MachineSimulation.fbeVSimulator, FB_eVSimulator, 641891648 (9088)
-        MachineSimulation.fbMachine, FB_MachineSimulator, 641889344 (2304)
+        MachineSimulation.fbeVSimulator, FB_eVSimulator, 641974592 (9088)
+        MachineSimulation.fbMachine, FB_MachineSimulator, 641972288 (2304)
 
 
 MAIN
@@ -716,22 +721,22 @@ MAIN
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        MAIN.bM1K1_OUT_Override, BOOL, 641518976 (8)
-        MAIN.fbBPControl, FB_BPControlDevice, 641516288 (2656)
-        MAIN.fbEcatDiag, FB_EcatDiagWrapper, 640420352 (1095936)
-        MAIN.fbEcatDiag.arrEcMasterNetId, T_AmsNetIdArr, 641503728 (48)
-        MAIN.fbEcatDiag.nEcMasterDeviceId, UINT, 641503712 (16)
-        MAIN.fbEcatDiag.nEcMasterDevState, UINT, 641503696 (16)
-        MAIN.fbEcatDiag.nEcMasterSlaveCount, UINT, 641503680 (16)
-        MAIN.fbEcatDiag.nEcMasterSlaveCountCfg, UINT, 641503968 (16)
-        MAIN.fbEcatDiag.wFrmXWcState, WORD, 640420768 (16)
-        MAIN.fbGetTimeZone, FB_GetTimeZoneInformation, 641541664 (3488)
-        MAIN.fbLogHandler, FB_LogHandler, 634634496 (5785856)
-        MAIN.fbTime, FB_LocalSystemTime, 641519040 (19040)
-        MAIN.fbTime_to_UTC, FB_TzSpecificLocalTimeToSystemTime, 641538080 (3584)
+        MAIN.bM1K1_OUT_Override, BOOL, 641517344 (8)
+        MAIN.fbBPControl, FB_BPControlDevice, 641514688 (2656)
+        MAIN.fbEcatDiag, FB_EcatDiagWrapper, 640418752 (1095936)
+        MAIN.fbEcatDiag.arrEcMasterNetId, T_AmsNetIdArr, 641502128 (48)
+        MAIN.fbEcatDiag.nEcMasterDeviceId, UINT, 641502112 (16)
+        MAIN.fbEcatDiag.nEcMasterDevState, UINT, 641502096 (16)
+        MAIN.fbEcatDiag.nEcMasterSlaveCount, UINT, 641502080 (16)
+        MAIN.fbEcatDiag.nEcMasterSlaveCountCfg, UINT, 641502368 (16)
+        MAIN.fbEcatDiag.wFrmXWcState, WORD, 640419168 (16)
+        MAIN.fbGetTimeZone, FB_GetTimeZoneInformation, 641540032 (3488)
+        MAIN.fbLogHandler, FB_LogHandler, 634632896 (5785856)
+        MAIN.fbTime, FB_LocalSystemTime, 641517408 (19040)
+        MAIN.fbTime_to_UTC, FB_TzSpecificLocalTimeToSystemTime, 641536448 (3584)
         MAIN.Initialize, BOOL, 626225192 (8)
-        MAIN.PERanges, PE_Ranges, 641518944 (32)
-        MAIN.SystemTime, DINT, 641519008 (32)
+        MAIN.PERanges, PE_Ranges, 634632864 (32)
+        MAIN.SystemTime, DINT, 641517376 (32)
 
 .. raw:: html
 
@@ -751,20 +756,20 @@ P_AT1K0_SL1K0
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        P_AT1K0_SL1K0.bSimApt, BOOL, 642493312 (8)
-        P_AT1K0_SL1K0.ffKFEGattConnection, FB_FastFault, 642468224 (25088)
-        P_AT1K0_SL1K0.ffKFEMotConnection, FB_FastFault, 642443136 (25088)
-        P_AT1K0_SL1K0.i_bWcStateIn_AT1K0, BOOL, 641519000 (8)
-        P_AT1K0_SL1K0.i_bWcStateIn_KFEMOT, BOOL, 642442328 (8)
-        P_AT1K0_SL1K0.i_bWcStateOut_AT1K0, BOOL, 641518992 (8)
-        P_AT1K0_SL1K0.i_bWcStateOut_KFEMOT, BOOL, 642442320 (8)
-        P_AT1K0_SL1K0.i_nState_AT1K0, UINT, 642442304 (16)
-        P_AT1K0_SL1K0.i_nState_KFEMOT, UINT, 642443104 (16)
-        P_AT1K0_SL1K0.i_nTranToAT1K0Stat, ST_PMPS_Attenuator_IO, 642442240 (64)
-        P_AT1K0_SL1K0.i_stAptArrayStat, ST_PMPS_Aperture_IO, 642442720 (384)
-        P_AT1K0_SL1K0.idx, UINT, 642443120 (16)
-        P_AT1K0_SL1K0.q_nTranToAT1K0Req, ST_PMPS_Attenuator_IO, 642442176 (64)
-        P_AT1K0_SL1K0.q_stAptArrayReq, ST_PMPS_Aperture_IO, 642442336 (384)
+        P_AT1K0_SL1K0.bSimApt, BOOL, 642576288 (8)
+        P_AT1K0_SL1K0.ffKFEGattConnection, FB_FastFault, 642551200 (25088)
+        P_AT1K0_SL1K0.ffKFEMotConnection, FB_FastFault, 642526112 (25088)
+        P_AT1K0_SL1K0.i_bWcStateIn_AT1K0, BOOL, 641517368 (8)
+        P_AT1K0_SL1K0.i_bWcStateIn_KFEMOT, BOOL, 641984504 (8)
+        P_AT1K0_SL1K0.i_bWcStateOut_AT1K0, BOOL, 641517360 (8)
+        P_AT1K0_SL1K0.i_bWcStateOut_KFEMOT, BOOL, 641984496 (8)
+        P_AT1K0_SL1K0.i_nState_AT1K0, UINT, 641984480 (16)
+        P_AT1K0_SL1K0.i_nState_KFEMOT, UINT, 642526080 (16)
+        P_AT1K0_SL1K0.i_nTranToAT1K0Stat, ST_PMPS_Attenuator_IO, 642525248 (64)
+        P_AT1K0_SL1K0.i_stAptArrayStat, ST_PMPS_Aperture_IO, 642525696 (384)
+        P_AT1K0_SL1K0.idx, UINT, 642526096 (16)
+        P_AT1K0_SL1K0.q_nTranToAT1K0Req, ST_PMPS_Attenuator_IO, 642525184 (64)
+        P_AT1K0_SL1K0.q_stAptArrayReq, ST_PMPS_Aperture_IO, 642525312 (384)
 
 .. raw:: html
 
@@ -784,17 +789,17 @@ P_SATT
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        P_SATT.ffkfeConnection, FB_FastFault, 642496480 (25088)
-        P_SATT.ffRixConnection, FB_FastFault, 642521568 (25088)
-        P_SATT.i_bWcStateIn_kfe_mot, BOOL, 642493328 (8)
-        P_SATT.i_bWcStateIn_rix_mot, BOOL, 642496432 (8)
-        P_SATT.i_bWcStateOut_kfe_mot, BOOL, 642493320 (8)
-        P_SATT.i_bWcStateOut_rix_mot, BOOL, 642493336 (8)
-        P_SATT.i_nState_kfe_mot, UINT, 642496416 (16)
-        P_SATT.i_nState_rix_mot, UINT, 642496448 (16)
-        P_SATT.i_SattArrayStatus_KFE, ST_PMPS_Attenuator_IO, 642494368 (1024)
-        P_SATT.i_SattArrayStatus_RIX, ST_PMPS_Attenuator_IO, 642495392 (1024)
-        P_SATT.q_SattArrayReq, ST_PMPS_Attenuator_IO, 642493344 (1024)
+        P_SATT.ffkfeConnection, FB_FastFault, 642579456 (25088)
+        P_SATT.ffRixConnection, FB_FastFault, 642604544 (25088)
+        P_SATT.i_bWcStateIn_kfe_mot, BOOL, 642576304 (8)
+        P_SATT.i_bWcStateIn_rix_mot, BOOL, 642579408 (8)
+        P_SATT.i_bWcStateOut_kfe_mot, BOOL, 642576296 (8)
+        P_SATT.i_bWcStateOut_rix_mot, BOOL, 642576312 (8)
+        P_SATT.i_nState_kfe_mot, UINT, 642579392 (16)
+        P_SATT.i_nState_rix_mot, UINT, 642579424 (16)
+        P_SATT.i_SattArrayStatus_KFE, ST_PMPS_Attenuator_IO, 642577344 (1024)
+        P_SATT.i_SattArrayStatus_RIX, ST_PMPS_Attenuator_IO, 642578368 (1024)
+        P_SATT.q_SattArrayReq, ST_PMPS_Attenuator_IO, 642576320 (1024)
 
 .. raw:: html
 
@@ -824,105 +829,105 @@ PMPS_Arbiter
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        PMPS_Arbiter.count, CTU, 642286368 (128)
-        PMPS_Arbiter.fbBPRequestor, FB_BPRequestor, 641901504 (3776)
-        PMPS_Arbiter.fbCuInterface, FB_CTLS_Outputs, 642035488 (1792)
-        PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES, BOOL, 642037232 (24)
-        PMPS_Arbiter.fbMPSInterface, FB_BeamClassOutputs, 642033600 (1888)
-        PMPS_Arbiter.fbMPSInterface.q_BC_ASSERTION_LINES, BOOL, 642035392 (64)
-        PMPS_Arbiter.fbPhotonEnergyWatcher, FB_PhotonEnergyWatcher, 641905280 (128320)
-        PMPS_Arbiter.fbSetPE, PE_Ranges, 641804000 (32)
-        PMPS_Arbiter.plc_crix_mot_PMPS_IO, FB_ArbiterToSubSys_IO, 642379904 (31136)
-        PMPS_Arbiter.plc_crix_mot_PMPS_IO.i_Connected, BOOL, 642385792 (8)
-        PMPS_Arbiter.plc_crix_mot_PMPS_IO.i_RequestedBP, ST_BeamParams_IO, 642380704 (1696)
-        PMPS_Arbiter.plc_crix_mot_PMPS_IO.i_TxPDOState, BOOL, 642385808 (8)
-        PMPS_Arbiter.plc_crix_mot_PMPS_IO.i_TxPDOToggle, BOOL, 642385816 (8)
-        PMPS_Arbiter.plc_crix_mot_PMPS_IO.i_WcState, BOOL, 642385800 (8)
-        PMPS_Arbiter.plc_crix_mot_PMPS_IO.o_CurrentBP, ST_BeamParams_IO, 642384096 (1696)
-        PMPS_Arbiter.plc_crix_vac_PMPS_IO, FB_ArbiterToSubSys_IO, 642411040 (31136)
-        PMPS_Arbiter.plc_crix_vac_PMPS_IO.i_Connected, BOOL, 642416928 (8)
-        PMPS_Arbiter.plc_crix_vac_PMPS_IO.i_RequestedBP, ST_BeamParams_IO, 642411840 (1696)
-        PMPS_Arbiter.plc_crix_vac_PMPS_IO.i_TxPDOState, BOOL, 642416944 (8)
-        PMPS_Arbiter.plc_crix_vac_PMPS_IO.i_TxPDOToggle, BOOL, 642416952 (8)
-        PMPS_Arbiter.plc_crix_vac_PMPS_IO.i_WcState, BOOL, 642416936 (8)
-        PMPS_Arbiter.plc_crix_vac_PMPS_IO.o_CurrentBP, ST_BeamParams_IO, 642415232 (1696)
-        PMPS_Arbiter.plc_kfe_gatt_PMPS_IO, FB_ArbiterToSubSys_IO, 642099552 (31136)
-        PMPS_Arbiter.plc_kfe_gatt_PMPS_IO.i_Connected, BOOL, 642105440 (8)
-        PMPS_Arbiter.plc_kfe_gatt_PMPS_IO.i_RequestedBP, ST_BeamParams_IO, 642100352 (1696)
-        PMPS_Arbiter.plc_kfe_gatt_PMPS_IO.i_TxPDOState, BOOL, 642105456 (8)
-        PMPS_Arbiter.plc_kfe_gatt_PMPS_IO.i_TxPDOToggle, BOOL, 642105464 (8)
-        PMPS_Arbiter.plc_kfe_gatt_PMPS_IO.i_WcState, BOOL, 642105448 (8)
-        PMPS_Arbiter.plc_kfe_gatt_PMPS_IO.o_CurrentBP, ST_BeamParams_IO, 642103744 (1696)
-        PMPS_Arbiter.plc_kfe_gmd_PMPS_IO, FB_ArbiterToSubSys_IO, 642130688 (31136)
-        PMPS_Arbiter.plc_kfe_gmd_PMPS_IO.i_Connected, BOOL, 642136576 (8)
-        PMPS_Arbiter.plc_kfe_gmd_PMPS_IO.i_RequestedBP, ST_BeamParams_IO, 642131488 (1696)
-        PMPS_Arbiter.plc_kfe_gmd_PMPS_IO.i_TxPDOState, BOOL, 642136592 (8)
-        PMPS_Arbiter.plc_kfe_gmd_PMPS_IO.i_TxPDOToggle, BOOL, 642136600 (8)
-        PMPS_Arbiter.plc_kfe_gmd_PMPS_IO.i_WcState, BOOL, 642136584 (8)
-        PMPS_Arbiter.plc_kfe_gmd_PMPS_IO.o_CurrentBP, ST_BeamParams_IO, 642134880 (1696)
-        PMPS_Arbiter.plc_kfe_motion_PMPS_IO, FB_ArbiterToSubSys_IO, 642037280 (31136)
-        PMPS_Arbiter.plc_kfe_motion_PMPS_IO.i_Connected, BOOL, 642043168 (8)
-        PMPS_Arbiter.plc_kfe_motion_PMPS_IO.i_RequestedBP, ST_BeamParams_IO, 642038080 (1696)
-        PMPS_Arbiter.plc_kfe_motion_PMPS_IO.i_TxPDOState, BOOL, 642043184 (8)
-        PMPS_Arbiter.plc_kfe_motion_PMPS_IO.i_TxPDOToggle, BOOL, 642043192 (8)
-        PMPS_Arbiter.plc_kfe_motion_PMPS_IO.i_WcState, BOOL, 642043176 (8)
-        PMPS_Arbiter.plc_kfe_motion_PMPS_IO.o_CurrentBP, ST_BeamParams_IO, 642041472 (1696)
-        PMPS_Arbiter.plc_kfe_vac_PMPS_IO, FB_ArbiterToSubSys_IO, 642068416 (31136)
-        PMPS_Arbiter.plc_kfe_vac_PMPS_IO.i_Connected, BOOL, 642074304 (8)
-        PMPS_Arbiter.plc_kfe_vac_PMPS_IO.i_RequestedBP, ST_BeamParams_IO, 642069216 (1696)
-        PMPS_Arbiter.plc_kfe_vac_PMPS_IO.i_TxPDOState, BOOL, 642074320 (8)
-        PMPS_Arbiter.plc_kfe_vac_PMPS_IO.i_TxPDOToggle, BOOL, 642074328 (8)
-        PMPS_Arbiter.plc_kfe_vac_PMPS_IO.i_WcState, BOOL, 642074312 (8)
-        PMPS_Arbiter.plc_kfe_vac_PMPS_IO.o_CurrentBP, ST_BeamParams_IO, 642072608 (1696)
-        PMPS_Arbiter.plc_kfe_xgmd_PMPS_IO, FB_ArbiterToSubSys_IO, 642161824 (31136)
-        PMPS_Arbiter.plc_kfe_xgmd_PMPS_IO.i_Connected, BOOL, 642167712 (8)
-        PMPS_Arbiter.plc_kfe_xgmd_PMPS_IO.i_RequestedBP, ST_BeamParams_IO, 642162624 (1696)
-        PMPS_Arbiter.plc_kfe_xgmd_PMPS_IO.i_TxPDOState, BOOL, 642167728 (8)
-        PMPS_Arbiter.plc_kfe_xgmd_PMPS_IO.i_TxPDOToggle, BOOL, 642167736 (8)
-        PMPS_Arbiter.plc_kfe_xgmd_PMPS_IO.i_WcState, BOOL, 642167720 (8)
-        PMPS_Arbiter.plc_kfe_xgmd_PMPS_IO.o_CurrentBP, ST_BeamParams_IO, 642166016 (1696)
-        PMPS_Arbiter.plc_rix_mot_PMPS_IO, FB_ArbiterToSubSys_IO, 642348768 (31136)
-        PMPS_Arbiter.plc_rix_mot_PMPS_IO.i_Connected, BOOL, 642354656 (8)
-        PMPS_Arbiter.plc_rix_mot_PMPS_IO.i_RequestedBP, ST_BeamParams_IO, 642349568 (1696)
-        PMPS_Arbiter.plc_rix_mot_PMPS_IO.i_TxPDOState, BOOL, 642354672 (8)
-        PMPS_Arbiter.plc_rix_mot_PMPS_IO.i_TxPDOToggle, BOOL, 642354680 (8)
-        PMPS_Arbiter.plc_rix_mot_PMPS_IO.i_WcState, BOOL, 642354664 (8)
-        PMPS_Arbiter.plc_rix_mot_PMPS_IO.o_CurrentBP, ST_BeamParams_IO, 642352960 (1696)
-        PMPS_Arbiter.plc_rix_optics_PMPS_IO, FB_ArbiterToSubSys_IO, 642317632 (31136)
-        PMPS_Arbiter.plc_rix_optics_PMPS_IO.i_Connected, BOOL, 642323520 (8)
-        PMPS_Arbiter.plc_rix_optics_PMPS_IO.i_RequestedBP, ST_BeamParams_IO, 642318432 (1696)
-        PMPS_Arbiter.plc_rix_optics_PMPS_IO.i_TxPDOState, BOOL, 642323536 (8)
-        PMPS_Arbiter.plc_rix_optics_PMPS_IO.i_TxPDOToggle, BOOL, 642323544 (8)
-        PMPS_Arbiter.plc_rix_optics_PMPS_IO.i_WcState, BOOL, 642323528 (8)
-        PMPS_Arbiter.plc_rix_optics_PMPS_IO.o_CurrentBP, ST_BeamParams_IO, 642321824 (1696)
-        PMPS_Arbiter.plc_rix_vac_PMPS_IO, FB_ArbiterToSubSys_IO, 642286496 (31136)
-        PMPS_Arbiter.plc_rix_vac_PMPS_IO.i_Connected, BOOL, 642292384 (8)
-        PMPS_Arbiter.plc_rix_vac_PMPS_IO.i_RequestedBP, ST_BeamParams_IO, 642287296 (1696)
-        PMPS_Arbiter.plc_rix_vac_PMPS_IO.i_TxPDOState, BOOL, 642292400 (8)
-        PMPS_Arbiter.plc_rix_vac_PMPS_IO.i_TxPDOToggle, BOOL, 642292408 (8)
-        PMPS_Arbiter.plc_rix_vac_PMPS_IO.i_WcState, BOOL, 642292392 (8)
-        PMPS_Arbiter.plc_rix_vac_PMPS_IO.o_CurrentBP, ST_BeamParams_IO, 642290688 (1696)
-        PMPS_Arbiter.plc_tmo_motion_PMPS_IO, FB_ArbiterToSubSys_IO, 642192960 (31136)
-        PMPS_Arbiter.plc_tmo_motion_PMPS_IO.i_Connected, BOOL, 642198848 (8)
-        PMPS_Arbiter.plc_tmo_motion_PMPS_IO.i_RequestedBP, ST_BeamParams_IO, 642193760 (1696)
-        PMPS_Arbiter.plc_tmo_motion_PMPS_IO.i_TxPDOState, BOOL, 642198864 (8)
-        PMPS_Arbiter.plc_tmo_motion_PMPS_IO.i_TxPDOToggle, BOOL, 642198872 (8)
-        PMPS_Arbiter.plc_tmo_motion_PMPS_IO.i_WcState, BOOL, 642198856 (8)
-        PMPS_Arbiter.plc_tmo_motion_PMPS_IO.o_CurrentBP, ST_BeamParams_IO, 642197152 (1696)
-        PMPS_Arbiter.plc_tmo_optics_PMPS_IO, FB_ArbiterToSubSys_IO, 642224096 (31136)
-        PMPS_Arbiter.plc_tmo_optics_PMPS_IO.i_Connected, BOOL, 642229984 (8)
-        PMPS_Arbiter.plc_tmo_optics_PMPS_IO.i_RequestedBP, ST_BeamParams_IO, 642224896 (1696)
-        PMPS_Arbiter.plc_tmo_optics_PMPS_IO.i_TxPDOState, BOOL, 642230000 (8)
-        PMPS_Arbiter.plc_tmo_optics_PMPS_IO.i_TxPDOToggle, BOOL, 642230008 (8)
-        PMPS_Arbiter.plc_tmo_optics_PMPS_IO.i_WcState, BOOL, 642229992 (8)
-        PMPS_Arbiter.plc_tmo_optics_PMPS_IO.o_CurrentBP, ST_BeamParams_IO, 642228288 (1696)
-        PMPS_Arbiter.plc_tmo_vacuum_PMPS_IO, FB_ArbiterToSubSys_IO, 642255232 (31136)
-        PMPS_Arbiter.plc_tmo_vacuum_PMPS_IO.i_Connected, BOOL, 642261120 (8)
-        PMPS_Arbiter.plc_tmo_vacuum_PMPS_IO.i_RequestedBP, ST_BeamParams_IO, 642256032 (1696)
-        PMPS_Arbiter.plc_tmo_vacuum_PMPS_IO.i_TxPDOState, BOOL, 642261136 (8)
-        PMPS_Arbiter.plc_tmo_vacuum_PMPS_IO.i_TxPDOToggle, BOOL, 642261144 (8)
-        PMPS_Arbiter.plc_tmo_vacuum_PMPS_IO.i_WcState, BOOL, 642261128 (8)
-        PMPS_Arbiter.plc_tmo_vacuum_PMPS_IO.o_CurrentBP, ST_BeamParams_IO, 642259424 (1696)
+        PMPS_Arbiter.count, CTU, 642369376 (128)
+        PMPS_Arbiter.fbBPRequestor, FB_BPRequestor, 641984512 (3776)
+        PMPS_Arbiter.fbCuInterface, FB_CTLS_Outputs, 642118496 (1792)
+        PMPS_Arbiter.fbCuInterface.q_CLTS_ASSERTION_LINES, BOOL, 642120240 (24)
+        PMPS_Arbiter.fbMPSInterface, FB_BeamClassOutputs, 642116608 (1888)
+        PMPS_Arbiter.fbMPSInterface.q_BC_ASSERTION_LINES, BOOL, 642118400 (64)
+        PMPS_Arbiter.fbPhotonEnergyWatcher, FB_PhotonEnergyWatcher, 641988288 (128320)
+        PMPS_Arbiter.fbSetPE, PE_Ranges, 641984448 (32)
+        PMPS_Arbiter.plc_crix_mot_PMPS_IO, FB_ArbiterToSubSys_IO, 642462912 (31136)
+        PMPS_Arbiter.plc_crix_mot_PMPS_IO.i_Connected, BOOL, 642468800 (8)
+        PMPS_Arbiter.plc_crix_mot_PMPS_IO.i_RequestedBP, ST_BeamParams_IO, 642463712 (1696)
+        PMPS_Arbiter.plc_crix_mot_PMPS_IO.i_TxPDOState, BOOL, 642468816 (8)
+        PMPS_Arbiter.plc_crix_mot_PMPS_IO.i_TxPDOToggle, BOOL, 642468824 (8)
+        PMPS_Arbiter.plc_crix_mot_PMPS_IO.i_WcState, BOOL, 642468808 (8)
+        PMPS_Arbiter.plc_crix_mot_PMPS_IO.o_CurrentBP, ST_BeamParams_IO, 642467104 (1696)
+        PMPS_Arbiter.plc_crix_vac_PMPS_IO, FB_ArbiterToSubSys_IO, 642494048 (31136)
+        PMPS_Arbiter.plc_crix_vac_PMPS_IO.i_Connected, BOOL, 642499936 (8)
+        PMPS_Arbiter.plc_crix_vac_PMPS_IO.i_RequestedBP, ST_BeamParams_IO, 642494848 (1696)
+        PMPS_Arbiter.plc_crix_vac_PMPS_IO.i_TxPDOState, BOOL, 642499952 (8)
+        PMPS_Arbiter.plc_crix_vac_PMPS_IO.i_TxPDOToggle, BOOL, 642499960 (8)
+        PMPS_Arbiter.plc_crix_vac_PMPS_IO.i_WcState, BOOL, 642499944 (8)
+        PMPS_Arbiter.plc_crix_vac_PMPS_IO.o_CurrentBP, ST_BeamParams_IO, 642498240 (1696)
+        PMPS_Arbiter.plc_kfe_gatt_PMPS_IO, FB_ArbiterToSubSys_IO, 642182560 (31136)
+        PMPS_Arbiter.plc_kfe_gatt_PMPS_IO.i_Connected, BOOL, 642188448 (8)
+        PMPS_Arbiter.plc_kfe_gatt_PMPS_IO.i_RequestedBP, ST_BeamParams_IO, 642183360 (1696)
+        PMPS_Arbiter.plc_kfe_gatt_PMPS_IO.i_TxPDOState, BOOL, 642188464 (8)
+        PMPS_Arbiter.plc_kfe_gatt_PMPS_IO.i_TxPDOToggle, BOOL, 642188472 (8)
+        PMPS_Arbiter.plc_kfe_gatt_PMPS_IO.i_WcState, BOOL, 642188456 (8)
+        PMPS_Arbiter.plc_kfe_gatt_PMPS_IO.o_CurrentBP, ST_BeamParams_IO, 642186752 (1696)
+        PMPS_Arbiter.plc_kfe_gmd_PMPS_IO, FB_ArbiterToSubSys_IO, 642213696 (31136)
+        PMPS_Arbiter.plc_kfe_gmd_PMPS_IO.i_Connected, BOOL, 642219584 (8)
+        PMPS_Arbiter.plc_kfe_gmd_PMPS_IO.i_RequestedBP, ST_BeamParams_IO, 642214496 (1696)
+        PMPS_Arbiter.plc_kfe_gmd_PMPS_IO.i_TxPDOState, BOOL, 642219600 (8)
+        PMPS_Arbiter.plc_kfe_gmd_PMPS_IO.i_TxPDOToggle, BOOL, 642219608 (8)
+        PMPS_Arbiter.plc_kfe_gmd_PMPS_IO.i_WcState, BOOL, 642219592 (8)
+        PMPS_Arbiter.plc_kfe_gmd_PMPS_IO.o_CurrentBP, ST_BeamParams_IO, 642217888 (1696)
+        PMPS_Arbiter.plc_kfe_motion_PMPS_IO, FB_ArbiterToSubSys_IO, 642120288 (31136)
+        PMPS_Arbiter.plc_kfe_motion_PMPS_IO.i_Connected, BOOL, 642126176 (8)
+        PMPS_Arbiter.plc_kfe_motion_PMPS_IO.i_RequestedBP, ST_BeamParams_IO, 642121088 (1696)
+        PMPS_Arbiter.plc_kfe_motion_PMPS_IO.i_TxPDOState, BOOL, 642126192 (8)
+        PMPS_Arbiter.plc_kfe_motion_PMPS_IO.i_TxPDOToggle, BOOL, 642126200 (8)
+        PMPS_Arbiter.plc_kfe_motion_PMPS_IO.i_WcState, BOOL, 642126184 (8)
+        PMPS_Arbiter.plc_kfe_motion_PMPS_IO.o_CurrentBP, ST_BeamParams_IO, 642124480 (1696)
+        PMPS_Arbiter.plc_kfe_vac_PMPS_IO, FB_ArbiterToSubSys_IO, 642151424 (31136)
+        PMPS_Arbiter.plc_kfe_vac_PMPS_IO.i_Connected, BOOL, 642157312 (8)
+        PMPS_Arbiter.plc_kfe_vac_PMPS_IO.i_RequestedBP, ST_BeamParams_IO, 642152224 (1696)
+        PMPS_Arbiter.plc_kfe_vac_PMPS_IO.i_TxPDOState, BOOL, 642157328 (8)
+        PMPS_Arbiter.plc_kfe_vac_PMPS_IO.i_TxPDOToggle, BOOL, 642157336 (8)
+        PMPS_Arbiter.plc_kfe_vac_PMPS_IO.i_WcState, BOOL, 642157320 (8)
+        PMPS_Arbiter.plc_kfe_vac_PMPS_IO.o_CurrentBP, ST_BeamParams_IO, 642155616 (1696)
+        PMPS_Arbiter.plc_kfe_xgmd_PMPS_IO, FB_ArbiterToSubSys_IO, 642244832 (31136)
+        PMPS_Arbiter.plc_kfe_xgmd_PMPS_IO.i_Connected, BOOL, 642250720 (8)
+        PMPS_Arbiter.plc_kfe_xgmd_PMPS_IO.i_RequestedBP, ST_BeamParams_IO, 642245632 (1696)
+        PMPS_Arbiter.plc_kfe_xgmd_PMPS_IO.i_TxPDOState, BOOL, 642250736 (8)
+        PMPS_Arbiter.plc_kfe_xgmd_PMPS_IO.i_TxPDOToggle, BOOL, 642250744 (8)
+        PMPS_Arbiter.plc_kfe_xgmd_PMPS_IO.i_WcState, BOOL, 642250728 (8)
+        PMPS_Arbiter.plc_kfe_xgmd_PMPS_IO.o_CurrentBP, ST_BeamParams_IO, 642249024 (1696)
+        PMPS_Arbiter.plc_rix_mot_PMPS_IO, FB_ArbiterToSubSys_IO, 642431776 (31136)
+        PMPS_Arbiter.plc_rix_mot_PMPS_IO.i_Connected, BOOL, 642437664 (8)
+        PMPS_Arbiter.plc_rix_mot_PMPS_IO.i_RequestedBP, ST_BeamParams_IO, 642432576 (1696)
+        PMPS_Arbiter.plc_rix_mot_PMPS_IO.i_TxPDOState, BOOL, 642437680 (8)
+        PMPS_Arbiter.plc_rix_mot_PMPS_IO.i_TxPDOToggle, BOOL, 642437688 (8)
+        PMPS_Arbiter.plc_rix_mot_PMPS_IO.i_WcState, BOOL, 642437672 (8)
+        PMPS_Arbiter.plc_rix_mot_PMPS_IO.o_CurrentBP, ST_BeamParams_IO, 642435968 (1696)
+        PMPS_Arbiter.plc_rix_optics_PMPS_IO, FB_ArbiterToSubSys_IO, 642400640 (31136)
+        PMPS_Arbiter.plc_rix_optics_PMPS_IO.i_Connected, BOOL, 642406528 (8)
+        PMPS_Arbiter.plc_rix_optics_PMPS_IO.i_RequestedBP, ST_BeamParams_IO, 642401440 (1696)
+        PMPS_Arbiter.plc_rix_optics_PMPS_IO.i_TxPDOState, BOOL, 642406544 (8)
+        PMPS_Arbiter.plc_rix_optics_PMPS_IO.i_TxPDOToggle, BOOL, 642406552 (8)
+        PMPS_Arbiter.plc_rix_optics_PMPS_IO.i_WcState, BOOL, 642406536 (8)
+        PMPS_Arbiter.plc_rix_optics_PMPS_IO.o_CurrentBP, ST_BeamParams_IO, 642404832 (1696)
+        PMPS_Arbiter.plc_rix_vac_PMPS_IO, FB_ArbiterToSubSys_IO, 642369504 (31136)
+        PMPS_Arbiter.plc_rix_vac_PMPS_IO.i_Connected, BOOL, 642375392 (8)
+        PMPS_Arbiter.plc_rix_vac_PMPS_IO.i_RequestedBP, ST_BeamParams_IO, 642370304 (1696)
+        PMPS_Arbiter.plc_rix_vac_PMPS_IO.i_TxPDOState, BOOL, 642375408 (8)
+        PMPS_Arbiter.plc_rix_vac_PMPS_IO.i_TxPDOToggle, BOOL, 642375416 (8)
+        PMPS_Arbiter.plc_rix_vac_PMPS_IO.i_WcState, BOOL, 642375400 (8)
+        PMPS_Arbiter.plc_rix_vac_PMPS_IO.o_CurrentBP, ST_BeamParams_IO, 642373696 (1696)
+        PMPS_Arbiter.plc_tmo_motion_PMPS_IO, FB_ArbiterToSubSys_IO, 642275968 (31136)
+        PMPS_Arbiter.plc_tmo_motion_PMPS_IO.i_Connected, BOOL, 642281856 (8)
+        PMPS_Arbiter.plc_tmo_motion_PMPS_IO.i_RequestedBP, ST_BeamParams_IO, 642276768 (1696)
+        PMPS_Arbiter.plc_tmo_motion_PMPS_IO.i_TxPDOState, BOOL, 642281872 (8)
+        PMPS_Arbiter.plc_tmo_motion_PMPS_IO.i_TxPDOToggle, BOOL, 642281880 (8)
+        PMPS_Arbiter.plc_tmo_motion_PMPS_IO.i_WcState, BOOL, 642281864 (8)
+        PMPS_Arbiter.plc_tmo_motion_PMPS_IO.o_CurrentBP, ST_BeamParams_IO, 642280160 (1696)
+        PMPS_Arbiter.plc_tmo_optics_PMPS_IO, FB_ArbiterToSubSys_IO, 642307104 (31136)
+        PMPS_Arbiter.plc_tmo_optics_PMPS_IO.i_Connected, BOOL, 642312992 (8)
+        PMPS_Arbiter.plc_tmo_optics_PMPS_IO.i_RequestedBP, ST_BeamParams_IO, 642307904 (1696)
+        PMPS_Arbiter.plc_tmo_optics_PMPS_IO.i_TxPDOState, BOOL, 642313008 (8)
+        PMPS_Arbiter.plc_tmo_optics_PMPS_IO.i_TxPDOToggle, BOOL, 642313016 (8)
+        PMPS_Arbiter.plc_tmo_optics_PMPS_IO.i_WcState, BOOL, 642313000 (8)
+        PMPS_Arbiter.plc_tmo_optics_PMPS_IO.o_CurrentBP, ST_BeamParams_IO, 642311296 (1696)
+        PMPS_Arbiter.plc_tmo_vacuum_PMPS_IO, FB_ArbiterToSubSys_IO, 642338240 (31136)
+        PMPS_Arbiter.plc_tmo_vacuum_PMPS_IO.i_Connected, BOOL, 642344128 (8)
+        PMPS_Arbiter.plc_tmo_vacuum_PMPS_IO.i_RequestedBP, ST_BeamParams_IO, 642339040 (1696)
+        PMPS_Arbiter.plc_tmo_vacuum_PMPS_IO.i_TxPDOState, BOOL, 642344144 (8)
+        PMPS_Arbiter.plc_tmo_vacuum_PMPS_IO.i_TxPDOToggle, BOOL, 642344152 (8)
+        PMPS_Arbiter.plc_tmo_vacuum_PMPS_IO.i_WcState, BOOL, 642344136 (8)
+        PMPS_Arbiter.plc_tmo_vacuum_PMPS_IO.o_CurrentBP, ST_BeamParams_IO, 642342432 (1696)
 
 .. raw:: html
 
@@ -943,23 +948,23 @@ PMPS_GVL
     :align: center
 
         PMPS_GVL.AccumulatedFF, UDINT, 3072032 (32)
-        PMPS_GVL.AUX_ATTENUATORS, UINT, 634588160 (16)
-        PMPS_GVL.cnMaxStateArrayLen, INT, 634583056 (16)
-        PMPS_GVL.cst0RateBeam, ST_BeamParams, 634584768 (1696)
-        PMPS_GVL.cstFullBeam, ST_BeamParams, 634583072 (1696)
-        PMPS_GVL.DUMMY_AUX_ATT_ARRAY, ST_PMPS_Attenuator, 634588192 (1024)
+        PMPS_GVL.AUX_ATTENUATORS, UINT, 634583040 (16)
+        PMPS_GVL.cnMaxStateArrayLen, INT, 634586528 (16)
+        PMPS_GVL.cst0RateBeam, ST_BeamParams, 634584832 (1696)
+        PMPS_GVL.cstFullBeam, ST_BeamParams, 634583136 (1696)
+        PMPS_GVL.DUMMY_AUX_ATT_ARRAY, ST_PMPS_Attenuator, 634586560 (1024)
         PMPS_GVL.EXCLUDED_ASSERTION_ID, UDINT, 634582816 (32)
         PMPS_GVL.FAST_TEST_VELOCITY, LREAL, 634582912 (64)
         PMPS_GVL.g_areVBoundaries, REAL, 634581760 (1024)
-        PMPS_GVL.g_areVBoundariesK, REAL, 634590304 (1024)
-        PMPS_GVL.g_areVBoundariesL, REAL, 634589280 (1024)
-        PMPS_GVL.g_cBoundaries, INT, 634589216 (16)
-        PMPS_GVL.MAX_APERTURES, UINT, 634588176 (16)
+        PMPS_GVL.g_areVBoundariesK, REAL, 634588672 (1024)
+        PMPS_GVL.g_areVBoundariesL, REAL, 634587648 (1024)
+        PMPS_GVL.g_cBoundaries, INT, 634587584 (16)
+        PMPS_GVL.MAX_APERTURES, UINT, 634586544 (16)
         PMPS_GVL.MAX_DEVICE_STATES, UDINT, 634582976 (32)
-        PMPS_GVL.MAX_VETO_DEVICES, UINT, 634583040 (16)
+        PMPS_GVL.MAX_VETO_DEVICES, UINT, 634583056 (16)
         PMPS_GVL.PERange, PE_Ranges, 634582784 (32)
-        PMPS_GVL.reVHyst, REAL, 634589248 (32)
-        PMPS_GVL.stAttenuators, ST_PMPS_Attenuator, 648316928 (64)
+        PMPS_GVL.reVHyst, REAL, 634587616 (32)
+        PMPS_GVL.stAttenuators, ST_PMPS_Attenuator, 634583072 (64)
         PMPS_GVL.stCurrentBeamParameters, ST_BeamParams, 634580064 (1696)
         PMPS_GVL.stRequestedBeamParameters, ST_BeamParams, 634578368 (1696)
         PMPS_GVL.SuccessfulPreemption, UDINT, 3072000 (32)
@@ -979,9 +984,9 @@ PMPS_PARAM
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        PMPS_PARAM.MAX_ASSERTIONS, UDINT, 634591328 (32)
-        PMPS_PARAM.MAX_FAST_FAULTS, UINT, 634589232 (16)
-        PMPS_PARAM.TRANS_MARGIN, REAL, 634591360 (32)
+        PMPS_PARAM.MAX_ASSERTIONS, UDINT, 634589696 (32)
+        PMPS_PARAM.MAX_FAST_FAULTS, UINT, 634587600 (16)
+        PMPS_PARAM.TRANS_MARGIN, REAL, 634589728 (32)
 
 
 PMPS_TOOLS
@@ -991,7 +996,7 @@ PMPS_TOOLS
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        PMPS_TOOLS.fbJson, FB_JsonSaxWriter, 634591392 (256)
+        PMPS_TOOLS.fbJson, FB_JsonSaxWriter, 634589760 (256)
 
 
 TC_EVENT_CLASSES
@@ -1001,12 +1006,12 @@ TC_EVENT_CLASSES
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        TC_EVENT_CLASSES.LCLSGeneralEventClass, GUID, 644074720 (128)
-        TC_EVENT_CLASSES.TcGeneralAdsEventClass, GUID, 644074208 (128)
-        TC_EVENT_CLASSES.TcRouterEventClass, GUID, 644074336 (128)
-        TC_EVENT_CLASSES.TcRTimeEventClass, GUID, 644074464 (128)
-        TC_EVENT_CLASSES.TcSystemEventClass, GUID, 644074080 (128)
-        TC_EVENT_CLASSES.Win32EventClass, GUID, 644074592 (128)
+        TC_EVENT_CLASSES.LCLSGeneralEventClass, GUID, 644148192 (128)
+        TC_EVENT_CLASSES.TcGeneralAdsEventClass, GUID, 644147680 (128)
+        TC_EVENT_CLASSES.TcRouterEventClass, GUID, 644147808 (128)
+        TC_EVENT_CLASSES.TcRTimeEventClass, GUID, 644147936 (128)
+        TC_EVENT_CLASSES.TcSystemEventClass, GUID, 644147552 (128)
+        TC_EVENT_CLASSES.Win32EventClass, GUID, 644148064 (128)
 
 
 TC_EVENTS
@@ -1016,7 +1021,7 @@ TC_EVENTS
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        TC_EVENTS.LCLSGeneralEventClass, LCLSGeneralEventClass, 644105056 (960)
+        TC_EVENTS.LCLSGeneralEventClass, LCLSGeneralEventClass, 644138528 (960)
 
 
 TwinCAT_SystemInfoVarList
@@ -1026,13 +1031,13 @@ TwinCAT_SystemInfoVarList
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        TwinCAT_SystemInfoVarList.__FFOTask, _Implicit_Task_Info, 644060000 (704)
-        TwinCAT_SystemInfoVarList.__PlcTask, _Implicit_Task_Info, 644060704 (704)
-        TwinCAT_SystemInfoVarList._AppInfo, PlcAppSystemInfo, 644055776 (2048)
-        TwinCAT_SystemInfoVarList._TaskInfo, PlcTaskSystemInfo, 644057856 (2048)
-        TwinCAT_SystemInfoVarList._TaskOid_FFOTask, OTCID, 644059904 (32)
-        TwinCAT_SystemInfoVarList._TaskOid_PlcTask, OTCID, 644059968 (32)
-        TwinCAT_SystemInfoVarList._TaskPouOid_FFOTask, OTCID, 644057824 (32)
-        TwinCAT_SystemInfoVarList._TaskPouOid_PlcTask, OTCID, 644059936 (32)
+        TwinCAT_SystemInfoVarList.__FFOTask, _Implicit_Task_Info, 644094496 (704)
+        TwinCAT_SystemInfoVarList.__PlcTask, _Implicit_Task_Info, 644095200 (704)
+        TwinCAT_SystemInfoVarList._AppInfo, PlcAppSystemInfo, 644090272 (2048)
+        TwinCAT_SystemInfoVarList._TaskInfo, PlcTaskSystemInfo, 644092352 (2048)
+        TwinCAT_SystemInfoVarList._TaskOid_FFOTask, OTCID, 644094400 (32)
+        TwinCAT_SystemInfoVarList._TaskOid_PlcTask, OTCID, 644094464 (32)
+        TwinCAT_SystemInfoVarList._TaskPouOid_FFOTask, OTCID, 644092320 (32)
+        TwinCAT_SystemInfoVarList._TaskPouOid_PlcTask, OTCID, 644094432 (32)
 
 

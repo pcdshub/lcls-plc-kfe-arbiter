@@ -32,6 +32,8 @@ Links
         KFEArbiter Instance, PlcTask Inputs^CurrentBPUpdate.st1k2Watcher.i_StopperOutLS, TIID^Device 1 (EtherCAT)^E0 (EK1200)^E3 (EK1122)^950-101W-R4-MPS-2^PPS Stoppers 1, Channel 4^ST1K2 OUT
         KFEArbiter Instance, PlcTask Inputs^CurrentBPUpdate.st3k4Watcher.i_StopperInLS, TIID^Device 1 (EtherCAT)^E0 (EK1200)^E3 (EK1122)^950-101W-R4-MPS-2^PPS Stoppers 1, Channel 1^ST3K4 IN
         KFEArbiter Instance, PlcTask Inputs^CurrentBPUpdate.st3k4Watcher.i_StopperOutLS, TIID^Device 1 (EtherCAT)^E0 (EK1200)^E3 (EK1122)^950-101W-R4-MPS-2^PPS Stoppers 1, Channel 2^ST3K4 OUT
+        KFEArbiter Instance, PlcTask Inputs^CurrentBPUpdate.st4k4Watcher.i_StopperInLS, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-tmo-mot, IO Inputs^bST4K4_IN
+        KFEArbiter Instance, PlcTask Inputs^CurrentBPUpdate.st4k4Watcher.i_StopperOutLS, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-tmo-mot, IO Inputs^bST4K4_OUT
         KFEArbiter Instance, PlcTask Inputs^MAIN.fbEcatDiag.arrEcMasterNetId, TIID^Device 1 (EtherCAT), InfoData^AmsNetId
         KFEArbiter Instance, PlcTask Inputs^MAIN.fbEcatDiag.nEcMasterDevState, TIID^Device 1 (EtherCAT), Inputs^DevState
         KFEArbiter Instance, PlcTask Inputs^MAIN.fbEcatDiag.nEcMasterDeviceId, TIID^Device 1 (EtherCAT), InfoData^DevId

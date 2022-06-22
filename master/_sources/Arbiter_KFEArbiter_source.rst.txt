@@ -234,6 +234,15 @@ CurrentBPUpdate
     			eVetoDeviceIN := K_Stopper.MR1K1_IN,
     			eVetoDeviceOUT := K_Stopper.MR1K1_OUT,
     			sVetoDeviceName := 'MR1K1');
+    			
+    	// ST4K4 Photon Terminator Veto	 
+    	{attribute 'TcLinkTo' := '
+                    .i_StopperInLS:=TIIB[plc-tmo-mot]^IO Inputs^bST4K4_IN;
+                    .i_StopperOutLS:=TIIB[plc-tmo-mot]^IO Inputs^bST4K4_OUT;
+         '}
+        st4k4Watcher : FB_KStopper(
+            PMPS.K_Stopper.ST4K4,
+            'ST4K4');
     		
     END_VAR
     fbEPICS_KRate(BP:=PMPS_GVL.stCurrentBeamParameters, fbBYKIK_Rate:=fbBYKIK_Rate, FFO:=GVL.g_FastFaultOutput1);
@@ -252,6 +261,8 @@ CurrentBPUpdate
     		i_bOut := i_MR1K1_ENC < cMR1K1_OUT_UpperLimit,
     		q_bIN => q_MR1K1_VETO, 
     		stCurrentBP:= PMPS_GVL.stCurrentBeamParameters);
+    // ST4K4 Photon Terminator Veto
+    st4k4Watcher(stCurrentBP:=PMPS_GVL.stCurrentBeamParameters);
 
     END_PROGRAM
 
