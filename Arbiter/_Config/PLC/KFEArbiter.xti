@@ -421,13 +421,6 @@
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>CurrentBPUpdate.i_MR1K1_ENC</Name>
-					<Comment>
-						<![CDATA[/////////////////////]]>
-					</Comment>
-					<Type>UDINT</Type>
-				</Var>
-				<Var>
 					<Name>CurrentBPUpdate.st3k4Watcher.i_StopperOutLS</Name>
 					<Type>BOOL</Type>
 				</Var>
@@ -441,6 +434,36 @@
 				</Var>
 				<Var>
 					<Name>CurrentBPUpdate.st1k2Watcher.i_StopperInLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>CurrentBPUpdate.i_MR1K1_ENC</Name>
+					<Comment>
+						<![CDATA[/////////////////////]]>
+					</Comment>
+					<Type>UDINT</Type>
+				</Var>
+				<Var>
+					<Name>CurrentBPUpdate.st4k4Watcher.i_StopperOutLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>CurrentBPUpdate.st4k4Watcher.i_StopperInLS</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>P_AT1K0_SL1K0.i_nState_AT1K0</Name>
+					<Type>UINT</Type>
+				</Var>
+				<Var>
+					<Name>P_AT1K0_SL1K0.i_bWcStateOut_KFEMOT</Name>
+					<Comment>
+						<![CDATA[ plc-kfe-motion interface diagnostics]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>P_AT1K0_SL1K0.i_bWcStateIn_KFEMOT</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -2466,21 +2489,6 @@
 					<Type GUID="{7E016B85-166E-4B4F-AAC4-ECA8DDD44F13}">ST_PMPS_Attenuator_IO</Type>
 				</Var>
 				<Var>
-					<Name>P_AT1K0_SL1K0.i_nState_AT1K0</Name>
-					<Type>UINT</Type>
-				</Var>
-				<Var>
-					<Name>P_AT1K0_SL1K0.i_bWcStateOut_KFEMOT</Name>
-					<Comment>
-						<![CDATA[ plc-kfe-motion interface diagnostics]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>P_AT1K0_SL1K0.i_bWcStateIn_KFEMOT</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>P_AT1K0_SL1K0.i_stAptArrayStat</Name>
 					<Type GUID="{B0236749-C315-EC4D-D21C-B52A19E31F36}">ARRAY [1..4] OF ST_PMPS_Aperture_IO</Type>
 					<SubVar>
@@ -2642,6 +2650,14 @@
 				</Var>
 				<Var>
 					<Name>CurrentBPUpdate.st1k2Watcher.q_StopperIN_Relay</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>CurrentBPUpdate.st4k4Watcher.q_StopperOUT_Relay</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>CurrentBPUpdate.st4k4Watcher.q_StopperIN_Relay</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -4675,6 +4691,8 @@
 				<Link VarA="PlcTask Outputs^PMPS_Arbiter.plc_kfe_xgmd_PMPS_IO.o_CurrentBP" VarB="IO Outputs^CurrentBP" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-tmo-mot">
+				<Link VarA="PlcTask Inputs^CurrentBPUpdate.st4k4Watcher.i_StopperInLS" VarB="IO Inputs^bST4K4_IN" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^CurrentBPUpdate.st4k4Watcher.i_StopperOutLS" VarB="IO Inputs^bST4K4_OUT" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_tmo_motion_PMPS_IO.i_Connected" VarB="SYNC Inputs^External device not connected" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_tmo_motion_PMPS_IO.i_RequestedBP" VarB="IO Inputs^RequestedBP" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_tmo_motion_PMPS_IO.i_TxPDOState" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
