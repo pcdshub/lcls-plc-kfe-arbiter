@@ -11,10 +11,14 @@ VAR
     pv: @(PREFIX)PhotonEnergyWatcher
     '}
     fbPhotonEnergyWatcher	:	FB_PhotonEnergyWatcher;
+	{attribute 'pytmc' := '
+    pv: @(PREFIX)BeamClassWatcher
+    '}
+	fbBeamClassWatcher : FB_BeamClassWatcher;
     {attribute 'pytmc' := '
     pv: @(PREFIX)BeamClassOutputs
     '}
-    fbMPSInterface	:	FB_BeamClassOutputs;
+    fbMPSInterface	:	FB_BeamClassOutputs_BCD;
     {attribute 'pytmc' := '
     pv: @(PREFIX)CuRateOutputs
     '}
@@ -188,6 +192,13 @@ fbPhotonEnergyWatcher(i_stCurrentBeamParams	:= PMPS_GVL.stCurrentBeamParameters,
                     i_stRequestedBeamParams := PMPS_GVL.stRequestedBeamParameters,
                     io_fbFFHWO:= GVL.g_FastFaultOutput1,
                     i_xReset := GVL.AttemptReset);			
+
+// Keep an eye on the beam class
+fbBeamClassWatcher(i_stCurrentBeamParams	:= PMPS_GVL.stCurrentBeamParameters,
+                    i_stRequestedBeamParams := PMPS_GVL.stRequestedBeamParameters,
+                    io_fbFFHWO:= GVL.g_FastFaultOutput1,
+                    i_xReset := GVL.AttemptReset);
+
 
 // Evaluate fast fault vetos
 g_FastFaultOutput1.Execute();

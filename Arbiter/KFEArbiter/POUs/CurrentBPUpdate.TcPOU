@@ -17,6 +17,18 @@ VAR
     '}
 	fbEPICS_KRate : FB_RateFromEPICS;
 	
+	{attribute 'pytmc' := '
+        pv: @(PREFIX)L:BC
+        link: SIOC:SYS0:MP03:SC_SXR_BC
+        field: EGU BCEnum
+    '}
+    fbMPS_BeamClass : FB_LREALFromEPICS := (
+		iMaximumValidSeverity := 2);
+	
+		{attribute 'pytmc' := '
+        pv: @(PREFIX)
+    '}
+	fbEPICSLBeamClass : FB_BeamClassFromEPICS;
 	
 	
 	{attribute 'pytmc' := '
@@ -77,12 +89,19 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[
+      <ST><![CDATA[// Acquiring L-line rate
 fbEPICS_KRate(BP:=PMPS_GVL.stCurrentBeamParameters, fbBYKIK_Rate:=fbBYKIK_Rate, FFO:=GVL.g_FastFaultOutput1);
 
+// Acquiring photon energy
 fbKPhotonEnergy(BP:=PMPS_GVL.stCurrentBeamParameters);
 
 q_rPhotonEnergy := LREAL_TO_REAL(fbKPhotonEnergy.fbSXU.fCurrentPhotonEnergy);
+
+//Update current photon energy
+PMPS_GVL.stCurrentBeamParameters.neV := LREAL_TO_REAL(fbKPhotonEnergy.fbSXU.fCurrentPhotonEnergy);
+// Acquiring K-line BeamClass
+fbEPICSLBeamClass(BP:=PMPS_GVL.stCurrentBeamParameters, fbMPS_BeamClass:=fbMPS_BeamClass, FFO:=GVL.g_FastFaultOutput1);
+
 
 // Stopper readbacks
 st3k4Watcher(stCurrentBP:=PMPS_GVL.stCurrentBeamParameters);
