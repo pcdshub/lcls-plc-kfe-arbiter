@@ -30,6 +30,17 @@ VAR
     '}
 	fbEPICSLBeamClass : FB_BeamClassFromEPICS;
 	
+	{attribute 'pytmc' := '
+        pv: @(PREFIX)K:Mode
+        link: link: SIOC:FEES:MP01:LCLSMODE_RBV
+    '}
+    fbSXR_MachineMode : FB_LREALFromEPICS := (
+		iMaximumValidSeverity := 2);
+		
+	{attribute 'pytmc' := '
+        pv: @(PREFIX)
+    '}
+	fbEPICSLMachineMode : FB_MachineModeFromEPICS;
 	
 	{attribute 'pytmc' := '
         pv: @(PREFIX)PE
@@ -101,6 +112,9 @@ q_rPhotonEnergy := LREAL_TO_REAL(fbKPhotonEnergy.fbSXU.fCurrentPhotonEnergy);
 PMPS_GVL.stCurrentBeamParameters.neV := LREAL_TO_REAL(fbKPhotonEnergy.fbSXU.fCurrentPhotonEnergy);
 // Acquiring K-line BeamClass
 fbEPICSLBeamClass(BP:=PMPS_GVL.stCurrentBeamParameters, fbMPS_BeamClass:=fbMPS_BeamClass, FFO:=GVL.g_FastFaultOutput1);
+
+// Acquiring K-line Machine Mode
+fbEPICSLMachineMode(BP:=PMPS_GVL.stCurrentBeamParameters, fbMPS_MachineMode:=fbSXR_MachineMode, FFO:=GVL.g_FastFaultOutput1);
 
 
 // Stopper readbacks
