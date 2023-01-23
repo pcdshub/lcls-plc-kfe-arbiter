@@ -100,7 +100,7 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[// Acquiring L-line rate
+      <ST><![CDATA[// Acquiring K-line rate
 fbEPICS_KRate(BP:=PMPS_GVL.stCurrentBeamParameters, fbBYKIK_Rate:=fbBYKIK_Rate, FFO:=GVL.g_FastFaultOutput1);
 
 // Acquiring photon energy
