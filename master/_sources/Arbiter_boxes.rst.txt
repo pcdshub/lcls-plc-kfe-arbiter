@@ -21,8 +21,8 @@ plc-kfe-gatt
         BootStrapData, 0010140200141402
         SyncMan, 0010000426000100010000008000da050004001026010000
         SyncMan, 0016000422000100020000008000da050004001622010000
-        SyncMan, 001ce0006400010003000000000000000000001c64010000
-        SyncMan, 008edf002000010004000000000000000200008e20010000
+        SyncMan, 001ce4006400010003000000000000000000001c64010000
+        SyncMan, 008ee7002000010004000000000000000200008e20010000
         Fmmu, 0000000000000000001c00020100000001000000000000000000000000000000
         Fmmu, 0000000000000000008e00010100000002000000000000000000000000000000
         Fmmu, 00000000000000000d0800010100000003000000000000000000000000000000
@@ -96,9 +96,9 @@ PDO IO Inputs (Index #x1a08, Flags #x0020, SyncMan 3)
     :header: Name, Comment, BitLen, Index, Type
     :align: center
 
-        "RequestedBP", "", 240, "#x6000", "ST_BeamParams_IO"
-        "Current Transmission", "", 64, "#x6000", "ST_PMPS_Attenuator_IO"
-        "bGattStatus", "", 8, "#x6000", "BYTE"
+        "Current Transmission", "", , "#x6000", "ST_PMPS_Attenuator_IO"
+        "bGattStatus", "", , "#x6000", "BYTE"
+        "RequestedBP", "", , "#x6000", "ST_BeamParams_IO"
 
 
 
@@ -108,9 +108,8 @@ PDO IO Outputs (Index #x1608, Flags #x0020, SyncMan 2)
     :header: Name, Comment, BitLen, Index, Type
     :align: center
 
-        "CurrentBP", "", 240, "#x7000", "ST_BeamParams_IO"
-        "Requested Transmission", "", 64, "#x7000", "ST_PMPS_Attenuator_IO"
-        "rPhotonEnergy", "", 32, "#x7000", "REAL"
+        "Requested Transmission", "", , "#x7000", "ST_PMPS_Attenuator_IO"
+        "CurrentBP", "", , "#x7000", "ST_BeamParams_IO"
 
 
 .. raw:: html
@@ -641,8 +640,8 @@ plc-kfe-motion
         BootStrapData, 0010140200141402
         SyncMan, 0010000426000100010000008000da050004001026010000
         SyncMan, 0016000422000100020000008000da050004001622010000
-        SyncMan, 001c88016400010003000000000000000000001c64010000
-        SyncMan, 008e86012000010004000000000000000200008e20010000
+        SyncMan, 001c8c016400010003000000000000000000001c64010000
+        SyncMan, 008e8e012000010004000000000000000200008e20010000
         Fmmu, 0000000000000000001c00020100000001000000000000000000000000000000
         Fmmu, 0000000000000000008e00010100000002000000000000000000000000000000
         Fmmu, 00000000000000000d0800010100000003000000000000000000000000000000
@@ -717,8 +716,8 @@ PDO IO Inputs (Index #x1a08, Flags #x0020, SyncMan 3)
     :align: center
 
         "AptArrayStatus", "", , "#x6000", "ARRAY [1..4] OF ST_PMPS_Aperture_IO"
-        "RequestedBP", "", , "#x6000", "ST_BeamParams_IO"
         "SattArrayStatus", "", , "#x6000", "ARRAY [1..16] OF ST_PMPS_Attenuator_IO"
+        "RequestedBP", "", , "#x6000", "ST_BeamParams_IO"
 
 
 
@@ -729,9 +728,8 @@ PDO IO Outputs (Index #x1608, Flags #x0020, SyncMan 2)
     :align: center
 
         "AptArrayReq", "", , "#x7000", "ARRAY [1..4] OF ST_PMPS_Aperture_IO"
-        "CurrentBP", "", , "#x7000", "ST_BeamParams_IO"
         "SattArrayReq", "", , "#x7000", "ARRAY [1..16] OF ST_PMPS_Attenuator_IO"
-        "rPhotonEnergy", "", , "#x7000", "REAL"
+        "CurrentBP", "", , "#x7000", "ST_BeamParams_IO"
 
 
 .. raw:: html
@@ -1195,8 +1193,8 @@ plc-tmo-mot
     ID, 34
         SyncMan, 001000012600010001000000800000040001001026010000
         SyncMan, 001400012200010002000000800000040001001422010000
-        SyncMan, 0018d4002400010003000000000000000000001824010000
-        SyncMan, 001ed8002000010004000000000000000200001e20010000
+        SyncMan, 0018dc002400010003000000000000000000001824010000
+        SyncMan, 001ee0002000010004000000000000000200001e20010000
         Fmmu, 0000000000000000001800020100000001000000000000000000000000000000
         Fmmu, 0000000000000000001e00010100000002000000000000000000000000000000
         Fmmu, 00000000000000000d0800010100000003000000000000000000000000000000
@@ -1267,9 +1265,9 @@ PDO IO Inputs (Index #x1a00, Flags #x0021, SyncMan 3)
     :header: Name, Comment, BitLen, Index, Type
     :align: center
 
-        "RequestedBP", "", , "#x6000", "ST_BeamParams_IO"
         "bST4K4_IN", "", , "#x6000", "BOOL"
         "bST4K4_OUT", "", , "#x6000", "BOOL"
+        "RequestedBP", "", , "#x6000", "ST_BeamParams_IO"
 
 
 
@@ -1305,8 +1303,8 @@ plc-tmo-optics
         BootStrapData, 0010140200141402
         SyncMan, 0010000426000100010000008000da050004001026010000
         SyncMan, 0016000422000100020000008000da050004001622010000
-        SyncMan, 001cd4006400010003000000000000000000001c64010000
-        SyncMan, 008ed6002000010004000000000000000200008e20010000
+        SyncMan, 001cdc006400010003000000000000000000001c64010000
+        SyncMan, 008ede002000010004000000000000000200008e20010000
         Fmmu, 0000000000000000001c00020100000001000000000000000000000000000000
         Fmmu, 0000000000000000008e00010100000002000000000000000000000000000000
         Fmmu, 00000000000000000d0800010100000003000000000000000000000000000000
@@ -1415,9 +1413,9 @@ plc-tmo-vac
     ID, 36
         SyncMan, 001000012600010001000000800000040001001026010000
         SyncMan, 001400012200010002000000800000040001001422010000
-        SyncMan, 001800002400000003000000000000000000001824010000
-        SyncMan, 001e02002000010004000000000000000200001e20010000
-        Fmmu, 0000000000000000000000020000000001000000000000000000000000000000
+        SyncMan, 0018dc002400010003000000000000000000001824010000
+        SyncMan, 001ede002000010004000000000000000200001e20010000
+        Fmmu, 0000000000000000001800020100000001000000000000000000000000000000
         Fmmu, 0000000000000000001e00010100000002000000000000000000000000000000
         Fmmu, 00000000000000000d0800010100000003000000000000000000000000000000
         CoeProfile, 5001
@@ -1523,8 +1521,8 @@ plc-rix-mot
         BootStrapData, 0010140200141402
         SyncMan, 0010000426000100010000008000da050004001026010000
         SyncMan, 0016000422000100020000008000da050004001622010000
-        SyncMan, 001c58016400010003000000000000000000001c64010000
-        SyncMan, 008e56012000010004000000000000000200008e20010000
+        SyncMan, 001c5c016400010003000000000000000000001c64010000
+        SyncMan, 008e5e012000010004000000000000000200008e20010000
         Fmmu, 0000000000000000001c00020100000001000000000000000000000000000000
         Fmmu, 0000000000000000008e00010100000002000000000000000000000000000000
         Fmmu, 00000000000000000d0800010100000003000000000000000000000000000000
@@ -1598,8 +1596,8 @@ PDO IO Inputs (Index #x1a08, Flags #x0020, SyncMan 3)
     :header: Name, Comment, BitLen, Index, Type
     :align: center
 
-        "RequestedBP", "", , "#x6000", "ST_BeamParams_IO"
         "SattArrayStatus", "", , "#x6000", "ARRAY [1..16] OF ST_PMPS_Attenuator_IO"
+        "RequestedBP", "", , "#x6000", "ST_BeamParams_IO"
 
 
 
@@ -1609,9 +1607,8 @@ PDO IO Outputs (Index #x1608, Flags #x0020, SyncMan 2)
     :header: Name, Comment, BitLen, Index, Type
     :align: center
 
-        "CurrentBP", "", , "#x7000", "ST_BeamParams_IO"
-        "rPhotonEnergy", "", , "#x7000", "REAL"
         "SattArrayReq", "", , "#x7000", "ARRAY [1..16] OF ST_PMPS_Attenuator_IO"
+        "CurrentBP", "", , "#x7000", "ST_BeamParams_IO"
 
 
 .. raw:: html
@@ -1637,8 +1634,8 @@ plc-rix-vac
         BootStrapData, 0010140200141402
         SyncMan, 0010000426000100010000008000da050004001026010000
         SyncMan, 0016000422000100020000008000da050004001622010000
-        SyncMan, 001cd4006400010003000000000000000000001c64010000
-        SyncMan, 008ed6002000010004000000000000000200008e20010000
+        SyncMan, 001cdc006400010003000000000000000000001c64010000
+        SyncMan, 008ede002000010004000000000000000200008e20010000
         Fmmu, 0000000000000000001c00020100000001000000000000000000000000000000
         Fmmu, 0000000000000000008e00010100000002000000000000000000000000000000
         Fmmu, 00000000000000000d0800010100000003000000000000000000000000000000
@@ -1748,8 +1745,8 @@ plc-rix-optics
         BootStrapData, 0010140200141402
         SyncMan, 0010000426000100010000008000da050004001026010000
         SyncMan, 0016000422000100020000008000da050004001622010000
-        SyncMan, 001cd8006400010003000000000000000000001c64010000
-        SyncMan, 008eda002000010004000000000000000200008e20010000
+        SyncMan, 001cdc006400010003000000000000000000001c64010000
+        SyncMan, 008ee2002000010004000000000000000200008e20010000
         Fmmu, 0000000000000000001c00020100000001000000000000000000000000000000
         Fmmu, 0000000000000000008e00010100000002000000000000000000000000000000
         Fmmu, 00000000000000000d0800010100000003000000000000000000000000000000
@@ -1834,7 +1831,6 @@ PDO IO Outputs (Index #x1608, Flags #x0020, SyncMan 2)
     :header: Name, Comment, BitLen, Index, Type
     :align: center
 
-        "rPhotonEnergy", "", , "#x7000", "REAL"
         "CurrentBP", "", , "#x7000", "ST_BeamParams_IO"
 
 
@@ -1861,8 +1857,8 @@ plc-crix-vac
         BootStrapData, 0010140200141402
         SyncMan, 0010000426000100010000008000da050004001026010000
         SyncMan, 0016000422000100020000008000da050004001622010000
-        SyncMan, 001cd4006400010003000000000000000000001c64010000
-        SyncMan, 008ed6002000010004000000000000000200008e20010000
+        SyncMan, 001cdc006400010003000000000000000000001c64010000
+        SyncMan, 008ede002000010004000000000000000200008e20010000
         Fmmu, 0000000000000000001c00020100000001000000000000000000000000000000
         Fmmu, 0000000000000000008e00010100000002000000000000000000000000000000
         Fmmu, 00000000000000000d0800010100000003000000000000000000000000000000
@@ -1937,7 +1933,6 @@ PDO IO Inputs (Index #x1a08, Flags #x0020, SyncMan 3)
     :align: center
 
         "RequestedBP", "", , "#x6000", "ST_BeamParams_IO"
-        "FFO_Link", "", , "#x6000", "BOOL"
 
 
 
@@ -1973,8 +1968,8 @@ plc-crix-mot
         BootStrapData, 0010140200141402
         SyncMan, 0010000426000100010000008000da050004001026010000
         SyncMan, 0016000422000100020000008000da050004001622010000
-        SyncMan, 001cd4006400010003000000000000000000001c64010000
-        SyncMan, 008ed7002000010004000000000000000200008e20010000
+        SyncMan, 001cdc006400010003000000000000000000001c64010000
+        SyncMan, 008ede002000010004000000000000000200008e20010000
         Fmmu, 0000000000000000001c00020100000001000000000000000000000000000000
         Fmmu, 0000000000000000008e00010100000002000000000000000000000000000000
         Fmmu, 00000000000000000d0800010100000003000000000000000000000000000000
@@ -1988,11 +1983,11 @@ PDO SYNC Inputs (Index #x1a01, Flags #x0010, SyncMan 3)
     :header: Name, Comment, BitLen, Index, Type
     :align: center
 
-        "None", "", , "", "ARRAY [0..11] OF BIT"
-        "TxPDO toggle", "Bit toggles when new data from other side received", , "#x1801", "BIT"
-        "TxPDO state", "0: Other side is in OP state >0: Error", , "#x1801", "BIT"
-        "None", "", , "", "ARRAY [0..0] OF BIT"
-        "External device not connected", "0: External device connected 1: External device not connected", , "#x10f4", "BIT"
+        "None", "", 12, "", "ARRAY [0..11] OF BIT"
+        "TxPDO toggle", "Bit toggles when new data from other side received", 1, "#x1801", "BIT"
+        "TxPDO state", "0: Other side is in OP state >0: Error", 1, "#x1801", "BIT"
+        "None", "", 1, "", "ARRAY [0..0] OF BIT"
+        "External device not connected", "0: External device connected 1: External device not connected", 1, "#x10f4", "BIT"
 
 
 
@@ -2002,15 +1997,15 @@ PDO SYNC Inputs (Index #x1a02, Flags #x0010, SyncMan )
     :header: Name, Comment, BitLen, Index, Type
     :align: center
 
-        "Sync Mode", "0: no Syncronisation 1: Secondary side is Sync Master 2: Primary side is Sync Master", , "#x10f4", "BIT2"
-        "None", "", , "", "ARRAY [0..9] OF BIT"
-        "TxPDO toggle", "Bit toggles when new data from other side received", , "#x1802", "BIT"
-        "TxPDO state", "0: Other side is in OP state >0: Error", , "#x1802", "BIT"
-        "Timestamp update toggle", "Bit toggles when new timestamp data available", , "#x10f4", "BIT"
-        "External device not connected", "0: External device connected 1: External device not connected", , "#x10f4", "BIT"
-        "Internal time stamp", "", , "#x10f4", "ULINT"
-        "External time stamp", "", , "#x10f4", "ULINT"
-        "None", "", , "", "UDINT"
+        "Sync Mode", "0: no Syncronisation 1: Secondary side is Sync Master 2: Primary side is Sync Master", 2, "#x10f4", "BIT2"
+        "None", "", 10, "", "ARRAY [0..9] OF BIT"
+        "TxPDO toggle", "Bit toggles when new data from other side received", 1, "#x1802", "BIT"
+        "TxPDO state", "0: Other side is in OP state >0: Error", 1, "#x1802", "BIT"
+        "Timestamp update toggle", "Bit toggles when new timestamp data available", 1, "#x10f4", "BIT"
+        "External device not connected", "0: External device connected 1: External device not connected", 1, "#x10f4", "BIT"
+        "Internal time stamp", "", 64, "#x10f4", "ULINT"
+        "External time stamp", "", 64, "#x10f4", "ULINT"
+        "None", "", 32, "", "ARRAY [0..3] OF BYTE"
 
 
 
@@ -2020,15 +2015,15 @@ PDO SYNC Inputs (Index #x1a03, Flags #x0010, SyncMan )
     :header: Name, Comment, BitLen, Index, Type
     :align: center
 
-        "Sync Mode", "0: no Syncronisation 1: Secondary side is Sync Master 2: Primary side is Sync Master", , "#x10f4", "BIT2"
-        "None", "", , "", "ARRAY [0..9] OF BIT"
-        "TxPDO toggle", "Bit toggles when new data from other side received", , "#x1803", "BIT"
-        "TxPDO state", "0: Other side is in OP state >0: Error", , "#x1803", "BIT"
-        "Timestamp update toggle", "Bit toggles when new timestamp data available", , "#x10f4", "BIT"
-        "External device not connected", "0: External device connected 1: External device not connected", , "#x10f4", "BIT"
-        "Internal time stamp", "", , "#x10f4", "UDINT"
-        "External time stamp", "", , "#x10f4", "UDINT"
-        "None", "", , "", "UDINT"
+        "Sync Mode", "0: no Syncronisation 1: Secondary side is Sync Master 2: Primary side is Sync Master", 2, "#x10f4", "BIT2"
+        "None", "", 10, "", "ARRAY [0..9] OF BIT"
+        "TxPDO toggle", "Bit toggles when new data from other side received", 1, "#x1803", "BIT"
+        "TxPDO state", "0: Other side is in OP state >0: Error", 1, "#x1803", "BIT"
+        "Timestamp update toggle", "Bit toggles when new timestamp data available", 1, "#x10f4", "BIT"
+        "External device not connected", "0: External device connected 1: External device not connected", 1, "#x10f4", "BIT"
+        "Internal time stamp", "", 32, "#x10f4", "UDINT"
+        "External time stamp", "", 32, "#x10f4", "UDINT"
+        "None", "", 32, "", "ARRAY [0..3] OF BYTE"
 
 
 
@@ -2038,7 +2033,7 @@ PDO FOE Info (Index #x1a05, Flags #x0020, SyncMan )
     :header: Name, Comment, BitLen, Index, Type
     :align: center
 
-        "Data Bytes Pending", "", , "#xf650", "UINT"
+        "Data Bytes Pending", "", 16, "#xf650", "UINT"
 
 
 
@@ -2049,7 +2044,6 @@ PDO IO Inputs (Index #x1a08, Flags #x0020, SyncMan 3)
     :align: center
 
         "RequestedBP", "", , "#x6000", "ST_BeamParams_IO"
-        "FFO_Link", "", , "#x6000", "BOOL"
 
 
 

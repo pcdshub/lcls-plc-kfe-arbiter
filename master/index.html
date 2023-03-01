@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>lcls-plc-kfe-arbiter &mdash; pcdshub/lcls-plc-kfe-arbiter  documentation</title>
@@ -11,12 +11,12 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/doctr-versions-menu.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/docs-versions-menu.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -28,11 +28,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="#" class="icon icon-home"> pcdshub/lcls-plc-kfe-arbiter
+
+          
+          
+          <a href="#" class="icon icon-home">
+            pcdshub/lcls-plc-kfe-arbiter
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -42,6 +46,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Arbiter_pragmas.html">Pragmas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Arbiter_nc.html">NC Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Arbiter_ethercat.html">Box Hierarchy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Arbiter_boxes.html">Boxes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Arbiter_links.html">Links</a></li>
 </ul>
@@ -71,8 +76,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
-      <li>lcls-plc-kfe-arbiter</li>
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">lcls-plc-kfe-arbiter</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -92,6 +97,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Arbiter_nc.html">NC Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Arbiter_ethercat.html">Box Hierarchy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Arbiter_boxes.html">Boxes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Arbiter_boxes.html#plc-kfe-gatt">plc-kfe-gatt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Arbiter_boxes.html#e0-ek1200">E0 (EK1200)</a></li>
@@ -133,6 +139,7 @@
 <li class="toctree-l2"><a class="reference internal" href="Arbiter_KFEArbiter_summary.html#constants">Constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Arbiter_KFEArbiter_summary.html#currentbpupdate">CurrentBPUpdate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Arbiter_KFEArbiter_summary.html#defaultglobals">DefaultGlobals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Arbiter_KFEArbiter_summary.html#generalconstants">GeneralConstants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Arbiter_KFEArbiter_summary.html#global-constants">Global_Constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Arbiter_KFEArbiter_summary.html#global-variables">Global_Variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Arbiter_KFEArbiter_summary.html#global-variables-ethercat">Global_Variables_EtherCAT</a></li>
@@ -143,7 +150,6 @@
 <li class="toctree-l2"><a class="reference internal" href="Arbiter_KFEArbiter_summary.html#gvl-logger">GVL_Logger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Arbiter_KFEArbiter_summary.html#gvl-param-tcunit">GVL_Param_TcUnit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Arbiter_KFEArbiter_summary.html#gvl-tcunit">GVL_TcUnit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Arbiter_KFEArbiter_summary.html#lcls-general">LCLS_General</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Arbiter_KFEArbiter_summary.html#machinesimulation">MachineSimulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Arbiter_KFEArbiter_summary.html#main">MAIN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Arbiter_KFEArbiter_summary.html#p-at1k0-sl1k0">P_AT1K0_SL1K0</a></li>
@@ -159,7 +165,6 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Arbiter_KFEArbiter_epics.html">Data Types</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Arbiter_KFEArbiter_epics.html#fb-beamclassoutputs">FB_BeamClassOutputs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Arbiter_KFEArbiter_epics.html#lcls-general-fb-listener">LCLS_General.FB_Listener</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Arbiter_KFEArbiter_epics.html#lcls-general-fb-loghandler">LCLS_General.FB_LogHandler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Arbiter_KFEArbiter_epics.html#lcls-general-fb-logmessage">LCLS_General.FB_LogMessage</a></li>
@@ -167,6 +172,8 @@
 <li class="toctree-l2"><a class="reference internal" href="Arbiter_KFEArbiter_epics.html#lcls-general-st-pendingevent">LCLS_General.ST_PendingEvent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Arbiter_KFEArbiter_epics.html#pmps-fb-arbiter">PMPS.FB_Arbiter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Arbiter_KFEArbiter_epics.html#pmps-fb-arbitertosubsys-io">PMPS.FB_ArbiterToSubSys_IO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Arbiter_KFEArbiter_epics.html#pmps-fb-beamclassoutputs-bcd">PMPS.FB_BeamClassOutputs_BCD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Arbiter_KFEArbiter_epics.html#pmps-fb-beamclasswatcher">PMPS.FB_BeamClassWatcher</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Arbiter_KFEArbiter_epics.html#pmps-fb-beamparamassertionpool">PMPS.FB_BeamParamAssertionPool</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Arbiter_KFEArbiter_epics.html#pmps-fb-bpcontroldevice">PMPS.FB_BPControlDevice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Arbiter_KFEArbiter_epics.html#pmps-fb-ctls-outputs">PMPS.FB_CTLS_Outputs</a></li>
@@ -232,7 +239,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, SLAC National Accelerator Laboratory.</p>
+    <p>&#169; Copyright 2023, SLAC National Accelerator Laboratory.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

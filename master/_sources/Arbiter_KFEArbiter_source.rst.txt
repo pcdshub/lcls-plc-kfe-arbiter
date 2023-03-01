@@ -28,8 +28,8 @@ GVL
         '}
         {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[FFO]^Channel 1^Output'}
         g_FastFaultOutput1	:	FB_HardwareFFOutput := (bAutoReset:=TRUE);
-    	
-    	{attribute 'pytmc' := '
+
+        {attribute 'pytmc' := '
         pv: @(PREFIX)FFO:02
         '}
         {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[FFO]^Channel 2^Output'}
@@ -41,7 +41,7 @@ GVL
     END_VAR
 
     VAR_GLOBAL CONSTANT
-    	MAX_FAST_FAULTS : UINT := 100;
+        MAX_FAST_FAULTS : UINT := 100;
     END_VAR
 
 
@@ -173,94 +173,128 @@ CurrentBPUpdate
 
     PROGRAM CurrentBPUpdate
     VAR
-    	{attribute 'pytmc' := '
+        {attribute 'pytmc' := '
             pv: @(PREFIX)K:Rate
             link: IOC:BSY0:MP01:BYKIKS_RATE
             field: EGU RateEnum
         '}
         fbBYKIK_Rate : FB_LREALFromEPICS := (
-    		iMaximumValidSeverity := 2);
-    	
-    	
-    	{attribute 'pytmc' := '
+            iMaximumValidSeverity := 2);
+
+
+        {attribute 'pytmc' := '
             pv: @(PREFIX)
         '}
-    	fbEPICS_KRate : FB_RateFromEPICS;
-    	
-    	
-    	
-    	{attribute 'pytmc' := '
+        fbEPICS_KRate : FB_RateFromEPICS;
+
+        {attribute 'pytmc' := '
+            pv: @(PREFIX)L:BC
+            link: SIOC:SYS0:MP03:SC_SXR_BC
+            field: EGU BCEnum
+        '}
+        fbMPS_BeamClass : FB_LREALFromEPICS := (
+            iMaximumValidSeverity := 2);
+
+            {attribute 'pytmc' := '
+            pv: @(PREFIX)
+        '}
+        fbEPICSKBeamClass : FB_BeamClassFromEPICS;
+
+        {attribute 'pytmc' := '
+            pv: @(PREFIX)K:Mode
+            link: SIOC:FEES:MP01:FACMODE_RBV
+        '}
+        fbSXR_MachineMode : FB_LREALFromEPICS := (
+            iMaximumValidSeverity := 2);
+
+        {attribute 'pytmc' := '
+            pv: @(PREFIX)
+        '}
+        fbEPICSLMachineMode : FB_MachineModeFromEPICS;
+
+        {attribute 'pytmc' := '
             pv: @(PREFIX)PE
         '}
-    	fbKPhotonEnergy : FB_KPhotonEnergy;
-    	
-    	// Photon energy for the masses
-    	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-gatt]^IO Outputs^rPhotonEnergy'}
-    	{attribute 'TcLinkTo' := 'TIIB[plc-rix-mot]^IO Outputs^rPhotonEnergy'}
-    	{attribute 'TcLinkTo' := 'TIIB[plc-rix-optics]^IO Outputs^rPhotonEnergy'}
-    	q_rPhotonEnergy AT %Q* : REAL;
-    	
-    	
+        fbKPhotonEnergy : FB_KPhotonEnergy;
+
+        // Photon energy for the masses
+        {attribute 'TcLinkTo' := 'TIIB[plc-kfe-gatt]^IO Outputs^rPhotonEnergy'}
+        {attribute 'TcLinkTo' := 'TIIB[plc-rix-mot]^IO Outputs^rPhotonEnergy'}
+        {attribute 'TcLinkTo' := 'TIIB[plc-rix-optics]^IO Outputs^rPhotonEnergy'}
+        q_rPhotonEnergy AT %Q* : REAL;
+
+
         // Stoppers
 
         {attribute 'TcLinkTo' := '
                     .i_StopperInLS:=TIIB[PPS Stoppers 1]^Channel 1^ST3K4 IN;
                     .i_StopperOutLS:=TIIB[PPS Stoppers 1]^Channel 2^ST3K4 OUT;
-    				.q_StopperIN_Relay:=TIIB[PMPS_Premp]^Channel 12^ST3K4 RELAY IN;
+                    .q_StopperIN_Relay:=TIIB[PMPS_Premp]^Channel 12^ST3K4 RELAY IN;
                                     '}
         st3k4Watcher : FB_KStopper(
             PMPS.K_Stopper.ST3K4,
             'ST3K4');
-    		
+
        {attribute 'TcLinkTo' := '
                     .i_StopperInLS:=TIIB[PPS Stoppers 1]^Channel 3^ST1K2 IN;
                     .i_StopperOutLS:=TIIB[PPS Stoppers 1]^Channel 4^ST1K2 OUT;
-    				.q_StopperIN_Relay:=TIIB[PMPS_Premp]^Channel 14^ST1K2 RELAY IN;
+                    .q_StopperIN_Relay:=TIIB[PMPS_Premp]^Channel 14^ST1K2 RELAY IN;
                                     '}
         st1k2Watcher : FB_KStopper(
             PMPS.K_Stopper.ST1K2,
             'ST1K2');
-    	
-    	// MR1K1 Veto
-    	////////////////////////
-    	  	{attribute 'TcLinkTo' := 'TIIB[plc-rix-optics]^IO Inputs^MR1K1_Y_ENC'}
-    		i_MR1K1_ENC AT %I* : UDINT; // MR1K1 encoder from the rix optics system
-    		cMR1K1_IN_UpperLimit : UDINT := 33411000;
-    		cMR1K1_IN_LowerLimit : UDINT := 31911000;
-    		cMR1K1_OUT_UpperLimit : UDINT := 14173400;
-    		{attribute 'TcLinkTo' := 'TIIB[PMPS_Premp]^Channel 13^MR1K1 IN'}
-    		q_MR1K1_VETO AT %Q* : BOOL; // Signal to accel. MPS that MR1K1 is in
-    		fbMR1K1VetoDevice : FB_KVetoDevice(
-    			eVetoDeviceIN := K_Stopper.MR1K1_IN,
-    			eVetoDeviceOUT := K_Stopper.MR1K1_OUT,
-    			sVetoDeviceName := 'MR1K1');
-    			
-    	// ST4K4 Photon Terminator Veto	 
-    	{attribute 'TcLinkTo' := '
+
+        // MR1K1 Veto
+        ////////////////////////
+              {attribute 'TcLinkTo' := 'TIIB[plc-rix-optics]^IO Inputs^MR1K1_Y_ENC'}
+            i_MR1K1_ENC AT %I* : UDINT; // MR1K1 encoder from the rix optics system
+            cMR1K1_IN_UpperLimit : UDINT := 33411000;
+            cMR1K1_IN_LowerLimit : UDINT := 31911000;
+            cMR1K1_OUT_UpperLimit : UDINT := 14173400;
+            {attribute 'TcLinkTo' := 'TIIB[PMPS_Premp]^Channel 13^MR1K1 IN'}
+            q_MR1K1_VETO AT %Q* : BOOL; // Signal to accel. MPS that MR1K1 is in
+            fbMR1K1VetoDevice : FB_KVetoDevice(
+                eVetoDeviceIN := K_Stopper.MR1K1_IN,
+                eVetoDeviceOUT := K_Stopper.MR1K1_OUT,
+                sVetoDeviceName := 'MR1K1');
+
+        // ST4K4 Photon Terminator Veto
+        {attribute 'TcLinkTo' := '
                     .i_StopperInLS:=TIIB[plc-tmo-mot]^IO Inputs^bST4K4_IN;
                     .i_StopperOutLS:=TIIB[plc-tmo-mot]^IO Inputs^bST4K4_OUT;
          '}
         st4k4Watcher : FB_KStopper(
             PMPS.K_Stopper.ST4K4,
             'ST4K4');
-    		
+
     END_VAR
+    // Acquiring K-line rate
     fbEPICS_KRate(BP:=PMPS_GVL.stCurrentBeamParameters, fbBYKIK_Rate:=fbBYKIK_Rate, FFO:=GVL.g_FastFaultOutput1);
 
+    // Acquiring photon energy
     fbKPhotonEnergy(BP:=PMPS_GVL.stCurrentBeamParameters);
 
     q_rPhotonEnergy := LREAL_TO_REAL(fbKPhotonEnergy.fbSXU.fCurrentPhotonEnergy);
+
+    //Update current photon energy
+    PMPS_GVL.stCurrentBeamParameters.neV := LREAL_TO_REAL(fbKPhotonEnergy.fbSXU.fCurrentPhotonEnergy);
+    // Acquiring K-line BeamClass
+    fbEPICSKBeamClass(BP:=PMPS_GVL.stCurrentBeamParameters, fbMPS_BeamClass:=fbMPS_BeamClass, FFO:=GVL.g_FastFaultOutput1);
+
+    // Acquiring K-line Machine Mode
+    fbEPICSLMachineMode(BP:=PMPS_GVL.stCurrentBeamParameters, fbMPS_MachineMode:=fbSXR_MachineMode, FFO:=GVL.g_FastFaultOutput1);
+
 
     // Stopper readbacks
     st3k4Watcher(stCurrentBP:=PMPS_GVL.stCurrentBeamParameters);
     st1k2Watcher(stCurrentBP:=PMPS_GVL.stCurrentBeamParameters);
     // MR1K1 Veto
     ////////////////////////
-    	fbMR1K1VetoDevice(
-    		i_bIn := cMR1K1_IN_LowerLimit < i_MR1K1_ENC	AND i_MR1K1_ENC < cMR1K1_IN_UpperLimit,
-    		i_bOut := i_MR1K1_ENC < cMR1K1_OUT_UpperLimit,
-    		q_bIN => q_MR1K1_VETO, 
-    		stCurrentBP:= PMPS_GVL.stCurrentBeamParameters);
+        fbMR1K1VetoDevice(
+            i_bIn := cMR1K1_IN_LowerLimit < i_MR1K1_ENC	AND i_MR1K1_ENC < cMR1K1_IN_UpperLimit,
+            i_bOut := i_MR1K1_ENC < cMR1K1_OUT_UpperLimit,
+            q_bIN => q_MR1K1_VETO,
+            stCurrentBP:= PMPS_GVL.stCurrentBeamParameters);
     // ST4K4 Photon Terminator Veto
     st4k4Watcher(stCurrentBP:=PMPS_GVL.stCurrentBeamParameters);
 
@@ -335,7 +369,7 @@ FB_BeamClassOutputs
 
         InitCounter: BYTE;
         counter    :    INT;
-        
+
         // Beam class lines are restricted to 8 channels in the current design, since
         // there are no plans to use all 16. Channels 1-7 may be allocated to any other
         // beam classes so long as they are ordered least to greatest.
@@ -344,12 +378,12 @@ FB_BeamClassOutputs
             io: i
             field: DESC Hardwire channel state'}
             epicsBitmap : WORD;
-            
+
         {attribute 'TcLinkTo' := '[1] := TIIB[PMPS_Premp]^Channel 1^Output;
                                   [2] := TIIB[PMPS_Premp]^Channel 2^Output;
                                   [3] := TIIB[PMPS_Premp]^Channel 3^Output;
                                   [4] := TIIB[PMPS_Premp]^Channel 4^Output;
-                                  
+
                                   [5] := TIIB[PMPS_Premp]^Channel 5^Output;
                                   [6] := TIIB[PMPS_Premp]^Channel 6^Output;
                                   [7] := TIIB[PMPS_Premp]^Channel 7^Output;
@@ -370,7 +404,7 @@ FB_BeamClassOutputs
     ELSIF BP.nRate >= 1 THEN
         nBeamClass := BC_1HZ;
     ELSE
-    	nBeamClass := 0;
+        nBeamClass := 0;
     END_IF
 
 
@@ -430,8 +464,8 @@ MachineSimulation
         i_stAssertedParams := PMPS_GVL.stRequestedBeamParameters,
         iq_stMachineParams := PMPS_GVL.stCurrentBeamParameters,
         i_xFault	:= NOT GVL.g_FastFaultOutput1.q_xFastFaultOut,
-    	xEnableAtt := false,
-    	xEnablePE := false
+        xEnableAtt := false,
+        xEnablePE := false
         );
 
     //PMPS_GVL.stCurrentBeamParameters.neVRange := F_eVRangeCalculator(fbeVSimulator.eV, PMPS_GVL.stCurrentBeamParameters.neVRange);
@@ -460,21 +494,21 @@ MAIN
         {attribute 'pytmc' := '
         pv: @(PREFIX)BeamParamCntl
         '}
-        fbBPControl : FB_BPControlDevice(nID:=10);
-    	
-    	PERanges : PE_Ranges;
-    	{attribute 'TcLinkTo' := 'TIIB[PMPS_Premp]^Channel 8^Output;'}
-    	bM1K1_OUT_Override AT %Q* : BOOL; // Using this book to completely overrule the last bit of the BC interface.
-    	
-    	//System Time
-    	 {attribute 'pytmc' := '
+        fbBPControl : FB_BPControlDevice(nID:=16#FFFF);
+
+        PERanges : PE_Ranges;
+        {attribute 'TcLinkTo' := 'TIIB[PMPS_Premp]^Channel 8^Output;'}
+        bM1K1_OUT_Override AT %Q* : BOOL; // Using this book to completely overrule the last bit of the BC interface.
+
+        //System Time
+         {attribute 'pytmc' := '
             pv: @(PREFIX)SystemDT
             io: i
          '}
-    	SystemTime:DINT;
-    	fbTime : FB_LocalSystemTime := ( bEnable := TRUE, dwCycle := 1 ); //Get current system time, used for override
-    	fbTime_to_UTC: FB_TzSpecificLocalTimeToSystemTime;
-    	fbGetTimeZone: FB_GetTimeZoneInformation;
+        SystemTime:DINT;
+        fbTime : FB_LocalSystemTime := ( bEnable := TRUE, dwCycle := 1 ); //Get current system time, used for override
+        fbTime_to_UTC: FB_TzSpecificLocalTimeToSystemTime;
+        fbGetTimeZone: FB_GetTimeZoneInformation;
     END_VAR
     //Arbiter PLC
 
@@ -547,88 +581,88 @@ P_AT1K0_SL1K0
 
     PROGRAM P_AT1K0_SL1K0
     VAR
-    	
-    	// Transmisison request and status with plc-kfe-gatt
-    	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-gatt]^IO Outputs^Requested Transmission'}
-    	q_nTranToAT1K0Req AT %Q* : ST_PMPS_Attenuator_IO; // Transmission request to AT1K0
-    	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-gatt]^IO Inputs^Current Transmission'}
-    	i_nTranToAT1K0Stat AT %I* : ST_PMPS_Attenuator_IO; // Transmission request to AT1K0
 
-    	// plc-kfe-gatt interface diagnostics
-    	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-gatt]^WcState^WcStateOut'}
-    	i_bWcStateOut_AT1K0 AT %I* : BOOL;
-    	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-gatt]^WcState^WcStateIn'}
-    	i_bWcStateIn_AT1K0 AT %I* : BOOL;
-    	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-gatt]^InfoData^State'}
-    	i_nState_AT1K0 AT %I* : UINT;
-    	
-    	// Apterure request and status to plc-kfe-motion
-    	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-motion]^IO Outputs^AptArrayReq'}
-    	q_stAptArrayReq AT %Q* : ARRAY [1..4] OF ST_PMPS_Aperture_IO;
-    	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-motion]^IO Inputs^AptArrayStatus'}
-    	i_stAptArrayStat AT %I* : ARRAY [1..4] OF ST_PMPS_Aperture_IO;
-    	
-    	// plc-kfe-motion interface diagnostics
-    	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-motion]^WcState^WcStateOut'}
-    	i_bWcStateOut_KFEMOT AT %I* : BOOL;
-    	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-motion]^WcState^WcStateIn'}
-    	i_bWcStateIn_KFEMOT AT %I* : BOOL;
-    	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-motion]^InfoData^State'}
-    	i_nState_KFEMOT AT %I* : UINT;
+        // Transmisison request and status with plc-kfe-gatt
+        {attribute 'TcLinkTo' := 'TIIB[plc-kfe-gatt]^IO Outputs^Requested Transmission'}
+        q_nTranToAT1K0Req AT %Q* : ST_PMPS_Attenuator_IO; // Transmission request to AT1K0
+        {attribute 'TcLinkTo' := 'TIIB[plc-kfe-gatt]^IO Inputs^Current Transmission'}
+        i_nTranToAT1K0Stat AT %I* : ST_PMPS_Attenuator_IO; // Transmission request to AT1K0
 
-    	idx : UINT;
-    	
-    	ffKFEMotConnection : FB_FastFault := (
-    		i_DevName := 'PMPS Arbiter',
-    		i_Desc := 'EtherCAT interface watcher, for connection to KFE Motion systems for SL1K0 size requests. Very rare. Make a note, and if it can be reset, go ahead.',
-    		i_TypeCode := 16#5);
-    	ffKFEGattConnection : FB_FastFault := (
-    		i_DevName := 'PMPS Arbiter',
-    		i_Desc := 'EtherCAT interface watcher, for connection to KFE Gas Att. systems for Transmission requests. Very rare. Make a note, and if it can be reset, go ahead.',
-    		i_TypeCode := 16#5);
-    	bSimApt: BOOL;
+        // plc-kfe-gatt interface diagnostics
+        {attribute 'TcLinkTo' := 'TIIB[plc-kfe-gatt]^WcState^WcStateOut'}
+        i_bWcStateOut_AT1K0 AT %I* : BOOL;
+        {attribute 'TcLinkTo' := 'TIIB[plc-kfe-gatt]^WcState^WcStateIn'}
+        i_bWcStateIn_AT1K0 AT %I* : BOOL;
+        {attribute 'TcLinkTo' := 'TIIB[plc-kfe-gatt]^InfoData^State'}
+        i_nState_AT1K0 AT %I* : UINT;
+
+        // Apterure request and status to plc-kfe-motion
+        {attribute 'TcLinkTo' := 'TIIB[plc-kfe-motion]^IO Outputs^AptArrayReq'}
+        q_stAptArrayReq AT %Q* : ARRAY [1..4] OF ST_PMPS_Aperture_IO;
+        {attribute 'TcLinkTo' := 'TIIB[plc-kfe-motion]^IO Inputs^AptArrayStatus'}
+        i_stAptArrayStat AT %I* : ARRAY [1..4] OF ST_PMPS_Aperture_IO;
+
+        // plc-kfe-motion interface diagnostics
+        {attribute 'TcLinkTo' := 'TIIB[plc-kfe-motion]^WcState^WcStateOut'}
+        i_bWcStateOut_KFEMOT AT %I* : BOOL;
+        {attribute 'TcLinkTo' := 'TIIB[plc-kfe-motion]^WcState^WcStateIn'}
+        i_bWcStateIn_KFEMOT AT %I* : BOOL;
+        {attribute 'TcLinkTo' := 'TIIB[plc-kfe-motion]^InfoData^State'}
+        i_nState_KFEMOT AT %I* : UINT;
+
+        idx : UINT;
+
+        ffKFEMotConnection : FB_FastFault := (
+            i_DevName := 'PMPS Arbiter',
+            i_Desc := 'EtherCAT interface watcher, for connection to KFE Motion systems for SL1K0 size requests. Very rare. Make a note, and if it can be reset, go ahead.',
+            i_TypeCode := 16#5);
+        ffKFEGattConnection : FB_FastFault := (
+            i_DevName := 'PMPS Arbiter',
+            i_Desc := 'EtherCAT interface watcher, for connection to KFE Gas Att. systems for Transmission requests. Very rare. Make a note, and if it can be reset, go ahead.',
+            i_TypeCode := 16#5);
+        bSimApt: BOOL;
     END_VAR
     // If interface with plc-kfe-gatt OK carry out exchange
     IF i_bWcStateOut_AT1K0 = 0 AND i_bWcStateIn_AT1K0 = 0 AND i_nState_AT1K0 = 8 THEN
-    	
-    	// Send request from this arbiter to the gas attenuator
-    	q_nTranToAT1K0Req.nTran := PMPS_GVL.stRequestedBeamParameters.nTran*PMPS_GVL.TRANS_SCALING_FACTOR;
-    	q_nTranToAT1K0Req.xAttOK := 16#FF;
-    	
-    	//Update 
-    	PMPS_GVL.stCurrentBeamParameters.nTran := i_nTranToAT1K0Stat.nTran;//REAL_TO_UINT(UINT_TO_REAL(i_nTranToAT1K0Stat.nTran)*0.01);
 
-    	ffKFEGattConnection.i_xOK := TRUE;
+        // Send request from this arbiter to the gas attenuator
+        q_nTranToAT1K0Req.nTran := PMPS_GVL.stRequestedBeamParameters.nTran*PMPS_GVL.TRANS_SCALING_FACTOR;
+        q_nTranToAT1K0Req.xAttOK := 16#FF;
+
+        //Update
+        PMPS_GVL.stCurrentBeamParameters.nTran := i_nTranToAT1K0Stat.nTran;//REAL_TO_UINT(UINT_TO_REAL(i_nTranToAT1K0Stat.nTran)*0.01);
+
+        ffKFEGattConnection.i_xOK := TRUE;
     ELSE
-    	// Fast fault
-    	ffKFEGattConnection.i_xOK := FALSE;
-    	
-    	PMPS_GVL.stCurrentBeamParameters.nTran := PMPS_GVL.TRANS_SCALING_FACTOR;//100;
-    	
+        // Fast fault
+        ffKFEGattConnection.i_xOK := FALSE;
+
+        PMPS_GVL.stCurrentBeamParameters.nTran := PMPS_GVL.TRANS_SCALING_FACTOR;//100;
+
     END_IF
 
     ffKFEGattConnection(io_fbFFHWO := g_FastFaultOutput1);
 
     // If interface with plc-kfe-motion OK, carry out exchange
     IF i_bWcStateIn_KFEMOT = 0 AND i_bWcStateOut_KFEMOT = 0 AND i_nState_KFEMOT = 8 THEN
-    	
-    	// Send request from this arbiter to kfe-mot
-    	MEMCPY( ADR(q_stAptArrayReq) , ADR(PMPS_GVL.stRequestedBeamParameters.astApertures) , PMPS_GVL.MAX_APERTURES * SIZEOF(ST_PMPS_Aperture_IO) );
-    	
-    	// 	Recieve current apreture state for broadcast
-    	MEMCPY( ADR(PMPS_GVL.stCurrentBeamParameters.astApertures) , ADR(i_stAptArrayStat) , PMPS_GVL.MAX_APERTURES * SIZEOF(ST_PMPS_Aperture_IO) );
-    	
-    	ffKFEMotConnection.i_xOK := TRUE;
-    	
+
+        // Send request from this arbiter to kfe-mot
+        MEMCPY( ADR(q_stAptArrayReq) , ADR(PMPS_GVL.stRequestedBeamParameters.astApertures) , PMPS_GVL.MAX_APERTURES * SIZEOF(ST_PMPS_Aperture_IO) );
+
+        // 	Recieve current apreture state for broadcast
+        MEMCPY( ADR(PMPS_GVL.stCurrentBeamParameters.astApertures) , ADR(i_stAptArrayStat) , PMPS_GVL.MAX_APERTURES * SIZEOF(ST_PMPS_Aperture_IO) );
+
+        ffKFEMotConnection.i_xOK := TRUE;
+
     ELSIF bSimApt THEN
-    	PMPS_GVL.stCurrentBeamParameters.astApertures := PMPS_GVL.stRequestedBeamParameters.astApertures;
+        PMPS_GVL.stCurrentBeamParameters.astApertures := PMPS_GVL.stRequestedBeamParameters.astApertures;
     ELSE
-    	// Fast fault
-    	ffKFEMotConnection.i_xOK := FALSE;
-    	// Set broadcast apterture states to not OK
-    	FOR idx := 1 TO PMPS_GVL.MAX_APERTURES DO
-    		PMPS_GVL.stCurrentBeamParameters.astApertures[idx].xOK := FALSE;
-    	END_FOR
+        // Fast fault
+        ffKFEMotConnection.i_xOK := FALSE;
+        // Set broadcast apterture states to not OK
+        FOR idx := 1 TO PMPS_GVL.MAX_APERTURES DO
+            PMPS_GVL.stCurrentBeamParameters.astApertures[idx].xOK := FALSE;
+        END_FOR
     END_IF
 
     ffKFEMotConnection(io_fbFFHWO := g_FastFaultOutput1);
@@ -645,67 +679,67 @@ P_SATT
 
     PROGRAM P_SATT
     VAR
-    	//All Sold attenuators requests are summerrized into this one output
-    	q_SattArrayReq AT %Q* : ARRAY [1..PMPS_GVL.AUX_ATTENUATORS] OF ST_PMPS_Attenuator_IO; // Transmission request to ALL PLCs
-    	//Per PLC current satt trans
-    	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-motion]^IO Inputs^SattArrayStatus'}
-    	i_SattArrayStatus_KFE AT %I* : ARRAY [1..PMPS_GVL.AUX_ATTENUATORS] OF ST_PMPS_Attenuator_IO; // Transmission request to KFE MOT PLC
-    		{attribute 'TcLinkTo' := 'TIIB[plc-rix-mot]^IO Inputs^SattArrayStatus'}
-    	i_SattArrayStatus_RIX AT %I* : ARRAY [1..PMPS_GVL.AUX_ATTENUATORS] OF ST_PMPS_Attenuator_IO; // Transmission request to RIX MOT PLC
-    	
-    	// plc-tmo-mot interface diagnostics
-    	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-motion]^WcState^WcStateOut'}
-    	i_bWcStateOut_kfe_mot AT %I* : BOOL;
-    	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-motion]^WcState^WcStateIn'}
-    	i_bWcStateIn_kfe_mot AT %I* : BOOL;
-    	{attribute 'TcLinkTo' := 'TIIB[plc-kfe-motion]^InfoData^State'}
-    	i_nState_kfe_mot AT %I* : UINT;
-    	
-    	// plc-rix-mot interface diagnostics
-    	{attribute 'TcLinkTo' := 'TIIB[plc-rix-mot]^WcState^WcStateOut'}
-    	i_bWcStateOut_rix_mot AT %I* : BOOL;
-    	{attribute 'TcLinkTo' := 'TIIB[plc-rix-mot]^WcState^WcStateIn'}
-    	i_bWcStateIn_rix_mot AT %I* : BOOL;
-    	{attribute 'TcLinkTo' := 'TIIB[plc-rix-mot]^InfoData^State'}
-    	i_nState_rix_mot AT %I* : UINT;
-    	
-    	//FFO Connection per PLC
-    	ffkfeConnection : FB_FastFault := (
-    		i_DevName := 'PMPS Arbiter',
-    		i_Desc := 'EtherCAT interface watcher, for tmo-mot connection to systems for attenuation requests. Very rare. Make a note, and if it can be reset, go ahead.',
-    		i_TypeCode := 16#5);
-    	ffRixConnection : FB_FastFault := (
-    		i_DevName := 'PMPS Arbiter',
-    		i_Desc := 'EtherCAT interface watcher, for rix-mot connection to systems for attenuation requests. Very rare. Make a note, and if it can be reset, go ahead.',
-    		i_TypeCode := 16#5);
+        //All Sold attenuators requests are summerrized into this one output
+        q_SattArrayReq AT %Q* : ARRAY [1..PMPS_GVL.AUX_ATTENUATORS] OF ST_PMPS_Attenuator_IO; // Transmission request to ALL PLCs
+        //Per PLC current satt trans
+        {attribute 'TcLinkTo' := 'TIIB[plc-kfe-motion]^IO Inputs^SattArrayStatus'}
+        i_SattArrayStatus_KFE AT %I* : ARRAY [1..PMPS_GVL.AUX_ATTENUATORS] OF ST_PMPS_Attenuator_IO; // Transmission request to KFE MOT PLC
+            {attribute 'TcLinkTo' := 'TIIB[plc-rix-mot]^IO Inputs^SattArrayStatus'}
+        i_SattArrayStatus_RIX AT %I* : ARRAY [1..PMPS_GVL.AUX_ATTENUATORS] OF ST_PMPS_Attenuator_IO; // Transmission request to RIX MOT PLC
+
+        // plc-tmo-mot interface diagnostics
+        {attribute 'TcLinkTo' := 'TIIB[plc-kfe-motion]^WcState^WcStateOut'}
+        i_bWcStateOut_kfe_mot AT %I* : BOOL;
+        {attribute 'TcLinkTo' := 'TIIB[plc-kfe-motion]^WcState^WcStateIn'}
+        i_bWcStateIn_kfe_mot AT %I* : BOOL;
+        {attribute 'TcLinkTo' := 'TIIB[plc-kfe-motion]^InfoData^State'}
+        i_nState_kfe_mot AT %I* : UINT;
+
+        // plc-rix-mot interface diagnostics
+        {attribute 'TcLinkTo' := 'TIIB[plc-rix-mot]^WcState^WcStateOut'}
+        i_bWcStateOut_rix_mot AT %I* : BOOL;
+        {attribute 'TcLinkTo' := 'TIIB[plc-rix-mot]^WcState^WcStateIn'}
+        i_bWcStateIn_rix_mot AT %I* : BOOL;
+        {attribute 'TcLinkTo' := 'TIIB[plc-rix-mot]^InfoData^State'}
+        i_nState_rix_mot AT %I* : UINT;
+
+        //FFO Connection per PLC
+        ffkfeConnection : FB_FastFault := (
+            i_DevName := 'PMPS Arbiter',
+            i_Desc := 'EtherCAT interface watcher, for tmo-mot connection to systems for attenuation requests. Very rare. Make a note, and if it can be reset, go ahead.',
+            i_TypeCode := 16#5);
+        ffRixConnection : FB_FastFault := (
+            i_DevName := 'PMPS Arbiter',
+            i_Desc := 'EtherCAT interface watcher, for rix-mot connection to systems for attenuation requests. Very rare. Make a note, and if it can be reset, go ahead.',
+            i_TypeCode := 16#5);
     END_VAR
     // Send request from this arbiter to all satts
     MEMCPY( ADR(q_SattArrayReq) , ADR(PMPS_GVL.stRequestedBeamParameters.astAttenuators) , PMPS_GVL.AUX_ATTENUATORS * SIZEOF(ST_PMPS_Attenuator_IO) );
-    	
+
     //TMO motion PLC SATT current trans update
     IF i_bWcStateIn_kfe_mot = 0 AND i_bWcStateOut_kfe_mot = 0 AND i_nState_kfe_mot = 8 THEN
-    	// 	Recieve current transmission of the satt
-    	//PMPS_GVL.stCurrentBeamParameters.astAttenuators[PMPS.K_Attenuators.AT1K4].nTran :=  i_SattArrayStatus_KFE[PMPS.K_Attenuators.AT1K4].nTran;
-    	//PMPS_GVL.stCurrentBeamParameters.astAttenuators[PMPS.K_Attenuators.AT1K4].xAttOK :=  i_SattArrayStatus_KFE[PMPS.K_Attenuators.AT1K4].xAttOK;	
-    	ffkfeConnection.i_xOK := TRUE;
+        // 	Recieve current transmission of the satt
+        //PMPS_GVL.stCurrentBeamParameters.astAttenuators[PMPS.K_Attenuators.AT1K4].nTran :=  i_SattArrayStatus_KFE[PMPS.K_Attenuators.AT1K4].nTran;
+        //PMPS_GVL.stCurrentBeamParameters.astAttenuators[PMPS.K_Attenuators.AT1K4].xAttOK :=  i_SattArrayStatus_KFE[PMPS.K_Attenuators.AT1K4].xAttOK;
+        ffkfeConnection.i_xOK := TRUE;
     ELSE
-    	// Fast fault
-    	ffkfeConnection.i_xOK := FALSE;
+        // Fast fault
+        ffkfeConnection.i_xOK := FALSE;
     END_IF
     ffkfeConnection(io_fbFFHWO := g_FastFaultOutput1);
 
     //RIX motion PLC SATT current trans update
     IF i_bWcStateIn_rix_mot = 0 AND i_bWcStateOut_rix_mot = 0 AND i_nState_rix_mot = 8 THEN
-    	
-    	// 	Recieve current transmission of the satt
-    	//PMPS_GVL.stCurrentBeamParameters.astAttenuators[PMPS.K_Attenuators.AT1K2].nTran :=  i_SattArrayStatus_RIX[PMPS.K_Attenuators.AT1K2].nTran;
-    	//PMPS_GVL.stCurrentBeamParameters.astAttenuators[PMPS.K_Attenuators.AT1K2].xAttOK :=  i_SattArrayStatus_RIX[PMPS.K_Attenuators.AT1K2].xAttOK;	
-    	//PMPS_GVL.stCurrentBeamParameters.astAttenuators[PMPS.K_Attenuators.AT2K2].nTran :=  i_SattArrayStatus_RIX[PMPS.K_Attenuators.AT2K2].nTran;
-    	//PMPS_GVL.stCurrentBeamParameters.astAttenuators[PMPS.K_Attenuators.AT2K2].xAttOK :=  i_SattArrayStatus_RIX[PMPS.K_Attenuators.AT2K2].xAttOK;	
-    	ffRixConnection.i_xOK := TRUE;	
+
+        // 	Recieve current transmission of the satt
+        //PMPS_GVL.stCurrentBeamParameters.astAttenuators[PMPS.K_Attenuators.AT1K2].nTran :=  i_SattArrayStatus_RIX[PMPS.K_Attenuators.AT1K2].nTran;
+        //PMPS_GVL.stCurrentBeamParameters.astAttenuators[PMPS.K_Attenuators.AT1K2].xAttOK :=  i_SattArrayStatus_RIX[PMPS.K_Attenuators.AT1K2].xAttOK;
+        //PMPS_GVL.stCurrentBeamParameters.astAttenuators[PMPS.K_Attenuators.AT2K2].nTran :=  i_SattArrayStatus_RIX[PMPS.K_Attenuators.AT2K2].nTran;
+        //PMPS_GVL.stCurrentBeamParameters.astAttenuators[PMPS.K_Attenuators.AT2K2].xAttOK :=  i_SattArrayStatus_RIX[PMPS.K_Attenuators.AT2K2].xAttOK;
+        ffRixConnection.i_xOK := TRUE;
     ELSE
-    	// Fast fault
-    	ffRixConnection.i_xOK := FALSE;
+        // Fast fault
+        ffRixConnection.i_xOK := FALSE;
     END_IF
     ffRixConnection(io_fbFFHWO := g_FastFaultOutput1);
 
@@ -722,7 +756,7 @@ PMPS_Arbiter
     PROGRAM PMPS_Arbiter
     VAR
 
-    	fbSetPE	:	PE_Ranges;
+        fbSetPE	:	PE_Ranges;
 
         fbBPRequestor : FB_BPRequestor; // Updates global PMPS RequestedBeamParams
         {attribute 'pytmc' := '
@@ -730,9 +764,13 @@ PMPS_Arbiter
         '}
         fbPhotonEnergyWatcher	:	FB_PhotonEnergyWatcher;
         {attribute 'pytmc' := '
+        pv: @(PREFIX)BeamClassWatcher
+        '}
+        fbBeamClassWatcher : FB_BeamClassWatcher;
+        {attribute 'pytmc' := '
         pv: @(PREFIX)BeamClassOutputs
         '}
-        fbMPSInterface	:	FB_BeamClassOutputs;
+        fbMPSInterface	:	FB_BeamClassOutputs_BCD;
         {attribute 'pytmc' := '
         pv: @(PREFIX)CuRateOutputs
         '}
@@ -752,57 +790,57 @@ PMPS_Arbiter
                                     .i_TxPDOState:=TIIB[plc-kfe-motion]^SYNC Inputs^TxPDO state;
                                     '}
         plc_kfe_motion_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#FF0F);
-    	
-    	   
 
-    	
-    	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-kfe-vac]^IO Inputs^RequestedBP;
-    								.o_CurrentBP:=TIIB[plc-kfe-vac]^IO Outputs^CurrentBP;
-    								.i_Connected:=TIIB[plc-kfe-vac]^SYNC Inputs^External device not connected;
-    								.i_WcState:=TIIB[plc-kfe-vac]^WcState^WcStateIn;
-    								.i_TxPDOState:=TIIB[plc-kfe-vac]^SYNC Inputs^TxPDO state;
-    								'}
+
+
+
+        {attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-kfe-vac]^IO Inputs^RequestedBP;
+                                    .o_CurrentBP:=TIIB[plc-kfe-vac]^IO Outputs^CurrentBP;
+                                    .i_Connected:=TIIB[plc-kfe-vac]^SYNC Inputs^External device not connected;
+                                    .i_WcState:=TIIB[plc-kfe-vac]^WcState^WcStateIn;
+                                    .i_TxPDOState:=TIIB[plc-kfe-vac]^SYNC Inputs^TxPDO state;
+                                    '}
         plc_kfe_vac_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#FF11);
-    	
-    	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-kfe-gatt]^IO Inputs^RequestedBP;
-    								.o_CurrentBP:=TIIB[plc-kfe-gatt]^IO Outputs^CurrentBP;
-    								.i_Connected:=TIIB[plc-kfe-gatt]^SYNC Inputs^External device not connected;
-    								.i_WcState:=TIIB[plc-kfe-gatt]^WcState^WcStateIn;
-    								.i_TxPDOState:=TIIB[plc-kfe-gatt]^SYNC Inputs^TxPDO state;
-    								'}
+
+        {attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-kfe-gatt]^IO Inputs^RequestedBP;
+                                    .o_CurrentBP:=TIIB[plc-kfe-gatt]^IO Outputs^CurrentBP;
+                                    .i_Connected:=TIIB[plc-kfe-gatt]^SYNC Inputs^External device not connected;
+                                    .i_WcState:=TIIB[plc-kfe-gatt]^WcState^WcStateIn;
+                                    .i_TxPDOState:=TIIB[plc-kfe-gatt]^SYNC Inputs^TxPDO state;
+                                    '}
         plc_kfe_gatt_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#FF12);
-    	
-    	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-kfe-gmd-vac-01]^IO Inputs^RequestedBP;
-    								.o_CurrentBP:=TIIB[plc-kfe-gmd-vac-01]^IO Outputs^CurrentBP;
-    								.i_Connected:=TIIB[plc-kfe-gmd-vac-01]^SYNC Inputs^External device not connected;
-    								.i_WcState:=TIIB[plc-kfe-gmd-vac-01]^WcState^WcStateIn;
-    								.i_TxPDOState:=TIIB[plc-kfe-gmd-vac-01]^SYNC Inputs^TxPDO state;
-    								'}
+
+        {attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-kfe-gmd-vac-01]^IO Inputs^RequestedBP;
+                                    .o_CurrentBP:=TIIB[plc-kfe-gmd-vac-01]^IO Outputs^CurrentBP;
+                                    .i_Connected:=TIIB[plc-kfe-gmd-vac-01]^SYNC Inputs^External device not connected;
+                                    .i_WcState:=TIIB[plc-kfe-gmd-vac-01]^WcState^WcStateIn;
+                                    .i_TxPDOState:=TIIB[plc-kfe-gmd-vac-01]^SYNC Inputs^TxPDO state;
+                                    '}
         plc_kfe_gmd_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#FF13);
-    	
-    	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-kfe-xgmd-vac-01]^IO Inputs^RequestedBP;
-    								.o_CurrentBP:=TIIB[plc-kfe-xgmd-vac-01]^IO Outputs^CurrentBP;
-    								.i_Connected:=TIIB[plc-kfe-xgmd-vac-01]^SYNC Inputs^External device not connected;
-    								.i_WcState:=TIIB[plc-kfe-xgmd-vac-01]^WcState^WcStateIn;
-    								.i_TxPDOState:=TIIB[plc-kfe-xgmd-vac-01]^SYNC Inputs^TxPDO state;
-    								'}
+
+        {attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-kfe-xgmd-vac-01]^IO Inputs^RequestedBP;
+                                    .o_CurrentBP:=TIIB[plc-kfe-xgmd-vac-01]^IO Outputs^CurrentBP;
+                                    .i_Connected:=TIIB[plc-kfe-xgmd-vac-01]^SYNC Inputs^External device not connected;
+                                    .i_WcState:=TIIB[plc-kfe-xgmd-vac-01]^WcState^WcStateIn;
+                                    .i_TxPDOState:=TIIB[plc-kfe-xgmd-vac-01]^SYNC Inputs^TxPDO state;
+                                    '}
         plc_kfe_xgmd_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#FF14);
-    	
-    	
-    	
+
+
+
     //////////////////////////////////////////////
     // TMO PLCs
     /////////////////////////////////////////////
-    	
-    	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-tmo-mot]^IO Inputs^RequestedBP;
+
+        {attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-tmo-mot]^IO Inputs^RequestedBP;
                                     .o_CurrentBP:=TIIB[plc-tmo-mot]^IO Outputs^CurrentBP;
                                     .i_Connected:=TIIB[plc-tmo-mot]^SYNC Inputs^External device not connected;
                                     .i_WcState:=TIIB[plc-tmo-mot]^WcState^WcStateIn;
                                     .i_TxPDOState:=TIIB[plc-tmo-mot]^SYNC Inputs^TxPDO state;
                                     '}
         plc_tmo_motion_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#F100);
-    	
-    	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-tmo-optics]^IO Inputs^RequestedBP;
+
+        {attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-tmo-optics]^IO Inputs^RequestedBP;
                                     .o_CurrentBP:=TIIB[plc-tmo-optics]^IO Outputs^CurrentBP;
                                     .i_Connected:=TIIB[plc-tmo-optics]^SYNC Inputs^External device not connected;
                                     .i_WcState:=TIIB[plc-tmo-optics]^WcState^WcStateIn;
@@ -810,19 +848,19 @@ PMPS_Arbiter
                                     '}
         plc_tmo_optics_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#F101);
 
-    	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-tmo-vac]^IO Inputs^RequestedBP;
+        {attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-tmo-vac]^IO Inputs^RequestedBP;
                                     .o_CurrentBP:=TIIB[plc-tmo-vac]^IO Outputs^CurrentBP;
                                     .i_Connected:=TIIB[plc-tmo-vac]^SYNC Inputs^External device not connected;
                                     .i_WcState:=TIIB[plc-tmo-vac]^WcState^WcStateIn;
                                     .i_TxPDOState:=TIIB[plc-tmo-vac]^SYNC Inputs^TxPDO state;
                                     '}
-        plc_tmo_vacuum_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#F102);	
-    	
-    	count : CTU;
+        plc_tmo_vacuum_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#F102);
+
+        count : CTU;
     //////////////////////////////////////////////
     // RIX PLCs
-    /////////////////////////////////////////////	
-    	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-rix-vac]^IO Inputs^RequestedBP;
+    /////////////////////////////////////////////
+        {attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-rix-vac]^IO Inputs^RequestedBP;
                                     .o_CurrentBP:=TIIB[plc-rix-vac]^IO Outputs^CurrentBP;
                                     .i_Connected:=TIIB[plc-rix-vac]^SYNC Inputs^External device not connected;
                                     .i_WcState:=TIIB[plc-rix-vac]^WcState^WcStateIn;
@@ -830,23 +868,23 @@ PMPS_Arbiter
                                     '}
         plc_rix_vac_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#F200);
 
-    	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-rix-optics]^IO Inputs^RequestedBP;
+        {attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-rix-optics]^IO Inputs^RequestedBP;
                                     .o_CurrentBP:=TIIB[plc-rix-optics]^IO Outputs^CurrentBP;
                                     .i_Connected:=TIIB[plc-rix-optics]^SYNC Inputs^External device not connected;
                                     .i_WcState:=TIIB[plc-rix-optics]^WcState^WcStateIn;
                                     .i_TxPDOState:=TIIB[plc-rix-optics]^SYNC Inputs^TxPDO state;
                                     '}
         plc_rix_optics_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#F201);
-    	
-    	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-rix-mot]^IO Inputs^RequestedBP;
+
+        {attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-rix-mot]^IO Inputs^RequestedBP;
                                     .o_CurrentBP:=TIIB[plc-rix-mot]^IO Outputs^CurrentBP;
                                     .i_Connected:=TIIB[plc-rix-mot]^SYNC Inputs^External device not connected;
                                     .i_WcState:=TIIB[plc-rix-mot]^WcState^WcStateIn;
                                     .i_TxPDOState:=TIIB[plc-rix-mot]^SYNC Inputs^TxPDO state;
                                     '}
-        plc_rix_mot_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#F202);	
-    	
-    	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-crix-mot]^IO Inputs^RequestedBP;
+        plc_rix_mot_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#F202);
+
+        {attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-crix-mot]^IO Inputs^RequestedBP;
                                     .o_CurrentBP:=TIIB[plc-crix-mot]^IO Outputs^CurrentBP;
                                     .i_Connected:=TIIB[plc-crix-mot]^SYNC Inputs^External device not connected;
                                     .i_WcState:=TIIB[plc-crix-mot]^WcState^WcStateIn;
@@ -860,34 +898,34 @@ PMPS_Arbiter
                                     .i_WcState:=TIIB[plc-crix-vac]^WcState^WcStateIn;
                                     .i_TxPDOState:=TIIB[plc-crix-vac]^SYNC Inputs^TxPDO state;
                                     '}
-        plc_crix_vac_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#F204);	
-    	
+        plc_crix_vac_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#F204);
+
     END_VAR
     // Updating arbiter with subsystem requests.
 
     ///////////////////////////
     // KFE
-    	plc_kfe_motion_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'KFE MOTION');
-    	plc_kfe_vac_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'KFE VACUUM');
-    	plc_kfe_gatt_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'KFE GATT');
+        plc_kfe_motion_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'KFE MOTION');
+        plc_kfe_vac_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'KFE VACUUM');
+        plc_kfe_gatt_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'KFE GATT');
 
 
     ///////////////////////////
     // TMO
-    	plc_tmo_motion_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset , sName:= 'TMO MOTION');
-    	plc_tmo_optics_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'TMO OPTICS');
-    	plc_tmo_vacuum_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'TMO VACUUM');
+        plc_tmo_motion_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset , sName:= 'TMO MOTION');
+        plc_tmo_optics_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'TMO OPTICS');
+        plc_tmo_vacuum_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'TMO VACUUM');
     //////////////////////////
 
     // RIX
-    	plc_rix_mot_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'RIX MOTION');
-    	plc_rix_vac_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'RIX VACUUM');
-    	plc_rix_optics_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'RIX OPTICS');
-    	plc_crix_mot_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'CRIX MOTION');
-    	plc_crix_vac_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'CRIX VACUUM');
+        plc_rix_mot_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'RIX MOTION');
+        plc_rix_vac_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'RIX VACUUM');
+        plc_rix_optics_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'RIX OPTICS');
+        plc_crix_mot_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'CRIX MOTION');
+        plc_crix_vac_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'CRIX VACUUM');
     ///////////////////////////
-    	
-    ////////////////////////////	
+
+    ////////////////////////////
     // Beam parameter requestor
     fbBPRequestor(Arbiter:=GVL.g_fbArbiter1, q_ReqBP => PMPS_GVL.stRequestedBeamParameters);
 
@@ -902,7 +940,14 @@ PMPS_Arbiter
     fbPhotonEnergyWatcher(i_stCurrentBeamParams	:= PMPS_GVL.stCurrentBeamParameters,
                         i_stRequestedBeamParams := PMPS_GVL.stRequestedBeamParameters,
                         io_fbFFHWO:= GVL.g_FastFaultOutput1,
-                        i_xReset := GVL.AttemptReset);			
+                        i_xReset := GVL.AttemptReset);
+
+    // Keep an eye on the beam class
+    fbBeamClassWatcher(i_stCurrentBeamParams	:= PMPS_GVL.stCurrentBeamParameters,
+                        i_stRequestedBeamParams := PMPS_GVL.stRequestedBeamParameters,
+                        io_fbFFHWO:= GVL.g_FastFaultOutput1,
+                        i_xReset := GVL.AttemptReset);
+
 
     // Evaluate fast fault vetos
     g_FastFaultOutput1.Execute();
@@ -911,7 +956,6 @@ PMPS_Arbiter
 
 
 Related:
-    * `FB_BeamClassOutputs`_
     * `GVL`_
 
 
