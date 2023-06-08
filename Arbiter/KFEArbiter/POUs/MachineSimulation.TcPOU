@@ -16,8 +16,8 @@ fbMachine(
     i_stAssertedParams := PMPS_GVL.stRequestedBeamParameters,
     iq_stMachineParams := PMPS_GVL.stCurrentBeamParameters,
     i_xFault	:= NOT GVL.g_FastFaultOutput1.q_xFastFaultOut,
-	xEnableAtt := false,
-	xEnablePE := false
+    xEnableAtt := false,
+    xEnablePE := false
     );
 
 //PMPS_GVL.stCurrentBeamParameters.neVRange := F_eVRangeCalculator(fbeVSimulator.eV, PMPS_GVL.stCurrentBeamParameters.neVRange);
