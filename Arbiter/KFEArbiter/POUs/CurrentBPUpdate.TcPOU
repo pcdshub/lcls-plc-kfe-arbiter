@@ -28,7 +28,7 @@ VAR
 		{attribute 'pytmc' := '
         pv: @(PREFIX)
     '}
-	fbEPICSLBeamClass : FB_BeamClassFromEPICS;
+	fbEPICSKBeamClass : FB_BeamClassFromEPICS;
 	
 	{attribute 'pytmc' := '
         pv: @(PREFIX)K:Mode
@@ -111,7 +111,7 @@ q_rPhotonEnergy := LREAL_TO_REAL(fbKPhotonEnergy.fbSXU.fCurrentPhotonEnergy);
 //Update current photon energy
 PMPS_GVL.stCurrentBeamParameters.neV := LREAL_TO_REAL(fbKPhotonEnergy.fbSXU.fCurrentPhotonEnergy);
 // Acquiring K-line BeamClass
-fbEPICSLBeamClass(BP:=PMPS_GVL.stCurrentBeamParameters, fbMPS_BeamClass:=fbMPS_BeamClass, FFO:=GVL.g_FastFaultOutput1);
+fbEPICSKBeamClass(BP:=PMPS_GVL.stCurrentBeamParameters, fbMPS_BeamClass:=fbMPS_BeamClass, FFO:=GVL.g_FastFaultOutput1);
 
 // Acquiring K-line Machine Mode
 fbEPICSLMachineMode(BP:=PMPS_GVL.stCurrentBeamParameters, fbMPS_MachineMode:=fbSXR_MachineMode, FFO:=GVL.g_FastFaultOutput1);

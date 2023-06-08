@@ -11,7 +11,7 @@ VAR
     {attribute 'pytmc' := '
     pv: @(PREFIX)BeamParamCntl
     '}
-    fbBPControl : FB_BPControlDevice(nID:=10);
+    fbBPControl : FB_BPControlDevice(nID:=16#FFFF);
 	
 	PERanges : PE_Ranges;
 	{attribute 'TcLinkTo' := 'TIIB[PMPS_Premp]^Channel 8^Output;'}
