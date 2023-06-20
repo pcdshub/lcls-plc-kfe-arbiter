@@ -405,13 +405,6 @@
 			<Vars VarGrpType="1">
 				<Name>PlcTask Inputs</Name>
 				<Var>
-					<Name>LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
-					<Comment>
-						<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
-					</Comment>
-					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
-				</Var>
-				<Var>
 					<Name>MAIN.fbEcatDiag.wFrmXWcState</Name>
 					<Comment>
 						<![CDATA[ link to task related ethercat frame state (Frm1WcState)]]>

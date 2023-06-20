@@ -32,7 +32,7 @@ VAR
 
     {attribute 'pytmc' := '
         pv: @(PREFIX)K:Mode
-        link: SIOC:FEES:MP01:LCLSMODE_RBV
+        link: SIOC:FEES:MP01:FACMODE_RBV
     '}
     fbSXR_MachineMode : FB_LREALFromEPICS := (
         iMaximumValidSeverity := 2);
