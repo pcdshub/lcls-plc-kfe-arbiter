@@ -11,21 +11,21 @@ VAR
     {attribute 'pytmc' := '
     pv: @(PREFIX)BeamParamCntl
     '}
-    fbBPControl : FB_BPControlDevice(nID:=10);
-	
-	PERanges : PE_Ranges;
-	{attribute 'TcLinkTo' := 'TIIB[PMPS_Premp]^Channel 8^Output;'}
-	bM1K1_OUT_Override AT %Q* : BOOL; // Using this book to completely overrule the last bit of the BC interface.
-	
-	//System Time
-	 {attribute 'pytmc' := '
+    fbBPControl : FB_BPControlDevice(nID:=16#FFFF);
+
+    PERanges : PE_Ranges;
+    {attribute 'TcLinkTo' := 'TIIB[PMPS_Premp]^Channel 8^Output;'}
+    bM1K1_OUT_Override AT %Q* : BOOL; // Using this book to completely overrule the last bit of the BC interface.
+
+    //System Time
+     {attribute 'pytmc' := '
         pv: @(PREFIX)SystemDT
         io: i
      '}
-	SystemTime:DINT;
-	fbTime : FB_LocalSystemTime := ( bEnable := TRUE, dwCycle := 1 ); //Get current system time, used for override
-	fbTime_to_UTC: FB_TzSpecificLocalTimeToSystemTime;
-	fbGetTimeZone: FB_GetTimeZoneInformation;
+    SystemTime:DINT;
+    fbTime : FB_LocalSystemTime := ( bEnable := TRUE, dwCycle := 1 ); //Get current system time, used for override
+    fbTime_to_UTC: FB_TzSpecificLocalTimeToSystemTime;
+    fbGetTimeZone: FB_GetTimeZoneInformation;
 END_VAR
 ]]></Declaration>
     <Implementation>
