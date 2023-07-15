@@ -4779,9 +4779,6 @@
 					<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-gmd-vac-01">
 						<Link VarA="PMPS_Arbiter.plc_kfe_gmd_PMPS_IO.o_CurrentBP" TypeA="ST_BeamParams_IO" InOutA="1" GuidA="{0C6A4924-E177-45F6-9AB0-6F9DB98D3474}" VarB="IO Outputs^CurrentBP" AutoLink="true" RestoreInfo="TypeMismatch" OldTypeA="ST_BeamParams_IO" OldGuidA="{0C6A4924-E177-45F6-9AB0-6F9DB98D3474}" NewTypeA="ST_BeamParams_IO" NewGuidA="{292CD354-C7C0-4A61-AAD0-1C85DD69646B}"/>
 					</OwnerB>
-					<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-vac">
-						<Link VarA="PMPS_Arbiter.plc_kfe_vac_PMPS_IO.o_CurrentBP" TypeA="ST_BeamParams_IO" InOutA="1" GuidA="{0C6A4924-E177-45F6-9AB0-6F9DB98D3474}" VarB="IO Outputs^CurrentBP" AutoLink="true" RestoreInfo="TypeMismatch" OldTypeA="ST_BeamParams_IO" OldGuidA="{0C6A4924-E177-45F6-9AB0-6F9DB98D3474}" NewTypeA="ST_BeamParams_IO" NewGuidA="{292CD354-C7C0-4A61-AAD0-1C85DD69646B}"/>
-					</OwnerB>
 					<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-xgmd-vac-01">
 						<Link VarA="PMPS_Arbiter.plc_kfe_xgmd_PMPS_IO.o_CurrentBP" TypeA="ST_BeamParams_IO" InOutA="1" GuidA="{0C6A4924-E177-45F6-9AB0-6F9DB98D3474}" VarB="IO Outputs^CurrentBP" AutoLink="true" RestoreInfo="TypeMismatch" OldTypeA="ST_BeamParams_IO" OldGuidA="{0C6A4924-E177-45F6-9AB0-6F9DB98D3474}" NewTypeA="ST_BeamParams_IO" NewGuidA="{292CD354-C7C0-4A61-AAD0-1C85DD69646B}"/>
 					</OwnerB>
@@ -4794,9 +4791,6 @@
 				<OwnerA Name="InputDst" Prefix="TIPC^KFEArbiter^KFEArbiter Instance" Type="1">
 					<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-gmd-vac-01">
 						<Link VarA="PMPS_Arbiter.plc_kfe_gmd_PMPS_IO.i_RequestedBP" TypeA="ST_BeamParams_IO" InOutA="0" GuidA="{0C6A4924-E177-45F6-9AB0-6F9DB98D3474}" VarB="IO Inputs^RequestedBP" AutoLink="true" RestoreInfo="TypeMismatch" OldTypeA="ST_BeamParams_IO" OldGuidA="{0C6A4924-E177-45F6-9AB0-6F9DB98D3474}" NewTypeA="ST_BeamParams_IO" NewGuidA="{292CD354-C7C0-4A61-AAD0-1C85DD69646B}"/>
-					</OwnerB>
-					<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-vac">
-						<Link VarA="PMPS_Arbiter.plc_kfe_vac_PMPS_IO.i_RequestedBP" TypeA="ST_BeamParams_IO" InOutA="0" GuidA="{0C6A4924-E177-45F6-9AB0-6F9DB98D3474}" VarB="IO Inputs^RequestedBP" AutoLink="true" RestoreInfo="TypeMismatch" OldTypeA="ST_BeamParams_IO" OldGuidA="{0C6A4924-E177-45F6-9AB0-6F9DB98D3474}" NewTypeA="ST_BeamParams_IO" NewGuidA="{292CD354-C7C0-4A61-AAD0-1C85DD69646B}"/>
 					</OwnerB>
 					<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-xgmd-vac-01">
 						<Link VarA="PMPS_Arbiter.plc_kfe_xgmd_PMPS_IO.i_RequestedBP" TypeA="ST_BeamParams_IO" InOutA="0" GuidA="{0C6A4924-E177-45F6-9AB0-6F9DB98D3474}" VarB="IO Inputs^RequestedBP" AutoLink="true" RestoreInfo="TypeMismatch" OldTypeA="ST_BeamParams_IO" OldGuidA="{0C6A4924-E177-45F6-9AB0-6F9DB98D3474}" NewTypeA="ST_BeamParams_IO" NewGuidA="{292CD354-C7C0-4A61-AAD0-1C85DD69646B}"/>
