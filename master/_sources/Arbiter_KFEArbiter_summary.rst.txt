@@ -24,7 +24,7 @@ Settings
 Pragmas
 -------
 
-Total pragmas found: 62
+Total pragmas found: 67
 Total linter errors: 0
 
 
@@ -598,6 +598,11 @@ Global_Version
 GVL
 ^^^
 
+.. raw:: html
+
+   <details>
+       <summary>12 Symbols</summary>
+
 .. csv-table::
     :header: Symbol, Type, Offset/Size
     :align: center
@@ -610,8 +615,15 @@ GVL
         GVL.g_fbArbiter1, FB_Arbiter, 1273025408 (473472)
         GVL.g_rTestingVelocity, LREAL, 1274490496 (64)
         GVL.MAX_FAST_FAULTS, UINT, 1273500656 (16)
+        GVL.MaxDuration, REAL, 1279440160 (32)
+        GVL.nBeamIntensity, INT, 1279436880 (16)
         GVL.nLangId_OnlineMonitoring, DINT, 4391264 (32)
         GVL.ReqBP, ST_BeamParams, 1273498880 (1760)
+
+.. raw:: html
+
+   </details>
+   <br />
 
 
 GVL_CheckBounds
@@ -794,12 +806,14 @@ P_AT1K0_SL1K0
 .. raw:: html
 
    <details>
-       <summary>14 Symbols</summary>
+       <summary>21 Symbols</summary>
 
 .. csv-table::
     :header: Symbol, Type, Offset/Size
     :align: center
 
+        P_AT1K0_SL1K0.bApplyJF, BOOL, 1274490840 (8)
+        P_AT1K0_SL1K0.bCancelJF, BOOL, 1274574160 (8)
         P_AT1K0_SL1K0.bSimApt, BOOL, 1272920440 (8)
         P_AT1K0_SL1K0.ffKFEGattConnection, FB_FastFault, 1272946336 (25088)
         P_AT1K0_SL1K0.ffKFEMotConnection, FB_FastFault, 1272921248 (25088)
@@ -812,8 +826,13 @@ P_AT1K0_SL1K0
         P_AT1K0_SL1K0.i_nTranToAT1K0Stat, ST_PMPS_Attenuator_IO, 1272920352 (64)
         P_AT1K0_SL1K0.i_stAptArrayStat, ST_PMPS_Aperture_IO, 1272920832 (384)
         P_AT1K0_SL1K0.idx, UINT, 1272921232 (16)
+        P_AT1K0_SL1K0.nBeamIntensityJF, REAL, 1279436896 (32)
         P_AT1K0_SL1K0.q_nTranToAT1K0Req, ST_PMPS_Attenuator_IO, 1272920288 (64)
         P_AT1K0_SL1K0.q_stAptArrayReq, ST_PMPS_Aperture_IO, 1272920448 (384)
+        P_AT1K0_SL1K0.rDurationJF, REAL, 1279439584 (32)
+        P_AT1K0_SL1K0.rTimeRemainJF, REAL, 1279439776 (32)
+        P_AT1K0_SL1K0.tDuration, TIME, 1279439968 (32)
+        P_AT1K0_SL1K0.tonDuration, TON, 1280108096 (224)
 
 .. raw:: html
 

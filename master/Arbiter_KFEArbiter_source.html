@@ -11,12 +11,12 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="_static/jquery.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
-        <script src="_static/docs-versions-menu.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/docs-versions-menu.js?v=3d6a1aea"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -107,12 +107,12 @@
            <div itemprop="articleBody">
              
   <section id="duts">
-<h1>DUTs<a class="headerlink" href="#duts" title="Permalink to this heading"></a></h1>
+<h1>DUTs<a class="headerlink" href="#duts" title="Link to this heading"></a></h1>
 </section>
 <section id="gvls">
-<h1>GVLs<a class="headerlink" href="#gvls" title="Permalink to this heading"></a></h1>
+<h1>GVLs<a class="headerlink" href="#gvls" title="Link to this heading"></a></h1>
 <section id="gvl">
-<h2>GVL<a class="headerlink" href="#gvl" title="Permalink to this heading"></a></h2>
+<h2>GVL<a class="headerlink" href="#gvl" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">VAR_GLOBAL</span>
    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
     <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">PREFIX</span><span class="p">)</span><span class="n">Arbiter</span><span class="p">:</span><span class="mi">01</span>
@@ -142,12 +142,16 @@
 
 <span class="n">VAR_GLOBAL</span> <span class="n">CONSTANT</span>
     <span class="n">MAX_FAST_FAULTS</span> <span class="p">:</span> <span class="n">UINT</span> <span class="o">:=</span> <span class="mi">100</span><span class="p">;</span>
+    <span class="o">//</span><span class="n">Judgement</span> <span class="n">factor</span> <span class="n">constants</span> <span class="p">(</span><span class="n">administrative</span> <span class="n">mode</span><span class="p">)</span>
+    <span class="n">nBeamIntensity</span> <span class="p">:</span> <span class="n">INT</span> <span class="o">:=</span><span class="mi">5</span><span class="p">;</span><span class="o">//</span><span class="n">mj</span>
+    <span class="n">MaxDuration</span> <span class="p">:</span> <span class="n">REAL</span> <span class="o">:=</span><span class="mi">12</span><span class="p">;</span>
+
 <span class="n">END_VAR</span>
 </pre></div>
 </div>
 </section>
 <section id="gvl-checkbounds">
-<h2>GVL_CheckBounds<a class="headerlink" href="#gvl-checkbounds" title="Permalink to this heading"></a></h2>
+<h2>GVL_CheckBounds<a class="headerlink" href="#gvl-checkbounds" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span>
     <span class="n">nTooLow</span> <span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span>
@@ -159,9 +163,9 @@
 </section>
 </section>
 <section id="pous">
-<h1>POUs<a class="headerlink" href="#pous" title="Permalink to this heading"></a></h1>
+<h1>POUs<a class="headerlink" href="#pous" title="Link to this heading"></a></h1>
 <section id="checkbounds">
-<h2>CheckBounds<a class="headerlink" href="#checkbounds" title="Permalink to this heading"></a></h2>
+<h2>CheckBounds<a class="headerlink" href="#checkbounds" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Implicitly</span> <span class="n">generated</span> <span class="n">code</span> <span class="p">:</span> <span class="n">DO</span> <span class="n">NOT</span> <span class="n">EDIT</span>
 <span class="n">FUNCTION</span> <span class="n">CheckBounds</span> <span class="p">:</span> <span class="n">DINT</span>
 <span class="n">VAR_INPUT</span>
@@ -209,7 +213,7 @@
 </dl>
 </section>
 <section id="checkrangesigned">
-<h2>CheckRangeSigned<a class="headerlink" href="#checkrangesigned" title="Permalink to this heading"></a></h2>
+<h2>CheckRangeSigned<a class="headerlink" href="#checkrangesigned" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Implicitly</span> <span class="n">generated</span> <span class="n">code</span> <span class="p">:</span> <span class="n">DO</span> <span class="n">NOT</span> <span class="n">EDIT</span>
 <span class="n">FUNCTION</span> <span class="n">CheckRangeSigned</span> <span class="p">:</span> <span class="n">DINT</span>
 <span class="n">VAR_INPUT</span>
@@ -231,7 +235,7 @@
 </div>
 </section>
 <section id="checkrangeunsigned">
-<h2>CheckRangeUnsigned<a class="headerlink" href="#checkrangeunsigned" title="Permalink to this heading"></a></h2>
+<h2>CheckRangeUnsigned<a class="headerlink" href="#checkrangeunsigned" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Implicitly</span> <span class="n">generated</span> <span class="n">code</span> <span class="p">:</span> <span class="n">DO</span> <span class="n">NOT</span> <span class="n">EDIT</span>
 <span class="n">FUNCTION</span> <span class="n">CheckRangeUnsigned</span> <span class="p">:</span> <span class="n">UDINT</span>
 <span class="n">VAR_INPUT</span>
@@ -253,7 +257,7 @@
 </div>
 </section>
 <section id="currentbpupdate">
-<h2>CurrentBPUpdate<a class="headerlink" href="#currentbpupdate" title="Permalink to this heading"></a></h2>
+<h2>CurrentBPUpdate<a class="headerlink" href="#currentbpupdate" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">CurrentBPUpdate</span>
 <span class="n">VAR</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
@@ -392,7 +396,7 @@
 </dl>
 </section>
 <section id="cxdisplay">
-<h2>CXDisplay<a class="headerlink" href="#cxdisplay" title="Permalink to this heading"></a></h2>
+<h2>CXDisplay<a class="headerlink" href="#cxdisplay" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">CXDisplay</span>
 <span class="n">VAR</span>
     <span class="n">DisplayStats</span> <span class="p">:</span> <span class="n">FB_CXSetTextDisplayUSB</span> <span class="o">:=</span> <span class="p">(</span><span class="n">nPort</span><span class="o">:=</span><span class="mi">28928</span><span class="p">);</span>
@@ -416,7 +420,7 @@
 </div>
 </section>
 <section id="fast-faults-evaluate">
-<h2>Fast_Faults_Evaluate<a class="headerlink" href="#fast-faults-evaluate" title="Permalink to this heading"></a></h2>
+<h2>Fast_Faults_Evaluate<a class="headerlink" href="#fast-faults-evaluate" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">Fast_Faults_Evaluate</span>
 <span class="n">VAR</span>
 
@@ -428,7 +432,7 @@
 </div>
 </section>
 <section id="fb-beamclassoutputs">
-<h2>FB_BeamClassOutputs<a class="headerlink" href="#fb-beamclassoutputs" title="Permalink to this heading"></a></h2>
+<h2>FB_BeamClassOutputs<a class="headerlink" href="#fb-beamclassoutputs" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(*
 Sets the beam class assertion lines for a given beam class.
 *)
@@ -521,7 +525,7 @@ END_FUNCTION_BLOCK
 </div>
 </section>
 <section id="machinesimulation">
-<h2>MachineSimulation<a class="headerlink" href="#machinesimulation" title="Permalink to this heading"></a></h2>
+<h2>MachineSimulation<a class="headerlink" href="#machinesimulation" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">MachineSimulation</span>
 <span class="n">VAR</span>
     <span class="n">fbMachine</span>       <span class="p">:</span>       <span class="n">FB_MachineSimulator</span><span class="p">;</span> <span class="o">//</span><span class="n">Simulates</span> <span class="n">attenuator</span> <span class="k">as</span> <span class="n">well</span>
@@ -554,7 +558,7 @@ END_FUNCTION_BLOCK
 </dl>
 </section>
 <section id="main">
-<h2>MAIN<a class="headerlink" href="#main" title="Permalink to this heading"></a></h2>
+<h2>MAIN<a class="headerlink" href="#main" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">MAIN</span>
 <span class="n">VAR</span>
     <span class="n">Initialize</span>      <span class="p">:</span>       <span class="n">BOOL</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
@@ -649,7 +653,7 @@ END_FUNCTION_BLOCK
 </dl>
 </section>
 <section id="p-at1k0-sl1k0">
-<h2>P_AT1K0_SL1K0<a class="headerlink" href="#p-at1k0-sl1k0" title="Permalink to this heading"></a></h2>
+<h2>P_AT1K0_SL1K0<a class="headerlink" href="#p-at1k0-sl1k0" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">P_AT1K0_SL1K0</span>
 <span class="n">VAR</span>
 
@@ -692,7 +696,59 @@ END_FUNCTION_BLOCK
         <span class="n">i_Desc</span> <span class="o">:=</span> <span class="s1">&#39;EtherCAT interface watcher, for connection to KFE Gas Att. systems for Transmission requests. Very rare. Make a note, and if it can be reset, go ahead.&#39;</span><span class="p">,</span>
         <span class="n">i_TypeCode</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#5);</span>
     <span class="n">bSimApt</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
+
+<span class="o">//</span> <span class="n">Administrative</span> <span class="n">mode</span> <span class="k">for</span> <span class="n">beam</span> <span class="n">intensity</span>
+     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+       <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">PREFIX</span><span class="p">)</span><span class="n">IntensityJF</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">nBeamIntensityJF</span><span class="p">:</span> <span class="n">REAL</span> <span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">nBeamIntensity</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+       <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">PREFIX</span><span class="p">)</span><span class="n">ApplyJF</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">bApplyJF</span><span class="p">:</span> <span class="n">BOOL</span><span class="o">:=</span><span class="n">FALSE</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+       <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">PREFIX</span><span class="p">)</span><span class="n">CancelJF</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">bCancelJF</span><span class="p">:</span> <span class="n">BOOL</span><span class="o">:=</span><span class="n">FALSE</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+       <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">PREFIX</span><span class="p">)</span><span class="n">DurationJF</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">rDurationJF</span><span class="p">:</span> <span class="n">REAL</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">MaxDuration</span><span class="p">;</span><span class="o">//</span><span class="n">hours</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+       <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">PREFIX</span><span class="p">)</span><span class="n">TimeRemainJF</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">rTimeRemainJF</span><span class="p">:</span> <span class="n">REAL</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">MaxDuration</span><span class="p">;</span><span class="o">//</span><span class="n">hours</span>
+
+    <span class="n">tDuration</span><span class="p">:</span><span class="n">TIME</span><span class="p">;</span>
+    <span class="n">tonDuration</span><span class="p">:</span><span class="n">TON</span><span class="p">;</span>
+
+
 <span class="n">END_VAR</span>
+<span class="o">//</span><span class="n">Beam</span> <span class="n">intensity</span> <span class="n">factor</span> <span class="n">implemenation</span>
+<span class="o">//</span> <span class="n">No</span> <span class="n">diff</span> <span class="n">by</span> <span class="n">zero</span>
+<span class="n">IF</span> <span class="p">(</span><span class="n">nBeamIntensityJF</span> <span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="n">THEN</span> <span class="n">nBeamIntensityJF</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">nBeamIntensity</span><span class="p">;</span> <span class="n">END_IF</span>
+<span class="o">//</span><span class="n">Check</span> <span class="n">it</span> <span class="n">it</span> <span class="n">has</span> <span class="n">expired</span> <span class="ow">or</span> <span class="ow">is</span> <span class="n">cancelled</span> <span class="ow">and</span> <span class="n">reset</span> <span class="n">to</span> <span class="n">defaults</span>
+<span class="n">IF</span><span class="p">(</span><span class="n">tonDuration</span><span class="o">.</span><span class="n">Q</span> <span class="n">OR</span> <span class="n">bCancelJF</span><span class="p">)</span>
+<span class="n">THEN</span>
+    <span class="n">nBeamIntensityJF</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">nBeamIntensity</span><span class="p">;</span>
+    <span class="n">bCancelJF</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+    <span class="n">bApplyJF</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">END_IF</span>
+<span class="o">//</span> <span class="n">Maximum</span> <span class="n">duration</span> <span class="ow">is</span> <span class="mi">12</span> <span class="n">hours</span>
+<span class="n">rDurationJF</span> <span class="o">:=</span> <span class="n">LIMIT</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">rDurationJF</span><span class="p">,</span><span class="n">MaxDuration</span><span class="p">);</span>
+<span class="o">//</span><span class="n">check</span> <span class="k">if</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">applied</span>
+<span class="n">tDuration</span><span class="o">:=</span> <span class="n">TO_TIME</span><span class="p">(</span><span class="n">rDurationJF</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">1000</span><span class="p">);</span><span class="o">//</span><span class="n">to</span> <span class="n">msec</span>
+<span class="n">tonDuration</span><span class="p">(</span><span class="n">IN</span><span class="o">:=</span><span class="n">bApplyJF</span><span class="p">,</span><span class="n">PT</span><span class="o">:=</span><span class="n">tDuration</span><span class="p">,</span><span class="n">ET</span><span class="o">=&gt;</span><span class="p">);</span>
+<span class="n">rTimeRemainJF</span><span class="o">:=</span> <span class="n">rDurationJF</span> <span class="o">-</span> <span class="p">(</span><span class="n">TO_REAL</span><span class="p">(</span><span class="n">tonDuration</span><span class="o">.</span><span class="n">ET</span><span class="p">)</span><span class="o">/</span><span class="mi">60</span><span class="o">/</span><span class="mi">60</span><span class="o">/</span><span class="mi">1000</span><span class="p">);</span><span class="o">//</span><span class="n">to</span> <span class="n">hours</span>
+
+
+<span class="o">//</span><span class="n">Calculate</span> <span class="n">the</span> <span class="n">new</span> <span class="n">requested</span> <span class="n">transmission</span>
+<span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stRequestedBeamParameters</span><span class="o">.</span><span class="n">nTran</span> <span class="o">:=</span> <span class="n">LIMIT</span><span class="p">(</span><span class="mi">0</span><span class="p">,(</span><span class="n">GVL</span><span class="o">.</span><span class="n">nBeamIntensity</span><span class="o">/</span><span class="n">nBeamIntensityJF</span><span class="p">)</span><span class="o">*</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stRequestedBeamParameters</span><span class="o">.</span><span class="n">nTran</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+
+
+
 <span class="o">//</span> <span class="n">If</span> <span class="n">interface</span> <span class="k">with</span> <span class="n">plc</span><span class="o">-</span><span class="n">kfe</span><span class="o">-</span><span class="n">gatt</span> <span class="n">OK</span> <span class="n">carry</span> <span class="n">out</span> <span class="n">exchange</span>
 <span class="n">IF</span> <span class="n">i_bWcStateOut_AT1K0</span> <span class="o">=</span> <span class="mi">0</span> <span class="n">AND</span> <span class="n">i_bWcStateIn_AT1K0</span> <span class="o">=</span> <span class="mi">0</span> <span class="n">AND</span> <span class="n">i_nState_AT1K0</span> <span class="o">=</span> <span class="mi">8</span> <span class="n">THEN</span>
 
@@ -700,8 +756,8 @@ END_FUNCTION_BLOCK
     <span class="n">q_nTranToAT1K0Req</span><span class="o">.</span><span class="n">nTran</span> <span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stRequestedBeamParameters</span><span class="o">.</span><span class="n">nTran</span><span class="o">*</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">TRANS_SCALING_FACTOR</span><span class="p">;</span>
     <span class="n">q_nTranToAT1K0Req</span><span class="o">.</span><span class="n">xAttOK</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#FF;</span>
 
-    <span class="o">//</span><span class="n">Update</span>
-    <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">nTran</span> <span class="o">:=</span> <span class="n">i_nTranToAT1K0Stat</span><span class="o">.</span><span class="n">nTran</span><span class="p">;</span><span class="o">//</span><span class="n">REAL_TO_UINT</span><span class="p">(</span><span class="n">UINT_TO_REAL</span><span class="p">(</span><span class="n">i_nTranToAT1K0Stat</span><span class="o">.</span><span class="n">nTran</span><span class="p">)</span><span class="o">*</span><span class="mf">0.01</span><span class="p">);</span>
+    <span class="o">//</span><span class="n">Update</span> <span class="k">with</span> <span class="n">judgement</span> <span class="n">factor</span>
+    <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">nTran</span> <span class="o">:=</span> <span class="n">i_nTranToAT1K0Stat</span><span class="o">.</span><span class="n">nTran</span> <span class="o">*</span><span class="p">(</span><span class="n">nBeamIntensityJF</span><span class="o">/</span><span class="n">GVL</span><span class="o">.</span><span class="n">nBeamIntensity</span><span class="p">);</span><span class="o">//</span><span class="n">REAL_TO_UINT</span><span class="p">(</span><span class="n">UINT_TO_REAL</span><span class="p">(</span><span class="n">i_nTranToAT1K0Stat</span><span class="o">.</span><span class="n">nTran</span><span class="p">)</span><span class="o">*</span><span class="mf">0.01</span><span class="p">);</span>
 
     <span class="n">ffKFEGattConnection</span><span class="o">.</span><span class="n">i_xOK</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
 <span class="n">ELSE</span>
@@ -741,9 +797,15 @@ END_FUNCTION_BLOCK
 <span class="n">END_PROGRAM</span>
 </pre></div>
 </div>
+<dl class="simple">
+<dt>Related:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#gvl">GVL</a></p></li>
+</ul>
+</dd>
+</dl>
 </section>
 <section id="p-satt">
-<h2>P_SATT<a class="headerlink" href="#p-satt" title="Permalink to this heading"></a></h2>
+<h2>P_SATT<a class="headerlink" href="#p-satt" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">P_SATT</span>
 <span class="n">VAR</span>
     <span class="o">//</span><span class="n">All</span> <span class="n">Sold</span> <span class="n">attenuators</span> <span class="n">requests</span> <span class="n">are</span> <span class="n">summerrized</span> <span class="n">into</span> <span class="n">this</span> <span class="n">one</span> <span class="n">output</span>
@@ -815,7 +877,7 @@ END_FUNCTION_BLOCK
 </div>
 </section>
 <section id="pmps-arbiter">
-<h2>PMPS_Arbiter<a class="headerlink" href="#pmps-arbiter" title="Permalink to this heading"></a></h2>
+<h2>PMPS_Arbiter<a class="headerlink" href="#pmps-arbiter" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PMPS_Arbiter</span>
 <span class="n">VAR</span>
 
@@ -1026,7 +1088,7 @@ END_FUNCTION_BLOCK
 </dl>
 </section>
 <section id="testing">
-<h2>Testing<a class="headerlink" href="#testing" title="Permalink to this heading"></a></h2>
+<h2>Testing<a class="headerlink" href="#testing" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">Testing</span>
 <span class="n">VAR</span>
     <span class="n">AttemptReset</span> <span class="p">:</span> <span class="n">TON</span> <span class="o">:=</span> <span class="p">(</span><span class="n">PT</span><span class="o">:=</span><span class="n">T</span><span class="c1">#1s);</span>

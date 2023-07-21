@@ -43008,4 +43008,64 @@ Database Records
         | io: input
 
 
+    * - $(PREFIX)ApplyJF_RBV
+      - bi
+      - P_AT1K0_SL1K0.bApplyJF
+      - | io: output
+
+
+    * - $(PREFIX)ApplyJF
+      - bo
+      - P_AT1K0_SL1K0.bApplyJF
+      - | io: output
+
+
+    * - $(PREFIX)CancelJF_RBV
+      - bi
+      - P_AT1K0_SL1K0.bCancelJF
+      - | io: output
+
+
+    * - $(PREFIX)CancelJF
+      - bo
+      - P_AT1K0_SL1K0.bCancelJF
+      - | io: output
+
+
+    * - $(PREFIX)IntensityJF_RBV
+      - ai
+      - P_AT1K0_SL1K0.nBeamIntensityJF
+      - | io: output
+
+
+    * - $(PREFIX)IntensityJF
+      - ao
+      - P_AT1K0_SL1K0.nBeamIntensityJF
+      - | io: output
+
+
+    * - $(PREFIX)DurationJF_RBV
+      - ai
+      - P_AT1K0_SL1K0.rDurationJF
+      - | io: output
+
+
+    * - $(PREFIX)DurationJF
+      - ao
+      - P_AT1K0_SL1K0.rDurationJF
+      - | io: output
+
+
+    * - $(PREFIX)TimeRemainJF_RBV
+      - ai
+      - P_AT1K0_SL1K0.rTimeRemainJF
+      - | io: output
+
+
+    * - $(PREFIX)TimeRemainJF
+      - ao
+      - P_AT1K0_SL1K0.rTimeRemainJF
+      - | io: output
+
+
 

@@ -23,7 +23,6 @@ Links
         InputDst, PMPS_Arbiter.lfe_PMPS_IO.i_RequestedBP, TIID^Device 1 (EtherCAT)^Box 23 (CU1128)^plc-lfe-motion, IO Inputs^RequestedBP
         InputDst, PMPS_Arbiter.lfe_PMPS_IO.i_TxPDOState, TIID^Device 1 (EtherCAT)^Box 23 (CU1128)^plc-lfe-motion, SYNC Inputs^TxPDO state
         InputDst, PMPS_Arbiter.plc_kfe_gmd_PMPS_IO.i_RequestedBP, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-gmd-vac-01, IO Inputs^RequestedBP
-        InputDst, PMPS_Arbiter.plc_kfe_vac_PMPS_IO.i_RequestedBP, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-vac, IO Inputs^RequestedBP
         InputDst, PMPS_Arbiter.plc_kfe_xgmd_PMPS_IO.i_RequestedBP, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-xgmd-vac-01, IO Inputs^RequestedBP
         InputDst, PMPS_Arbiter.st3k4Watcher.i_StopperInLS, TIID^Device 1 (EtherCAT)^E0 (EK1200)^E3 (EK1122)^950-101W-R4-MPS-2^PPS Stoppers 1, Channel 1^ST3K4 IN
         InputDst, PMPS_Arbiter.st3k4Watcher.i_StopperOutLS, TIID^Device 1 (EtherCAT)^E0 (EK1200)^E3 (EK1122)^950-101W-R4-MPS-2^PPS Stoppers 1, Channel 2^ST3K4 OUT
@@ -160,7 +159,6 @@ Links
         OutputSrc, PMPS_Arbiter.fbSubSys2_Requestor.o_CurrentBP, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 3 (EK1122)^SubSysPLC2, IO Outputs^CurrentBP
         OutputSrc, PMPS_Arbiter.lfe_PMPS_IO.o_CurrentBP, TIID^Device 1 (EtherCAT)^Box 23 (CU1128)^plc-lfe-motion, IO Outputs^CurrentBP
         OutputSrc, PMPS_Arbiter.plc_kfe_gmd_PMPS_IO.o_CurrentBP, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-gmd-vac-01, IO Outputs^CurrentBP
-        OutputSrc, PMPS_Arbiter.plc_kfe_vac_PMPS_IO.o_CurrentBP, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-vac, IO Outputs^CurrentBP
         OutputSrc, PMPS_Arbiter.plc_kfe_xgmd_PMPS_IO.o_CurrentBP, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-xgmd-vac-01, IO Outputs^CurrentBP
         OutputSrc, P_AT1K0_SL1K0.q_nTranToAT1K0Req, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-gatt, IO Outputs^Requested Transmission
         OutputSrc, P_SATT.q_nTranSattReq, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^B940-009-R07-MPS-1 CU1-ESC2^plc-rix-mot, IO Outputs^SattArrayReq
