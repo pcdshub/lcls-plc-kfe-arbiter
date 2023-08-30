@@ -31,6 +31,10 @@ END_VAR
 
 VAR_GLOBAL CONSTANT
     MAX_FAST_FAULTS : UINT := 100;
+	//Judgement factor constants (administrative mode)
+	nBeamIntensity : INT :=5;//mj
+	MaxDuration : REAL :=12;
+
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
