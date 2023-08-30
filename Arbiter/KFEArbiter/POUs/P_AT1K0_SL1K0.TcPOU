@@ -95,7 +95,7 @@ rTimeRemainJF:= rDurationJF - (TO_REAL(tonDuration.ET)/60/60/1000);//to hours
 
 
 //Calculate the new requested transmission
-PMPS_GVL.stRequestedBeamParameters.nTran := LIMIT(0,(nBeamIntensity/nBeamIntensityJF)* PMPS_GVL.stRequestedBeamParameters.nTran,1);
+PMPS_GVL.stRequestedBeamParameters.nTran := LIMIT(0,(GVL.nBeamIntensity/nBeamIntensityJF)* PMPS_GVL.stRequestedBeamParameters.nTran,1);
 
 
 
@@ -107,7 +107,7 @@ IF i_bWcStateOut_AT1K0 = 0 AND i_bWcStateIn_AT1K0 = 0 AND i_nState_AT1K0 = 8 THE
     q_nTranToAT1K0Req.xAttOK := 16#FF;
 
     //Update with judgement factor
-    PMPS_GVL.stCurrentBeamParameters.nTran := i_nTranToAT1K0Stat.nTran *(nBeamIntensityJF/nBeamIntensity);//REAL_TO_UINT(UINT_TO_REAL(i_nTranToAT1K0Stat.nTran)*0.01);
+    PMPS_GVL.stCurrentBeamParameters.nTran := i_nTranToAT1K0Stat.nTran *(nBeamIntensityJF/GVL.nBeamIntensity);//REAL_TO_UINT(UINT_TO_REAL(i_nTranToAT1K0Stat.nTran)*0.01);
 
     ffKFEGattConnection.i_xOK := TRUE;
 ELSE
