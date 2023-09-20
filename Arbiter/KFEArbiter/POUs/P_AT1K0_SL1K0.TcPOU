@@ -78,7 +78,7 @@ END_VAR
       <ST><![CDATA[
 //Beam intensity factor implemenation
 // No diff by zero
-IF (nBeamIntensityJF =0) THEN nBeamIntensityJF:=GVL.nBeamIntensity; END_IF
+IF (nBeamIntensityJF =0) OR (nBeamIntensityJF > GVL.nBeamIntensity ) THEN nBeamIntensityJF:=GVL.nBeamIntensity; END_IF
 //Check it it has expired or is cancelled and reset to defaults
 IF(tonDuration.Q OR bCancelJF)
 THEN 
