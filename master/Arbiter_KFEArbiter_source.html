@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DUTs &mdash; pcdshub/lcls-plc-kfe-arbiter  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/tree.css?v=837a00b9" />
+      <link rel="stylesheet" type="text/css" href="_static/width.css?v=ab210c7a" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -14,7 +18,7 @@
         <script src="_static/jquery.js?v=5d32c60e"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
         <script src="_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="_static/docs-versions-menu.js?v=3d6a1aea"></script>
     <script src="_static/js/theme.js"></script>
@@ -46,7 +50,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Arbiter_pragmas.html">Pragmas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Arbiter_nc.html">NC Settings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Arbiter_ethercat.html">Box Hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Arbiter_ethercat.html">EtherCAT Terminals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Arbiter_boxes.html">Boxes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Arbiter_links.html">Links</a></li>
 </ul>
@@ -423,8 +427,16 @@
 <h2>Fast_Faults_Evaluate<a class="headerlink" href="#fast-faults-evaluate" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">Fast_Faults_Evaluate</span>
 <span class="n">VAR</span>
-
+<span class="n">FFO</span>    <span class="p">:</span>    <span class="n">FB_FastFault</span> <span class="o">:=</span><span class="p">(</span>
+        <span class="n">i_Desc</span> <span class="o">:=</span> <span class="s1">&#39;Fault occurs when the beamline valves on qrixs are not in open state&#39;</span><span class="p">,</span>
+        <span class="n">i_TypeCode</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#1010);</span>
+<span class="n">i_xFastFaultOut_qrix_vac</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span><span class="p">:</span>        <span class="n">BOOL</span><span class="p">;</span>
 <span class="n">END_VAR</span>
+<span class="n">FFO</span><span class="p">(</span>
+    <span class="n">io_fbFFHWO</span> <span class="o">:=</span> <span class="n">g_FastFaultOutput2</span><span class="p">,</span>
+    <span class="n">i_xOK</span> <span class="o">:=</span> <span class="n">i_xFastFaultOut_qrix_vac</span><span class="p">,</span>
+    <span class="n">i_xAutoReset</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">);</span>
+
 <span class="n">g_FastFaultOutput2</span><span class="o">.</span><span class="n">EvaluateOutput</span><span class="p">(</span><span class="n">bAutoReset</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
 
 <span class="n">END_PROGRAM</span>
@@ -699,25 +711,25 @@ END_FUNCTION_BLOCK
 
 <span class="o">//</span> <span class="n">Administrative</span> <span class="n">mode</span> <span class="k">for</span> <span class="n">beam</span> <span class="n">intensity</span>
      <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-       <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">PREFIX</span><span class="p">)</span><span class="n">IntensityJF</span>
+          <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">PREFIX</span><span class="p">)</span><span class="n">IntensityJF</span>
     <span class="s1">&#39;}</span>
     <span class="n">nBeamIntensityJF</span><span class="p">:</span> <span class="n">REAL</span> <span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">nBeamIntensity</span><span class="p">;</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-       <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">PREFIX</span><span class="p">)</span><span class="n">ApplyJF</span>
+          <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">PREFIX</span><span class="p">)</span><span class="n">ApplyJF</span>
     <span class="s1">&#39;}</span>
     <span class="n">bApplyJF</span><span class="p">:</span> <span class="n">BOOL</span><span class="o">:=</span><span class="n">FALSE</span><span class="p">;</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-       <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">PREFIX</span><span class="p">)</span><span class="n">CancelJF</span>
+          <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">PREFIX</span><span class="p">)</span><span class="n">CancelJF</span>
     <span class="s1">&#39;}</span>
     <span class="n">bCancelJF</span><span class="p">:</span> <span class="n">BOOL</span><span class="o">:=</span><span class="n">FALSE</span><span class="p">;</span>
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-       <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">PREFIX</span><span class="p">)</span><span class="n">DurationJF</span>
+          <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">PREFIX</span><span class="p">)</span><span class="n">DurationJF</span>
     <span class="s1">&#39;}</span>
     <span class="n">rDurationJF</span><span class="p">:</span> <span class="n">REAL</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">MaxDuration</span><span class="p">;</span><span class="o">//</span><span class="n">hours</span>
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-       <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">PREFIX</span><span class="p">)</span><span class="n">TimeRemainJF</span>
+          <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">PREFIX</span><span class="p">)</span><span class="n">TimeRemainJF</span>
     <span class="s1">&#39;}</span>
     <span class="n">rTimeRemainJF</span><span class="p">:</span> <span class="n">REAL</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">MaxDuration</span><span class="p">;</span><span class="o">//</span><span class="n">hours</span>
 
@@ -728,14 +740,15 @@ END_FUNCTION_BLOCK
 <span class="n">END_VAR</span>
 <span class="o">//</span><span class="n">Beam</span> <span class="n">intensity</span> <span class="n">factor</span> <span class="n">implemenation</span>
 <span class="o">//</span> <span class="n">No</span> <span class="n">diff</span> <span class="n">by</span> <span class="n">zero</span>
-<span class="n">IF</span> <span class="p">(</span><span class="n">nBeamIntensityJF</span> <span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="n">THEN</span> <span class="n">nBeamIntensityJF</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">nBeamIntensity</span><span class="p">;</span> <span class="n">END_IF</span>
+<span class="n">IF</span> <span class="p">(</span><span class="n">nBeamIntensityJF</span> <span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="n">OR</span> <span class="p">(</span><span class="n">nBeamIntensityJF</span> <span class="o">&gt;</span> <span class="n">GVL</span><span class="o">.</span><span class="n">nBeamIntensity</span> <span class="p">)</span> <span class="n">THEN</span> <span class="n">nBeamIntensityJF</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">nBeamIntensity</span><span class="p">;</span> <span class="n">END_IF</span>
 <span class="o">//</span><span class="n">Check</span> <span class="n">it</span> <span class="n">it</span> <span class="n">has</span> <span class="n">expired</span> <span class="ow">or</span> <span class="ow">is</span> <span class="n">cancelled</span> <span class="ow">and</span> <span class="n">reset</span> <span class="n">to</span> <span class="n">defaults</span>
 <span class="n">IF</span><span class="p">(</span><span class="n">tonDuration</span><span class="o">.</span><span class="n">Q</span> <span class="n">OR</span> <span class="n">bCancelJF</span><span class="p">)</span>
 <span class="n">THEN</span>
     <span class="n">nBeamIntensityJF</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">nBeamIntensity</span><span class="p">;</span>
     <span class="n">bCancelJF</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
-    <span class="n">bApplyJF</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+     <span class="n">bApplyJF</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
 <span class="n">END_IF</span>
+
 <span class="o">//</span> <span class="n">Maximum</span> <span class="n">duration</span> <span class="ow">is</span> <span class="mi">12</span> <span class="n">hours</span>
 <span class="n">rDurationJF</span> <span class="o">:=</span> <span class="n">LIMIT</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">rDurationJF</span><span class="p">,</span><span class="n">MaxDuration</span><span class="p">);</span>
 <span class="o">//</span><span class="n">check</span> <span class="k">if</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">applied</span>
@@ -743,21 +756,25 @@ END_FUNCTION_BLOCK
 <span class="n">tonDuration</span><span class="p">(</span><span class="n">IN</span><span class="o">:=</span><span class="n">bApplyJF</span><span class="p">,</span><span class="n">PT</span><span class="o">:=</span><span class="n">tDuration</span><span class="p">,</span><span class="n">ET</span><span class="o">=&gt;</span><span class="p">);</span>
 <span class="n">rTimeRemainJF</span><span class="o">:=</span> <span class="n">rDurationJF</span> <span class="o">-</span> <span class="p">(</span><span class="n">TO_REAL</span><span class="p">(</span><span class="n">tonDuration</span><span class="o">.</span><span class="n">ET</span><span class="p">)</span><span class="o">/</span><span class="mi">60</span><span class="o">/</span><span class="mi">60</span><span class="o">/</span><span class="mi">1000</span><span class="p">);</span><span class="o">//</span><span class="n">to</span> <span class="n">hours</span>
 
-
-<span class="o">//</span><span class="n">Calculate</span> <span class="n">the</span> <span class="n">new</span> <span class="n">requested</span> <span class="n">transmission</span>
-<span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stRequestedBeamParameters</span><span class="o">.</span><span class="n">nTran</span> <span class="o">:=</span> <span class="n">LIMIT</span><span class="p">(</span><span class="mi">0</span><span class="p">,(</span><span class="n">GVL</span><span class="o">.</span><span class="n">nBeamIntensity</span><span class="o">/</span><span class="n">nBeamIntensityJF</span><span class="p">)</span><span class="o">*</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stRequestedBeamParameters</span><span class="o">.</span><span class="n">nTran</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
-
-
-
 <span class="o">//</span> <span class="n">If</span> <span class="n">interface</span> <span class="k">with</span> <span class="n">plc</span><span class="o">-</span><span class="n">kfe</span><span class="o">-</span><span class="n">gatt</span> <span class="n">OK</span> <span class="n">carry</span> <span class="n">out</span> <span class="n">exchange</span>
 <span class="n">IF</span> <span class="n">i_bWcStateOut_AT1K0</span> <span class="o">=</span> <span class="mi">0</span> <span class="n">AND</span> <span class="n">i_bWcStateIn_AT1K0</span> <span class="o">=</span> <span class="mi">0</span> <span class="n">AND</span> <span class="n">i_nState_AT1K0</span> <span class="o">=</span> <span class="mi">8</span> <span class="n">THEN</span>
 
     <span class="o">//</span> <span class="n">Send</span> <span class="n">request</span> <span class="kn">from</span> <span class="nn">this</span> <span class="n">arbiter</span> <span class="n">to</span> <span class="n">the</span> <span class="n">gas</span> <span class="n">attenuator</span>
-    <span class="n">q_nTranToAT1K0Req</span><span class="o">.</span><span class="n">nTran</span> <span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stRequestedBeamParameters</span><span class="o">.</span><span class="n">nTran</span><span class="o">*</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">TRANS_SCALING_FACTOR</span><span class="p">;</span>
+    <span class="n">IF</span> <span class="p">(</span><span class="n">bApplyJF</span><span class="p">)</span> <span class="n">THEN</span>
+        <span class="n">q_nTranToAT1K0Req</span><span class="o">.</span><span class="n">nTran</span> <span class="o">:=</span> <span class="n">LIMIT</span><span class="p">(</span><span class="mi">0</span><span class="p">,(</span><span class="n">GVL</span><span class="o">.</span><span class="n">nBeamIntensity</span><span class="o">/</span><span class="n">nBeamIntensityJF</span><span class="p">)</span><span class="o">*</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stRequestedBeamParameters</span><span class="o">.</span><span class="n">nTran</span><span class="o">*</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">TRANS_SCALING_FACTOR</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+    <span class="n">ELSE</span>
+        <span class="n">q_nTranToAT1K0Req</span><span class="o">.</span><span class="n">nTran</span> <span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stRequestedBeamParameters</span><span class="o">.</span><span class="n">nTran</span><span class="o">*</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">TRANS_SCALING_FACTOR</span><span class="p">;</span>
+    <span class="n">END_IF</span>
+
     <span class="n">q_nTranToAT1K0Req</span><span class="o">.</span><span class="n">xAttOK</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#FF;</span>
 
     <span class="o">//</span><span class="n">Update</span> <span class="k">with</span> <span class="n">judgement</span> <span class="n">factor</span>
-    <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">nTran</span> <span class="o">:=</span> <span class="n">i_nTranToAT1K0Stat</span><span class="o">.</span><span class="n">nTran</span> <span class="o">*</span><span class="p">(</span><span class="n">nBeamIntensityJF</span><span class="o">/</span><span class="n">GVL</span><span class="o">.</span><span class="n">nBeamIntensity</span><span class="p">);</span><span class="o">//</span><span class="n">REAL_TO_UINT</span><span class="p">(</span><span class="n">UINT_TO_REAL</span><span class="p">(</span><span class="n">i_nTranToAT1K0Stat</span><span class="o">.</span><span class="n">nTran</span><span class="p">)</span><span class="o">*</span><span class="mf">0.01</span><span class="p">);</span>
+    <span class="o">//</span><span class="n">Calculate</span> <span class="n">the</span> <span class="n">new</span> <span class="n">requested</span> <span class="n">transmission</span>
+    <span class="n">IF</span> <span class="p">(</span><span class="n">bApplyJF</span><span class="p">)</span> <span class="n">THEN</span>
+        <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">nTran</span> <span class="o">:=</span> <span class="n">i_nTranToAT1K0Stat</span><span class="o">.</span><span class="n">nTran</span> <span class="o">*</span><span class="p">(</span><span class="n">nBeamIntensityJF</span><span class="o">/</span><span class="n">GVL</span><span class="o">.</span><span class="n">nBeamIntensity</span><span class="p">);</span><span class="o">//</span><span class="n">REAL_TO_UINT</span><span class="p">(</span><span class="n">UINT_TO_REAL</span><span class="p">(</span><span class="n">i_nTranToAT1K0Stat</span><span class="o">.</span><span class="n">nTran</span><span class="p">)</span><span class="o">*</span><span class="mf">0.01</span><span class="p">);</span>
+    <span class="n">ELSE</span>
+        <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">nTran</span> <span class="o">:=</span> <span class="n">i_nTranToAT1K0Stat</span><span class="o">.</span><span class="n">nTran</span><span class="p">;</span><span class="o">//</span><span class="n">REAL_TO_UINT</span><span class="p">(</span><span class="n">UINT_TO_REAL</span><span class="p">(</span><span class="n">i_nTranToAT1K0Stat</span><span class="o">.</span><span class="n">nTran</span><span class="p">)</span><span class="o">*</span><span class="mf">0.01</span><span class="p">);</span>
+    <span class="n">END_IF</span>
 
     <span class="n">ffKFEGattConnection</span><span class="o">.</span><span class="n">i_xOK</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
 <span class="n">ELSE</span>
@@ -1023,7 +1040,25 @@ END_FUNCTION_BLOCK
                                 <span class="o">.</span><span class="n">i_WcState</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">plc</span><span class="o">-</span><span class="n">crix</span><span class="o">-</span><span class="n">vac</span><span class="p">]</span><span class="o">^</span><span class="n">WcState</span><span class="o">^</span><span class="n">WcStateIn</span><span class="p">;</span>
                                 <span class="o">.</span><span class="n">i_TxPDOState</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">plc</span><span class="o">-</span><span class="n">crix</span><span class="o">-</span><span class="n">vac</span><span class="p">]</span><span class="o">^</span><span class="n">SYNC</span> <span class="n">Inputs</span><span class="o">^</span><span class="n">TxPDO</span> <span class="n">state</span><span class="p">;</span>
                                 <span class="s1">&#39;}</span>
-    <span class="n">plc_crix_vac_PMPS_IO</span> <span class="p">:</span> <span class="n">FB_ArbiterToSubSys_IO</span> <span class="o">:=</span> <span class="p">(</span><span class="n">RequestingSystemID</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#F204);</span>
+    <span class="n">plc_crix_vac_PMPS_IO</span> <span class="p">:</span> <span class="n">FB_ArbiterToSubSys_IO</span> <span class="o">:=</span> <span class="p">(</span><span class="n">RequestingSystemID</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#F205);</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.i_RequestedBP:=TIIB[plc-qrix-mot]^IO Inputs^RequestedBP;</span>
+                                <span class="o">.</span><span class="n">o_CurrentBP</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">plc</span><span class="o">-</span><span class="n">qrix</span><span class="o">-</span><span class="n">mot</span><span class="p">]</span><span class="o">^</span><span class="n">IO</span> <span class="n">Outputs</span><span class="o">^</span><span class="n">CurrentBP</span><span class="p">;</span>
+                                <span class="o">.</span><span class="n">i_Connected</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">plc</span><span class="o">-</span><span class="n">qrix</span><span class="o">-</span><span class="n">mot</span><span class="p">]</span><span class="o">^</span><span class="n">SYNC</span> <span class="n">Inputs</span><span class="o">^</span><span class="n">External</span> <span class="n">device</span> <span class="ow">not</span> <span class="n">connected</span><span class="p">;</span>
+                                <span class="o">.</span><span class="n">i_WcState</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">plc</span><span class="o">-</span><span class="n">qrix</span><span class="o">-</span><span class="n">mot</span><span class="p">]</span><span class="o">^</span><span class="n">WcState</span><span class="o">^</span><span class="n">WcStateIn</span><span class="p">;</span>
+                                <span class="o">.</span><span class="n">i_TxPDOState</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">plc</span><span class="o">-</span><span class="n">qrix</span><span class="o">-</span><span class="n">mot</span><span class="p">]</span><span class="o">^</span><span class="n">SYNC</span> <span class="n">Inputs</span><span class="o">^</span><span class="n">TxPDO</span> <span class="n">state</span><span class="p">;</span>
+                                <span class="s1">&#39;}</span>
+
+
+    <span class="n">plc_qrix_mot_PMPS_IO</span> <span class="p">:</span> <span class="n">FB_ArbiterToSubSys_IO</span> <span class="o">:=</span> <span class="p">(</span><span class="n">RequestingSystemID</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#F206);</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.i_RequestedBP:=TIIB[plc-qrix-vac]^IO Inputs^RequestedBP;</span>
+                                <span class="o">.</span><span class="n">o_CurrentBP</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">plc</span><span class="o">-</span><span class="n">qrix</span><span class="o">-</span><span class="n">vac</span><span class="p">]</span><span class="o">^</span><span class="n">IO</span> <span class="n">Outputs</span><span class="o">^</span><span class="n">CurrentBP</span><span class="p">;</span>
+                                <span class="o">.</span><span class="n">i_Connected</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">plc</span><span class="o">-</span><span class="n">qrix</span><span class="o">-</span><span class="n">vac</span><span class="p">]</span><span class="o">^</span><span class="n">SYNC</span> <span class="n">Inputs</span><span class="o">^</span><span class="n">External</span> <span class="n">device</span> <span class="ow">not</span> <span class="n">connected</span><span class="p">;</span>
+                                <span class="o">.</span><span class="n">i_WcState</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">plc</span><span class="o">-</span><span class="n">qrix</span><span class="o">-</span><span class="n">vac</span><span class="p">]</span><span class="o">^</span><span class="n">WcState</span><span class="o">^</span><span class="n">WcStateIn</span><span class="p">;</span>
+                                <span class="o">.</span><span class="n">i_TxPDOState</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">plc</span><span class="o">-</span><span class="n">qrix</span><span class="o">-</span><span class="n">vac</span><span class="p">]</span><span class="o">^</span><span class="n">SYNC</span> <span class="n">Inputs</span><span class="o">^</span><span class="n">TxPDO</span> <span class="n">state</span><span class="p">;</span>
+                                <span class="s1">&#39;}</span>
+    <span class="n">plc_qrix_vac_PMPS_IO</span> <span class="p">:</span> <span class="n">FB_ArbiterToSubSys_IO</span> <span class="o">:=</span> <span class="p">(</span><span class="n">RequestingSystemID</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#F204);</span>
 
 <span class="n">END_VAR</span>
 <span class="o">//</span> <span class="n">Updating</span> <span class="n">arbiter</span> <span class="k">with</span> <span class="n">subsystem</span> <span class="n">requests</span><span class="o">.</span>
@@ -1048,6 +1083,7 @@ END_FUNCTION_BLOCK
     <span class="n">plc_rix_optics_PMPS_IO</span><span class="p">(</span><span class="n">Arbiter</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">g_fbArbiter1</span><span class="p">,</span> <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="p">,</span> <span class="n">Reset</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">AttemptReset</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span> <span class="s1">&#39;RIX OPTICS&#39;</span><span class="p">);</span>
     <span class="n">plc_crix_mot_PMPS_IO</span><span class="p">(</span><span class="n">Arbiter</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">g_fbArbiter1</span><span class="p">,</span> <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="p">,</span> <span class="n">Reset</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">AttemptReset</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span> <span class="s1">&#39;CRIX MOTION&#39;</span><span class="p">);</span>
     <span class="n">plc_crix_vac_PMPS_IO</span><span class="p">(</span><span class="n">Arbiter</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">g_fbArbiter1</span><span class="p">,</span> <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="p">,</span> <span class="n">Reset</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">AttemptReset</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span> <span class="s1">&#39;CRIX VACUUM&#39;</span><span class="p">);</span>
+    <span class="n">plc_qrix_vac_PMPS_IO</span><span class="p">(</span><span class="n">Arbiter</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">g_fbArbiter1</span><span class="p">,</span> <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="p">,</span> <span class="n">Reset</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">AttemptReset</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span> <span class="s1">&#39;QRIX VACUUM&#39;</span><span class="p">);</span>
 <span class="o">///////////////////////////</span>
 
 <span class="o">////////////////////////////</span>
@@ -1071,7 +1107,7 @@ END_FUNCTION_BLOCK
 <span class="nc">fbBeamClassWatcher</span><span class="p">(</span><span class="n">i_stCurrentBeamParams</span>    <span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="p">,</span>
                     <span class="n">i_stRequestedBeamParams</span> <span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stRequestedBeamParameters</span><span class="p">,</span>
                     <span class="n">io_fbFFHWO</span><span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="p">,</span>
-                    <span class="n">i_xReset</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">AttemptReset</span><span class="p">);</span>
+                    <span class="n">i_xAutoReset</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">);</span>
 
 
 <span class="o">//</span> <span class="n">Evaluate</span> <span class="n">fast</span> <span class="n">fault</span> <span class="n">vetos</span>
@@ -1130,7 +1166,7 @@ END_FUNCTION_BLOCK
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, SLAC National Accelerator Laboratory.</p>
+    <p>&#169; Copyright 2024, SLAC National Accelerator Laboratory.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

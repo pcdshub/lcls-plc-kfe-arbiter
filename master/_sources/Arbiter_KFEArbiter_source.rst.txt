@@ -42,9 +42,9 @@ GVL
 
     VAR_GLOBAL CONSTANT
         MAX_FAST_FAULTS : UINT := 100;
-    	//Judgement factor constants (administrative mode)
-    	nBeamIntensity : INT :=5;//mj
-    	MaxDuration : REAL :=12;
+        //Judgement factor constants (administrative mode)
+        nBeamIntensity : INT :=5;//mj
+        MaxDuration : REAL :=12;
 
     END_VAR
 
@@ -344,8 +344,16 @@ Fast_Faults_Evaluate
 
     PROGRAM Fast_Faults_Evaluate
     VAR
-
+    FFO    :    FB_FastFault :=(
+            i_Desc := 'Fault occurs when the beamline valves on qrixs are not in open state',
+            i_TypeCode := 16#1010);
+    i_xFastFaultOut_qrix_vac AT %I*:        BOOL;
     END_VAR
+    FFO(
+        io_fbFFHWO := g_FastFaultOutput2,
+        i_xOK := i_xFastFaultOut_qrix_vac,
+        i_xAutoReset := TRUE);
+
     g_FastFaultOutput2.EvaluateOutput(bAutoReset:=TRUE);
 
     END_PROGRAM
@@ -625,46 +633,47 @@ P_AT1K0_SL1K0
             i_Desc := 'EtherCAT interface watcher, for connection to KFE Gas Att. systems for Transmission requests. Very rare. Make a note, and if it can be reset, go ahead.',
             i_TypeCode := 16#5);
         bSimApt: BOOL;
-    	
+
     // Administrative mode for beam intensity
-    	 {attribute 'pytmc' := '
-       	   pv: @(PREFIX)IntensityJF
+         {attribute 'pytmc' := '
+              pv: @(PREFIX)IntensityJF
         '}
-    	nBeamIntensityJF: REAL :=GVL.nBeamIntensity;
-    	{attribute 'pytmc' := '
-       	   pv: @(PREFIX)ApplyJF
+        nBeamIntensityJF: REAL :=GVL.nBeamIntensity;
+        {attribute 'pytmc' := '
+              pv: @(PREFIX)ApplyJF
         '}
-    	bApplyJF: BOOL:=FALSE;
-    	{attribute 'pytmc' := '
-       	   pv: @(PREFIX)CancelJF
+        bApplyJF: BOOL:=FALSE;
+        {attribute 'pytmc' := '
+              pv: @(PREFIX)CancelJF
         '}
-    	bCancelJF: BOOL:=FALSE;
-    	
-    	{attribute 'pytmc' := '
-       	   pv: @(PREFIX)DurationJF
+        bCancelJF: BOOL:=FALSE;
+
+        {attribute 'pytmc' := '
+              pv: @(PREFIX)DurationJF
         '}
-    	rDurationJF: REAL:=GVL.MaxDuration;//hours
-    	
-    	{attribute 'pytmc' := '
-       	   pv: @(PREFIX)TimeRemainJF
+        rDurationJF: REAL:=GVL.MaxDuration;//hours
+
+        {attribute 'pytmc' := '
+              pv: @(PREFIX)TimeRemainJF
         '}
-    	rTimeRemainJF: REAL:=GVL.MaxDuration;//hours
-    	
-    	tDuration:TIME;
-    	tonDuration:TON;
-    	
-    	
+        rTimeRemainJF: REAL:=GVL.MaxDuration;//hours
+
+        tDuration:TIME;
+        tonDuration:TON;
+
+
     END_VAR
     //Beam intensity factor implemenation
     // No diff by zero
-    IF (nBeamIntensityJF =0) THEN nBeamIntensityJF:=GVL.nBeamIntensity; END_IF
+    IF (nBeamIntensityJF =0) OR (nBeamIntensityJF > GVL.nBeamIntensity ) THEN nBeamIntensityJF:=GVL.nBeamIntensity; END_IF
     //Check it it has expired or is cancelled and reset to defaults
     IF(tonDuration.Q OR bCancelJF)
-    THEN 
-    	nBeamIntensityJF:=GVL.nBeamIntensity;
-    	bCancelJF := FALSE;
-     	bApplyJF := FALSE;
+    THEN
+        nBeamIntensityJF:=GVL.nBeamIntensity;
+        bCancelJF := FALSE;
+         bApplyJF := FALSE;
     END_IF
+
     // Maximum duration is 12 hours
     rDurationJF := LIMIT(0,rDurationJF,MaxDuration);
     //check if it is applied
@@ -672,21 +681,25 @@ P_AT1K0_SL1K0
     tonDuration(IN:=bApplyJF,PT:=tDuration,ET=>);
     rTimeRemainJF:= rDurationJF - (TO_REAL(tonDuration.ET)/60/60/1000);//to hours
 
-
-    //Calculate the new requested transmission
-    PMPS_GVL.stRequestedBeamParameters.nTran := LIMIT(0,(GVL.nBeamIntensity/nBeamIntensityJF)* PMPS_GVL.stRequestedBeamParameters.nTran,1);
-
-
-
     // If interface with plc-kfe-gatt OK carry out exchange
     IF i_bWcStateOut_AT1K0 = 0 AND i_bWcStateIn_AT1K0 = 0 AND i_nState_AT1K0 = 8 THEN
 
         // Send request from this arbiter to the gas attenuator
-        q_nTranToAT1K0Req.nTran := PMPS_GVL.stRequestedBeamParameters.nTran*PMPS_GVL.TRANS_SCALING_FACTOR;
+        IF (bApplyJF) THEN
+            q_nTranToAT1K0Req.nTran := LIMIT(0,(GVL.nBeamIntensity/nBeamIntensityJF)*PMPS_GVL.stRequestedBeamParameters.nTran*PMPS_GVL.TRANS_SCALING_FACTOR,1);
+        ELSE
+            q_nTranToAT1K0Req.nTran := PMPS_GVL.stRequestedBeamParameters.nTran*PMPS_GVL.TRANS_SCALING_FACTOR;
+        END_IF
+
         q_nTranToAT1K0Req.xAttOK := 16#FF;
 
         //Update with judgement factor
-        PMPS_GVL.stCurrentBeamParameters.nTran := i_nTranToAT1K0Stat.nTran *(nBeamIntensityJF/GVL.nBeamIntensity);//REAL_TO_UINT(UINT_TO_REAL(i_nTranToAT1K0Stat.nTran)*0.01);
+        //Calculate the new requested transmission
+        IF (bApplyJF) THEN
+            PMPS_GVL.stCurrentBeamParameters.nTran := i_nTranToAT1K0Stat.nTran *(nBeamIntensityJF/GVL.nBeamIntensity);//REAL_TO_UINT(UINT_TO_REAL(i_nTranToAT1K0Stat.nTran)*0.01);
+        ELSE
+            PMPS_GVL.stCurrentBeamParameters.nTran := i_nTranToAT1K0Stat.nTran;//REAL_TO_UINT(UINT_TO_REAL(i_nTranToAT1K0Stat.nTran)*0.01);
+        END_IF
 
         ffKFEGattConnection.i_xOK := TRUE;
     ELSE
@@ -956,7 +969,25 @@ PMPS_Arbiter
                                     .i_WcState:=TIIB[plc-crix-vac]^WcState^WcStateIn;
                                     .i_TxPDOState:=TIIB[plc-crix-vac]^SYNC Inputs^TxPDO state;
                                     '}
-        plc_crix_vac_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#F204);
+        plc_crix_vac_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#F205);
+
+        {attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-qrix-mot]^IO Inputs^RequestedBP;
+                                    .o_CurrentBP:=TIIB[plc-qrix-mot]^IO Outputs^CurrentBP;
+                                    .i_Connected:=TIIB[plc-qrix-mot]^SYNC Inputs^External device not connected;
+                                    .i_WcState:=TIIB[plc-qrix-mot]^WcState^WcStateIn;
+                                    .i_TxPDOState:=TIIB[plc-qrix-mot]^SYNC Inputs^TxPDO state;
+                                    '}
+
+
+        plc_qrix_mot_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#F206);
+
+        {attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-qrix-vac]^IO Inputs^RequestedBP;
+                                    .o_CurrentBP:=TIIB[plc-qrix-vac]^IO Outputs^CurrentBP;
+                                    .i_Connected:=TIIB[plc-qrix-vac]^SYNC Inputs^External device not connected;
+                                    .i_WcState:=TIIB[plc-qrix-vac]^WcState^WcStateIn;
+                                    .i_TxPDOState:=TIIB[plc-qrix-vac]^SYNC Inputs^TxPDO state;
+                                    '}
+        plc_qrix_vac_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#F204);
 
     END_VAR
     // Updating arbiter with subsystem requests.
@@ -981,6 +1012,7 @@ PMPS_Arbiter
         plc_rix_optics_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'RIX OPTICS');
         plc_crix_mot_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'CRIX MOTION');
         plc_crix_vac_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'CRIX VACUUM');
+        plc_qrix_vac_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'QRIX VACUUM');
     ///////////////////////////
 
     ////////////////////////////
@@ -1004,7 +1036,7 @@ PMPS_Arbiter
     fbBeamClassWatcher(i_stCurrentBeamParams	:= PMPS_GVL.stCurrentBeamParameters,
                         i_stRequestedBeamParams := PMPS_GVL.stRequestedBeamParameters,
                         io_fbFFHWO:= GVL.g_FastFaultOutput1,
-                        i_xReset := GVL.AttemptReset);
+                        i_xAutoReset := TRUE);
 
 
     // Evaluate fast fault vetos
