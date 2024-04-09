@@ -86,17 +86,13 @@ THEN
 	bCancelJF := FALSE;
  	bApplyJF := FALSE;
 END_IF
-//IF NOT (bApplyJF) THEN nBeamIntensityJF:=GVL.nBeamIntensity; END_IF
+
 // Maximum duration is 12 hours
 rDurationJF := LIMIT(0,rDurationJF,MaxDuration);
 //check if it is applied
 tDuration:= TO_TIME(rDurationJF*60*60*1000);//to msec
 tonDuration(IN:=bApplyJF,PT:=tDuration,ET=>);
 rTimeRemainJF:= rDurationJF - (TO_REAL(tonDuration.ET)/60/60/1000);//to hours
-
-
-//Calculate the new requested transmission
-
 
 // If interface with plc-kfe-gatt OK carry out exchange
 IF i_bWcStateOut_AT1K0 = 0 AND i_bWcStateIn_AT1K0 = 0 AND i_nState_AT1K0 = 8 THEN
@@ -117,8 +113,6 @@ IF i_bWcStateOut_AT1K0 = 0 AND i_bWcStateIn_AT1K0 = 0 AND i_nState_AT1K0 = 8 THE
 	ELSE
 		PMPS_GVL.stCurrentBeamParameters.nTran := i_nTranToAT1K0Stat.nTran;//REAL_TO_UINT(UINT_TO_REAL(i_nTranToAT1K0Stat.nTran)*0.01);
 	END_IF
-
-    
 
     ffKFEGattConnection.i_xOK := TRUE;
 ELSE
