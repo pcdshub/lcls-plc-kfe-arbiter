@@ -6,7 +6,7 @@ VAR
 FFO    :    FB_FastFault :=(
         i_Desc := 'Fault occurs when the beamline valves on qrixs are not in open state',
         i_TypeCode := 16#1010);
-i_xFastFaultOut_qrix_vac AT %I*:        BOOL; 
+i_xFastFaultOut_qrix_vac AT %I*:        BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>

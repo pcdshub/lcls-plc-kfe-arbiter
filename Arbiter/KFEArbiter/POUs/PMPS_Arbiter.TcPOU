@@ -147,18 +147,18 @@ VAR
                                 .i_TxPDOState:=TIIB[plc-crix-vac]^SYNC Inputs^TxPDO state;
                                 '}
     plc_crix_vac_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#F205);
-	
-	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-qrix-mot]^IO Inputs^RequestedBP;
+
+    {attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-qrix-mot]^IO Inputs^RequestedBP;
                                 .o_CurrentBP:=TIIB[plc-qrix-mot]^IO Outputs^CurrentBP;
                                 .i_Connected:=TIIB[plc-qrix-mot]^SYNC Inputs^External device not connected;
                                 .i_WcState:=TIIB[plc-qrix-mot]^WcState^WcStateIn;
                                 .i_TxPDOState:=TIIB[plc-qrix-mot]^SYNC Inputs^TxPDO state;
                                 '}
-	
-   
+
+
     plc_qrix_mot_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#F206);
 
-	{attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-qrix-vac]^IO Inputs^RequestedBP;
+    {attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-qrix-vac]^IO Inputs^RequestedBP;
                                 .o_CurrentBP:=TIIB[plc-qrix-vac]^IO Outputs^CurrentBP;
                                 .i_Connected:=TIIB[plc-qrix-vac]^SYNC Inputs^External device not connected;
                                 .i_WcState:=TIIB[plc-qrix-vac]^WcState^WcStateIn;
@@ -192,7 +192,7 @@ END_VAR
     plc_rix_optics_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'RIX OPTICS');
     plc_crix_mot_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'CRIX MOTION');
     plc_crix_vac_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'CRIX VACUUM');
-	plc_qrix_vac_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'QRIX VACUUM');
+    plc_qrix_vac_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'QRIX VACUUM');
 ///////////////////////////
 
 ////////////////////////////
