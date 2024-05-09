@@ -44,12 +44,13 @@
 		<Box File="B940-009-R07-MPS-1 CU1-ESC1.xti" Id="23">
 			<EtherCAT PortABoxInfo="#x01000016"/>
 		</Box>
-		<EtherCAT EnableVirtualSwitch="true" MaxSwitchPorts="14" MaxSwitchFrames="360">
+		<EtherCAT EnableVirtualSwitch="true" MaxSwitchPorts="18" MaxSwitchFrames="440">
 			<Redundancy Mode="2" AdapterReference="true" PreviousPort="33554461"/>
 			<SyncUnit Name="rix" NoDeleteIfUnused="true"/>
 			<SyncUnit Name="kfe" NoDeleteIfUnused="true"/>
 			<SyncUnit Name="tmo" NoDeleteIfUnused="true"/>
 			<SyncUnit Name="crix" NoDeleteIfUnused="true"/>
+			<SyncUnit Name="qrix" NoDeleteIfUnused="true"/>
 		</EtherCAT>
 	</Device>
 </TcSmItem>

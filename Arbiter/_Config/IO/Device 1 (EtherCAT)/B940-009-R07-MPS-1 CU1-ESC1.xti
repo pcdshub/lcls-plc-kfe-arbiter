@@ -49,13 +49,19 @@
 			<Box File="plc-crix-vac.xti" Id="45">
 				<EtherCAT PortABoxInfo="#x0100001c"/>
 			</Box>
+			<Box File="plc-crix-mot.xti" Id="47">
+				<EtherCAT PortABoxInfo="#x0100002d"/>
+			</Box>
 		</Box>
 		<Box BoxType="9099" Id="29">
 			<Name>B940-009-R07-MPS-1 CU1-ESC3</Name>
 			<ImageId>1002</ImageId>
 			<EtherCAT SlaveType="1" PdiType="#x0d00" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x04685432" RevisionNo="#x00010002" PortPhys="4371" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="CU1128 6x EtherCAT junction - Dev B" Desc="CU1128-C" PortABoxInfo="#x0200001c"/>
-			<Box File="plc-crix-mot.xti" Id="47">
+			<Box File="plc-qrix-vac.xti" Id="50">
 				<EtherCAT PortABoxInfo="#x0300001d"/>
+			</Box>
+			<Box File="plc-qrix-mot.xti" Id="51">
+				<EtherCAT PortABoxInfo="#x01000032"/>
 			</Box>
 		</Box>
 	</Box>
