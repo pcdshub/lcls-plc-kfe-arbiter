@@ -3,11 +3,18 @@
   <POU Name="Fast_Faults_Evaluate" Id="{667ad34f-81ff-0404-3362-bb63097d9547}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Fast_Faults_Evaluate
 VAR
-
+FFO    :    FB_FastFault :=(
+        i_Desc := 'Fault occurs when the beamline valves on qrixs are not in open state',
+        i_TypeCode := 16#1010);
+i_xFastFaultOut_qrix_vac AT %I*:        BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[g_FastFaultOutput2.EvaluateOutput(bAutoReset:=TRUE);]]></ST>
+      <ST><![CDATA[FFO(
+    io_fbFFHWO := g_FastFaultOutput2,
+    i_xOK := i_xFastFaultOut_qrix_vac);
+
+g_FastFaultOutput2.EvaluateOutput(bAutoReset:=TRUE);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

@@ -109,30 +109,6 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{B0236749-C315-EC4D-D21C-B52A19E31F36}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..4] OF ST_PMPS_Aperture_IO</Name>
-			<BitSize>384</BitSize>
-			<BaseType GUID="{67AC048F-B785-4A4D-B941-B11E2213F502}">ST_PMPS_Aperture_IO</BaseType>
-			<ArrayInfo>
-				<LBound>1</LBound>
-				<Elements>4</Elements>
-			</ArrayInfo>
-			<Hides>
-				<Hide GUID="{1C5B6FFE-5600-8C40-85B0-B61070AA3AFB}"/>
-			</Hides>
-		</DataType>
-		<DataType>
-			<Name GUID="{6D319B26-4590-2152-3DE7-3BA9B629CA65}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..16] OF ST_PMPS_Attenuator_IO</Name>
-			<BitSize>1024</BitSize>
-			<BaseType GUID="{7E016B85-166E-4B4F-AAC4-ECA8DDD44F13}">ST_PMPS_Attenuator_IO</BaseType>
-			<ArrayInfo>
-				<LBound>1</LBound>
-				<Elements>16</Elements>
-			</ArrayInfo>
-			<Hides>
-				<Hide GUID="{63B6CB02-1D33-B57D-1DC8-CC6DA3ED8E9B}"/>
-			</Hides>
-		</DataType>
-		<DataType>
 			<Name GUID="{292CD354-C7C0-4A61-AAD0-1C85DD69646B}">ST_BeamParams_IO</Name>
 			<BitSize>1760</BitSize>
 			<SubItem>
@@ -353,6 +329,57 @@
 			</Hides>
 		</DataType>
 		<DataType>
+			<Name GUID="{7E016B85-166E-4B4F-AAC4-ECA8DDD44F13}">ST_PMPS_Attenuator_IO</Name>
+			<BitSize>64</BitSize>
+			<SubItem>
+				<Name>nTran</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>xAttOK</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<Hides>
+				<Hide GUID="{76269EAC-36F0-4513-B811-3725FD02409A}"/>
+				<Hide GUID="{E96BEA56-6301-4A6A-BF6A-F08340C87594}"/>
+				<Hide GUID="{FE32F9A9-7E7A-413D-8D77-0C99C34D8CD9}"/>
+				<Hide GUID="{D01709AA-9B4A-464A-B4D1-4BF476CFE7DE}"/>
+				<Hide GUID="{D6F0EA12-B425-4603-9C4B-B4FD442416C3}"/>
+				<Hide GUID="{0FF3CAED-DFFA-453E-8BDC-2F6EE7142B14}"/>
+				<Hide GUID="{AC42932A-79BD-4670-8CF2-1DDEA2EE41C7}"/>
+				<Hide GUID="{EE241488-3DC7-4C48-A9D8-BB32379587BC}"/>
+				<Hide GUID="{EE241488-3DC7-4C48-A9D8-BB32379587BC}"/>
+			</Hides>
+		</DataType>
+		<DataType>
+			<Name GUID="{B0236749-C315-EC4D-D21C-B52A19E31F36}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..4] OF ST_PMPS_Aperture_IO</Name>
+			<BitSize>384</BitSize>
+			<BaseType GUID="{67AC048F-B785-4A4D-B941-B11E2213F502}">ST_PMPS_Aperture_IO</BaseType>
+			<ArrayInfo>
+				<LBound>1</LBound>
+				<Elements>4</Elements>
+			</ArrayInfo>
+			<Hides>
+				<Hide GUID="{1C5B6FFE-5600-8C40-85B0-B61070AA3AFB}"/>
+			</Hides>
+		</DataType>
+		<DataType>
+			<Name GUID="{6D319B26-4590-2152-3DE7-3BA9B629CA65}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..16] OF ST_PMPS_Attenuator_IO</Name>
+			<BitSize>1024</BitSize>
+			<BaseType GUID="{7E016B85-166E-4B4F-AAC4-ECA8DDD44F13}">ST_PMPS_Attenuator_IO</BaseType>
+			<ArrayInfo>
+				<LBound>1</LBound>
+				<Elements>16</Elements>
+			</ArrayInfo>
+			<Hides>
+				<Hide GUID="{63B6CB02-1D33-B57D-1DC8-CC6DA3ED8E9B}"/>
+			</Hides>
+		</DataType>
+		<DataType>
 			<Name GUID="{CF887A53-7490-A600-6B5D-04343BF0EA04}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..4] OF BOOL</Name>
 			<BitSize>32</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
@@ -467,145 +494,6 @@
 				<Var>
 					<Name>CurrentBPUpdate.st4k4Watcher.i_StopperInLS</Name>
 					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>P_AT1K0_SL1K0.i_nTranToAT1K0Stat</Name>
-					<Comment>
-						<![CDATA[ Transmission request to AT1K0]]>
-					</Comment>
-					<Type GUID="{7E016B85-166E-4B4F-AAC4-ECA8DDD44F13}">ST_PMPS_Attenuator_IO</Type>
-				</Var>
-				<Var>
-					<Name>P_AT1K0_SL1K0.i_nState_AT1K0</Name>
-					<Type>UINT</Type>
-				</Var>
-				<Var>
-					<Name>P_AT1K0_SL1K0.i_bWcStateIn_KFEMOT</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>P_AT1K0_SL1K0.i_stAptArrayStat</Name>
-					<Type GUID="{B0236749-C315-EC4D-D21C-B52A19E31F36}">ARRAY [1..4] OF ST_PMPS_Aperture_IO</Type>
-					<SubVar>
-						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[1]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[1]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[1]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[2]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[2]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[2]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[3]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[3]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[3]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[4]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[4]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[4]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>P_AT1K0_SL1K0.i_nState_KFEMOT</Name>
-					<Type>UINT</Type>
-				</Var>
-				<Var>
-					<Name>P_SATT.i_SattArrayStatus_KFE</Name>
-					<Comment>
-						<![CDATA[ Transmission request to KFE MOT PLC]]>
-					</Comment>
-					<Type GUID="{6D319B26-4590-2152-3DE7-3BA9B629CA65}">ARRAY [1..16] OF ST_PMPS_Attenuator_IO</Type>
-				</Var>
-				<Var>
-					<Name>P_SATT.i_SattArrayStatus_RIX</Name>
-					<Comment>
-						<![CDATA[ Transmission request to RIX MOT PLC]]>
-					</Comment>
-					<Type GUID="{6D319B26-4590-2152-3DE7-3BA9B629CA65}">ARRAY [1..16] OF ST_PMPS_Attenuator_IO</Type>
-				</Var>
-				<Var>
-					<Name>P_SATT.i_bWcStateOut_kfe_mot</Name>
-					<Comment>
-						<![CDATA[ plc-tmo-mot interface diagnostics]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>P_SATT.i_bWcStateIn_kfe_mot</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>P_SATT.i_nState_kfe_mot</Name>
-					<Type>UINT</Type>
-				</Var>
-				<Var>
-					<Name>P_SATT.i_bWcStateOut_rix_mot</Name>
-					<Comment>
-						<![CDATA[ plc-rix-mot interface diagnostics]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>P_SATT.i_bWcStateIn_rix_mot</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>P_SATT.i_nState_rix_mot</Name>
-					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>PMPS_Arbiter.plc_kfe_motion_PMPS_IO.i_RequestedBP</Name>
@@ -2700,6 +2588,471 @@
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
+				<Var>
+					<Name>PMPS_Arbiter.plc_qrix_mot_PMPS_IO.i_RequestedBP</Name>
+					<Comment>
+						<![CDATA[ Requested BP from subsystem]]>
+					</Comment>
+					<Type GUID="{292CD354-C7C0-4A61-AAD0-1C85DD69646B}">ST_BeamParams_IO</Type>
+					<SubVar>
+						<Name>nTran</Name>
+						<Comment>
+							<![CDATA[Requested pre-optic attenuation - 1 is full transmission]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>nRate</Name>
+						<Comment>
+							<![CDATA[ Pulse-rate ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>neVRange</Name>
+						<Comment>
+							<![CDATA[ Photon energy ranges ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>neV</Name>
+						<Comment>
+							<![CDATA[Current Photon energy as calculated by the arbiter]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astAttenuators</Name>
+						<Comment>
+							<![CDATA[ Beamline attenuators ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[1]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[1]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[1]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[2]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[2]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[2]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[3]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[3]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[3]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>aVetoDevices</Name>
+						<Comment>
+							<![CDATA[ Stopper statuses ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>xValidToggle</Name>
+						<Comment>
+							<![CDATA[ Toggle for watchdog]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>xValid</Name>
+						<Comment>
+							<![CDATA[ Beam parameter set is valid (if readback), or acknowledged (if request)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>nCohortInt</Name>
+						<Comment>
+							<![CDATA[ Cohort index. Identifies which cohort this BP set was included in arbitration]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>PMPS_Arbiter.plc_qrix_mot_PMPS_IO.i_Connected</Name>
+					<Comment>
+						<![CDATA[ SYNC Inputs^External device not connected !!! Doesn't really work.]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PMPS_Arbiter.plc_qrix_mot_PMPS_IO.i_WcState</Name>
+					<Comment>
+						<![CDATA[ WcState^WcState]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PMPS_Arbiter.plc_qrix_mot_PMPS_IO.i_TxPDOState</Name>
+					<Comment>
+						<![CDATA[ SYNC Inputs^TxPDO state]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PMPS_Arbiter.plc_qrix_mot_PMPS_IO.i_TxPDOToggle</Name>
+					<Comment>
+						<![CDATA[ TxPDO toggle]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PMPS_Arbiter.plc_qrix_vac_PMPS_IO.i_RequestedBP</Name>
+					<Comment>
+						<![CDATA[ Requested BP from subsystem]]>
+					</Comment>
+					<Type GUID="{292CD354-C7C0-4A61-AAD0-1C85DD69646B}">ST_BeamParams_IO</Type>
+					<SubVar>
+						<Name>nTran</Name>
+						<Comment>
+							<![CDATA[Requested pre-optic attenuation - 1 is full transmission]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>nRate</Name>
+						<Comment>
+							<![CDATA[ Pulse-rate ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>neVRange</Name>
+						<Comment>
+							<![CDATA[ Photon energy ranges ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>neV</Name>
+						<Comment>
+							<![CDATA[Current Photon energy as calculated by the arbiter]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astAttenuators</Name>
+						<Comment>
+							<![CDATA[ Beamline attenuators ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[1]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[1]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[1]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[2]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[2]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[2]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[3]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[3]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[3]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>aVetoDevices</Name>
+						<Comment>
+							<![CDATA[ Stopper statuses ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>xValidToggle</Name>
+						<Comment>
+							<![CDATA[ Toggle for watchdog]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>xValid</Name>
+						<Comment>
+							<![CDATA[ Beam parameter set is valid (if readback), or acknowledged (if request)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>nCohortInt</Name>
+						<Comment>
+							<![CDATA[ Cohort index. Identifies which cohort this BP set was included in arbitration]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>PMPS_Arbiter.plc_qrix_vac_PMPS_IO.i_Connected</Name>
+					<Comment>
+						<![CDATA[ SYNC Inputs^External device not connected !!! Doesn't really work.]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PMPS_Arbiter.plc_qrix_vac_PMPS_IO.i_WcState</Name>
+					<Comment>
+						<![CDATA[ WcState^WcState]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PMPS_Arbiter.plc_qrix_vac_PMPS_IO.i_TxPDOState</Name>
+					<Comment>
+						<![CDATA[ SYNC Inputs^TxPDO state]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>PMPS_Arbiter.plc_qrix_vac_PMPS_IO.i_TxPDOToggle</Name>
+					<Comment>
+						<![CDATA[ TxPDO toggle]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>P_AT1K0_SL1K0.i_nTranToAT1K0Stat</Name>
+					<Comment>
+						<![CDATA[ Transmission request to AT1K0]]>
+					</Comment>
+					<Type GUID="{7E016B85-166E-4B4F-AAC4-ECA8DDD44F13}">ST_PMPS_Attenuator_IO</Type>
+				</Var>
+				<Var>
+					<Name>P_AT1K0_SL1K0.i_nState_AT1K0</Name>
+					<Type>UINT</Type>
+				</Var>
+				<Var>
+					<Name>P_AT1K0_SL1K0.i_bWcStateIn_KFEMOT</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>P_AT1K0_SL1K0.i_stAptArrayStat</Name>
+					<Type GUID="{B0236749-C315-EC4D-D21C-B52A19E31F36}">ARRAY [1..4] OF ST_PMPS_Aperture_IO</Type>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[1]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[1]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[1]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[2]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[2]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[2]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[3]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[3]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[3]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[4]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[4]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.i_stAptArrayStat[4]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>P_AT1K0_SL1K0.i_nState_KFEMOT</Name>
+					<Type>UINT</Type>
+				</Var>
+				<Var>
+					<Name>P_SATT.i_bWcStateOut_kfe_mot</Name>
+					<Comment>
+						<![CDATA[ plc-tmo-mot interface diagnostics]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>P_SATT.i_bWcStateIn_kfe_mot</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>P_SATT.i_SattArrayStatus_KFE</Name>
+					<Comment>
+						<![CDATA[ Transmission request to KFE MOT PLC]]>
+					</Comment>
+					<Type GUID="{6D319B26-4590-2152-3DE7-3BA9B629CA65}">ARRAY [1..16] OF ST_PMPS_Attenuator_IO</Type>
+				</Var>
+				<Var>
+					<Name>P_SATT.i_SattArrayStatus_RIX</Name>
+					<Comment>
+						<![CDATA[ Transmission request to RIX MOT PLC]]>
+					</Comment>
+					<Type GUID="{6D319B26-4590-2152-3DE7-3BA9B629CA65}">ARRAY [1..16] OF ST_PMPS_Attenuator_IO</Type>
+				</Var>
+				<Var>
+					<Name>P_SATT.i_nState_kfe_mot</Name>
+					<Type>UINT</Type>
+				</Var>
+				<Var>
+					<Name>P_SATT.i_bWcStateOut_rix_mot</Name>
+					<Comment>
+						<![CDATA[ plc-rix-mot interface diagnostics]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>P_SATT.i_bWcStateIn_rix_mot</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>P_SATT.i_nState_rix_mot</Name>
+					<Type>UINT</Type>
+				</Var>
+				<Var>
+					<Name>Fast_Faults_Evaluate.i_xFastFaultOut_qrix_vac</Name>
+					<Type>BOOL</Type>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
 				<Name>PlcTask Outputs</Name>
@@ -2746,107 +3099,6 @@
 				</Var>
 				<Var>
 					<Name>CurrentBPUpdate.st4k4Watcher.q_StopperIN_Relay</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>P_AT1K0_SL1K0.q_nTranToAT1K0Req</Name>
-					<Comment>
-						<![CDATA[ Transmission request to AT1K0]]>
-					</Comment>
-					<Type GUID="{7E016B85-166E-4B4F-AAC4-ECA8DDD44F13}">ST_PMPS_Attenuator_IO</Type>
-				</Var>
-				<Var>
-					<Name>P_AT1K0_SL1K0.q_stAptArrayReq</Name>
-					<Comment>
-						<![CDATA[ Apterure request and status to plc-kfe-motion]]>
-					</Comment>
-					<Type GUID="{B0236749-C315-EC4D-D21C-B52A19E31F36}">ARRAY [1..4] OF ST_PMPS_Aperture_IO</Type>
-					<SubVar>
-						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[1]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[1]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[1]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[2]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[2]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[2]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[3]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[3]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[3]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[4]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[4]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[4]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>P_SATT.q_SattArrayReq</Name>
-					<Comment>
-						<![CDATA[ Transmission request to ALL PLCs]]>
-					</Comment>
-					<Type GUID="{6D319B26-4590-2152-3DE7-3BA9B629CA65}">ARRAY [1..16] OF ST_PMPS_Attenuator_IO</Type>
-				</Var>
-				<Var>
-					<Name>GVL.g_FastFaultOutput1.q_xFastFaultOut</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.g_FastFaultOutput2.q_xFastFaultOut</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
@@ -4586,6 +4838,373 @@
 						</Comment>
 					</SubVar>
 				</Var>
+				<Var>
+					<Name>PMPS_Arbiter.plc_qrix_mot_PMPS_IO.o_CurrentBP</Name>
+					<Comment>
+						<![CDATA[ Current BP set]]>
+					</Comment>
+					<Type GUID="{292CD354-C7C0-4A61-AAD0-1C85DD69646B}">ST_BeamParams_IO</Type>
+					<SubVar>
+						<Name>nTran</Name>
+						<Comment>
+							<![CDATA[Requested pre-optic attenuation - 1 is full transmission]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>nRate</Name>
+						<Comment>
+							<![CDATA[ Pulse-rate ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>neVRange</Name>
+						<Comment>
+							<![CDATA[ Photon energy ranges ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>neV</Name>
+						<Comment>
+							<![CDATA[Current Photon energy as calculated by the arbiter]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astAttenuators</Name>
+						<Comment>
+							<![CDATA[ Beamline attenuators ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[1]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[1]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[1]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[2]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[2]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[2]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[3]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[3]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[3]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>aVetoDevices</Name>
+						<Comment>
+							<![CDATA[ Stopper statuses ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>xValidToggle</Name>
+						<Comment>
+							<![CDATA[ Toggle for watchdog]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>xValid</Name>
+						<Comment>
+							<![CDATA[ Beam parameter set is valid (if readback), or acknowledged (if request)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>nCohortInt</Name>
+						<Comment>
+							<![CDATA[ Cohort index. Identifies which cohort this BP set was included in arbitration]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>PMPS_Arbiter.plc_qrix_vac_PMPS_IO.o_CurrentBP</Name>
+					<Comment>
+						<![CDATA[ Current BP set]]>
+					</Comment>
+					<Type GUID="{292CD354-C7C0-4A61-AAD0-1C85DD69646B}">ST_BeamParams_IO</Type>
+					<SubVar>
+						<Name>nTran</Name>
+						<Comment>
+							<![CDATA[Requested pre-optic attenuation - 1 is full transmission]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>nRate</Name>
+						<Comment>
+							<![CDATA[ Pulse-rate ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>neVRange</Name>
+						<Comment>
+							<![CDATA[ Photon energy ranges ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>neV</Name>
+						<Comment>
+							<![CDATA[Current Photon energy as calculated by the arbiter]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astAttenuators</Name>
+						<Comment>
+							<![CDATA[ Beamline attenuators ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[1]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[1]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[1]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[2]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[2]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[2]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[3]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[3]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[3]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>aVetoDevices</Name>
+						<Comment>
+							<![CDATA[ Stopper statuses ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>xValidToggle</Name>
+						<Comment>
+							<![CDATA[ Toggle for watchdog]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>xValid</Name>
+						<Comment>
+							<![CDATA[ Beam parameter set is valid (if readback), or acknowledged (if request)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>nCohortInt</Name>
+						<Comment>
+							<![CDATA[ Cohort index. Identifies which cohort this BP set was included in arbitration]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>P_AT1K0_SL1K0.q_nTranToAT1K0Req</Name>
+					<Comment>
+						<![CDATA[ Transmission request to AT1K0]]>
+					</Comment>
+					<Type GUID="{7E016B85-166E-4B4F-AAC4-ECA8DDD44F13}">ST_PMPS_Attenuator_IO</Type>
+				</Var>
+				<Var>
+					<Name>P_AT1K0_SL1K0.q_stAptArrayReq</Name>
+					<Comment>
+						<![CDATA[ Apterure request and status to plc-kfe-motion]]>
+					</Comment>
+					<Type GUID="{B0236749-C315-EC4D-D21C-B52A19E31F36}">ARRAY [1..4] OF ST_PMPS_Aperture_IO</Type>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[1]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[1]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[1]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[2]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[2]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[2]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[3]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[3]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[3]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[4]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[4]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>P_AT1K0_SL1K0.q_stAptArrayReq[4]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>P_SATT.q_SattArrayReq</Name>
+					<Comment>
+						<![CDATA[ Transmission request to ALL PLCs]]>
+					</Comment>
+					<Type GUID="{6D319B26-4590-2152-3DE7-3BA9B629CA65}">ARRAY [1..16] OF ST_PMPS_Attenuator_IO</Type>
+				</Var>
+				<Var>
+					<Name>GVL.g_FastFaultOutput1.q_xFastFaultOut</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.g_FastFaultOutput2.q_xFastFaultOut</Name>
+					<Type>BOOL</Type>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="8">
 				<Name>PlcTask Retains</Name>
@@ -4786,6 +5405,13 @@
 				<Link VarA="PlcTask Inputs^MAIN.fbEcatDiag.nEcMasterSlaveCountCfg" VarB="InfoData^CfgSlaveCount" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^MAIN.fbEcatDiag.wFrmXWcState" VarB="Inputs^Frm1WcState" AutoLink="true"/>
 			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^B940-009-R07-MPS-1 CU1-ESC2^plc-crix-mot">
+				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_crix_mot_PMPS_IO.i_Connected" VarB="SYNC Inputs^External device not connected" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_crix_mot_PMPS_IO.i_RequestedBP" VarB="IO Inputs^RequestedBP" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_crix_mot_PMPS_IO.i_TxPDOState" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_crix_mot_PMPS_IO.i_WcState" VarB="WcState^WcStateIn" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.plc_crix_mot_PMPS_IO.o_CurrentBP" VarB="IO Outputs^CurrentBP" AutoLink="true"/>
+			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^B940-009-R07-MPS-1 CU1-ESC2^plc-crix-vac">
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_crix_vac_PMPS_IO.i_Connected" VarB="SYNC Inputs^External device not connected" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_crix_vac_PMPS_IO.i_RequestedBP" VarB="IO Inputs^RequestedBP" AutoLink="true"/>
@@ -4820,12 +5446,20 @@
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_rix_vac_PMPS_IO.i_WcState" VarB="WcState^WcStateIn" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^PMPS_Arbiter.plc_rix_vac_PMPS_IO.o_CurrentBP" VarB="IO Outputs^CurrentBP" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^B940-009-R07-MPS-1 CU1-ESC3^plc-crix-mot">
-				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_crix_mot_PMPS_IO.i_Connected" VarB="SYNC Inputs^External device not connected" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_crix_mot_PMPS_IO.i_RequestedBP" VarB="IO Inputs^RequestedBP" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_crix_mot_PMPS_IO.i_TxPDOState" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_crix_mot_PMPS_IO.i_WcState" VarB="WcState^WcStateIn" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^PMPS_Arbiter.plc_crix_mot_PMPS_IO.o_CurrentBP" VarB="IO Outputs^CurrentBP" AutoLink="true"/>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^B940-009-R07-MPS-1 CU1-ESC3^plc-qrix-mot">
+				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_qrix_mot_PMPS_IO.i_Connected" VarB="SYNC Inputs^External device not connected" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_qrix_mot_PMPS_IO.i_RequestedBP" VarB="IO Inputs^RequestedBP" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_qrix_mot_PMPS_IO.i_TxPDOState" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_qrix_mot_PMPS_IO.i_WcState" VarB="WcState^WcStateIn" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.plc_qrix_mot_PMPS_IO.o_CurrentBP" VarB="IO Outputs^CurrentBP" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^B940-009-R07-MPS-1 CU1-ESC3^plc-qrix-vac">
+				<Link VarA="PlcTask Inputs^Fast_Faults_Evaluate.i_xFastFaultOut_qrix_vac" VarB="IO Inputs^FFO"/>
+				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_qrix_vac_PMPS_IO.i_Connected" VarB="SYNC Inputs^External device not connected" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_qrix_vac_PMPS_IO.i_RequestedBP" VarB="IO Inputs^RequestedBP" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_qrix_vac_PMPS_IO.i_TxPDOState" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_qrix_vac_PMPS_IO.i_WcState" VarB="WcState^WcStateIn" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^PMPS_Arbiter.plc_qrix_vac_PMPS_IO.o_CurrentBP" VarB="IO Outputs^CurrentBP" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-gatt">
 				<Link VarA="PlcTask Inputs^PMPS_Arbiter.plc_kfe_gatt_PMPS_IO.i_Connected" VarB="SYNC Inputs^External device not connected" AutoLink="true"/>
