@@ -12,7 +12,8 @@ END_VAR
     <Implementation>
       <ST><![CDATA[FFO(
     io_fbFFHWO := g_FastFaultOutput2,
-    i_xOK := i_xFastFaultOut_qrix_vac);
+    i_xOK := i_xFastFaultOut_qrix_vac,
+	i_xAutoReset := TRUE);
 
 g_FastFaultOutput2.EvaluateOutput(bAutoReset:=TRUE);]]></ST>
     </Implementation>
