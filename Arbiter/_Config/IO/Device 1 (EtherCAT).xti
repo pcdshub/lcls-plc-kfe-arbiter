@@ -51,6 +51,7 @@
 			<SyncUnit Name="tmo" NoDeleteIfUnused="true"/>
 			<SyncUnit Name="crix" NoDeleteIfUnused="true"/>
 			<SyncUnit Name="qrix" NoDeleteIfUnused="true"/>
+			<SyncUnit Name="future" NoDeleteIfUnused="true"/>
 		</EtherCAT>
 	</Device>
 </TcSmItem>

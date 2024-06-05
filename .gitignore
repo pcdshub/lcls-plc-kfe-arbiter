@@ -8,5 +8,8 @@ _CompileInfo
 *.~u
 *.csv
 *.svd
-*.tclrs
-/Arbiter/ArbiterPLC/LineIDs.dbg
+*.dbg
+TrialLicense.tclrs
+*.library
+*.tmcRefac
+.pytmc_build
