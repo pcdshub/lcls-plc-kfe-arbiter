@@ -174,7 +174,7 @@ VAR
                                 .o_CurrentBP:=TIIB[plc-txi-mot]^IO Outputs^CurrentBP;
                                 .i_Connected:=TIIB[plc-txi-mot]^SYNC Inputs^External device not connected;
                                 .i_WcState:=TIIB[plc-txi-mot]^WcState^WcStateIn;
-                                .i_TxPDOState:=TIIB[plc-tmtxio-mot]^SYNC Inputs^TxPDO state;
+                                .i_TxPDOState:=TIIB[plc-txi-mot]^SYNC Inputs^TxPDO state;
                                 '}
     plc_txi_motion_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#F300);
 
