@@ -73,7 +73,16 @@ VAR
     st1k2Watcher : FB_KStopper(
         PMPS.K_Stopper.ST1K2,
         'ST1K2');
-
+	
+	{attribute 'TcLinkTo' := '
+                .i_StopperInLS:=TIIB[PPS Stoppers 1]^Channel 5^ST1K3 IN;
+                .i_StopperOutLS:=TIIB[PPS Stoppers 1]^Channel 6^ST1K3 OUT;
+                .q_StopperIN_Relay:=TIIB[PMPS_Premp]^Channel 7^ST1K3 RELAY IN;
+                                '}
+    st1k3Watcher : FB_KStopper(
+        PMPS.K_Stopper.ST1K3,
+        'ST1K3');
+	
     // MR1K1 Veto
     ////////////////////////
           {attribute 'TcLinkTo' := 'TIIB[plc-rix-optics]^IO Inputs^MR1K1_Y_ENC'}
@@ -96,6 +105,35 @@ VAR
     st4k4Watcher : FB_KStopper(
         PMPS.K_Stopper.ST4K4,
         'ST4K4');
+
+		
+	 // MR1K3 Veto
+    ////////////////////////
+          {attribute 'TcLinkTo' := 'TIIB[plc-txi-optics]^IO Inputs^MR1K3_Y_ENC'}
+        i_MR1K3_ENC AT %I* : ULINT; // MR1K3 encoder from the txi k optics optics system
+        cMR1K3_IN_UpperLimit : UDINT := 108500000 + 5000000;
+        cMR1K3_IN_LowerLimit : UDINT := 108500000 - 5000000 ;
+        cMR1K3_OUT_UpperLimit : UDINT := 8900000;
+       
+        q_MR1K3_VETO AT %Q* : BOOL; // Signal to accel. MPS that MR1K3 is in
+        fbMR1K3VetoDevice : FB_KVetoDevice(
+            eVetoDeviceIN := K_Stopper.MR1K3_IN,
+            eVetoDeviceOUT := K_Stopper.MR1K3_OUT,
+            sVetoDeviceName := 'MR1K3');
+			
+	// MR2K3 Veto
+    ////////////////////////
+          {attribute 'TcLinkTo' := 'TIIB[plc-txi-optics]^IO Inputs^MR2K3_Y_ENC'}
+        i_MR2K3_ENC AT %I* : ULINT; // MR2K3 encoder from the txi k optics system
+        cMR2K3_IN_UpperLimit : UDINT := 108500000 + 5000000;
+        cMR2K3_IN_LowerLimit : UDINT := 108500000 - 5000000 ;
+        cMR2K3_OUT_UpperLimit : UDINT := 8900000;
+       
+        q_MR2K3_VETO AT %Q* : BOOL; // Signal to accel. MPS that MR2K3 is in
+        fbMR2K3VetoDevice : FB_KVetoDevice(
+            eVetoDeviceIN := K_Stopper.MR2K3_IN,
+            eVetoDeviceOUT := K_Stopper.MR2K3_OUT,
+            sVetoDeviceName := 'MR2K3');
 
 END_VAR
 ]]></Declaration>
@@ -120,6 +158,7 @@ fbEPICSLMachineMode(BP:=PMPS_GVL.stCurrentBeamParameters, fbMPS_MachineMode:=fbS
 // Stopper readbacks
 st3k4Watcher(stCurrentBP:=PMPS_GVL.stCurrentBeamParameters);
 st1k2Watcher(stCurrentBP:=PMPS_GVL.stCurrentBeamParameters);
+st1k3Watcher(stCurrentBP:=PMPS_GVL.stCurrentBeamParameters);
 // MR1K1 Veto
 ////////////////////////
     fbMR1K1VetoDevice(
@@ -128,7 +167,27 @@ st1k2Watcher(stCurrentBP:=PMPS_GVL.stCurrentBeamParameters);
         q_bIN => q_MR1K1_VETO,
         stCurrentBP:= PMPS_GVL.stCurrentBeamParameters);
 // ST4K4 Photon Terminator Veto
-st4k4Watcher(stCurrentBP:=PMPS_GVL.stCurrentBeamParameters);]]></ST>
+st4k4Watcher(stCurrentBP:=PMPS_GVL.stCurrentBeamParameters);
+
+// MR1K3 Veto
+////////////////////////
+    fbMR1K3VetoDevice(
+        i_bIn := cMR1K3_IN_LowerLimit < i_MR1K3_ENC	AND i_MR1K3_ENC < cMR1K3_IN_UpperLimit,
+        i_bOut := i_MR1K3_ENC < cMR1K3_OUT_UpperLimit,
+        q_bIN => q_MR1K3_VETO,
+        stCurrentBP:= PMPS_GVL.stCurrentBeamParameters);
+		
+		
+// MR2K3 Veto
+////////////////////////
+    fbMR2K3VetoDevice(
+        i_bIn := cMR2K3_IN_LowerLimit < i_MR2K3_ENC	AND i_MR2K3_ENC < cMR2K3_IN_UpperLimit,
+        i_bOut := i_MR2K3_ENC < cMR2K3_OUT_UpperLimit,
+        q_bIN => q_MR2K3_VETO,
+        stCurrentBP:= PMPS_GVL.stCurrentBeamParameters);
+		
+		
+		]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

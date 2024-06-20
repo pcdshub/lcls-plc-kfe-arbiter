@@ -28,12 +28,12 @@
 				</Entry>
 			</Pdo>
 			<Pdo Name="Channel 5" Index="#x1a04" Flags="#x0011" SyncMan="0">
-				<Entry Name="Input" Index="#x6040" Sub="#x01">
+				<Entry Name="ST1K3 IN" Index="#x6040" Sub="#x01">
 					<Type>BIT</Type>
 				</Entry>
 			</Pdo>
 			<Pdo Name="Channel 6" Index="#x1a05" Flags="#x0011" SyncMan="0">
-				<Entry Name="Input" Index="#x6050" Sub="#x01">
+				<Entry Name="ST1K3 OUT" Index="#x6050" Sub="#x01">
 					<Type>BIT</Type>
 				</Entry>
 			</Pdo>

@@ -7,12 +7,47 @@ FFO    :    FB_FastFault :=(
         i_Desc := 'Fault occurs when the beamline valves on qrixs are not in open state',
         i_TypeCode := 16#1010);
 i_xFastFaultOut_qrix_vac AT %I*:        BOOL;
+
+FFO2   :    FB_FastFault :=(
+        i_Desc := 'Forward Fault from TXI Vacuum.',
+        i_TypeCode := 16#3010);
+ {attribute 'TcLinkTo' := 'TIIB[plc-txi-vac]^IO Inputs^FFO'}
+i_xFastFaultOut_txi_vac AT %I*:        BOOL;
+
+FFO3    :    FB_FastFault :=(
+        i_Desc := 'Forward Fault from TXI Motion.',
+        i_TypeCode := 16#3013);
+{attribute 'TcLinkTo' := 'TIIB[plc-txi-mot]^IO Inputs^FFO'}
+i_xFastFaultOut_txi_mot AT %I*:        BOOL;
+
+
+FFO4    :    FB_FastFault :=(
+        i_Desc := 'Forward Fault from TXI OPTICS.',
+        i_TypeCode := 16#3013);
+{attribute 'TcLinkTo' := 'TIIB[plc-txi-optics]^IO Inputs^FFO'}
+i_xFastFaultOut_txi_optics AT %I*:        BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[FFO(
     io_fbFFHWO := g_FastFaultOutput2,
     i_xOK := i_xFastFaultOut_qrix_vac,
+    i_xAutoReset := TRUE);
+	
+	
+FFO2(
+    io_fbFFHWO := g_FastFaultOutput2,
+    i_xOK := i_xFastFaultOut_txi_vac,
+    i_xAutoReset := TRUE);
+	
+FFO3(
+    io_fbFFHWO := g_FastFaultOutput2,
+    i_xOK := i_xFastFaultOut_txi_mot,
+    i_xAutoReset := TRUE);
+	
+FFO4(
+    io_fbFFHWO := g_FastFaultOutput2,
+    i_xOK := i_xFastFaultOut_txi_mot,
     i_xAutoReset := TRUE);
 
 g_FastFaultOutput2.EvaluateOutput(bAutoReset:=TRUE);]]></ST>
