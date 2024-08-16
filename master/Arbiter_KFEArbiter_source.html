@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="./">
 <head>
@@ -6,21 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DUTs &mdash; pcdshub/lcls-plc-kfe-arbiter  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/tree.css?v=837a00b9" />
       <link rel="stylesheet" type="text/css" href="_static/width.css?v=ab210c7a" />
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="_static/jquery.js?v=5d32c60e"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="_static/doctools.js?v=9a2dae69"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="_static/docs-versions-menu.js?v=3d6a1aea"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/docs-versions-menu.js?v=3d6a1aea"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -335,6 +333,15 @@
         <span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">ST1K2</span><span class="p">,</span>
         <span class="s1">&#39;ST1K2&#39;</span><span class="p">);</span>
 
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+                <span class="o">.</span><span class="n">i_StopperInLS</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">PPS</span> <span class="n">Stoppers</span> <span class="mi">1</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">5</span><span class="o">^</span><span class="n">ST1K3</span> <span class="n">IN</span><span class="p">;</span>
+                <span class="o">.</span><span class="n">i_StopperOutLS</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">PPS</span> <span class="n">Stoppers</span> <span class="mi">1</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">6</span><span class="o">^</span><span class="n">ST1K3</span> <span class="n">OUT</span><span class="p">;</span>
+                <span class="o">.</span><span class="n">q_StopperIN_Relay</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">PMPS_Premp</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">7</span><span class="o">^</span><span class="n">ST1K3</span> <span class="n">RELAY</span> <span class="n">IN</span><span class="p">;</span>
+                                <span class="s1">&#39;}</span>
+    <span class="n">st1k3Watcher</span> <span class="p">:</span> <span class="n">FB_KStopper</span><span class="p">(</span>
+        <span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">ST1K3</span><span class="p">,</span>
+        <span class="s1">&#39;ST1K3&#39;</span><span class="p">);</span>
+
     <span class="o">//</span> <span class="n">MR1K1</span> <span class="n">Veto</span>
     <span class="o">////////////////////////</span>
           <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[plc-rix-optics]^IO Inputs^MR1K1_Y_ENC&#39;</span><span class="p">}</span>
@@ -349,6 +356,9 @@
             <span class="n">eVetoDeviceOUT</span> <span class="o">:=</span> <span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR1K1_OUT</span><span class="p">,</span>
             <span class="n">sVetoDeviceName</span> <span class="o">:=</span> <span class="s1">&#39;MR1K1&#39;</span><span class="p">);</span>
 
+
+
+
     <span class="o">//</span> <span class="n">ST4K4</span> <span class="n">Photon</span> <span class="n">Terminator</span> <span class="n">Veto</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
                 <span class="o">.</span><span class="n">i_StopperInLS</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">plc</span><span class="o">-</span><span class="n">tmo</span><span class="o">-</span><span class="n">mot</span><span class="p">]</span><span class="o">^</span><span class="n">IO</span> <span class="n">Inputs</span><span class="o">^</span><span class="n">bST4K4_IN</span><span class="p">;</span>
@@ -357,6 +367,50 @@
     <span class="n">st4k4Watcher</span> <span class="p">:</span> <span class="n">FB_KStopper</span><span class="p">(</span>
         <span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">ST4K4</span><span class="p">,</span>
         <span class="s1">&#39;ST4K4&#39;</span><span class="p">);</span>
+
+
+     <span class="o">//</span> <span class="n">MR1K3</span> <span class="n">Veto</span>
+    <span class="o">////////////////////////</span>
+          <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[plc-txi-optics]^IO Inputs^MR1K3_Y_ENC&#39;</span><span class="p">}</span>
+        <span class="n">i_MR1K3_ENC</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span> <span class="p">:</span> <span class="n">ULINT</span><span class="p">;</span> <span class="o">//</span> <span class="n">MR1K3</span> <span class="n">encoder</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">txi</span> <span class="n">k</span> <span class="n">optics</span> <span class="n">optics</span> <span class="n">system</span>
+        <span class="n">cMR1K3_IN_UpperLimit</span> <span class="p">:</span> <span class="n">UDINT</span> <span class="o">:=</span> <span class="mi">108500000</span> <span class="o">+</span> <span class="mi">5000000</span><span class="p">;</span>
+        <span class="n">cMR1K3_IN_LowerLimit</span> <span class="p">:</span> <span class="n">UDINT</span> <span class="o">:=</span> <span class="mi">108500000</span> <span class="o">-</span> <span class="mi">5000000</span> <span class="p">;</span>
+        <span class="n">cMR1K3_OUT_UpperLimit</span> <span class="p">:</span> <span class="n">UDINT</span> <span class="o">:=</span> <span class="mi">8900000</span><span class="p">;</span>
+
+        <span class="n">q_MR1K3_VETO</span> <span class="n">AT</span> <span class="o">%</span><span class="n">Q</span><span class="o">*</span> <span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span> <span class="o">//</span> <span class="n">Signal</span> <span class="n">to</span> <span class="n">accel</span><span class="o">.</span> <span class="n">MPS</span> <span class="n">that</span> <span class="n">MR1K3</span> <span class="ow">is</span> <span class="ow">in</span>
+        <span class="n">fbMR1K3VetoDevice</span> <span class="p">:</span> <span class="n">FB_KVetoDevice</span><span class="p">(</span>
+            <span class="n">eVetoDeviceIN</span> <span class="o">:=</span> <span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR1K3_IN</span><span class="p">,</span>
+            <span class="n">eVetoDeviceOUT</span> <span class="o">:=</span> <span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR1K3_OUT</span><span class="p">,</span>
+            <span class="n">sVetoDeviceName</span> <span class="o">:=</span> <span class="s1">&#39;MR1K3&#39;</span><span class="p">);</span>
+
+    <span class="o">//</span> <span class="n">MR2K3</span> <span class="n">Veto</span>
+    <span class="o">////////////////////////</span>
+          <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[plc-txi-optics]^IO Inputs^MR2K3_Y_ENC&#39;</span><span class="p">}</span>
+        <span class="n">i_MR2K3_ENC</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span> <span class="p">:</span> <span class="n">ULINT</span><span class="p">;</span> <span class="o">//</span> <span class="n">MR2K3</span> <span class="n">encoder</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">txi</span> <span class="n">k</span> <span class="n">optics</span> <span class="n">system</span>
+        <span class="n">cMR2K3_IN_UpperLimit</span> <span class="p">:</span> <span class="n">UDINT</span> <span class="o">:=</span> <span class="mi">105650000</span> <span class="o">+</span> <span class="mi">10000000</span><span class="p">;</span>
+        <span class="n">cMR2K3_IN_LowerLimit</span> <span class="p">:</span> <span class="n">UDINT</span> <span class="o">:=</span> <span class="mi">105650000</span> <span class="o">-</span> <span class="mi">10000000</span> <span class="p">;</span>
+        <span class="n">cMR2K3_OUT_UpperLimit</span> <span class="p">:</span> <span class="n">UDINT</span> <span class="o">:=</span> <span class="mi">10000000</span><span class="p">;</span>
+
+        <span class="n">q_MR2K3_VETO</span> <span class="n">AT</span> <span class="o">%</span><span class="n">Q</span><span class="o">*</span> <span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span> <span class="o">//</span> <span class="n">Signal</span> <span class="n">to</span> <span class="n">accel</span><span class="o">.</span> <span class="n">MPS</span> <span class="n">that</span> <span class="n">MR2K3</span> <span class="ow">is</span> <span class="ow">in</span>
+        <span class="n">fbMR2K3VetoDevice</span> <span class="p">:</span> <span class="n">FB_KVetoDevice</span><span class="p">(</span>
+            <span class="n">eVetoDeviceIN</span> <span class="o">:=</span> <span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR2K3_IN</span><span class="p">,</span>
+            <span class="n">eVetoDeviceOUT</span> <span class="o">:=</span> <span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR2K3_OUT</span><span class="p">,</span>
+            <span class="n">sVetoDeviceName</span> <span class="o">:=</span> <span class="s1">&#39;MR2K3&#39;</span><span class="p">);</span>
+
+
+    <span class="o">//</span> <span class="n">ST1K4Veto</span>
+    <span class="o">//</span> <span class="n">ST1K4</span> <span class="n">Test</span> <span class="n">Photon</span> <span class="n">stopper</span> <span class="n">Veto</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">FEE</span> <span class="n">right</span> <span class="n">before</span> <span class="n">ST3K4</span> <span class="n">stopper</span>
+    <span class="n">st1k4Watcher</span> <span class="p">:</span>   <span class="n">FB_KVetoDevice</span><span class="p">(</span>
+            <span class="n">eVetoDeviceIN</span> <span class="o">:=</span> <span class="n">K_Stopper</span><span class="o">.</span><span class="n">ST1K4</span><span class="p">,</span>
+            <span class="n">eVetoDeviceOUT</span> <span class="o">:=</span> <span class="n">K_Stopper</span><span class="o">.</span><span class="n">DEFAULT</span><span class="p">,</span> <span class="o">//</span> <span class="ow">not</span> <span class="n">used</span> <span class="n">there</span> <span class="ow">is</span> <span class="n">no</span> <span class="n">ST1K4</span> <span class="n">OUT</span> <span class="n">Just</span> <span class="n">a</span> <span class="n">place</span> <span class="n">holder</span>
+            <span class="n">sVetoDeviceName</span> <span class="o">:=</span> <span class="s1">&#39;ST1K4&#39;</span><span class="p">);</span>
+    <span class="o">////////////////////////</span>
+
+          <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[plc-kfe-motion]^IO Inputs^ST1K4_Y_ENC&#39;</span><span class="p">}</span>
+        <span class="n">ST1K4_Y_ENC</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span> <span class="p">:</span> <span class="n">UDINT</span><span class="p">;</span> <span class="o">//</span> <span class="n">MR2K3</span> <span class="n">encoder</span> <span class="kn">from</span> <span class="nn">the</span>  <span class="n">system</span>
+        <span class="n">ST1K4_IN_UpperLimit</span> <span class="p">:</span> <span class="n">UDINT</span> <span class="o">:=</span> <span class="mi">4293998998</span> <span class="o">+</span> <span class="mi">10000</span><span class="p">;</span>
+        <span class="n">ST1K4_IN_LowerLimit</span> <span class="p">:</span> <span class="n">UDINT</span> <span class="o">:=</span> <span class="mi">4293998000</span><span class="p">;</span>
+        <span class="n">ST1K4_OUT_UpperLimit</span> <span class="p">:</span> <span class="n">UDINT</span> <span class="o">:=</span> <span class="mi">8900000</span><span class="p">;</span>
 
 <span class="n">END_VAR</span>
 <span class="o">//</span> <span class="n">Acquiring</span> <span class="n">K</span><span class="o">-</span><span class="n">line</span> <span class="n">rate</span>
@@ -379,6 +433,9 @@
 <span class="o">//</span> <span class="n">Stopper</span> <span class="n">readbacks</span>
 <span class="n">st3k4Watcher</span><span class="p">(</span><span class="n">stCurrentBP</span><span class="o">:=</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="p">);</span>
 <span class="n">st1k2Watcher</span><span class="p">(</span><span class="n">stCurrentBP</span><span class="o">:=</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="p">);</span>
+<span class="n">st1k3Watcher</span><span class="p">(</span><span class="n">stCurrentBP</span><span class="o">:=</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="p">);</span>
+<span class="o">//</span> <span class="n">ST4K4</span> <span class="n">Photon</span> <span class="n">Terminator</span> <span class="n">Veto</span>
+<span class="n">st4k4Watcher</span><span class="p">(</span><span class="n">stCurrentBP</span><span class="o">:=</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="p">);</span>
 <span class="o">//</span> <span class="n">MR1K1</span> <span class="n">Veto</span>
 <span class="o">////////////////////////</span>
     <span class="n">fbMR1K1VetoDevice</span><span class="p">(</span>
@@ -386,8 +443,29 @@
         <span class="n">i_bOut</span> <span class="o">:=</span> <span class="n">i_MR1K1_ENC</span> <span class="o">&lt;</span> <span class="n">cMR1K1_OUT_UpperLimit</span><span class="p">,</span>
         <span class="n">q_bIN</span> <span class="o">=&gt;</span> <span class="n">q_MR1K1_VETO</span><span class="p">,</span>
         <span class="n">stCurrentBP</span><span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="p">);</span>
-<span class="o">//</span> <span class="n">ST4K4</span> <span class="n">Photon</span> <span class="n">Terminator</span> <span class="n">Veto</span>
-<span class="n">st4k4Watcher</span><span class="p">(</span><span class="n">stCurrentBP</span><span class="o">:=</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="p">);</span>
+
+<span class="o">////////////////////////</span>
+    <span class="n">fbMR1K3VetoDevice</span><span class="p">(</span>
+        <span class="n">i_bIn</span> <span class="o">:=</span> <span class="n">cMR1K3_IN_LowerLimit</span> <span class="o">&lt;</span> <span class="n">i_MR1K3_ENC</span> <span class="n">AND</span> <span class="n">i_MR1K3_ENC</span> <span class="o">&lt;</span> <span class="n">cMR1K3_IN_UpperLimit</span><span class="p">,</span>
+        <span class="n">i_bOut</span> <span class="o">:=</span> <span class="n">i_MR1K3_ENC</span> <span class="o">&lt;</span> <span class="n">cMR1K3_OUT_UpperLimit</span><span class="p">,</span>
+        <span class="n">q_bIN</span> <span class="o">=&gt;</span> <span class="n">q_MR1K3_VETO</span><span class="p">,</span>
+        <span class="n">stCurrentBP</span><span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="p">);</span>
+
+
+<span class="o">//</span> <span class="n">MR2K3</span> <span class="n">Veto</span>
+<span class="o">////////////////////////</span>
+    <span class="n">fbMR2K3VetoDevice</span><span class="p">(</span>
+        <span class="n">i_bIn</span> <span class="o">:=</span> <span class="n">cMR2K3_IN_LowerLimit</span> <span class="o">&lt;</span> <span class="n">i_MR2K3_ENC</span> <span class="n">AND</span> <span class="n">i_MR2K3_ENC</span> <span class="o">&lt;</span> <span class="n">cMR2K3_IN_UpperLimit</span><span class="p">,</span>
+        <span class="n">i_bOut</span> <span class="o">:=</span> <span class="n">i_MR2K3_ENC</span> <span class="o">&lt;</span> <span class="n">cMR2K3_OUT_UpperLimit</span><span class="p">,</span>
+        <span class="n">q_bIN</span> <span class="o">=&gt;</span> <span class="n">q_MR2K3_VETO</span><span class="p">,</span>
+        <span class="n">stCurrentBP</span><span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="p">);</span>
+
+
+<span class="o">//</span> <span class="n">ST1K4</span> <span class="n">Photon</span> <span class="n">Test</span> <span class="n">stopper</span> <span class="n">Veto</span>
+<span class="n">st1k4Watcher</span><span class="p">(</span><span class="n">i_bIn</span> <span class="o">:=</span> <span class="n">ST1K4_IN_LowerLimit</span> <span class="o">&lt;</span> <span class="n">ST1K4_Y_ENC</span>     <span class="n">AND</span> <span class="n">ST1K4_Y_ENC</span> <span class="o">&lt;</span> <span class="n">ST1K4_IN_UpperLimit</span><span class="p">,</span>
+        <span class="n">i_bOut</span> <span class="o">:=</span> <span class="n">ST1K4_Y_ENC</span> <span class="o">&lt;</span>  <span class="n">ST1K4_OUT_UpperLimit</span><span class="p">,</span>
+        <span class="n">q_bIN</span> <span class="o">=&gt;</span> <span class="p">,</span>
+        <span class="n">stCurrentBP</span><span class="o">:=</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="p">);</span>
 
 <span class="n">END_PROGRAM</span>
 </pre></div>
@@ -431,11 +509,82 @@
         <span class="n">i_Desc</span> <span class="o">:=</span> <span class="s1">&#39;Fault occurs when the beamline valves on qrixs are not in open state&#39;</span><span class="p">,</span>
         <span class="n">i_TypeCode</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#1010);</span>
 <span class="n">i_xFastFaultOut_qrix_vac</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span><span class="p">:</span>        <span class="n">BOOL</span><span class="p">;</span>
+
+<span class="n">FFO2</span>   <span class="p">:</span>    <span class="n">FB_FastFault</span> <span class="o">:=</span><span class="p">(</span>
+        <span class="n">i_Desc</span> <span class="o">:=</span> <span class="s1">&#39;Forward Fault from TXI Vacuum.&#39;</span><span class="p">,</span>
+        <span class="n">i_TypeCode</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#3010);</span>
+ <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[plc-txi-vac]^IO Inputs^FFO&#39;</span><span class="p">}</span>
+<span class="n">i_xFastFaultOut_txi_vac</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span><span class="p">:</span>        <span class="n">BOOL</span><span class="p">;</span>
+
+<span class="n">FFO3</span>    <span class="p">:</span>    <span class="n">FB_FastFault</span> <span class="o">:=</span><span class="p">(</span>
+        <span class="n">i_Desc</span> <span class="o">:=</span> <span class="s1">&#39;Forward Fault from TXI Motion.&#39;</span><span class="p">,</span>
+        <span class="n">i_TypeCode</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#3013);</span>
+<span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[plc-txi-mot]^IO Inputs^FFO&#39;</span><span class="p">}</span>
+<span class="n">i_xFastFaultOut_txi_mot</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span><span class="p">:</span>        <span class="n">BOOL</span><span class="p">;</span>
+
+
+<span class="n">FFO4</span>    <span class="p">:</span>    <span class="n">FB_FastFault</span> <span class="o">:=</span><span class="p">(</span>
+        <span class="n">i_Desc</span> <span class="o">:=</span> <span class="s1">&#39;Forward Fault from TXI OPTICS.&#39;</span><span class="p">,</span>
+        <span class="n">i_TypeCode</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#3013);</span>
+<span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[plc-txi-optics]^IO Inputs^FFO&#39;</span><span class="p">}</span>
+<span class="n">i_xFastFaultOut_txi_optics</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span><span class="p">:</span>        <span class="n">BOOL</span><span class="p">;</span>
+
+<span class="p">(</span><span class="o">*</span><span class="n">TXI</span> <span class="n">OPTICS</span> <span class="n">Protection</span> <span class="n">Faults</span><span class="o">*</span><span class="p">)</span>
+
+<span class="n">FFO_RIX_TXI_OPTICS</span> <span class="p">:</span>    <span class="n">FB_FastFault</span> <span class="o">:=</span><span class="p">(</span>
+        <span class="n">i_Desc</span> <span class="o">:=</span> <span class="s1">&#39;Fault when MR1K1 is IN while a TXI Optics is in (either MR1K3 and MR2K3)&#39;</span><span class="p">,</span>
+        <span class="n">i_TypeCode</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#3103);</span>
+
+<span class="n">FFO_TXI_OPTICS</span> <span class="p">:</span>    <span class="n">FB_FastFault</span> <span class="o">:=</span><span class="p">(</span>
+        <span class="n">i_Desc</span> <span class="o">:=</span> <span class="s1">&#39;Fault when MR1K3 is OUT and MR2K3 is IN&#39;</span><span class="p">,</span>
+        <span class="n">i_TypeCode</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#3113);</span>
 <span class="n">END_VAR</span>
 <span class="n">FFO</span><span class="p">(</span>
     <span class="n">io_fbFFHWO</span> <span class="o">:=</span> <span class="n">g_FastFaultOutput2</span><span class="p">,</span>
     <span class="n">i_xOK</span> <span class="o">:=</span> <span class="n">i_xFastFaultOut_qrix_vac</span><span class="p">,</span>
     <span class="n">i_xAutoReset</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">);</span>
+
+
+<span class="n">FFO2</span><span class="p">(</span>
+    <span class="n">io_fbFFHWO</span> <span class="o">:=</span> <span class="n">g_FastFaultOutput2</span><span class="p">,</span>
+    <span class="n">i_xOK</span> <span class="o">:=</span> <span class="n">i_xFastFaultOut_txi_vac</span><span class="p">,</span>
+    <span class="n">i_xAutoReset</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">);</span>
+
+<span class="n">FFO3</span><span class="p">(</span>
+    <span class="n">io_fbFFHWO</span> <span class="o">:=</span> <span class="n">g_FastFaultOutput2</span><span class="p">,</span>
+    <span class="n">i_xOK</span> <span class="o">:=</span> <span class="n">i_xFastFaultOut_txi_mot</span><span class="p">,</span>
+    <span class="n">i_xAutoReset</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">);</span>
+
+<span class="n">FFO4</span><span class="p">(</span>
+    <span class="n">io_fbFFHWO</span> <span class="o">:=</span> <span class="n">g_FastFaultOutput2</span><span class="p">,</span>
+    <span class="n">i_xOK</span> <span class="o">:=</span> <span class="n">i_xFastFaultOut_txi_optics</span><span class="p">,</span>
+    <span class="n">i_xAutoReset</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">);</span>
+
+
+<span class="p">(</span><span class="o">*</span><span class="n">TXI</span> <span class="n">OPTICS</span> <span class="n">Protection</span> <span class="n">Faults</span><span class="o">*</span><span class="p">)</span>
+<span class="p">(</span><span class="o">*</span> <span class="n">MR1K1</span> <span class="o">|</span> <span class="n">MR1K3</span> <span class="o">|</span> <span class="n">MR2K3</span> <span class="o">|</span> <span class="n">Fault</span> <span class="o">*</span><span class="p">)</span>
+<span class="p">(</span><span class="o">*</span>  <span class="n">IN</span>   <span class="o">|</span>  <span class="n">IN</span>   <span class="o">|</span>  <span class="n">OUT</span>  <span class="o">|</span> <span class="n">TRUE</span>  <span class="o">*</span><span class="p">)</span>
+<span class="p">(</span><span class="o">*</span>  <span class="n">IN</span>   <span class="o">|</span>  <span class="n">OUT</span>  <span class="o">|</span>  <span class="n">IN</span>   <span class="o">|</span> <span class="n">TRUE</span>  <span class="o">*</span><span class="p">)</span>
+<span class="p">(</span><span class="o">*</span>  <span class="n">IN</span>   <span class="o">|</span>  <span class="n">IN</span>   <span class="o">|</span>  <span class="n">IN</span>   <span class="o">|</span> <span class="n">TRUE</span>  <span class="o">*</span><span class="p">)</span>
+<span class="p">(</span><span class="o">*</span>  <span class="n">OUT</span>  <span class="o">|</span>  <span class="n">IN</span>   <span class="o">|</span>  <span class="n">OUT</span>  <span class="o">|</span> <span class="n">TRUE</span>  <span class="o">*</span><span class="p">)</span>
+<span class="p">(</span><span class="o">*</span>  <span class="n">OUT</span>  <span class="o">|</span>  <span class="n">OUT</span>  <span class="o">|</span>  <span class="n">IN</span>   <span class="o">|</span> <span class="n">TRUE</span>  <span class="o">*</span><span class="p">)</span>
+
+<span class="n">FFO_RIX_TXI_OPTICS</span><span class="p">(</span>
+    <span class="n">io_fbFFHWO</span> <span class="o">:=</span> <span class="n">g_FastFaultOutput2</span><span class="p">,</span>
+    <span class="n">i_xOK</span> <span class="o">:=</span> <span class="p">(</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR1K1_IN</span><span class="p">]</span> <span class="n">AND</span> <span class="n">NOT</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR1K1_OUT</span><span class="p">])</span>
+                <span class="n">AND</span> <span class="p">((</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR1K3_OUT</span><span class="p">]</span> <span class="n">AND</span> <span class="n">NOT</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR1K3_IN</span><span class="p">])</span>
+                    <span class="n">AND</span> <span class="p">(</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR2K3_OUT</span><span class="p">]</span> <span class="n">AND</span> <span class="n">NOT</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR2K3_IN</span><span class="p">]))</span>
+                <span class="n">OR</span> <span class="p">(</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR1K1_OUT</span><span class="p">]</span> <span class="n">AND</span> <span class="n">NOT</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR1K1_IN</span><span class="p">])</span> <span class="p">,</span>
+    <span class="n">i_xAutoReset</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">);</span>
+
+<span class="n">FFO_TXI_OPTICS</span><span class="p">(</span>
+    <span class="n">io_fbFFHWO</span> <span class="o">:=</span> <span class="n">g_FastFaultOutput2</span><span class="p">,</span>
+    <span class="n">i_xOK</span> <span class="o">:=</span> <span class="p">(</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR1K3_OUT</span><span class="p">]</span> <span class="n">AND</span> <span class="n">NOT</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR1K3_IN</span><span class="p">]</span>
+                    <span class="n">AND</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR2K3_OUT</span><span class="p">]</span> <span class="n">AND</span> <span class="n">NOT</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR2K3_IN</span><span class="p">])</span>
+                <span class="n">OR</span> <span class="p">(</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR1K3_IN</span><span class="p">]</span> <span class="n">AND</span> <span class="n">NOT</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR1K3_OUT</span><span class="p">]</span>
+                    <span class="n">AND</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR2K3_IN</span><span class="p">]</span> <span class="n">AND</span> <span class="n">NOT</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR2K3_OUT</span><span class="p">])</span>  <span class="p">,</span>
+    <span class="n">i_xAutoReset</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">);</span>
+
 
 <span class="n">g_FastFaultOutput2</span><span class="o">.</span><span class="n">EvaluateOutput</span><span class="p">(</span><span class="n">bAutoReset</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
 
@@ -1060,6 +1209,42 @@ END_FUNCTION_BLOCK
                                 <span class="s1">&#39;}</span>
     <span class="n">plc_qrix_vac_PMPS_IO</span> <span class="p">:</span> <span class="n">FB_ArbiterToSubSys_IO</span> <span class="o">:=</span> <span class="p">(</span><span class="n">RequestingSystemID</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#F204);</span>
 
+<span class="o">//////////////////////////////////////////////</span>
+<span class="o">//</span> <span class="n">TXI</span> <span class="n">PLCs</span>
+<span class="o">/////////////////////////////////////////////</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.i_RequestedBP:=TIIB[plc-txi-mot]^IO Inputs^RequestedBP;</span>
+                                <span class="o">.</span><span class="n">o_CurrentBP</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">plc</span><span class="o">-</span><span class="n">txi</span><span class="o">-</span><span class="n">mot</span><span class="p">]</span><span class="o">^</span><span class="n">IO</span> <span class="n">Outputs</span><span class="o">^</span><span class="n">CurrentBP</span><span class="p">;</span>
+                                <span class="o">.</span><span class="n">i_Connected</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">plc</span><span class="o">-</span><span class="n">txi</span><span class="o">-</span><span class="n">mot</span><span class="p">]</span><span class="o">^</span><span class="n">SYNC</span> <span class="n">Inputs</span><span class="o">^</span><span class="n">External</span> <span class="n">device</span> <span class="ow">not</span> <span class="n">connected</span><span class="p">;</span>
+                                <span class="o">.</span><span class="n">i_WcState</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">plc</span><span class="o">-</span><span class="n">txi</span><span class="o">-</span><span class="n">mot</span><span class="p">]</span><span class="o">^</span><span class="n">WcState</span><span class="o">^</span><span class="n">WcStateIn</span><span class="p">;</span>
+                                <span class="o">.</span><span class="n">i_TxPDOState</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">plc</span><span class="o">-</span><span class="n">txi</span><span class="o">-</span><span class="n">mot</span><span class="p">]</span><span class="o">^</span><span class="n">SYNC</span> <span class="n">Inputs</span><span class="o">^</span><span class="n">TxPDO</span> <span class="n">state</span><span class="p">;</span>
+                                <span class="s1">&#39;}</span>
+    <span class="n">plc_txi_motion_PMPS_IO</span> <span class="p">:</span> <span class="n">FB_ArbiterToSubSys_IO</span> <span class="o">:=</span> <span class="p">(</span><span class="n">RequestingSystemID</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#F300);</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.i_RequestedBP:=TIIB[plc-txi-optics]^IO Inputs^RequestedBP;</span>
+                                <span class="o">.</span><span class="n">o_CurrentBP</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">plc</span><span class="o">-</span><span class="n">txi</span><span class="o">-</span><span class="n">optics</span><span class="p">]</span><span class="o">^</span><span class="n">IO</span> <span class="n">Outputs</span><span class="o">^</span><span class="n">CurrentBP</span><span class="p">;</span>
+                                <span class="o">.</span><span class="n">i_Connected</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">plc</span><span class="o">-</span><span class="n">txi</span><span class="o">-</span><span class="n">optics</span><span class="p">]</span><span class="o">^</span><span class="n">SYNC</span> <span class="n">Inputs</span><span class="o">^</span><span class="n">External</span> <span class="n">device</span> <span class="ow">not</span> <span class="n">connected</span><span class="p">;</span>
+                                <span class="o">.</span><span class="n">i_WcState</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">plc</span><span class="o">-</span><span class="n">txi</span><span class="o">-</span><span class="n">optics</span><span class="p">]</span><span class="o">^</span><span class="n">WcState</span><span class="o">^</span><span class="n">WcStateIn</span><span class="p">;</span>
+                                <span class="o">.</span><span class="n">i_TxPDOState</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">plc</span><span class="o">-</span><span class="n">txi</span><span class="o">-</span><span class="n">optics</span><span class="p">]</span><span class="o">^</span><span class="n">SYNC</span> <span class="n">Inputs</span><span class="o">^</span><span class="n">TxPDO</span> <span class="n">state</span><span class="p">;</span>
+                                <span class="s1">&#39;}</span>
+    <span class="n">plc_txi_optics_PMPS_IO</span> <span class="p">:</span> <span class="n">FB_ArbiterToSubSys_IO</span> <span class="o">:=</span> <span class="p">(</span><span class="n">RequestingSystemID</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#F301);</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.i_RequestedBP:=TIIB[plc-txi-vac]^IO Inputs^RequestedBP;</span>
+                                <span class="o">.</span><span class="n">o_CurrentBP</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">plc</span><span class="o">-</span><span class="n">txi</span><span class="o">-</span><span class="n">vac</span><span class="p">]</span><span class="o">^</span><span class="n">IO</span> <span class="n">Outputs</span><span class="o">^</span><span class="n">CurrentBP</span><span class="p">;</span>
+                                <span class="o">.</span><span class="n">i_Connected</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">plc</span><span class="o">-</span><span class="n">txi</span><span class="o">-</span><span class="n">vac</span><span class="p">]</span><span class="o">^</span><span class="n">SYNC</span> <span class="n">Inputs</span><span class="o">^</span><span class="n">External</span> <span class="n">device</span> <span class="ow">not</span> <span class="n">connected</span><span class="p">;</span>
+                                <span class="o">.</span><span class="n">i_WcState</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">plc</span><span class="o">-</span><span class="n">txi</span><span class="o">-</span><span class="n">vac</span><span class="p">]</span><span class="o">^</span><span class="n">WcState</span><span class="o">^</span><span class="n">WcStateIn</span><span class="p">;</span>
+                                <span class="o">.</span><span class="n">i_TxPDOState</span><span class="o">:=</span><span class="n">TIIB</span><span class="p">[</span><span class="n">plc</span><span class="o">-</span><span class="n">txi</span><span class="o">-</span><span class="n">vac</span><span class="p">]</span><span class="o">^</span><span class="n">SYNC</span> <span class="n">Inputs</span><span class="o">^</span><span class="n">TxPDO</span> <span class="n">state</span><span class="p">;</span>
+                                <span class="s1">&#39;}</span>
+    <span class="n">plc_txi_vacuum_PMPS_IO</span> <span class="p">:</span> <span class="n">FB_ArbiterToSubSys_IO</span> <span class="o">:=</span> <span class="p">(</span><span class="n">RequestingSystemID</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#F302);</span>
+
+    <span class="p">(</span><span class="o">*</span><span class="n">Remove</span><span class="o">*</span><span class="p">)</span>
+         <span class="n">ar1</span> <span class="p">:</span> <span class="nb">bool</span><span class="p">;</span>
+ <span class="n">ar2</span> <span class="p">:</span> <span class="nb">bool</span><span class="p">;</span>
+ <span class="n">nReqID</span><span class="p">:</span><span class="n">UDINT</span><span class="p">;</span>
+ <span class="n">nReqRM</span><span class="p">:</span><span class="n">UDINT</span><span class="p">;</span>
+ <span class="n">bRemove</span><span class="p">:</span><span class="nb">bool</span><span class="p">;</span>
+ <span class="n">rtRemove</span><span class="p">:</span> <span class="n">R_TRIG</span><span class="p">;</span>
+
 <span class="n">END_VAR</span>
 <span class="o">//</span> <span class="n">Updating</span> <span class="n">arbiter</span> <span class="k">with</span> <span class="n">subsystem</span> <span class="n">requests</span><span class="o">.</span>
 
@@ -1071,7 +1256,7 @@ END_FUNCTION_BLOCK
 
 
 <span class="o">///////////////////////////</span>
-<span class="o">//</span> <span class="n">TMO</span>
+<span class="o">//</span> <span class="n">TMO</span> <span class="n">K4</span>
     <span class="n">plc_tmo_motion_PMPS_IO</span><span class="p">(</span><span class="n">Arbiter</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">g_fbArbiter1</span><span class="p">,</span> <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="p">,</span> <span class="n">Reset</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">AttemptReset</span> <span class="p">,</span> <span class="n">sName</span><span class="o">:=</span> <span class="s1">&#39;TMO MOTION&#39;</span><span class="p">);</span>
     <span class="n">plc_tmo_optics_PMPS_IO</span><span class="p">(</span><span class="n">Arbiter</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">g_fbArbiter1</span><span class="p">,</span> <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="p">,</span> <span class="n">Reset</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">AttemptReset</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span> <span class="s1">&#39;TMO OPTICS&#39;</span><span class="p">);</span>
     <span class="n">plc_tmo_vacuum_PMPS_IO</span><span class="p">(</span><span class="n">Arbiter</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">g_fbArbiter1</span><span class="p">,</span> <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="p">,</span> <span class="n">Reset</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">AttemptReset</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span> <span class="s1">&#39;TMO VACUUM&#39;</span><span class="p">);</span>
@@ -1085,6 +1270,14 @@ END_FUNCTION_BLOCK
     <span class="n">plc_crix_vac_PMPS_IO</span><span class="p">(</span><span class="n">Arbiter</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">g_fbArbiter1</span><span class="p">,</span> <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="p">,</span> <span class="n">Reset</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">AttemptReset</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span> <span class="s1">&#39;CRIX VACUUM&#39;</span><span class="p">);</span>
     <span class="n">plc_qrix_vac_PMPS_IO</span><span class="p">(</span><span class="n">Arbiter</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">g_fbArbiter1</span><span class="p">,</span> <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="p">,</span> <span class="n">Reset</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">AttemptReset</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span> <span class="s1">&#39;QRIX VACUUM&#39;</span><span class="p">);</span>
 <span class="o">///////////////////////////</span>
+
+
+<span class="o">///////////////////////////</span>
+<span class="o">//</span> <span class="n">TXI</span> <span class="n">K3</span>
+    <span class="n">plc_txi_motion_PMPS_IO</span><span class="p">(</span><span class="n">Arbiter</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">g_fbArbiter1</span><span class="p">,</span> <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="p">,</span> <span class="n">Reset</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">AttemptReset</span> <span class="p">,</span> <span class="n">sName</span><span class="o">:=</span> <span class="s1">&#39;TXI MOTION&#39;</span><span class="p">);</span>
+    <span class="n">plc_txi_optics_PMPS_IO</span><span class="p">(</span><span class="n">Arbiter</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">g_fbArbiter1</span><span class="p">,</span> <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="p">,</span> <span class="n">Reset</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">AttemptReset</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span> <span class="s1">&#39;TXI OPTICS&#39;</span><span class="p">);</span>
+    <span class="n">plc_txi_vacuum_PMPS_IO</span><span class="p">(</span><span class="n">Arbiter</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">g_fbArbiter1</span><span class="p">,</span> <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">g_FastFaultOutput1</span><span class="p">,</span> <span class="n">Reset</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">AttemptReset</span><span class="p">,</span> <span class="n">sName</span><span class="o">:=</span> <span class="s1">&#39;TXI VACUUM&#39;</span><span class="p">);</span>
+<span class="o">//////////////////////////</span>
 
 <span class="o">////////////////////////////</span>
 <span class="o">//</span> <span class="n">Beam</span> <span class="n">parameter</span> <span class="n">requestor</span>
@@ -1112,6 +1305,16 @@ END_FUNCTION_BLOCK
 
 <span class="o">//</span> <span class="n">Evaluate</span> <span class="n">fast</span> <span class="n">fault</span> <span class="n">vetos</span>
 <span class="n">g_FastFaultOutput1</span><span class="o">.</span><span class="n">Execute</span><span class="p">();</span>
+
+
+<span class="p">(</span><span class="o">*</span><span class="n">remove</span><span class="o">*</span><span class="p">)</span>
+<span class="p">(</span><span class="o">*</span><span class="n">Debugging</span> <span class="n">functions</span><span class="o">*</span><span class="p">)</span>
+<span class="n">ar1</span><span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">g_fbArbiter1</span><span class="o">.</span><span class="n">CheckRequestInPool</span><span class="p">(</span><span class="n">nReqRM</span><span class="p">);</span>
+
+<span class="n">rtRemove</span><span class="p">(</span><span class="n">CLK</span><span class="o">:=</span> <span class="n">bRemove</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">rtRemove</span><span class="o">.</span><span class="n">Q</span><span class="p">)</span> <span class="n">THEN</span>
+     <span class="n">GVL</span><span class="o">.</span><span class="n">g_fbArbiter1</span><span class="o">.</span><span class="n">RemoveRequest</span><span class="p">(</span><span class="n">nReqRM</span><span class="p">);</span>
+<span class="n">END_IF</span>
 
 <span class="n">END_PROGRAM</span>
 </pre></div>

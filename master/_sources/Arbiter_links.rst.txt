@@ -29,14 +29,22 @@ Links
         InputDst, P_AT1K0_SL1K0.i_nTranToAT1K0Stat, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-gatt, IO Inputs^Current Transmission
         InputDst, P_SATT.i_nTranToStat_KFE, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-motion, IO Inputs^SattArrayStatus
         InputDst, P_SATT.i_nTranToStat_RIX, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^B940-009-R07-MPS-1 CU1-ESC2^plc-rix-mot, IO Inputs^SattArrayStatus
+        KFEArbiter Instance, PlcTask Inputs^CurrentBPUpdate.ST1K4_Y_ENC, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-motion, IO Inputs^ST1K4_Y_ENC
         KFEArbiter Instance, PlcTask Inputs^CurrentBPUpdate.i_MR1K1_ENC, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^B940-009-R07-MPS-1 CU1-ESC2^plc-rix-optics, IO Inputs^MR1K1_Y_ENC
+        KFEArbiter Instance, PlcTask Inputs^CurrentBPUpdate.i_MR1K3_ENC, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^B940-009-R07-MPS-1 CU1-ESC3^plc-txi-optics, IO Inputs^MR1K3_Y_ENC
+        KFEArbiter Instance, PlcTask Inputs^CurrentBPUpdate.i_MR2K3_ENC, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^B940-009-R07-MPS-1 CU1-ESC3^plc-txi-optics, IO Inputs^MR2K3_Y_ENC
         KFEArbiter Instance, PlcTask Inputs^CurrentBPUpdate.st1k2Watcher.i_StopperInLS, TIID^Device 1 (EtherCAT)^E0 (EK1200)^E3 (EK1122)^950-101W-R4-MPS-2^PPS Stoppers 1, Channel 3^ST1K2 IN
         KFEArbiter Instance, PlcTask Inputs^CurrentBPUpdate.st1k2Watcher.i_StopperOutLS, TIID^Device 1 (EtherCAT)^E0 (EK1200)^E3 (EK1122)^950-101W-R4-MPS-2^PPS Stoppers 1, Channel 4^ST1K2 OUT
+        KFEArbiter Instance, PlcTask Inputs^CurrentBPUpdate.st1k3Watcher.i_StopperInLS, TIID^Device 1 (EtherCAT)^E0 (EK1200)^E3 (EK1122)^950-101W-R4-MPS-2^PPS Stoppers 1, Channel 5^ST1K3 IN
+        KFEArbiter Instance, PlcTask Inputs^CurrentBPUpdate.st1k3Watcher.i_StopperOutLS, TIID^Device 1 (EtherCAT)^E0 (EK1200)^E3 (EK1122)^950-101W-R4-MPS-2^PPS Stoppers 1, Channel 6^ST1K3 OUT
         KFEArbiter Instance, PlcTask Inputs^CurrentBPUpdate.st3k4Watcher.i_StopperInLS, TIID^Device 1 (EtherCAT)^E0 (EK1200)^E3 (EK1122)^950-101W-R4-MPS-2^PPS Stoppers 1, Channel 1^ST3K4 IN
         KFEArbiter Instance, PlcTask Inputs^CurrentBPUpdate.st3k4Watcher.i_StopperOutLS, TIID^Device 1 (EtherCAT)^E0 (EK1200)^E3 (EK1122)^950-101W-R4-MPS-2^PPS Stoppers 1, Channel 2^ST3K4 OUT
         KFEArbiter Instance, PlcTask Inputs^CurrentBPUpdate.st4k4Watcher.i_StopperInLS, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-tmo-mot, IO Inputs^bST4K4_IN
         KFEArbiter Instance, PlcTask Inputs^CurrentBPUpdate.st4k4Watcher.i_StopperOutLS, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-tmo-mot, IO Inputs^bST4K4_OUT
         KFEArbiter Instance, PlcTask Inputs^Fast_Faults_Evaluate.i_xFastFaultOut_qrix_vac, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^B940-009-R07-MPS-1 CU1-ESC3^plc-qrix-vac, IO Inputs^FFO
+        KFEArbiter Instance, PlcTask Inputs^Fast_Faults_Evaluate.i_xFastFaultOut_txi_mot, TIID^Device 1 (EtherCAT)^plc-txi-mot, IO Inputs^FFO
+        KFEArbiter Instance, PlcTask Inputs^Fast_Faults_Evaluate.i_xFastFaultOut_txi_optics, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^B940-009-R07-MPS-1 CU1-ESC3^plc-txi-optics, IO Inputs^FFO
+        KFEArbiter Instance, PlcTask Inputs^Fast_Faults_Evaluate.i_xFastFaultOut_txi_vac, TIID^Device 1 (EtherCAT)^plc-txi-vac, IO Inputs^FFO
         KFEArbiter Instance, PlcTask Inputs^MAIN.fbEcatDiag.arrEcMasterNetId, TIID^Device 1 (EtherCAT), InfoData^AmsNetId
         KFEArbiter Instance, PlcTask Inputs^MAIN.fbEcatDiag.nEcMasterDevState, TIID^Device 1 (EtherCAT), Inputs^DevState
         KFEArbiter Instance, PlcTask Inputs^MAIN.fbEcatDiag.nEcMasterDeviceId, TIID^Device 1 (EtherCAT), InfoData^DevId
@@ -103,6 +111,18 @@ Links
         KFEArbiter Instance, PlcTask Inputs^PMPS_Arbiter.plc_tmo_vacuum_PMPS_IO.i_RequestedBP, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-tmo-vac, IO Inputs^RequestedBP
         KFEArbiter Instance, PlcTask Inputs^PMPS_Arbiter.plc_tmo_vacuum_PMPS_IO.i_TxPDOState, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-tmo-vac, SYNC Inputs^TxPDO state
         KFEArbiter Instance, PlcTask Inputs^PMPS_Arbiter.plc_tmo_vacuum_PMPS_IO.i_WcState, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-tmo-vac, WcState^WcStateIn
+        KFEArbiter Instance, PlcTask Inputs^PMPS_Arbiter.plc_txi_motion_PMPS_IO.i_Connected, TIID^Device 1 (EtherCAT)^plc-txi-mot, SYNC Inputs^External device not connected
+        KFEArbiter Instance, PlcTask Inputs^PMPS_Arbiter.plc_txi_motion_PMPS_IO.i_RequestedBP, TIID^Device 1 (EtherCAT)^plc-txi-mot, IO Inputs^RequestedBP
+        KFEArbiter Instance, PlcTask Inputs^PMPS_Arbiter.plc_txi_motion_PMPS_IO.i_TxPDOState, TIID^Device 1 (EtherCAT)^plc-txi-mot, SYNC Inputs^TxPDO state
+        KFEArbiter Instance, PlcTask Inputs^PMPS_Arbiter.plc_txi_motion_PMPS_IO.i_WcState, TIID^Device 1 (EtherCAT)^plc-txi-mot, WcState^WcStateIn
+        KFEArbiter Instance, PlcTask Inputs^PMPS_Arbiter.plc_txi_optics_PMPS_IO.i_Connected, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^B940-009-R07-MPS-1 CU1-ESC3^plc-txi-optics, SYNC Inputs^External device not connected
+        KFEArbiter Instance, PlcTask Inputs^PMPS_Arbiter.plc_txi_optics_PMPS_IO.i_RequestedBP, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^B940-009-R07-MPS-1 CU1-ESC3^plc-txi-optics, IO Inputs^RequestedBP
+        KFEArbiter Instance, PlcTask Inputs^PMPS_Arbiter.plc_txi_optics_PMPS_IO.i_TxPDOState, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^B940-009-R07-MPS-1 CU1-ESC3^plc-txi-optics, SYNC Inputs^TxPDO state
+        KFEArbiter Instance, PlcTask Inputs^PMPS_Arbiter.plc_txi_optics_PMPS_IO.i_WcState, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^B940-009-R07-MPS-1 CU1-ESC3^plc-txi-optics, WcState^WcStateIn
+        KFEArbiter Instance, PlcTask Inputs^PMPS_Arbiter.plc_txi_vacuum_PMPS_IO.i_Connected, TIID^Device 1 (EtherCAT)^plc-txi-vac, SYNC Inputs^External device not connected
+        KFEArbiter Instance, PlcTask Inputs^PMPS_Arbiter.plc_txi_vacuum_PMPS_IO.i_RequestedBP, TIID^Device 1 (EtherCAT)^plc-txi-vac, IO Inputs^RequestedBP
+        KFEArbiter Instance, PlcTask Inputs^PMPS_Arbiter.plc_txi_vacuum_PMPS_IO.i_TxPDOState, TIID^Device 1 (EtherCAT)^plc-txi-vac, SYNC Inputs^TxPDO state
+        KFEArbiter Instance, PlcTask Inputs^PMPS_Arbiter.plc_txi_vacuum_PMPS_IO.i_WcState, TIID^Device 1 (EtherCAT)^plc-txi-vac, WcState^WcStateIn
         KFEArbiter Instance, PlcTask Inputs^P_AT1K0_SL1K0.i_bWcStateIn_AT1K0, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-gatt, WcState^WcStateIn
         KFEArbiter Instance, PlcTask Inputs^P_AT1K0_SL1K0.i_bWcStateIn_KFEMOT, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-motion, WcState^WcStateIn
         KFEArbiter Instance, PlcTask Inputs^P_AT1K0_SL1K0.i_bWcStateOut_AT1K0, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-gatt, WcState^WcStateOut
@@ -121,6 +141,7 @@ Links
         KFEArbiter Instance, PlcTask Inputs^P_SATT.i_nState_rix_mot, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^B940-009-R07-MPS-1 CU1-ESC2^plc-rix-mot, InfoData^State
         KFEArbiter Instance, PlcTask Outputs^CurrentBPUpdate.q_MR1K1_VETO, TIID^Device 1 (EtherCAT)^E0 (EK1200)^PMPS_Premp, Channel 13^MR1K1 IN
         KFEArbiter Instance, PlcTask Outputs^CurrentBPUpdate.st1k2Watcher.q_StopperIN_Relay, TIID^Device 1 (EtherCAT)^E0 (EK1200)^PMPS_Premp, Channel 14^ST1K2 RELAY IN
+        KFEArbiter Instance, PlcTask Outputs^CurrentBPUpdate.st1k3Watcher.q_StopperIN_Relay, TIID^Device 1 (EtherCAT)^E0 (EK1200)^PMPS_Premp, Channel 7^ST1K3 RELAY IN
         KFEArbiter Instance, PlcTask Outputs^CurrentBPUpdate.st3k4Watcher.q_StopperIN_Relay, TIID^Device 1 (EtherCAT)^E0 (EK1200)^PMPS_Premp, Channel 12^ST3K4 RELAY IN
         KFEArbiter Instance, PlcTask Outputs^GVL.g_FastFaultOutput1.q_xFastFaultOut, TIID^Device 1 (EtherCAT)^E0 (EK1200)^FFO, Channel 1^Output
         KFEArbiter Instance, PlcTask Outputs^GVL.g_FastFaultOutput2.q_xFastFaultOut, TIID^Device 1 (EtherCAT)^E0 (EK1200)^FFO, Channel 2^Output
@@ -147,10 +168,12 @@ Links
         KFEArbiter Instance, PlcTask Outputs^PMPS_Arbiter.plc_tmo_motion_PMPS_IO.o_CurrentBP, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-tmo-mot, IO Outputs^CurrentBP
         KFEArbiter Instance, PlcTask Outputs^PMPS_Arbiter.plc_tmo_optics_PMPS_IO.o_CurrentBP, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-tmo-optics, IO Outputs^CurrentBP
         KFEArbiter Instance, PlcTask Outputs^PMPS_Arbiter.plc_tmo_vacuum_PMPS_IO.o_CurrentBP, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-tmo-vac, IO Outputs^CurrentBP
+        KFEArbiter Instance, PlcTask Outputs^PMPS_Arbiter.plc_txi_motion_PMPS_IO.o_CurrentBP, TIID^Device 1 (EtherCAT)^plc-txi-mot, IO Outputs^CurrentBP
+        KFEArbiter Instance, PlcTask Outputs^PMPS_Arbiter.plc_txi_optics_PMPS_IO.o_CurrentBP, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^B940-009-R07-MPS-1 CU1-ESC3^plc-txi-optics, IO Outputs^CurrentBP
+        KFEArbiter Instance, PlcTask Outputs^PMPS_Arbiter.plc_txi_vacuum_PMPS_IO.o_CurrentBP, TIID^Device 1 (EtherCAT)^plc-txi-vac, IO Outputs^CurrentBP
         KFEArbiter Instance, PlcTask Outputs^P_AT1K0_SL1K0.q_nTranToAT1K0Req, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-gatt, IO Outputs^Requested Transmission
         KFEArbiter Instance, PlcTask Outputs^P_AT1K0_SL1K0.q_stAptArrayReq, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-motion, IO Outputs^AptArrayReq
         KFEArbiter Instance, PlcTask Outputs^P_SATT.q_SattArrayReq, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^B940-009-R07-MPS-1 CU1-ESC2^plc-rix-mot, IO Outputs^SattArrayReq
-        KFEArbiter Instance, PlcTask Outputs^P_SATT.q_SattArrayReq, TIID^Device 1 (EtherCAT)^B940-009-R07-MPS-1 CU1-ESC1^plc-kfe-motion, IO Outputs^SattArrayReq
         OutputSrc, MachineSimulation.q_SimCurrBP, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 3 (EK1122)^SubSysPLC1 (EL6692), IO Outputs^CurrentBP
         OutputSrc, PMPS_Arbiter.fbMPSInterface.dumb, TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^PMPS_BC, Channel 1^Output
         OutputSrc, PMPS_Arbiter.fbMPSInterface.q_BC_ASSERTION_LINES[10], TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^PMPS_Premp, Channel 10^Output
