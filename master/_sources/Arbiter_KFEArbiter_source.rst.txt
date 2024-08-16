@@ -247,7 +247,16 @@ CurrentBPUpdate
         st1k2Watcher : FB_KStopper(
             PMPS.K_Stopper.ST1K2,
             'ST1K2');
-
+    	
+    	{attribute 'TcLinkTo' := '
+                    .i_StopperInLS:=TIIB[PPS Stoppers 1]^Channel 5^ST1K3 IN;
+                    .i_StopperOutLS:=TIIB[PPS Stoppers 1]^Channel 6^ST1K3 OUT;
+                    .q_StopperIN_Relay:=TIIB[PMPS_Premp]^Channel 7^ST1K3 RELAY IN;
+                                    '}
+        st1k3Watcher : FB_KStopper(
+            PMPS.K_Stopper.ST1K3,
+            'ST1K3');
+    	
         // MR1K1 Veto
         ////////////////////////
               {attribute 'TcLinkTo' := 'TIIB[plc-rix-optics]^IO Inputs^MR1K1_Y_ENC'}
@@ -271,6 +280,35 @@ CurrentBPUpdate
             PMPS.K_Stopper.ST4K4,
             'ST4K4');
 
+    		
+    	 // MR1K3 Veto
+        ////////////////////////
+              {attribute 'TcLinkTo' := 'TIIB[plc-txi-optics]^IO Inputs^MR1K3_Y_ENC'}
+            i_MR1K3_ENC AT %I* : ULINT; // MR1K3 encoder from the txi k optics optics system
+            cMR1K3_IN_UpperLimit : UDINT := 108500000 + 5000000;
+            cMR1K3_IN_LowerLimit : UDINT := 108500000 - 5000000 ;
+            cMR1K3_OUT_UpperLimit : UDINT := 8900000;
+           
+            q_MR1K3_VETO AT %Q* : BOOL; // Signal to accel. MPS that MR1K3 is in
+            fbMR1K3VetoDevice : FB_KVetoDevice(
+                eVetoDeviceIN := K_Stopper.MR1K3_IN,
+                eVetoDeviceOUT := K_Stopper.MR1K3_OUT,
+                sVetoDeviceName := 'MR1K3');
+    			
+    	// MR2K3 Veto
+        ////////////////////////
+              {attribute 'TcLinkTo' := 'TIIB[plc-txi-optics]^IO Inputs^MR2K3_Y_ENC'}
+            i_MR2K3_ENC AT %I* : ULINT; // MR2K3 encoder from the txi k optics system
+            cMR2K3_IN_UpperLimit : UDINT := 108500000 + 5000000;
+            cMR2K3_IN_LowerLimit : UDINT := 108500000 - 5000000 ;
+            cMR2K3_OUT_UpperLimit : UDINT := 8900000;
+           
+            q_MR2K3_VETO AT %Q* : BOOL; // Signal to accel. MPS that MR2K3 is in
+            fbMR2K3VetoDevice : FB_KVetoDevice(
+                eVetoDeviceIN := K_Stopper.MR2K3_IN,
+                eVetoDeviceOUT := K_Stopper.MR2K3_OUT,
+                sVetoDeviceName := 'MR2K3');
+
     END_VAR
     // Acquiring K-line rate
     fbEPICS_KRate(BP:=PMPS_GVL.stCurrentBeamParameters, fbBYKIK_Rate:=fbBYKIK_Rate, FFO:=GVL.g_FastFaultOutput1);
@@ -292,6 +330,7 @@ CurrentBPUpdate
     // Stopper readbacks
     st3k4Watcher(stCurrentBP:=PMPS_GVL.stCurrentBeamParameters);
     st1k2Watcher(stCurrentBP:=PMPS_GVL.stCurrentBeamParameters);
+    st1k3Watcher(stCurrentBP:=PMPS_GVL.stCurrentBeamParameters);
     // MR1K1 Veto
     ////////////////////////
         fbMR1K1VetoDevice(
@@ -301,6 +340,23 @@ CurrentBPUpdate
             stCurrentBP:= PMPS_GVL.stCurrentBeamParameters);
     // ST4K4 Photon Terminator Veto
     st4k4Watcher(stCurrentBP:=PMPS_GVL.stCurrentBeamParameters);
+
+    // MR1K3 Veto
+    ////////////////////////
+        fbMR1K3VetoDevice(
+            i_bIn := cMR1K3_IN_LowerLimit < i_MR1K3_ENC	AND i_MR1K3_ENC < cMR1K3_IN_UpperLimit,
+            i_bOut := i_MR1K3_ENC < cMR1K3_OUT_UpperLimit,
+            q_bIN => q_MR1K3_VETO,
+            stCurrentBP:= PMPS_GVL.stCurrentBeamParameters);
+    		
+    		
+    // MR2K3 Veto
+    ////////////////////////
+        fbMR2K3VetoDevice(
+            i_bIn := cMR2K3_IN_LowerLimit < i_MR2K3_ENC	AND i_MR2K3_ENC < cMR2K3_IN_UpperLimit,
+            i_bOut := i_MR2K3_ENC < cMR2K3_OUT_UpperLimit,
+            q_bIN => q_MR2K3_VETO,
+            stCurrentBP:= PMPS_GVL.stCurrentBeamParameters);
 
     END_PROGRAM
 
@@ -348,10 +404,45 @@ Fast_Faults_Evaluate
             i_Desc := 'Fault occurs when the beamline valves on qrixs are not in open state',
             i_TypeCode := 16#1010);
     i_xFastFaultOut_qrix_vac AT %I*:        BOOL;
+
+    FFO2   :    FB_FastFault :=(
+            i_Desc := 'Forward Fault from TXI Vacuum.',
+            i_TypeCode := 16#3010);
+     {attribute 'TcLinkTo' := 'TIIB[plc-txi-vac]^IO Inputs^FFO'}
+    i_xFastFaultOut_txi_vac AT %I*:        BOOL;
+
+    FFO3    :    FB_FastFault :=(
+            i_Desc := 'Forward Fault from TXI Motion.',
+            i_TypeCode := 16#3013);
+    {attribute 'TcLinkTo' := 'TIIB[plc-txi-mot]^IO Inputs^FFO'}
+    i_xFastFaultOut_txi_mot AT %I*:        BOOL;
+
+
+    FFO4    :    FB_FastFault :=(
+            i_Desc := 'Forward Fault from TXI OPTICS.',
+            i_TypeCode := 16#3013);
+    {attribute 'TcLinkTo' := 'TIIB[plc-txi-optics]^IO Inputs^FFO'}
+    i_xFastFaultOut_txi_optics AT %I*:        BOOL;
     END_VAR
     FFO(
         io_fbFFHWO := g_FastFaultOutput2,
         i_xOK := i_xFastFaultOut_qrix_vac,
+        i_xAutoReset := TRUE);
+    	
+    	
+    FFO2(
+        io_fbFFHWO := g_FastFaultOutput2,
+        i_xOK := i_xFastFaultOut_txi_vac,
+        i_xAutoReset := TRUE);
+    	
+    FFO3(
+        io_fbFFHWO := g_FastFaultOutput2,
+        i_xOK := i_xFastFaultOut_txi_mot,
+        i_xAutoReset := TRUE);
+    	
+    FFO4(
+        io_fbFFHWO := g_FastFaultOutput2,
+        i_xOK := i_xFastFaultOut_txi_mot,
         i_xAutoReset := TRUE);
 
     g_FastFaultOutput2.EvaluateOutput(bAutoReset:=TRUE);
@@ -989,6 +1080,36 @@ PMPS_Arbiter
                                     '}
         plc_qrix_vac_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#F204);
 
+    //////////////////////////////////////////////
+    // TXI PLCs
+    /////////////////////////////////////////////
+
+        {attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-txi-mot]^IO Inputs^RequestedBP;
+                                    .o_CurrentBP:=TIIB[plc-txi-mot]^IO Outputs^CurrentBP;
+                                    .i_Connected:=TIIB[plc-txi-mot]^SYNC Inputs^External device not connected;
+                                    .i_WcState:=TIIB[plc-txi-mot]^WcState^WcStateIn;
+                                    .i_TxPDOState:=TIIB[plc-txi-mot]^SYNC Inputs^TxPDO state;
+                                    '}
+        plc_txi_motion_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#F300);
+
+        {attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-txi-optics]^IO Inputs^RequestedBP;
+                                    .o_CurrentBP:=TIIB[plc-txi-optics]^IO Outputs^CurrentBP;
+                                    .i_Connected:=TIIB[plc-txi-optics]^SYNC Inputs^External device not connected;
+                                    .i_WcState:=TIIB[plc-txi-optics]^WcState^WcStateIn;
+                                    .i_TxPDOState:=TIIB[plc-txi-optics]^SYNC Inputs^TxPDO state;
+                                    '}
+        plc_txi_optics_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#F301);
+
+        {attribute 'TcLinkTo' := '.i_RequestedBP:=TIIB[plc-txi-vac]^IO Inputs^RequestedBP;
+                                    .o_CurrentBP:=TIIB[plc-txi-vac]^IO Outputs^CurrentBP;
+                                    .i_Connected:=TIIB[plc-txi-vac]^SYNC Inputs^External device not connected;
+                                    .i_WcState:=TIIB[plc-txi-vac]^WcState^WcStateIn;
+                                    .i_TxPDOState:=TIIB[plc-txi-vac]^SYNC Inputs^TxPDO state;
+                                    '}
+        plc_txi_vacuum_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#F302);
+    	
+    	
+    	
     END_VAR
     // Updating arbiter with subsystem requests.
 
@@ -1000,7 +1121,7 @@ PMPS_Arbiter
 
 
     ///////////////////////////
-    // TMO
+    // TMO K4
         plc_tmo_motion_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset , sName:= 'TMO MOTION');
         plc_tmo_optics_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'TMO OPTICS');
         plc_tmo_vacuum_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'TMO VACUUM');
@@ -1014,6 +1135,14 @@ PMPS_Arbiter
         plc_crix_vac_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'CRIX VACUUM');
         plc_qrix_vac_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'QRIX VACUUM');
     ///////////////////////////
+
+
+    ///////////////////////////
+    // TXI K3
+        plc_txi_motion_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset , sName:= 'TXI MOTION');
+        plc_txi_optics_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'TXI OPTICS');
+        plc_txi_vacuum_PMPS_IO(Arbiter:=GVL.g_fbArbiter1, fbFFHWO:=GVL.g_FastFaultOutput1, Reset:=GVL.AttemptReset, sName:= 'TXI VACUUM');
+    //////////////////////////
 
     ////////////////////////////
     // Beam parameter requestor
