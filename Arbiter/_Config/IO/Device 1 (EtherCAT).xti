@@ -44,14 +44,22 @@
 		<Box File="B940-009-R07-MPS-1 CU1-ESC1.xti" Id="23">
 			<EtherCAT PortABoxInfo="#x01000016"/>
 		</Box>
-		<EtherCAT EnableVirtualSwitch="true" MaxSwitchPorts="18" MaxSwitchFrames="440">
-			<Redundancy Mode="2" AdapterReference="true" PreviousPort="33554461"/>
+		<Box File="plc-txi-mot.xti" Id="56">
+			<EtherCAT PortABoxInfo="#x0200001d"/>
+		</Box>
+		<Box File="plc-txi-vac.xti" Id="57">
+			<EtherCAT PortABoxInfo="#x01000038"/>
+		</Box>
+		<EtherCAT EnableVirtualSwitch="true" MaxSwitchPorts="19" MaxSwitchFrames="460">
+			<Redundancy Mode="2" AdapterReference="true" PreviousPort="16777273"/>
 			<SyncUnit Name="rix" NoDeleteIfUnused="true"/>
 			<SyncUnit Name="kfe" NoDeleteIfUnused="true"/>
 			<SyncUnit Name="tmo" NoDeleteIfUnused="true"/>
 			<SyncUnit Name="crix" NoDeleteIfUnused="true"/>
 			<SyncUnit Name="qrix" NoDeleteIfUnused="true"/>
-			<SyncUnit Name="future" NoDeleteIfUnused="true"/>
+			<SyncUnit Name="txi" NoDeleteIfUnused="true"/>
+			<SyncUnit Name="txi-optics" NoDeleteIfUnused="true"/>
+			<SyncUnit Name="txi-vac" NoDeleteIfUnused="true"/>
 		</EtherCAT>
 	</Device>
 </TcSmItem>

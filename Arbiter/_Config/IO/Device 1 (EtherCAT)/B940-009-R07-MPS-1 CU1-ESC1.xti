@@ -63,6 +63,9 @@
 			<Box File="plc-qrix-mot.xti" Id="51">
 				<EtherCAT PortABoxInfo="#x01000032"/>
 			</Box>
+			<Box File="plc-txi-optics.xti" Id="55">
+				<EtherCAT PortABoxInfo="#x0100001d"/>
+			</Box>
 		</Box>
 	</Box>
 </TcSmItem>

@@ -42,7 +42,7 @@
 				</Entry>
 			</Pdo>
 			<Pdo Name="Channel 7" Index="#x1606" InOut="1" Flags="#x0011" SyncMan="0">
-				<Entry Name="Output" Index="#x7060" Sub="#x01">
+				<Entry Name="ST1K3 RELAY IN" Index="#x7060" Sub="#x01">
 					<Type>BIT</Type>
 				</Entry>
 			</Pdo>
