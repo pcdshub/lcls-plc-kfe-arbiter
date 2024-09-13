@@ -33,21 +33,21 @@ END_VAR
     io_fbFFHWO := g_FastFaultOutput2,
     i_xOK := i_xFastFaultOut_qrix_vac,
     i_xAutoReset := TRUE);
-	
-	
+
+
 FFO2(
     io_fbFFHWO := g_FastFaultOutput2,
     i_xOK := i_xFastFaultOut_txi_vac,
     i_xAutoReset := TRUE);
-	
+
 FFO3(
     io_fbFFHWO := g_FastFaultOutput2,
     i_xOK := i_xFastFaultOut_txi_mot,
     i_xAutoReset := TRUE);
-	
+
 FFO4(
     io_fbFFHWO := g_FastFaultOutput2,
-    i_xOK := i_xFastFaultOut_txi_mot,
+    i_xOK := i_xFastFaultOut_txi_optics,
     i_xAutoReset := TRUE);
 
 g_FastFaultOutput2.EvaluateOutput(bAutoReset:=TRUE);]]></ST>
