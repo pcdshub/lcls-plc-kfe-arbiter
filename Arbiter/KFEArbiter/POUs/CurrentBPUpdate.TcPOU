@@ -98,14 +98,7 @@ VAR
             sVetoDeviceName := 'MR1K1');
 
     
-	// ST1K4 Photon Terminator Veto in the FEE right before ST3K4 stopper
-    {attribute 'TcLinkTo' := '
-                .i_StopperInLS:=TIIB[plc-kfe-motion]^IO Inputs^bST1K4_IN;
-                .i_StopperOutLS:=TIIB[plc-kfe-motion]^IO Inputs^bST1K4_OUT;
-     '}
-    st1k4Watcher : FB_KStopper(
-        PMPS.K_Stopper.ST1K4,
-        'ST1K4');
+	
 		
 	// ST4K4 Photon Terminator Veto
     {attribute 'TcLinkTo' := '
@@ -144,6 +137,21 @@ VAR
             eVetoDeviceIN := K_Stopper.MR2K3_IN,
             eVetoDeviceOUT := K_Stopper.MR2K3_OUT,
             sVetoDeviceName := 'MR2K3');
+			
+			
+	// ST1K4Veto
+	// ST1K4 Test Photon stopper Veto in the FEE right before ST3K4 stopper
+    st1k4Watcher :   FB_KVetoDevice(
+            eVetoDeviceIN := K_Stopper.ST1K4,
+            eVetoDeviceOUT := K_Stopper.DEFAULT, // not used there is no ST1K4 OUT Just a place holder
+            sVetoDeviceName := 'ST1K4');
+    ////////////////////////
+	
+          {attribute 'TcLinkTo' := 'TIIB[plc-kfe-motion]^IO Inputs^ST1K4_Y_ENC'}
+        ST1K4_Y_ENC AT %I* : UDINT; // MR2K3 encoder from the  system
+        ST1K4_IN_UpperLimit : UDINT := 4293998998 + 10000;
+        ST1K4_IN_LowerLimit : UDINT := 4293998000;
+        ST1K4_OUT_UpperLimit : UDINT := 8900000;
 
 END_VAR
 ]]></Declaration>
@@ -169,6 +177,8 @@ fbEPICSLMachineMode(BP:=PMPS_GVL.stCurrentBeamParameters, fbMPS_MachineMode:=fbS
 st3k4Watcher(stCurrentBP:=PMPS_GVL.stCurrentBeamParameters);
 st1k2Watcher(stCurrentBP:=PMPS_GVL.stCurrentBeamParameters);
 st1k3Watcher(stCurrentBP:=PMPS_GVL.stCurrentBeamParameters);
+// ST4K4 Photon Terminator Veto
+st4k4Watcher(stCurrentBP:=PMPS_GVL.stCurrentBeamParameters);
 // MR1K1 Veto
 ////////////////////////
     fbMR1K1VetoDevice(
@@ -176,12 +186,7 @@ st1k3Watcher(stCurrentBP:=PMPS_GVL.stCurrentBeamParameters);
         i_bOut := i_MR1K1_ENC < cMR1K1_OUT_UpperLimit,
         q_bIN => q_MR1K1_VETO,
         stCurrentBP:= PMPS_GVL.stCurrentBeamParameters);
-// ST4K4 Photon Terminator Veto
-st4k4Watcher(stCurrentBP:=PMPS_GVL.stCurrentBeamParameters);
-// ST1K4 Photon Terminator Veto
-st1k4Watcher(stCurrentBP:=PMPS_GVL.stCurrentBeamParameters);
 
-// MR1K3 Veto
 ////////////////////////
     fbMR1K3VetoDevice(
         i_bIn := cMR1K3_IN_LowerLimit < i_MR1K3_ENC	AND i_MR1K3_ENC < cMR1K3_IN_UpperLimit,
@@ -198,6 +203,13 @@ st1k4Watcher(stCurrentBP:=PMPS_GVL.stCurrentBeamParameters);
         q_bIN => q_MR2K3_VETO,
         stCurrentBP:= PMPS_GVL.stCurrentBeamParameters);
 		
+
+// ST1K4 Photon Test stopper Veto
+st1k4Watcher(i_bIn := ST1K4_IN_LowerLimit < ST1K4_Y_ENC	AND ST1K4_Y_ENC < ST1K4_IN_UpperLimit,
+        i_bOut := ST1K4_Y_ENC <  ST1K4_OUT_UpperLimit,
+        q_bIN => ,
+        stCurrentBP:= PMPS_GVL.stCurrentBeamParameters);
+	
 		
 		]]></ST>
     </Implementation>

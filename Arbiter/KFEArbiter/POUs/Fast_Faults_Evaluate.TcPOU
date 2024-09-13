@@ -47,7 +47,7 @@ FFO3(
 	
 FFO4(
     io_fbFFHWO := g_FastFaultOutput2,
-    i_xOK := i_xFastFaultOut_txi_mot,
+    i_xOK := i_xFastFaultOut_txi_optics,
     i_xAutoReset := TRUE);
 
 g_FastFaultOutput2.EvaluateOutput(bAutoReset:=TRUE);]]></ST>
