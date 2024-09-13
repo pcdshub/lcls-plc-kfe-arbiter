@@ -193,15 +193,15 @@ VAR
                                 .i_TxPDOState:=TIIB[plc-txi-vac]^SYNC Inputs^TxPDO state;
                                 '}
     plc_txi_vacuum_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#F302);
-	
-	(*Remove*)
-		 ar1 : bool;
+
+    (*Remove*)
+         ar1 : bool;
  ar2 : bool;
  nReqID:UDINT;
  nReqRM:UDINT;
  bRemove:bool;
  rtRemove: R_TRIG;
-	
+
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -270,7 +270,7 @@ g_FastFaultOutput1.Execute();
 (*remove*)
 (*Debugging functions*)
 ar1:= GVL.g_fbArbiter1.CheckRequestInPool(nReqRM);
-	
+
 rtRemove(CLK:= bRemove);
 if (rtRemove.Q) THEN
      GVL.g_fbArbiter1.RemoveRequest(nReqRM);
