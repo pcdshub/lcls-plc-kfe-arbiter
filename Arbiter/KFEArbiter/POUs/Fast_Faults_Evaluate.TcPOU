@@ -78,9 +78,10 @@ FFO4(
 
 FFO_RIX_TXI_OPTICS(
     io_fbFFHWO := g_FastFaultOutput2,
-    i_xOK := (PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT] AND NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_IN])
+    i_xOK := (PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_IN] AND NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT])
                 AND ((PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K3_OUT] AND NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K3_IN])
-                    AND (PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR2K3_OUT] AND NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR2K3_IN]))  ,
+                    AND (PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR2K3_OUT] AND NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR2K3_IN]))
+                OR (PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT] AND NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_IN]) ,
     i_xAutoReset := FALSE);
 
 FFO_TXI_OPTICS(
