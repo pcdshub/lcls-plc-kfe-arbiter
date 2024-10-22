@@ -478,6 +478,13 @@
 					<Type>UDINT</Type>
 				</Var>
 				<Var>
+					<Name>P_AT1K0_SL1K0.i_bWcStateOut_AT1K0</Name>
+					<Comment>
+						<![CDATA[ plc-kfe-gatt interface diagnostics]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>CurrentBPUpdate.st4k4Watcher.i_StopperOutLS</Name>
 					<Type>BOOL</Type>
 				</Var>
@@ -505,6 +512,21 @@
 						<![CDATA[/////////////////////]]>
 					</Comment>
 					<Type>UDINT</Type>
+				</Var>
+				<Var>
+					<Name>P_AT1K0_SL1K0.i_bWcStateIn_AT1K0</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>P_AT1K0_SL1K0.i_bWcStateOut_KFEMOT</Name>
+					<Comment>
+						<![CDATA[ plc-kfe-motion interface diagnostics]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>P_AT1K0_SL1K0.i_nState_AT1K0</Name>
+					<Type>UINT</Type>
 				</Var>
 				<Var>
 					<Name>PMPS_Arbiter.plc_kfe_motion_PMPS_IO.i_RequestedBP</Name>
@@ -3412,21 +3434,6 @@
 					<Type GUID="{7E016B85-166E-4B4F-AAC4-ECA8DDD44F13}">ST_PMPS_Attenuator_IO</Type>
 				</Var>
 				<Var>
-					<Name>P_AT1K0_SL1K0.i_bWcStateOut_AT1K0</Name>
-					<Comment>
-						<![CDATA[ plc-kfe-gatt interface diagnostics]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>P_AT1K0_SL1K0.i_bWcStateIn_AT1K0</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>P_AT1K0_SL1K0.i_nState_AT1K0</Name>
-					<Type>UINT</Type>
-				</Var>
-				<Var>
 					<Name>P_AT1K0_SL1K0.i_stAptArrayStat</Name>
 					<Type GUID="{B0236749-C315-EC4D-D21C-B52A19E31F36}">ARRAY [1..4] OF ST_PMPS_Aperture_IO</Type>
 					<SubVar>
@@ -3503,37 +3510,12 @@
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>P_AT1K0_SL1K0.i_bWcStateOut_KFEMOT</Name>
-					<Comment>
-						<![CDATA[ plc-kfe-motion interface diagnostics]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>P_AT1K0_SL1K0.i_bWcStateIn_KFEMOT</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>P_AT1K0_SL1K0.i_nState_KFEMOT</Name>
 					<Type>UINT</Type>
-				</Var>
-				<Var>
-					<Name>P_SATT.i_bWcStateOut_kfe_mot</Name>
-					<Comment>
-						<![CDATA[ plc-tmo-mot interface diagnostics]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>P_SATT.i_bWcStateIn_kfe_mot</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>P_SATT.i_bWcStateOut_rix_mot</Name>
-					<Comment>
-						<![CDATA[ plc-rix-mot interface diagnostics]]>
-					</Comment>
-					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>P_SATT.i_SattArrayStatus_KFE</Name>
@@ -3550,20 +3532,38 @@
 					<Type GUID="{6D319B26-4590-2152-3DE7-3BA9B629CA65}">ARRAY [1..16] OF ST_PMPS_Attenuator_IO</Type>
 				</Var>
 				<Var>
+					<Name>P_SATT.i_bWcStateOut_kfe_mot</Name>
+					<Comment>
+						<![CDATA[ plc-tmo-mot interface diagnostics]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>P_SATT.i_bWcStateIn_kfe_mot</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
 					<Name>P_SATT.i_nState_kfe_mot</Name>
 					<Type>UINT</Type>
+				</Var>
+				<Var>
+					<Name>P_SATT.i_bWcStateOut_rix_mot</Name>
+					<Comment>
+						<![CDATA[ plc-rix-mot interface diagnostics]]>
+					</Comment>
+					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>P_SATT.i_bWcStateIn_rix_mot</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>Fast_Faults_Evaluate.i_xFastFaultOut_qrix_vac</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>P_SATT.i_nState_rix_mot</Name>
 					<Type>UINT</Type>
+				</Var>
+				<Var>
+					<Name>Fast_Faults_Evaluate.i_xFastFaultOut_qrix_vac</Name>
+					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>Fast_Faults_Evaluate.i_xFastFaultOut_txi_vac</Name>
