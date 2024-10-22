@@ -128,9 +128,9 @@ VAR
     ////////////////////////
           {attribute 'TcLinkTo' := 'TIIB[plc-txi-optics]^IO Inputs^MR2K3_Y_ENC'}
         i_MR2K3_ENC AT %I* : ULINT; // MR2K3 encoder from the txi k optics system
-        cMR2K3_IN_UpperLimit : UDINT := 108500000 + 5000000;
-        cMR2K3_IN_LowerLimit : UDINT := 108500000 - 5000000 ;
-        cMR2K3_OUT_UpperLimit : UDINT := 8900000;
+        cMR2K3_IN_UpperLimit : UDINT := 105650000 + 10000000;
+        cMR2K3_IN_LowerLimit : UDINT := 105650000 - 10000000 ;
+        cMR2K3_OUT_UpperLimit : UDINT := 10000000;
 
         q_MR2K3_VETO AT %Q* : BOOL; // Signal to accel. MPS that MR2K3 is in
         fbMR2K3VetoDevice : FB_KVetoDevice(
