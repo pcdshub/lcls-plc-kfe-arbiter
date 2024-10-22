@@ -68,7 +68,7 @@ FFO4(
 (*  IN   |  IN   |  IN   | TRUE  *)
 (*  OUT  |  IN   |  OUT  | TRUE  *)
 (*  OUT  |  OUT  |  IN   | TRUE  *)
-	
+
 FFO_RIX_TXI_OPTICS(
     io_fbFFHWO := g_FastFaultOutput2,
     i_xOK := (PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_IN] AND NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT])
