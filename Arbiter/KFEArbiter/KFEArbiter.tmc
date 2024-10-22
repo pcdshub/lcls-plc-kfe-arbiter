@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{982C585E-5FA3-D92C-44D2-0D3923BB3313}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{9D318B34-0861-A48A-B759-C2FE7E1E7C7C}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name GUID="{5C8FF47F-7F83-4493-8D21-F1FF8A08F75A}" Namespace="PLC" TcBaseType="true">PlcAppSystemInfo</Name>
@@ -516,31 +516,31 @@
         <Name>bBusy</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <GetCodeOffs>159404812</GetCodeOffs>
+        <GetCodeOffs>159411084</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>bError</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <GetCodeOffs>159404844</GetCodeOffs>
+        <GetCodeOffs>159411116</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>hrErrorCode</Name>
         <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>159404852</GetCodeOffs>
+        <GetCodeOffs>159411124</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>nStringSize</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>159404836</GetCodeOffs>
+        <GetCodeOffs>159411108</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sResult</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>159404848</GetCodeOffs>
+        <GetCodeOffs>159411120</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name RpcEnable="plc" VTableIndex="0">__getbBusy</Name>
@@ -1749,15 +1749,15 @@
         <Name>nId</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>159404756</GetCodeOffs>
-        <SetCodeOffs>159404780</SetCodeOffs>
+        <GetCodeOffs>159411028</GetCodeOffs>
+        <SetCodeOffs>159411052</SetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sName</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>159404792</GetCodeOffs>
-        <SetCodeOffs>159404804</SetCodeOffs>
+        <GetCodeOffs>159411064</GetCodeOffs>
+        <SetCodeOffs>159411076</SetCodeOffs>
       </PropertyItem>
       <Method>
         <Name RpcEnable="plc" VTableIndex="9">__setbCutInstancePathByLastInst</Name>
@@ -2025,31 +2025,31 @@
         <Name>eSeverity</Name>
         <Type GUID="{B57D3F4A-0836-49B0-81C3-BED5F4817EC9}">TcEventSeverity</Type>
         <BitSize>16</BitSize>
-        <GetCodeOffs>159404900</GetCodeOffs>
+        <GetCodeOffs>159411172</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>ipSourceInfo</Name>
         <Type Namespace="LCLS_General.Tc3_EventLogger">I_TcSourceInfo</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>159404880</GetCodeOffs>
+        <GetCodeOffs>159411152</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>nEventId</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>159404968</GetCodeOffs>
+        <GetCodeOffs>159411240</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sEventClassName</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>159404928</GetCodeOffs>
+        <GetCodeOffs>159411200</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sEventText</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>159404972</GetCodeOffs>
+        <GetCodeOffs>159411244</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name>EqualsToEventClass</Name>
@@ -2622,7 +2622,7 @@
         <Name>nTimeSent</Name>
         <Type>ULINT</Type>
         <BitSize>64</BitSize>
-        <GetCodeOffs>159404996</GetCodeOffs>
+        <GetCodeOffs>159411268</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name>SetJsonAttribute</Name>
@@ -4208,7 +4208,7 @@
       </Method>
     </DataType>
     <DataType>
-      <Name>UINT (1..GVL_Param_TcUnit.MaxNumberOfTestsForEachTestSuite)</Name>
+      <Name>UINT (UINT#1..GVL_Param_TcUnit.MaxNumberOfTestsForEachTestSuite)</Name>
       <BitSize>16</BitSize>
       <BaseType>UINT</BaseType>
       <Properties>
@@ -4219,21 +4219,6 @@
         <Property>
           <Name>UpperBorder</Name>
           <Value>100</Value>
-        </Property>
-      </Properties>
-    </DataType>
-    <DataType>
-      <Name>UINT (1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Name>
-      <BitSize>16</BitSize>
-      <BaseType>UINT</BaseType>
-      <Properties>
-        <Property>
-          <Name>LowerBorder</Name>
-          <Value>1</Value>
-        </Property>
-        <Property>
-          <Name>UpperBorder</Name>
-          <Value>1000</Value>
         </Property>
       </Properties>
     </DataType>
@@ -4254,7 +4239,7 @@
       </SubItem>
       <SubItem>
         <Name>PrintingTestSuiteResultNumber</Name>
-        <Type>UINT (1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
+        <Type>UINT (UINT#1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
         <BitSize>16</BitSize>
         <BitOffs>96</BitOffs>
       </SubItem>
@@ -4290,7 +4275,7 @@
         </Local>
         <Local>
           <Name>TestsInTestSuiteCounter</Name>
-          <Type>UINT (1..GVL_Param_TcUnit.MaxNumberOfTestsForEachTestSuite)</Type>
+          <Type>UINT (UINT#1..GVL_Param_TcUnit.MaxNumberOfTestsForEachTestSuite)</Type>
           <BitSize>16</BitSize>
         </Local>
         <Local>
@@ -5112,7 +5097,7 @@
       </SubItem>
       <SubItem>
         <Name>WritingTestSuiteResultNumber</Name>
-        <Type>UINT (1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
+        <Type>UINT (UINT#1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
         <BitSize>16</BitSize>
         <BitOffs>530208</BitOffs>
       </SubItem>
@@ -6060,6 +6045,21 @@
         <Property>
           <Name>PouType</Name>
           <Value>FunctionBlock</Value>
+        </Property>
+      </Properties>
+    </DataType>
+    <DataType>
+      <Name>UINT (1..GVL_Param_TcUnit.MaxNumberOfTestsForEachTestSuite)</Name>
+      <BitSize>16</BitSize>
+      <BaseType>UINT</BaseType>
+      <Properties>
+        <Property>
+          <Name>LowerBorder</Name>
+          <Value>1</Value>
+        </Property>
+        <Property>
+          <Name>UpperBorder</Name>
+          <Value>100</Value>
         </Property>
       </Properties>
     </DataType>
@@ -7659,6 +7659,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_BOOL</Name>
@@ -7791,6 +7796,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -7950,6 +7960,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>CalculateAndSetNumberOfAssertsForTest</Name>
@@ -8084,6 +8099,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -8242,6 +8262,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -8747,6 +8772,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -9522,6 +9552,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_TIME</Name>
@@ -9900,6 +9935,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_INT</Name>
@@ -9991,6 +10031,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -10118,6 +10163,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_LWORD</Name>
@@ -10219,6 +10269,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -10533,6 +10588,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AreAllTestsFinished</Name>
@@ -10702,6 +10762,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -10886,6 +10951,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_LREAL</Name>
@@ -10983,6 +11053,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -12848,7 +12923,7 @@
       </SubItem>
       <SubItem>
         <Name>PrintingTestSuiteResultNumber</Name>
-        <Type>UINT (1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
+        <Type>UINT (UINT#1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
         <BitSize>16</BitSize>
         <BitOffs>96</BitOffs>
       </SubItem>
@@ -12886,12 +12961,12 @@
         </Local>
         <Local>
           <Name>TestsInTestSuiteCounter</Name>
-          <Type>UINT (1..GVL_Param_TcUnit.MaxNumberOfTestsForEachTestSuite)</Type>
+          <Type>UINT (UINT#1..GVL_Param_TcUnit.MaxNumberOfTestsForEachTestSuite)</Type>
           <BitSize>16</BitSize>
         </Local>
         <Local>
           <Name>MaxNumberOfTestsToPrint</Name>
-          <Type>UINT (1..GVL_Param_TcUnit.MaxNumberOfTestsForEachTestSuite)</Type>
+          <Type>UINT (UINT#1..GVL_Param_TcUnit.MaxNumberOfTestsForEachTestSuite)</Type>
           <BitSize>16</BitSize>
         </Local>
         <Local>
@@ -13672,7 +13747,7 @@
       </SubItem>
       <SubItem>
         <Name>WritingTestSuiteResultNumber</Name>
-        <Type>UINT (1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
+        <Type>UINT (UINT#1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
         <BitSize>16</BitSize>
         <BitOffs>530208</BitOffs>
       </SubItem>
@@ -15490,6 +15565,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>FindTestSuiteInstancePath</Name>
@@ -15605,7 +15685,7 @@
         </Local>
         <Local>
           <Name>NumberOfTestsToAnalyse</Name>
-          <Type>UINT (1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
+          <Type>UINT (UINT#1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
           <BitSize>16</BitSize>
         </Local>
         <Local>
@@ -15748,6 +15828,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_BYTE</Name>
@@ -15849,6 +15934,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -16008,6 +16098,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_LTIME</Name>
@@ -16130,6 +16225,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -16271,6 +16371,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -17032,6 +17137,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>SetHasStartedRunning</Name>
@@ -17080,7 +17190,7 @@
         </Local>
         <Local>
           <Name>NumberOfTestsToAnalyse</Name>
-          <Type>UINT (1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
+          <Type>UINT (UINT#1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
           <BitSize>16</BitSize>
         </Local>
       </Method>
@@ -17192,6 +17302,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>GetHasStartedRunning</Name>
@@ -17294,6 +17409,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -17448,6 +17568,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_DINT</Name>
@@ -17573,6 +17698,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_STRING</Name>
@@ -17641,7 +17771,7 @@
         </Local>
         <Local>
           <Name>NumberOfTestsToAnalyse</Name>
-          <Type>UINT (1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
+          <Type>UINT (UINT#1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
           <BitSize>16</BitSize>
         </Local>
       </Method>
@@ -17745,6 +17875,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -18030,6 +18165,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>CalculateAndSetNumberOfAssertsForTest</Name>
@@ -18080,7 +18220,7 @@
         </Local>
         <Local>
           <Name>NumberOfTestsToAnalyse</Name>
-          <Type>UINT (1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
+          <Type>UINT (UINT#1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
           <BitSize>16</BitSize>
         </Local>
       </Method>
@@ -18439,7 +18579,7 @@
         </Local>
         <Local>
           <Name>NumberOfTestsToAnalyse</Name>
-          <Type>UINT (1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
+          <Type>UINT (UINT#1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Type>
           <BitSize>16</BitSize>
         </Local>
       </Method>
@@ -18823,6 +18963,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_UDINT</Name>
@@ -18914,6 +19059,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -21180,8 +21330,8 @@
         <Name>nTimestamp</Name>
         <Type>ULINT</Type>
         <BitSize>64</BitSize>
-        <GetCodeOffs>159409056</GetCodeOffs>
-        <SetCodeOffs>159409064</SetCodeOffs>
+        <GetCodeOffs>159415328</GetCodeOffs>
+        <SetCodeOffs>159415336</SetCodeOffs>
       </PropertyItem>
       <Method>
         <Name RpcEnable="plc" VTableIndex="44">__getnTimestamp</Name>
@@ -22475,31 +22625,31 @@
         <Name>bBusy</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <GetCodeOffs>159408304</GetCodeOffs>
+        <GetCodeOffs>159414576</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>bError</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <GetCodeOffs>159408336</GetCodeOffs>
+        <GetCodeOffs>159414608</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>hrErrorCode</Name>
         <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>159408340</GetCodeOffs>
+        <GetCodeOffs>159414612</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>nStringSize</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>159408328</GetCodeOffs>
+        <GetCodeOffs>159414600</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sEventText</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>159408348</GetCodeOffs>
+        <GetCodeOffs>159414620</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name RpcEnable="plc" VTableIndex="0">__getbBusy</Name>
@@ -37383,7 +37533,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1275087904</BitOffs>
+            <BitOffs>1275138048</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_SystemInfoVarList._TaskPouOid_FFOTask</Name>
@@ -37397,7 +37547,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1275089952</BitOffs>
+            <BitOffs>1275142144</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_SystemInfoVarList._TaskOid_FFOTask</Name>
@@ -37411,7 +37561,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1275092032</BitOffs>
+            <BitOffs>1275142176</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_SystemInfoVarList.__FFOTask</Name>
@@ -37432,7 +37582,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1275092128</BitOffs>
+            <BitOffs>1275142272</BitOffs>
           </Symbol>
         </DataArea>
         <DataArea>
@@ -37704,7 +37854,40 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1272574720</BitOffs>
+            <BitOffs>1272405344</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>P_AT1K0_SL1K0.i_bWcStateOut_AT1K0</Name>
+            <Comment> plc-kfe-gatt interface diagnostics</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>TIIB[plc-kfe-gatt]^WcState^WcStateOut</Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>1272587568</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>P_AT1K0_SL1K0.i_bWcStateIn_AT1K0</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>TIIB[plc-kfe-gatt]^WcState^WcStateIn</Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>1272587576</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PMPS_Arbiter.plc_kfe_motion_PMPS_IO.i_RequestedBP</Name>
@@ -39434,39 +39617,6 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
             <BitOffs>1273416512</BitOffs>
           </Symbol>
           <Symbol>
-            <Name>P_AT1K0_SL1K0.i_bWcStateOut_AT1K0</Name>
-            <Comment> plc-kfe-gatt interface diagnostics</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcLinkTo</Name>
-                <Value>TIIB[plc-kfe-gatt]^WcState^WcStateOut</Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>1273416576</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>P_AT1K0_SL1K0.i_bWcStateIn_AT1K0</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcLinkTo</Name>
-                <Value>TIIB[plc-kfe-gatt]^WcState^WcStateIn</Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>1273416584</BitOffs>
-          </Symbol>
-          <Symbol>
             <Name>P_AT1K0_SL1K0.i_nState_AT1K0</Name>
             <BitSize>16</BitSize>
             <BaseType>UINT</BaseType>
@@ -39480,7 +39630,40 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Value>Input</Value>
               </Property>
             </Properties>
+            <BitOffs>1273416576</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>P_AT1K0_SL1K0.i_bWcStateOut_KFEMOT</Name>
+            <Comment> plc-kfe-motion interface diagnostics</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>TIIB[plc-kfe-motion]^WcState^WcStateOut</Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
             <BitOffs>1273416592</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>P_AT1K0_SL1K0.i_bWcStateIn_KFEMOT</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>TIIB[plc-kfe-motion]^WcState^WcStateIn</Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>1273416600</BitOffs>
           </Symbol>
           <Symbol>
             <Name>P_AT1K0_SL1K0.i_stAptArrayStat</Name>
@@ -39503,39 +39686,6 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
             <BitOffs>1273416992</BitOffs>
           </Symbol>
           <Symbol>
-            <Name>P_AT1K0_SL1K0.i_bWcStateOut_KFEMOT</Name>
-            <Comment> plc-kfe-motion interface diagnostics</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcLinkTo</Name>
-                <Value>TIIB[plc-kfe-motion]^WcState^WcStateOut</Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>1273417376</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>P_AT1K0_SL1K0.i_bWcStateIn_KFEMOT</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcLinkTo</Name>
-                <Value>TIIB[plc-kfe-motion]^WcState^WcStateIn</Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>1273417384</BitOffs>
-          </Symbol>
-          <Symbol>
             <Name>P_AT1K0_SL1K0.i_nState_KFEMOT</Name>
             <BitSize>16</BitSize>
             <BaseType>UINT</BaseType>
@@ -39549,7 +39699,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1273417392</BitOffs>
+            <BitOffs>1273417376</BitOffs>
           </Symbol>
           <Symbol>
             <Name>P_SATT.i_bWcStateOut_kfe_mot</Name>
@@ -39566,40 +39716,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1273467656</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>P_SATT.i_bWcStateIn_kfe_mot</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcLinkTo</Name>
-                <Value>TIIB[plc-kfe-motion]^WcState^WcStateIn</Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>1273467664</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>P_SATT.i_bWcStateOut_rix_mot</Name>
-            <Comment> plc-rix-mot interface diagnostics</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcLinkTo</Name>
-                <Value>TIIB[plc-rix-mot]^WcState^WcStateOut</Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>1273467672</BitOffs>
+            <BitOffs>1273467608</BitOffs>
           </Symbol>
           <Symbol>
             <Name>P_SATT.i_SattArrayStatus_KFE</Name>
@@ -39620,7 +39737,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1273469024</BitOffs>
+            <BitOffs>1273468992</BitOffs>
           </Symbol>
           <Symbol>
             <Name>P_SATT.i_SattArrayStatus_RIX</Name>
@@ -39641,7 +39758,40 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1273470048</BitOffs>
+            <BitOffs>1273470016</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>P_SATT.i_bWcStateIn_kfe_mot</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>TIIB[plc-kfe-motion]^WcState^WcStateIn</Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>1273471040</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>P_SATT.i_bWcStateOut_rix_mot</Name>
+            <Comment> plc-rix-mot interface diagnostics</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>TIIB[plc-rix-mot]^WcState^WcStateOut</Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>1273471048</BitOffs>
           </Symbol>
           <Symbol>
             <Name>P_SATT.i_nState_kfe_mot</Name>
@@ -39657,7 +39807,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1273471072</BitOffs>
+            <BitOffs>1273471056</BitOffs>
           </Symbol>
           <Symbol>
             <Name>P_SATT.i_bWcStateIn_rix_mot</Name>
@@ -39673,7 +39823,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1273471088</BitOffs>
+            <BitOffs>1273471072</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Fast_Faults_Evaluate.i_xFastFaultOut_qrix_vac</Name>
@@ -39685,7 +39835,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1273471096</BitOffs>
+            <BitOffs>1273471080</BitOffs>
           </Symbol>
           <Symbol>
             <Name>P_SATT.i_nState_rix_mot</Name>
@@ -39701,7 +39851,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1273471104</BitOffs>
+            <BitOffs>1273471088</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Fast_Faults_Evaluate.i_xFastFaultOut_txi_vac</Name>
@@ -39717,7 +39867,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1273471120</BitOffs>
+            <BitOffs>1273571456</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Fast_Faults_Evaluate.i_xFastFaultOut_txi_mot</Name>
@@ -39733,7 +39883,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1273471128</BitOffs>
+            <BitOffs>1273571464</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Fast_Faults_Evaluate.i_xFastFaultOut_txi_optics</Name>
@@ -39749,7 +39899,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>1273621664</BitOffs>
+            <BitOffs>1273571472</BitOffs>
           </Symbol>
         </DataArea>
         <DataArea>
@@ -40262,7 +40412,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1273468000</BitOffs>
+            <BitOffs>1273467968</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL.g_FastFaultOutput1.q_xFastFaultOut</Name>
@@ -40282,7 +40432,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1274097928</BitOffs>
+            <BitOffs>1274148040</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL.g_FastFaultOutput2.q_xFastFaultOut</Name>
@@ -40302,7 +40452,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>1274592840</BitOffs>
+            <BitOffs>1274642952</BitOffs>
           </Symbol>
         </DataArea>
         <DataArea>
@@ -48957,6 +49107,13 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
             <BitOffs>1272151008</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>PMPS_Arbiter.ar1</Name>
+            <Comment>Remove</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <BitOffs>1272151064</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>CurrentBPUpdate.cMR1K3_IN_UpperLimit</Name>
             <BitSize>32</BitSize>
             <BaseType>UDINT</BaseType>
@@ -49029,7 +49186,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
             <BitSize>32</BitSize>
             <BaseType>UDINT</BaseType>
             <Default>
-              <Value>113500000</Value>
+              <Value>115650000</Value>
             </Default>
             <BitOffs>1272405248</BitOffs>
           </Symbol>
@@ -49038,7 +49195,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
             <BitSize>32</BitSize>
             <BaseType>UDINT</BaseType>
             <Default>
-              <Value>103500000</Value>
+              <Value>95650000</Value>
             </Default>
             <BitOffs>1272405280</BitOffs>
           </Symbol>
@@ -49047,28 +49204,9 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
             <BitSize>32</BitSize>
             <BaseType>UDINT</BaseType>
             <Default>
-              <Value>8900000</Value>
+              <Value>10000000</Value>
             </Default>
             <BitOffs>1272405312</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PMPS_Arbiter.ar1</Name>
-            <Comment>Remove</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <BitOffs>1272405352</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PMPS_Arbiter.ar2</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <BitOffs>1272405360</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PMPS_Arbiter.bRemove</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <BitOffs>1272405368</BitOffs>
           </Symbol>
           <Symbol>
             <Name>CurrentBPUpdate.fbMR2K3VetoDevice</Name>
@@ -49101,7 +49239,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
             <Default>
               <Value>4294008998</Value>
             </Default>
-            <BitOffs>1272574752</BitOffs>
+            <BitOffs>1272574720</BitOffs>
           </Symbol>
           <Symbol>
             <Name>CurrentBPUpdate.ST1K4_IN_LowerLimit</Name>
@@ -49110,7 +49248,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
             <Default>
               <Value>4293998000</Value>
             </Default>
-            <BitOffs>1272574784</BitOffs>
+            <BitOffs>1272574752</BitOffs>
           </Symbol>
           <Symbol>
             <Name>CurrentBPUpdate.ST1K4_OUT_UpperLimit</Name>
@@ -49119,14 +49257,20 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
             <Default>
               <Value>8900000</Value>
             </Default>
-            <BitOffs>1272574816</BitOffs>
+            <BitOffs>1272574784</BitOffs>
           </Symbol>
           <Symbol>
             <Name>MachineSimulation.fbMachine</Name>
             <Comment>Simulates attenuator as well</Comment>
             <BitSize>2368</BitSize>
             <BaseType Namespace="PMPS">FB_MachineSimulator</BaseType>
-            <BitOffs>1272575488</BitOffs>
+            <BitOffs>1272575456</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PMPS_Arbiter.fbSetPE</Name>
+            <BitSize>32</BitSize>
+            <BaseType Namespace="PMPS">PE_Ranges</BaseType>
+            <BitOffs>1272577824</BitOffs>
           </Symbol>
           <Symbol>
             <Name>MachineSimulation.fbeVSimulator</Name>
@@ -49141,10 +49285,16 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
             <BitOffs>1272577856</BitOffs>
           </Symbol>
           <Symbol>
-            <Name>PMPS_Arbiter.fbSetPE</Name>
-            <BitSize>32</BitSize>
-            <BaseType Namespace="PMPS">PE_Ranges</BaseType>
+            <Name>PMPS_Arbiter.ar2</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
             <BitOffs>1272587552</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>PMPS_Arbiter.bRemove</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <BitOffs>1272587560</BitOffs>
           </Symbol>
           <Symbol>
             <Name>PMPS_Arbiter.fbBPRequestor</Name>
@@ -49664,30 +49814,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
             <Name>P_AT1K0_SL1K0.idx</Name>
             <BitSize>16</BitSize>
             <BaseType>UINT</BaseType>
-            <BitOffs>1273417408</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>P_AT1K0_SL1K0.bSimApt</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <BitOffs>1273417424</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>P_AT1K0_SL1K0.bApplyJF</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Default>
-              <Value>0</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-          pv: @(PREFIX)ApplyJF
-    </Value>
-              </Property>
-            </Properties>
-            <BitOffs>1273417432</BitOffs>
+            <BitOffs>1273417392</BitOffs>
           </Symbol>
           <Symbol>
             <Name>P_AT1K0_SL1K0.ffKFEMotConnection</Name>
@@ -49707,7 +49834,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Value>5</Value>
               </SubItem>
             </Default>
-            <BitOffs>1273417440</BitOffs>
+            <BitOffs>1273417408</BitOffs>
           </Symbol>
           <Symbol>
             <Name>P_AT1K0_SL1K0.ffKFEGattConnection</Name>
@@ -49727,7 +49854,47 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Value>5</Value>
               </SubItem>
             </Default>
-            <BitOffs>1273442528</BitOffs>
+            <BitOffs>1273442496</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>P_AT1K0_SL1K0.bSimApt</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <BitOffs>1273467584</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>P_AT1K0_SL1K0.bApplyJF</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Default>
+              <Value>0</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+          pv: @(PREFIX)ApplyJF
+    </Value>
+              </Property>
+            </Properties>
+            <BitOffs>1273467592</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>P_AT1K0_SL1K0.bCancelJF</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Default>
+              <Value>0</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+          pv: @(PREFIX)CancelJF
+    </Value>
+              </Property>
+            </Properties>
+            <BitOffs>1273467600</BitOffs>
           </Symbol>
           <Symbol>
             <Name>P_AT1K0_SL1K0.nBeamIntensityJF</Name>
@@ -49748,23 +49915,6 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
             <BitOffs>1273467616</BitOffs>
           </Symbol>
           <Symbol>
-            <Name>P_AT1K0_SL1K0.bCancelJF</Name>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Default>
-              <Value>0</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-          pv: @(PREFIX)CancelJF
-    </Value>
-              </Property>
-            </Properties>
-            <BitOffs>1273467648</BitOffs>
-          </Symbol>
-          <Symbol>
             <Name>P_AT1K0_SL1K0.rDurationJF</Name>
             <Comment>hours</Comment>
             <BitSize>32</BitSize>
@@ -49780,7 +49930,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
     </Value>
               </Property>
             </Properties>
-            <BitOffs>1273467680</BitOffs>
+            <BitOffs>1273467648</BitOffs>
           </Symbol>
           <Symbol>
             <Name>P_AT1K0_SL1K0.rTimeRemainJF</Name>
@@ -49798,19 +49948,19 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
     </Value>
               </Property>
             </Properties>
-            <BitOffs>1273467712</BitOffs>
+            <BitOffs>1273467680</BitOffs>
           </Symbol>
           <Symbol>
             <Name>P_AT1K0_SL1K0.tDuration</Name>
             <BitSize>32</BitSize>
             <BaseType>TIME</BaseType>
-            <BitOffs>1273467744</BitOffs>
+            <BitOffs>1273467712</BitOffs>
           </Symbol>
           <Symbol>
             <Name>P_AT1K0_SL1K0.tonDuration</Name>
             <BitSize>224</BitSize>
             <BaseType Namespace="Tc2_Standard">TON</BaseType>
-            <BitOffs>1273467776</BitOffs>
+            <BitOffs>1273467744</BitOffs>
           </Symbol>
           <Symbol>
             <Name>P_SATT.ffkfeConnection</Name>
@@ -49831,7 +49981,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Value>5</Value>
               </SubItem>
             </Default>
-            <BitOffs>1273471136</BitOffs>
+            <BitOffs>1273471104</BitOffs>
           </Symbol>
           <Symbol>
             <Name>P_SATT.ffRixConnection</Name>
@@ -49851,7 +50001,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Value>5</Value>
               </SubItem>
             </Default>
-            <BitOffs>1273496224</BitOffs>
+            <BitOffs>1273496192</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Fast_Faults_Evaluate.FFO</Name>
@@ -49867,7 +50017,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Value>4112</Value>
               </SubItem>
             </Default>
-            <BitOffs>1273521312</BitOffs>
+            <BitOffs>1273521280</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Fast_Faults_Evaluate.FFO2</Name>
@@ -49883,7 +50033,19 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Value>12304</Value>
               </SubItem>
             </Default>
-            <BitOffs>1273546400</BitOffs>
+            <BitOffs>1273546368</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL.AttemptReset</Name>
+            <Comment> For testing</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>1273571480</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Fast_Faults_Evaluate.FFO3</Name>
@@ -49918,60 +50080,37 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
             <BitOffs>1273596576</BitOffs>
           </Symbol>
           <Symbol>
-            <Name>GVL.AttemptReset</Name>
-            <Comment> For testing</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>1273621672</BitOffs>
+            <Name>Fast_Faults_Evaluate.FFO_RIX_TXI_OPTICS</Name>
+            <Comment>TXI OPTICS Protection Faults</Comment>
+            <BitSize>25088</BitSize>
+            <BaseType Namespace="PMPS">FB_FastFault</BaseType>
+            <Default>
+              <SubItem>
+                <Name>.i_Desc</Name>
+                <String>Fault when MR1K1 is IN while a TXI Optics is in (either MR1K3 and MR2K3)</String>
+              </SubItem>
+              <SubItem>
+                <Name>.i_TypeCode</Name>
+                <Value>12547</Value>
+              </SubItem>
+            </Default>
+            <BitOffs>1273621664</BitOffs>
           </Symbol>
           <Symbol>
-            <Name>GVL.MAX_FAST_FAULTS</Name>
-            <BitSize>16</BitSize>
-            <BaseType>UINT</BaseType>
+            <Name>Fast_Faults_Evaluate.FFO_TXI_OPTICS</Name>
+            <BitSize>25088</BitSize>
+            <BaseType Namespace="PMPS">FB_FastFault</BaseType>
             <Default>
-              <Value>100</Value>
+              <SubItem>
+                <Name>.i_Desc</Name>
+                <String>Fault when MR1K3 is OUT and MR2K3 is IN</String>
+              </SubItem>
+              <SubItem>
+                <Name>.i_TypeCode</Name>
+                <Value>12563</Value>
+              </SubItem>
             </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>1273621680</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL.nBeamIntensity</Name>
-            <Comment>mj</Comment>
-            <BitSize>16</BitSize>
-            <BaseType>INT</BaseType>
-            <Default>
-              <Value>5</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>1273622368</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Constants.bLittleEndian</Name>
-            <Comment> Does the target support an FPU</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Default>
-              <Value>1</Value>
-            </Default>
-            <Properties>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>1273622392</BitOffs>
+            <BitOffs>1273646752</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL.g_fbArbiter1</Name>
@@ -49991,7 +50130,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1273622400</BitOffs>
+            <BitOffs>1273672512</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL.ReqBP</Name>
@@ -50003,21 +50142,36 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1274095872</BitOffs>
+            <BitOffs>1274145984</BitOffs>
           </Symbol>
           <Symbol>
-            <Name>GVL.MaxDuration</Name>
-            <BitSize>32</BitSize>
-            <BaseType>REAL</BaseType>
+            <Name>GVL.MAX_FAST_FAULTS</Name>
+            <BitSize>16</BitSize>
+            <BaseType>UINT</BaseType>
             <Default>
-              <Value>12</Value>
+              <Value>100</Value>
             </Default>
             <Properties>
               <Property>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1274097632</BitOffs>
+            <BitOffs>1274147744</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL.nBeamIntensity</Name>
+            <Comment>mj</Comment>
+            <BitSize>16</BitSize>
+            <BaseType>INT</BaseType>
+            <Default>
+              <Value>5</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>1274147760</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL.g_FastFaultOutput1</Name>
@@ -50045,7 +50199,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1274097664</BitOffs>
+            <BitOffs>1274147776</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL.g_FastFaultOutput2</Name>
@@ -50072,7 +50226,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1274592576</BitOffs>
+            <BitOffs>1274642688</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL.g_rTestingVelocity</Name>
@@ -50086,7 +50240,21 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1275087488</BitOffs>
+            <BitOffs>1275137600</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL.MaxDuration</Name>
+            <BitSize>32</BitSize>
+            <BaseType>REAL</BaseType>
+            <Default>
+              <Value>12</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>1275137664</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_CheckBounds.nTooLow</Name>
@@ -50097,7 +50265,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1275087552</BitOffs>
+            <BitOffs>1275137696</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_CheckBounds.nTooHigh</Name>
@@ -50108,7 +50276,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1275087584</BitOffs>
+            <BitOffs>1275137728</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_CheckBounds.nDivByZero</Name>
@@ -50119,7 +50287,22 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1275087616</BitOffs>
+            <BitOffs>1275137760</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>Constants.bLittleEndian</Name>
+            <Comment> Does the target support an FPU</Comment>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Default>
+              <Value>1</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>1275137800</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.RuntimeVersion</Name>
@@ -50149,7 +50332,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1275087648</BitOffs>
+            <BitOffs>1275137808</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.CompilerVersion</Name>
@@ -50179,7 +50362,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1275087712</BitOffs>
+            <BitOffs>1275137872</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.bSimulationMode</Name>
@@ -50194,7 +50377,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1275087776</BitOffs>
+            <BitOffs>1275137936</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.bFPUSupport</Name>
@@ -50208,7 +50391,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1275087784</BitOffs>
+            <BitOffs>1275137944</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.nRegisterSize</Name>
@@ -50223,7 +50406,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1275087792</BitOffs>
+            <BitOffs>1275137952</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.nPackMode</Name>
@@ -50238,7 +50421,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1275087808</BitOffs>
+            <BitOffs>1275137968</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.RuntimeVersionNumeric</Name>
@@ -50252,7 +50435,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1275087840</BitOffs>
+            <BitOffs>1275137984</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.CompilerVersionNumeric</Name>
@@ -50266,7 +50449,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1275087872</BitOffs>
+            <BitOffs>1275138016</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_SystemInfoVarList._TaskInfo</Name>
@@ -50284,7 +50467,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1275089984</BitOffs>
+            <BitOffs>1275140096</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_SystemInfoVarList._TaskPouOid_PlcTask</Name>
@@ -50298,7 +50481,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1275092064</BitOffs>
+            <BitOffs>1275142208</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_SystemInfoVarList._TaskOid_PlcTask</Name>
@@ -50312,7 +50495,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1275092096</BitOffs>
+            <BitOffs>1275142240</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_SystemInfoVarList.__PlcTask</Name>
@@ -50333,7 +50516,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1275092832</BitOffs>
+            <BitOffs>1275142976</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENT_CLASSES.TcSystemEventClass</Name>
@@ -50402,7 +50585,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1275106208</BitOffs>
+            <BitOffs>1275156352</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENT_CLASSES.TcGeneralAdsEventClass</Name>
@@ -50471,7 +50654,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1275106336</BitOffs>
+            <BitOffs>1275156480</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENT_CLASSES.TcRouterEventClass</Name>
@@ -50540,7 +50723,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1275106464</BitOffs>
+            <BitOffs>1275156608</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENT_CLASSES.TcRTimeEventClass</Name>
@@ -50609,7 +50792,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1275106592</BitOffs>
+            <BitOffs>1275156736</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENT_CLASSES.Win32EventClass</Name>
@@ -50678,7 +50861,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1275106720</BitOffs>
+            <BitOffs>1275156864</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENT_CLASSES.LCLSGeneralEventClass</Name>
@@ -50747,7 +50930,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1275106848</BitOffs>
+            <BitOffs>1275156992</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENTS.LCLSGeneralEventClass</Name>
@@ -50770,7 +50953,7 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>1275137184</BitOffs>
+            <BitOffs>1275187328</BitOffs>
           </Symbol>
         </DataArea>
         <DataArea>
@@ -50857,15 +51040,15 @@ request loop (two arbiters elevating to each other), or there is a RequestAdd, R
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2024-09-13T14:20:37</Value>
+          <Value>2024-10-22T10:15:38</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
-          <Value>630784</Value>
+          <Value>684032</Value>
         </Property>
         <Property>
           <Name>GlobalDataSize</Name>
-          <Value>158908416</Value>
+          <Value>158965760</Value>
         </Property>
       </Properties>
     </Module>
