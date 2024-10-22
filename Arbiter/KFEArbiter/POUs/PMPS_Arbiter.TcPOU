@@ -193,9 +193,9 @@ VAR
                                 .i_TxPDOState:=TIIB[plc-txi-vac]^SYNC Inputs^TxPDO state;
                                 '}
     plc_txi_vacuum_PMPS_IO : FB_ArbiterToSubSys_IO := (RequestingSystemID := 16#F302);
-	
-	
-	
+
+
+
 END_VAR
 ]]></Declaration>
     <Implementation>
