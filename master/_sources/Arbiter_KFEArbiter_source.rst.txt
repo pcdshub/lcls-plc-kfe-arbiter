@@ -288,9 +288,9 @@ CurrentBPUpdate
         ////////////////////////
               {attribute 'TcLinkTo' := 'TIIB[plc-txi-optics]^IO Inputs^MR1K3_Y_ENC'}
             i_MR1K3_ENC AT %I* : ULINT; // MR1K3 encoder from the txi k optics optics system
-            cMR1K3_IN_UpperLimit : UDINT := 108500000 + 5000000;
-            cMR1K3_IN_LowerLimit : UDINT := 108500000 - 5000000 ;
-            cMR1K3_OUT_UpperLimit : UDINT := 8900000;
+            cMR1K3_IN_UpperLimit : UDINT := 108500000 + 10000000;
+            cMR1K3_IN_LowerLimit : UDINT := 108500000 - 10000000 ;
+            cMR1K3_OUT_UpperLimit : UDINT := 8900000 + 100000;
 
             q_MR1K3_VETO AT %Q* : BOOL; // Signal to accel. MPS that MR1K3 is in
             fbMR1K3VetoDevice : FB_KVetoDevice(
@@ -424,25 +424,25 @@ Fast_Faults_Evaluate
 
     PROGRAM Fast_Faults_Evaluate
     VAR
-    FFO    :    FB_FastFault :=(
+    FFO    :    FB_FastFault :=(i_DevName := 'PMPS Arbiter',
             i_Desc := 'Fault occurs when the beamline valves on qrixs are not in open state',
             i_TypeCode := 16#1010);
     i_xFastFaultOut_qrix_vac AT %I*:        BOOL;
 
-    FFO2   :    FB_FastFault :=(
+    FFO2   :    FB_FastFault :=(i_DevName := 'PMPS Arbiter',
             i_Desc := 'Forward Fault from TXI Vacuum.',
             i_TypeCode := 16#3010);
      {attribute 'TcLinkTo' := 'TIIB[plc-txi-vac]^IO Inputs^FFO'}
     i_xFastFaultOut_txi_vac AT %I*:        BOOL;
 
-    FFO3    :    FB_FastFault :=(
+    FFO3    :    FB_FastFault :=(i_DevName := 'PMPS Arbiter',
             i_Desc := 'Forward Fault from TXI Motion.',
             i_TypeCode := 16#3013);
     {attribute 'TcLinkTo' := 'TIIB[plc-txi-mot]^IO Inputs^FFO'}
     i_xFastFaultOut_txi_mot AT %I*:        BOOL;
 
 
-    FFO4    :    FB_FastFault :=(
+    FFO4    :    FB_FastFault :=(i_DevName := 'PMPS Arbiter',
             i_Desc := 'Forward Fault from TXI OPTICS.',
             i_TypeCode := 16#3013);
     {attribute 'TcLinkTo' := 'TIIB[plc-txi-optics]^IO Inputs^FFO'}
@@ -450,11 +450,11 @@ Fast_Faults_Evaluate
 
     (*TXI OPTICS Protection Faults*)
 
-    FFO_RIX_TXI_OPTICS :    FB_FastFault :=(
-            i_Desc := 'Fault when MR1K1 is IN while a TXI Optics is in (either MR1K3 and MR2K3)',
+    FFO_RIX_TXI_OPTICS :    FB_FastFault :=(i_DevName := 'PMPS Arbiter',
+            i_Desc := 'Fault when MR1K1 is IN while a TXI Optics is IN (Check MR1K3 and MR2K3)',
             i_TypeCode := 16#3103);
 
-    FFO_TXI_OPTICS :    FB_FastFault :=(
+    FFO_TXI_OPTICS :    FB_FastFault :=(i_DevName := 'PMPS Arbiter',
             i_Desc := 'Fault when MR1K3 is OUT and MR2K3 is IN',
             i_TypeCode := 16#3113);
     END_VAR
