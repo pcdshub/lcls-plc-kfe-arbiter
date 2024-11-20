@@ -116,7 +116,7 @@ VAR
         i_MR1K3_ENC AT %I* : ULINT; // MR1K3 encoder from the txi k optics optics system
         cMR1K3_IN_UpperLimit : UDINT := 108500000 + 10000000;
         cMR1K3_IN_LowerLimit : UDINT := 108500000 - 10000000 ;
-        cMR1K3_OUT_UpperLimit : UDINT := 8900000;
+        cMR1K3_OUT_UpperLimit : UDINT := 8900000 + 100000;
 
         q_MR1K3_VETO AT %Q* : BOOL; // Signal to accel. MPS that MR1K3 is in
         fbMR1K3VetoDevice : FB_KVetoDevice(
