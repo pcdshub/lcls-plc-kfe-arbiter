@@ -15036,6 +15036,542 @@ PMPS.FB_KPhotonEnergy
         | link: [None, 'BEND:DMPS:400:BACT', '']
 
 
+    * - $(PREFIX):UND:22:Active_RBV
+      - bi
+      - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '2250:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2250:', None]
+
+
+    * - $(PREFIX):UND:22:eVAct
+      - ao
+      - Calculated photon energy; Linked to PV: [None, 'USEG:UNDS:', '2250:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2250:', None]
+
+
+    * - $(PREFIX):UND:22:eVAct_RBV
+      - ai
+      - Calculated photon energy; Linked to PV: [None, 'USEG:UNDS:', '2250:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2250:', None]
+
+
+    * - $(PREFIX):UND:22:eVDes
+      - ao
+      - Calculated desired photon energy; Linked to PV: [None, 'USEG:UNDS:', '2250:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2250:', None]
+
+
+    * - $(PREFIX):UND:22:eVDes_RBV
+      - ai
+      - Calculated desired photon energy; Linked to PV: [None, 'USEG:UNDS:', '2250:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2250:', None]
+
+
+    * - $(PREFIX):UND:22:KAct:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2250:', 'KAct', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2250:', 'KAct', '']
+
+
+    * - $(PREFIX):UND:22:KAct:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2250:', 'KAct', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2250:', 'KAct', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:22:KAct:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2250:', 'KAct', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2250:', 'KAct', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:22:KAct:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2250:', 'KAct', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2250:', 'KAct', '']
+
+
+    * - $(PREFIX):UND:22:KAct_RBV
+      - ai
+      - Current K; Linked to PV: [None, 'USEG:UNDS:', '2250:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2250:', None]
+
+
+    * - $(PREFIX):UND:22:KActValid_RBV
+      - bi
+      - Current K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2250:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2250:', None]
+
+
+    * - $(PREFIX):UND:22:KDes:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2250:', 'KDes', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2250:', 'KDes', '']
+
+
+    * - $(PREFIX):UND:22:KDes:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2250:', 'KDes', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2250:', 'KDes', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:22:KDes:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2250:', 'KDes', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2250:', 'KDes', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:22:KDes:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2250:', 'KDes', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2250:', 'KDes', '']
+
+
+    * - $(PREFIX):UND:22:KDes_RBV
+      - ai
+      - Target K; Linked to PV: [None, 'USEG:UNDS:', '2250:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2250:', None]
+
+
+    * - $(PREFIX):UND:22:KDesValid_RBV
+      - bi
+      - Target K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2250:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2250:', None]
+
+
+    * - $(PREFIX):UND:22:TargetActive_RBV
+      - bi
+      - Target K would make und active; Linked to PV: [None, 'USEG:UNDS:', '2250:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2250:', None]
+
+
+    * - $(PREFIX):UND:23:Active_RBV
+      - bi
+      - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '2350:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2350:', None]
+
+
+    * - $(PREFIX):UND:23:eVAct
+      - ao
+      - Calculated photon energy; Linked to PV: [None, 'USEG:UNDS:', '2350:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2350:', None]
+
+
+    * - $(PREFIX):UND:23:eVAct_RBV
+      - ai
+      - Calculated photon energy; Linked to PV: [None, 'USEG:UNDS:', '2350:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2350:', None]
+
+
+    * - $(PREFIX):UND:23:eVDes
+      - ao
+      - Calculated desired photon energy; Linked to PV: [None, 'USEG:UNDS:', '2350:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2350:', None]
+
+
+    * - $(PREFIX):UND:23:eVDes_RBV
+      - ai
+      - Calculated desired photon energy; Linked to PV: [None, 'USEG:UNDS:', '2350:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2350:', None]
+
+
+    * - $(PREFIX):UND:23:KAct:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2350:', 'KAct', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2350:', 'KAct', '']
+
+
+    * - $(PREFIX):UND:23:KAct:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2350:', 'KAct', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2350:', 'KAct', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:23:KAct:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2350:', 'KAct', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2350:', 'KAct', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:23:KAct:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2350:', 'KAct', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2350:', 'KAct', '']
+
+
+    * - $(PREFIX):UND:23:KAct_RBV
+      - ai
+      - Current K; Linked to PV: [None, 'USEG:UNDS:', '2350:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2350:', None]
+
+
+    * - $(PREFIX):UND:23:KActValid_RBV
+      - bi
+      - Current K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2350:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2350:', None]
+
+
+    * - $(PREFIX):UND:23:KDes:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2350:', 'KDes', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2350:', 'KDes', '']
+
+
+    * - $(PREFIX):UND:23:KDes:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2350:', 'KDes', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2350:', 'KDes', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:23:KDes:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2350:', 'KDes', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2350:', 'KDes', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:23:KDes:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2350:', 'KDes', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2350:', 'KDes', '']
+
+
+    * - $(PREFIX):UND:23:KDes_RBV
+      - ai
+      - Target K; Linked to PV: [None, 'USEG:UNDS:', '2350:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2350:', None]
+
+
+    * - $(PREFIX):UND:23:KDesValid_RBV
+      - bi
+      - Target K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2350:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2350:', None]
+
+
+    * - $(PREFIX):UND:23:TargetActive_RBV
+      - bi
+      - Target K would make und active; Linked to PV: [None, 'USEG:UNDS:', '2350:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2350:', None]
+
+
+    * - $(PREFIX):UND:24:Active_RBV
+      - bi
+      - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '2450:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2450:', None]
+
+
+    * - $(PREFIX):UND:24:eVAct
+      - ao
+      - Calculated photon energy; Linked to PV: [None, 'USEG:UNDS:', '2450:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2450:', None]
+
+
+    * - $(PREFIX):UND:24:eVAct_RBV
+      - ai
+      - Calculated photon energy; Linked to PV: [None, 'USEG:UNDS:', '2450:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2450:', None]
+
+
+    * - $(PREFIX):UND:24:eVDes
+      - ao
+      - Calculated desired photon energy; Linked to PV: [None, 'USEG:UNDS:', '2450:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2450:', None]
+
+
+    * - $(PREFIX):UND:24:eVDes_RBV
+      - ai
+      - Calculated desired photon energy; Linked to PV: [None, 'USEG:UNDS:', '2450:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2450:', None]
+
+
+    * - $(PREFIX):UND:24:KAct:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2450:', 'KAct', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2450:', 'KAct', '']
+
+
+    * - $(PREFIX):UND:24:KAct:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2450:', 'KAct', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2450:', 'KAct', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:24:KAct:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2450:', 'KAct', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2450:', 'KAct', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:24:KAct:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2450:', 'KAct', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2450:', 'KAct', '']
+
+
+    * - $(PREFIX):UND:24:KAct_RBV
+      - ai
+      - Current K; Linked to PV: [None, 'USEG:UNDS:', '2450:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2450:', None]
+
+
+    * - $(PREFIX):UND:24:KActValid_RBV
+      - bi
+      - Current K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2450:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2450:', None]
+
+
+    * - $(PREFIX):UND:24:KDes:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2450:', 'KDes', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2450:', 'KDes', '']
+
+
+    * - $(PREFIX):UND:24:KDes:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2450:', 'KDes', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2450:', 'KDes', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:24:KDes:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2450:', 'KDes', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2450:', 'KDes', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:24:KDes:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2450:', 'KDes', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2450:', 'KDes', '']
+
+
+    * - $(PREFIX):UND:24:KDes_RBV
+      - ai
+      - Target K; Linked to PV: [None, 'USEG:UNDS:', '2450:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2450:', None]
+
+
+    * - $(PREFIX):UND:24:KDesValid_RBV
+      - bi
+      - Target K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2450:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2450:', None]
+
+
+    * - $(PREFIX):UND:24:TargetActive_RBV
+      - bi
+      - Target K would make und active; Linked to PV: [None, 'USEG:UNDS:', '2450:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2450:', None]
+
+
+    * - $(PREFIX):UND:25:Active_RBV
+      - bi
+      - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '2550:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2550:', None]
+
+
+    * - $(PREFIX):UND:25:eVAct
+      - ao
+      - Calculated photon energy; Linked to PV: [None, 'USEG:UNDS:', '2550:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2550:', None]
+
+
+    * - $(PREFIX):UND:25:eVAct_RBV
+      - ai
+      - Calculated photon energy; Linked to PV: [None, 'USEG:UNDS:', '2550:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2550:', None]
+
+
+    * - $(PREFIX):UND:25:eVDes
+      - ao
+      - Calculated desired photon energy; Linked to PV: [None, 'USEG:UNDS:', '2550:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2550:', None]
+
+
+    * - $(PREFIX):UND:25:eVDes_RBV
+      - ai
+      - Calculated desired photon energy; Linked to PV: [None, 'USEG:UNDS:', '2550:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2550:', None]
+
+
+    * - $(PREFIX):UND:25:KAct:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2550:', 'KAct', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2550:', 'KAct', '']
+
+
+    * - $(PREFIX):UND:25:KAct:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2550:', 'KAct', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2550:', 'KAct', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:25:KAct:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2550:', 'KAct', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2550:', 'KAct', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:25:KAct:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2550:', 'KAct', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2550:', 'KAct', '']
+
+
+    * - $(PREFIX):UND:25:KAct_RBV
+      - ai
+      - Current K; Linked to PV: [None, 'USEG:UNDS:', '2550:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2550:', None]
+
+
+    * - $(PREFIX):UND:25:KActValid_RBV
+      - bi
+      - Current K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2550:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2550:', None]
+
+
+    * - $(PREFIX):UND:25:KDes:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2550:', 'KDes', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2550:', 'KDes', '']
+
+
+    * - $(PREFIX):UND:25:KDes:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2550:', 'KDes', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2550:', 'KDes', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:25:KDes:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2550:', 'KDes', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2550:', 'KDes', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:25:KDes:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2550:', 'KDes', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2550:', 'KDes', '']
+
+
+    * - $(PREFIX):UND:25:KDes_RBV
+      - ai
+      - Target K; Linked to PV: [None, 'USEG:UNDS:', '2550:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2550:', None]
+
+
+    * - $(PREFIX):UND:25:KDesValid_RBV
+      - bi
+      - Target K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2550:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2550:', None]
+
+
+    * - $(PREFIX):UND:25:TargetActive_RBV
+      - bi
+      - Target K would make und active; Linked to PV: [None, 'USEG:UNDS:', '2550:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2550:', None]
+
+
     * - $(PREFIX):UND:26:Active_RBV
       - bi
       - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '2650:', None]
@@ -17887,9 +18423,17 @@ PMPS.FB_KPhotonEnergy
         | link: [None, 'USEG:UNDS:', None]
 
 
-    * - $(PREFIX):UND:Period_RBV
+    * - $(PREFIX):UND:Period_Long_RBV
       - ai
-      - $(SYMBOL).fbSxu.fPeriod_mm; Linked to PV: [None, 'USEG:UNDS:', None]
+      - $(SYMBOL).fbSxu.fPeriod_56_mm; Linked to PV: [None, 'USEG:UNDS:', None]
+      - | field: EGU mm
+        | io: input
+        | link: [None, 'USEG:UNDS:', None]
+
+
+    * - $(PREFIX):UND:Period_Short_RBV
+      - ai
+      - $(SYMBOL).fbSxu.fPeriod_39_mm; Linked to PV: [None, 'USEG:UNDS:', None]
       - | field: EGU mm
         | io: input
         | link: [None, 'USEG:UNDS:', None]
@@ -17950,6 +18494,542 @@ PMPS.FB_SXU
       - Type
       - Description
       - Pragma
+    * - $(PREFIX):22:Active_RBV
+      - bi
+      - Undulator is considered active; Linked to PV: [None, '2250:', None]
+      - | io: input
+        | link: [None, '2250:', None]
+
+
+    * - $(PREFIX):22:eVAct
+      - ao
+      - Calculated photon energy; Linked to PV: [None, '2250:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, '2250:', None]
+
+
+    * - $(PREFIX):22:eVAct_RBV
+      - ai
+      - Calculated photon energy; Linked to PV: [None, '2250:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, '2250:', None]
+
+
+    * - $(PREFIX):22:eVDes
+      - ao
+      - Calculated desired photon energy; Linked to PV: [None, '2250:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, '2250:', None]
+
+
+    * - $(PREFIX):22:eVDes_RBV
+      - ai
+      - Calculated desired photon energy; Linked to PV: [None, '2250:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, '2250:', None]
+
+
+    * - $(PREFIX):22:KAct:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2250:', 'KAct', '']
+      - | io: output
+        | link: [None, '2250:', 'KAct', '']
+
+
+    * - $(PREFIX):22:KAct:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2250:', 'KAct', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2250:', 'KAct', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):22:KAct:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2250:', 'KAct', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2250:', 'KAct', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):22:KAct:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2250:', 'KAct', '']
+      - | io: output
+        | link: [None, '2250:', 'KAct', '']
+
+
+    * - $(PREFIX):22:KAct_RBV
+      - ai
+      - Current K; Linked to PV: [None, '2250:', None]
+      - | io: input
+        | link: [None, '2250:', None]
+
+
+    * - $(PREFIX):22:KActValid_RBV
+      - bi
+      - Current K Readback Valid; Linked to PV: [None, '2250:', None]
+      - | io: input
+        | link: [None, '2250:', None]
+
+
+    * - $(PREFIX):22:KDes:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2250:', 'KDes', '']
+      - | io: output
+        | link: [None, '2250:', 'KDes', '']
+
+
+    * - $(PREFIX):22:KDes:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2250:', 'KDes', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2250:', 'KDes', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):22:KDes:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2250:', 'KDes', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2250:', 'KDes', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):22:KDes:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2250:', 'KDes', '']
+      - | io: output
+        | link: [None, '2250:', 'KDes', '']
+
+
+    * - $(PREFIX):22:KDes_RBV
+      - ai
+      - Target K; Linked to PV: [None, '2250:', None]
+      - | io: input
+        | link: [None, '2250:', None]
+
+
+    * - $(PREFIX):22:KDesValid_RBV
+      - bi
+      - Target K Readback Valid; Linked to PV: [None, '2250:', None]
+      - | io: input
+        | link: [None, '2250:', None]
+
+
+    * - $(PREFIX):22:TargetActive_RBV
+      - bi
+      - Target K would make und active; Linked to PV: [None, '2250:', None]
+      - | io: input
+        | link: [None, '2250:', None]
+
+
+    * - $(PREFIX):23:Active_RBV
+      - bi
+      - Undulator is considered active; Linked to PV: [None, '2350:', None]
+      - | io: input
+        | link: [None, '2350:', None]
+
+
+    * - $(PREFIX):23:eVAct
+      - ao
+      - Calculated photon energy; Linked to PV: [None, '2350:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, '2350:', None]
+
+
+    * - $(PREFIX):23:eVAct_RBV
+      - ai
+      - Calculated photon energy; Linked to PV: [None, '2350:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, '2350:', None]
+
+
+    * - $(PREFIX):23:eVDes
+      - ao
+      - Calculated desired photon energy; Linked to PV: [None, '2350:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, '2350:', None]
+
+
+    * - $(PREFIX):23:eVDes_RBV
+      - ai
+      - Calculated desired photon energy; Linked to PV: [None, '2350:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, '2350:', None]
+
+
+    * - $(PREFIX):23:KAct:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2350:', 'KAct', '']
+      - | io: output
+        | link: [None, '2350:', 'KAct', '']
+
+
+    * - $(PREFIX):23:KAct:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2350:', 'KAct', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2350:', 'KAct', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):23:KAct:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2350:', 'KAct', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2350:', 'KAct', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):23:KAct:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2350:', 'KAct', '']
+      - | io: output
+        | link: [None, '2350:', 'KAct', '']
+
+
+    * - $(PREFIX):23:KAct_RBV
+      - ai
+      - Current K; Linked to PV: [None, '2350:', None]
+      - | io: input
+        | link: [None, '2350:', None]
+
+
+    * - $(PREFIX):23:KActValid_RBV
+      - bi
+      - Current K Readback Valid; Linked to PV: [None, '2350:', None]
+      - | io: input
+        | link: [None, '2350:', None]
+
+
+    * - $(PREFIX):23:KDes:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2350:', 'KDes', '']
+      - | io: output
+        | link: [None, '2350:', 'KDes', '']
+
+
+    * - $(PREFIX):23:KDes:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2350:', 'KDes', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2350:', 'KDes', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):23:KDes:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2350:', 'KDes', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2350:', 'KDes', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):23:KDes:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2350:', 'KDes', '']
+      - | io: output
+        | link: [None, '2350:', 'KDes', '']
+
+
+    * - $(PREFIX):23:KDes_RBV
+      - ai
+      - Target K; Linked to PV: [None, '2350:', None]
+      - | io: input
+        | link: [None, '2350:', None]
+
+
+    * - $(PREFIX):23:KDesValid_RBV
+      - bi
+      - Target K Readback Valid; Linked to PV: [None, '2350:', None]
+      - | io: input
+        | link: [None, '2350:', None]
+
+
+    * - $(PREFIX):23:TargetActive_RBV
+      - bi
+      - Target K would make und active; Linked to PV: [None, '2350:', None]
+      - | io: input
+        | link: [None, '2350:', None]
+
+
+    * - $(PREFIX):24:Active_RBV
+      - bi
+      - Undulator is considered active; Linked to PV: [None, '2450:', None]
+      - | io: input
+        | link: [None, '2450:', None]
+
+
+    * - $(PREFIX):24:eVAct
+      - ao
+      - Calculated photon energy; Linked to PV: [None, '2450:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, '2450:', None]
+
+
+    * - $(PREFIX):24:eVAct_RBV
+      - ai
+      - Calculated photon energy; Linked to PV: [None, '2450:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, '2450:', None]
+
+
+    * - $(PREFIX):24:eVDes
+      - ao
+      - Calculated desired photon energy; Linked to PV: [None, '2450:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, '2450:', None]
+
+
+    * - $(PREFIX):24:eVDes_RBV
+      - ai
+      - Calculated desired photon energy; Linked to PV: [None, '2450:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, '2450:', None]
+
+
+    * - $(PREFIX):24:KAct:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2450:', 'KAct', '']
+      - | io: output
+        | link: [None, '2450:', 'KAct', '']
+
+
+    * - $(PREFIX):24:KAct:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2450:', 'KAct', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2450:', 'KAct', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):24:KAct:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2450:', 'KAct', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2450:', 'KAct', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):24:KAct:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2450:', 'KAct', '']
+      - | io: output
+        | link: [None, '2450:', 'KAct', '']
+
+
+    * - $(PREFIX):24:KAct_RBV
+      - ai
+      - Current K; Linked to PV: [None, '2450:', None]
+      - | io: input
+        | link: [None, '2450:', None]
+
+
+    * - $(PREFIX):24:KActValid_RBV
+      - bi
+      - Current K Readback Valid; Linked to PV: [None, '2450:', None]
+      - | io: input
+        | link: [None, '2450:', None]
+
+
+    * - $(PREFIX):24:KDes:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2450:', 'KDes', '']
+      - | io: output
+        | link: [None, '2450:', 'KDes', '']
+
+
+    * - $(PREFIX):24:KDes:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2450:', 'KDes', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2450:', 'KDes', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):24:KDes:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2450:', 'KDes', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2450:', 'KDes', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):24:KDes:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2450:', 'KDes', '']
+      - | io: output
+        | link: [None, '2450:', 'KDes', '']
+
+
+    * - $(PREFIX):24:KDes_RBV
+      - ai
+      - Target K; Linked to PV: [None, '2450:', None]
+      - | io: input
+        | link: [None, '2450:', None]
+
+
+    * - $(PREFIX):24:KDesValid_RBV
+      - bi
+      - Target K Readback Valid; Linked to PV: [None, '2450:', None]
+      - | io: input
+        | link: [None, '2450:', None]
+
+
+    * - $(PREFIX):24:TargetActive_RBV
+      - bi
+      - Target K would make und active; Linked to PV: [None, '2450:', None]
+      - | io: input
+        | link: [None, '2450:', None]
+
+
+    * - $(PREFIX):25:Active_RBV
+      - bi
+      - Undulator is considered active; Linked to PV: [None, '2550:', None]
+      - | io: input
+        | link: [None, '2550:', None]
+
+
+    * - $(PREFIX):25:eVAct
+      - ao
+      - Calculated photon energy; Linked to PV: [None, '2550:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, '2550:', None]
+
+
+    * - $(PREFIX):25:eVAct_RBV
+      - ai
+      - Calculated photon energy; Linked to PV: [None, '2550:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, '2550:', None]
+
+
+    * - $(PREFIX):25:eVDes
+      - ao
+      - Calculated desired photon energy; Linked to PV: [None, '2550:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, '2550:', None]
+
+
+    * - $(PREFIX):25:eVDes_RBV
+      - ai
+      - Calculated desired photon energy; Linked to PV: [None, '2550:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, '2550:', None]
+
+
+    * - $(PREFIX):25:KAct:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2550:', 'KAct', '']
+      - | io: output
+        | link: [None, '2550:', 'KAct', '']
+
+
+    * - $(PREFIX):25:KAct:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2550:', 'KAct', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2550:', 'KAct', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):25:KAct:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2550:', 'KAct', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2550:', 'KAct', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):25:KAct:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2550:', 'KAct', '']
+      - | io: output
+        | link: [None, '2550:', 'KAct', '']
+
+
+    * - $(PREFIX):25:KAct_RBV
+      - ai
+      - Current K; Linked to PV: [None, '2550:', None]
+      - | io: input
+        | link: [None, '2550:', None]
+
+
+    * - $(PREFIX):25:KActValid_RBV
+      - bi
+      - Current K Readback Valid; Linked to PV: [None, '2550:', None]
+      - | io: input
+        | link: [None, '2550:', None]
+
+
+    * - $(PREFIX):25:KDes:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2550:', 'KDes', '']
+      - | io: output
+        | link: [None, '2550:', 'KDes', '']
+
+
+    * - $(PREFIX):25:KDes:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2550:', 'KDes', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2550:', 'KDes', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):25:KDes:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2550:', 'KDes', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2550:', 'KDes', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):25:KDes:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2550:', 'KDes', '']
+      - | io: output
+        | link: [None, '2550:', 'KDes', '']
+
+
+    * - $(PREFIX):25:KDes_RBV
+      - ai
+      - Target K; Linked to PV: [None, '2550:', None]
+      - | io: input
+        | link: [None, '2550:', None]
+
+
+    * - $(PREFIX):25:KDesValid_RBV
+      - bi
+      - Target K Readback Valid; Linked to PV: [None, '2550:', None]
+      - | io: input
+        | link: [None, '2550:', None]
+
+
+    * - $(PREFIX):25:TargetActive_RBV
+      - bi
+      - Target K would make und active; Linked to PV: [None, '2550:', None]
+      - | io: input
+        | link: [None, '2550:', None]
+
+
     * - $(PREFIX):26:Active_RBV
       - bi
       - Undulator is considered active; Linked to PV: [None, '2650:', None]
@@ -20796,9 +21876,16 @@ PMPS.FB_SXU
       - | io: input
 
 
-    * - $(PREFIX):Period_RBV
+    * - $(PREFIX):Period_Long_RBV
       - ai
-      - $(SYMBOL).fPeriod_mm
+      - $(SYMBOL).fPeriod_56_mm
+      - | field: EGU mm
+        | io: input
+
+
+    * - $(PREFIX):Period_Short_RBV
+      - ai
+      - $(SYMBOL).fPeriod_39_mm
       - | field: EGU mm
         | io: input
 
@@ -21867,9 +22954,17 @@ Database Records
         | link: [None, 'USEG:UNDS:', None]
 
 
-    * - $(PREFIX)PE:UND:Period_RBV
+    * - $(PREFIX)PE:UND:Period_Short_RBV
       - ai
-      - CurrentBPUpdate.fbKPhotonEnergy.fbSxu.fPeriod_mm; Linked to PV: [None, 'USEG:UNDS:', None]
+      - CurrentBPUpdate.fbKPhotonEnergy.fbSxu.fPeriod_39_mm; Linked to PV: [None, 'USEG:UNDS:', None]
+      - | field: EGU mm
+        | io: input
+        | link: [None, 'USEG:UNDS:', None]
+
+
+    * - $(PREFIX)PE:UND:Period_Long_RBV
+      - ai
+      - CurrentBPUpdate.fbKPhotonEnergy.fbSxu.fPeriod_56_mm; Linked to PV: [None, 'USEG:UNDS:', None]
       - | field: EGU mm
         | io: input
         | link: [None, 'USEG:UNDS:', None]
@@ -21882,6 +22977,542 @@ Database Records
         | field: PREC 3
         | io: input
         | link: [None, 'USEG:UNDS:', None]
+
+
+    * - $(PREFIX)PE:UND:22:KActValid_RBV
+      - bi
+      - Current K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2250:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2250:', None]
+
+
+    * - $(PREFIX)PE:UND:22:KDesValid_RBV
+      - bi
+      - Target K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2250:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2250:', None]
+
+
+    * - $(PREFIX)PE:UND:22:KAct_RBV
+      - ai
+      - Current K; Linked to PV: [None, 'USEG:UNDS:', '2250:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2250:', None]
+
+
+    * - $(PREFIX)PE:UND:22:KDes_RBV
+      - ai
+      - Target K; Linked to PV: [None, 'USEG:UNDS:', '2250:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2250:', None]
+
+
+    * - $(PREFIX)PE:UND:22:eVAct_RBV
+      - ai
+      - Calculated photon energy; Linked to PV: [None, 'USEG:UNDS:', '2250:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2250:', None]
+
+
+    * - $(PREFIX)PE:UND:22:eVAct
+      - ao
+      - Calculated photon energy; Linked to PV: [None, 'USEG:UNDS:', '2250:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2250:', None]
+
+
+    * - $(PREFIX)PE:UND:22:eVDes_RBV
+      - ai
+      - Calculated desired photon energy; Linked to PV: [None, 'USEG:UNDS:', '2250:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2250:', None]
+
+
+    * - $(PREFIX)PE:UND:22:eVDes
+      - ao
+      - Calculated desired photon energy; Linked to PV: [None, 'USEG:UNDS:', '2250:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2250:', None]
+
+
+    * - $(PREFIX)PE:UND:22:KAct:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2250:', 'KAct', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2250:', 'KAct', '']
+
+
+    * - $(PREFIX)PE:UND:22:KAct:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2250:', 'KAct', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2250:', 'KAct', '']
+
+
+    * - $(PREFIX)PE:UND:22:KAct:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2250:', 'KAct', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2250:', 'KAct', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:22:KAct:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2250:', 'KAct', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2250:', 'KAct', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:22:KDes:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2250:', 'KDes', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2250:', 'KDes', '']
+
+
+    * - $(PREFIX)PE:UND:22:KDes:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2250:', 'KDes', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2250:', 'KDes', '']
+
+
+    * - $(PREFIX)PE:UND:22:KDes:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2250:', 'KDes', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2250:', 'KDes', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:22:KDes:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2250:', 'KDes', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2250:', 'KDes', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:22:Active_RBV
+      - bi
+      - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '2250:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2250:', None]
+
+
+    * - $(PREFIX)PE:UND:22:TargetActive_RBV
+      - bi
+      - Target K would make und active; Linked to PV: [None, 'USEG:UNDS:', '2250:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2250:', None]
+
+
+    * - $(PREFIX)PE:UND:23:KActValid_RBV
+      - bi
+      - Current K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2350:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2350:', None]
+
+
+    * - $(PREFIX)PE:UND:23:KDesValid_RBV
+      - bi
+      - Target K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2350:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2350:', None]
+
+
+    * - $(PREFIX)PE:UND:23:KAct_RBV
+      - ai
+      - Current K; Linked to PV: [None, 'USEG:UNDS:', '2350:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2350:', None]
+
+
+    * - $(PREFIX)PE:UND:23:KDes_RBV
+      - ai
+      - Target K; Linked to PV: [None, 'USEG:UNDS:', '2350:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2350:', None]
+
+
+    * - $(PREFIX)PE:UND:23:eVAct_RBV
+      - ai
+      - Calculated photon energy; Linked to PV: [None, 'USEG:UNDS:', '2350:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2350:', None]
+
+
+    * - $(PREFIX)PE:UND:23:eVAct
+      - ao
+      - Calculated photon energy; Linked to PV: [None, 'USEG:UNDS:', '2350:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2350:', None]
+
+
+    * - $(PREFIX)PE:UND:23:eVDes_RBV
+      - ai
+      - Calculated desired photon energy; Linked to PV: [None, 'USEG:UNDS:', '2350:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2350:', None]
+
+
+    * - $(PREFIX)PE:UND:23:eVDes
+      - ao
+      - Calculated desired photon energy; Linked to PV: [None, 'USEG:UNDS:', '2350:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2350:', None]
+
+
+    * - $(PREFIX)PE:UND:23:KAct:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2350:', 'KAct', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2350:', 'KAct', '']
+
+
+    * - $(PREFIX)PE:UND:23:KAct:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2350:', 'KAct', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2350:', 'KAct', '']
+
+
+    * - $(PREFIX)PE:UND:23:KAct:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2350:', 'KAct', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2350:', 'KAct', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:23:KAct:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2350:', 'KAct', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2350:', 'KAct', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:23:KDes:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2350:', 'KDes', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2350:', 'KDes', '']
+
+
+    * - $(PREFIX)PE:UND:23:KDes:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2350:', 'KDes', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2350:', 'KDes', '']
+
+
+    * - $(PREFIX)PE:UND:23:KDes:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2350:', 'KDes', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2350:', 'KDes', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:23:KDes:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2350:', 'KDes', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2350:', 'KDes', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:23:Active_RBV
+      - bi
+      - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '2350:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2350:', None]
+
+
+    * - $(PREFIX)PE:UND:23:TargetActive_RBV
+      - bi
+      - Target K would make und active; Linked to PV: [None, 'USEG:UNDS:', '2350:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2350:', None]
+
+
+    * - $(PREFIX)PE:UND:24:KActValid_RBV
+      - bi
+      - Current K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2450:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2450:', None]
+
+
+    * - $(PREFIX)PE:UND:24:KDesValid_RBV
+      - bi
+      - Target K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2450:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2450:', None]
+
+
+    * - $(PREFIX)PE:UND:24:KAct_RBV
+      - ai
+      - Current K; Linked to PV: [None, 'USEG:UNDS:', '2450:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2450:', None]
+
+
+    * - $(PREFIX)PE:UND:24:KDes_RBV
+      - ai
+      - Target K; Linked to PV: [None, 'USEG:UNDS:', '2450:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2450:', None]
+
+
+    * - $(PREFIX)PE:UND:24:eVAct_RBV
+      - ai
+      - Calculated photon energy; Linked to PV: [None, 'USEG:UNDS:', '2450:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2450:', None]
+
+
+    * - $(PREFIX)PE:UND:24:eVAct
+      - ao
+      - Calculated photon energy; Linked to PV: [None, 'USEG:UNDS:', '2450:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2450:', None]
+
+
+    * - $(PREFIX)PE:UND:24:eVDes_RBV
+      - ai
+      - Calculated desired photon energy; Linked to PV: [None, 'USEG:UNDS:', '2450:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2450:', None]
+
+
+    * - $(PREFIX)PE:UND:24:eVDes
+      - ao
+      - Calculated desired photon energy; Linked to PV: [None, 'USEG:UNDS:', '2450:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2450:', None]
+
+
+    * - $(PREFIX)PE:UND:24:KAct:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2450:', 'KAct', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2450:', 'KAct', '']
+
+
+    * - $(PREFIX)PE:UND:24:KAct:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2450:', 'KAct', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2450:', 'KAct', '']
+
+
+    * - $(PREFIX)PE:UND:24:KAct:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2450:', 'KAct', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2450:', 'KAct', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:24:KAct:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2450:', 'KAct', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2450:', 'KAct', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:24:KDes:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2450:', 'KDes', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2450:', 'KDes', '']
+
+
+    * - $(PREFIX)PE:UND:24:KDes:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2450:', 'KDes', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2450:', 'KDes', '']
+
+
+    * - $(PREFIX)PE:UND:24:KDes:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2450:', 'KDes', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2450:', 'KDes', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:24:KDes:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2450:', 'KDes', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2450:', 'KDes', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:24:Active_RBV
+      - bi
+      - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '2450:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2450:', None]
+
+
+    * - $(PREFIX)PE:UND:24:TargetActive_RBV
+      - bi
+      - Target K would make und active; Linked to PV: [None, 'USEG:UNDS:', '2450:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2450:', None]
+
+
+    * - $(PREFIX)PE:UND:25:KActValid_RBV
+      - bi
+      - Current K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2550:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2550:', None]
+
+
+    * - $(PREFIX)PE:UND:25:KDesValid_RBV
+      - bi
+      - Target K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2550:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2550:', None]
+
+
+    * - $(PREFIX)PE:UND:25:KAct_RBV
+      - ai
+      - Current K; Linked to PV: [None, 'USEG:UNDS:', '2550:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2550:', None]
+
+
+    * - $(PREFIX)PE:UND:25:KDes_RBV
+      - ai
+      - Target K; Linked to PV: [None, 'USEG:UNDS:', '2550:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2550:', None]
+
+
+    * - $(PREFIX)PE:UND:25:eVAct_RBV
+      - ai
+      - Calculated photon energy; Linked to PV: [None, 'USEG:UNDS:', '2550:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2550:', None]
+
+
+    * - $(PREFIX)PE:UND:25:eVAct
+      - ao
+      - Calculated photon energy; Linked to PV: [None, 'USEG:UNDS:', '2550:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2550:', None]
+
+
+    * - $(PREFIX)PE:UND:25:eVDes_RBV
+      - ai
+      - Calculated desired photon energy; Linked to PV: [None, 'USEG:UNDS:', '2550:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2550:', None]
+
+
+    * - $(PREFIX)PE:UND:25:eVDes
+      - ao
+      - Calculated desired photon energy; Linked to PV: [None, 'USEG:UNDS:', '2550:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2550:', None]
+
+
+    * - $(PREFIX)PE:UND:25:KAct:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2550:', 'KAct', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2550:', 'KAct', '']
+
+
+    * - $(PREFIX)PE:UND:25:KAct:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2550:', 'KAct', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2550:', 'KAct', '']
+
+
+    * - $(PREFIX)PE:UND:25:KAct:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2550:', 'KAct', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2550:', 'KAct', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:25:KAct:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2550:', 'KAct', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2550:', 'KAct', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:25:KDes:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2550:', 'KDes', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2550:', 'KDes', '']
+
+
+    * - $(PREFIX)PE:UND:25:KDes:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2550:', 'KDes', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2550:', 'KDes', '']
+
+
+    * - $(PREFIX)PE:UND:25:KDes:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2550:', 'KDes', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2550:', 'KDes', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:25:KDes:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2550:', 'KDes', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2550:', 'KDes', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:25:Active_RBV
+      - bi
+      - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '2550:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2550:', None]
+
+
+    * - $(PREFIX)PE:UND:25:TargetActive_RBV
+      - bi
+      - Target K would make und active; Linked to PV: [None, 'USEG:UNDS:', '2550:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2550:', None]
 
 
     * - $(PREFIX)PE:UND:26:KActValid_RBV

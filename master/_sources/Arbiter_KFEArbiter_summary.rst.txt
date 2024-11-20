@@ -37,7 +37,7 @@ Libraries
     :align: center
 
         LCLS General, SLAC, , 2.8.2
-        PMPS, SLAC - LCLS, Unset, 3.3.0
+        PMPS, SLAC - LCLS, Unset, 3.4.1
         SysDir, System, , 3.5.8.0
         SysFile, System, , 3.5.9.0
         Tc2_EtherCAT, Beckhoff Automation GmbH, , 3.3.15.0
@@ -77,15 +77,15 @@ Constants
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        Constants.bFPUSupport, BOOL, 1275137944 (8)
-        Constants.bLittleEndian, BOOL, 1275137800 (8)
-        Constants.bSimulationMode, BOOL, 1275137936 (8)
-        Constants.CompilerVersion, VERSION, 1275137872 (64)
-        Constants.CompilerVersionNumeric, DWORD, 1275138016 (32)
-        Constants.nPackMode, UINT, 1275137968 (16)
-        Constants.nRegisterSize, WORD, 1275137952 (16)
-        Constants.RuntimeVersion, VERSION, 1275137808 (64)
-        Constants.RuntimeVersionNumeric, DWORD, 1275137984 (32)
+        Constants.bFPUSupport, BOOL, 1275087784 (8)
+        Constants.bLittleEndian, BOOL, 1273622392 (8)
+        Constants.bSimulationMode, BOOL, 1275087776 (8)
+        Constants.CompilerVersion, VERSION, 1275087712 (64)
+        Constants.CompilerVersionNumeric, DWORD, 1275087872 (32)
+        Constants.nPackMode, UINT, 1275087808 (16)
+        Constants.nRegisterSize, WORD, 1275087792 (16)
+        Constants.RuntimeVersion, VERSION, 1275087648 (64)
+        Constants.RuntimeVersionNumeric, DWORD, 1275087840 (32)
 
 
 CurrentBPUpdate
@@ -113,7 +113,7 @@ CurrentBPUpdate
         CurrentBPUpdate.fbEPICS_KRate, FB_RateFromEPICS, 1271760192 (25280)
         CurrentBPUpdate.fbEPICSKBeamClass, FB_BeamClassFromEPICS, 1271786432 (25280)
         CurrentBPUpdate.fbEPICSLMachineMode, FB_MachineModeFromEPICS, 1271812672 (25280)
-        CurrentBPUpdate.fbKPhotonEnergy, FB_KPhotonEnergy, 1271837952 (59136)
+        CurrentBPUpdate.fbKPhotonEnergy, FB_KPhotonEnergy, 1280098176 (70080)
         CurrentBPUpdate.fbMPS_BeamClass, FB_LREALFromEPICS, 1271785472 (960)
         CurrentBPUpdate.fbMR1K1VetoDevice, FB_KVetoDevice, 1272151104 (84672)
         CurrentBPUpdate.fbMR1K3VetoDevice, FB_KVetoDevice, 1272320512 (84672)
@@ -136,10 +136,10 @@ CurrentBPUpdate
         CurrentBPUpdate.st1k3Watcher.i_StopperOutLS, BOOL, 1272066368 (8)
         CurrentBPUpdate.st1k3Watcher.q_StopperIN_Relay, BOOL, 1272066392 (8)
         CurrentBPUpdate.st1k3Watcher.q_StopperOUT_Relay, BOOL, 1272066384 (8)
-        CurrentBPUpdate.ST1K4_IN_LowerLimit, UDINT, 1272574752 (32)
-        CurrentBPUpdate.ST1K4_IN_UpperLimit, UDINT, 1272574720 (32)
-        CurrentBPUpdate.ST1K4_OUT_UpperLimit, UDINT, 1272574784 (32)
-        CurrentBPUpdate.ST1K4_Y_ENC, UDINT, 1272405344 (32)
+        CurrentBPUpdate.ST1K4_IN_LowerLimit, UDINT, 1272574784 (32)
+        CurrentBPUpdate.ST1K4_IN_UpperLimit, UDINT, 1272574752 (32)
+        CurrentBPUpdate.ST1K4_OUT_UpperLimit, UDINT, 1272574816 (32)
+        CurrentBPUpdate.ST1K4_Y_ENC, UDINT, 1272574720 (32)
         CurrentBPUpdate.st1k4Watcher, FB_KVetoDevice, 1272490048 (84672)
         CurrentBPUpdate.st3k4Watcher, FB_KStopper, 1271897088 (84608)
         CurrentBPUpdate.st3k4Watcher.i_StopperInLS, BOOL, 1271897160 (8)
@@ -176,16 +176,16 @@ Fast_Faults_Evaluate
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        Fast_Faults_Evaluate.FFO, FB_FastFault, 1273521280 (25088)
-        Fast_Faults_Evaluate.FFO2, FB_FastFault, 1273546368 (25088)
+        Fast_Faults_Evaluate.FFO, FB_FastFault, 1273521312 (25088)
+        Fast_Faults_Evaluate.FFO2, FB_FastFault, 1273546400 (25088)
         Fast_Faults_Evaluate.FFO3, FB_FastFault, 1273571488 (25088)
         Fast_Faults_Evaluate.FFO4, FB_FastFault, 1273596576 (25088)
-        Fast_Faults_Evaluate.FFO_RIX_TXI_OPTICS, FB_FastFault, 1273621664 (25088)
-        Fast_Faults_Evaluate.FFO_TXI_OPTICS, FB_FastFault, 1273646752 (25088)
-        Fast_Faults_Evaluate.i_xFastFaultOut_qrix_vac, BOOL, 1273471080 (8)
-        Fast_Faults_Evaluate.i_xFastFaultOut_txi_mot, BOOL, 1273571464 (8)
-        Fast_Faults_Evaluate.i_xFastFaultOut_txi_optics, BOOL, 1273571472 (8)
-        Fast_Faults_Evaluate.i_xFastFaultOut_txi_vac, BOOL, 1273571456 (8)
+        Fast_Faults_Evaluate.FFO_RIX_TXI_OPTICS, FB_FastFault, 1280264768 (25088)
+        Fast_Faults_Evaluate.FFO_TXI_OPTICS, FB_FastFault, 1280289856 (25088)
+        Fast_Faults_Evaluate.i_xFastFaultOut_qrix_vac, BOOL, 1273471096 (8)
+        Fast_Faults_Evaluate.i_xFastFaultOut_txi_mot, BOOL, 1273471128 (8)
+        Fast_Faults_Evaluate.i_xFastFaultOut_txi_optics, BOOL, 1273621664 (8)
+        Fast_Faults_Evaluate.i_xFastFaultOut_txi_vac, BOOL, 1273471120 (8)
 
 
 GeneralConstants
@@ -609,13 +609,12 @@ Global_Version
 .. raw:: html
 
    <details>
-       <summary>15 Symbols</summary>
+       <summary>14 Symbols</summary>
 
 .. csv-table::
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        Global_Version.stLibVersion_PMPS, ST_LibVersion, 634590208 (288)
         Global_Version.stLibVersion_Tc2_EtherCAT, ST_LibVersion, 4178848 (288)
         Global_Version.stLibVersion_Tc2_IoFunctions, ST_LibVersion, 4390016 (288)
         Global_Version.stLibVersion_Tc2_Math, ST_LibVersion, 1264798592 (288)
@@ -649,18 +648,18 @@ GVL
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        GVL.AttemptReset, BOOL, 1273571480 (8)
-        GVL.g_FastFaultOutput1, FB_HardwareFFOutput, 1274147776 (494912)
-        GVL.g_FastFaultOutput1.q_xFastFaultOut, BOOL, 1274148040 (8)
-        GVL.g_FastFaultOutput2, FB_HardwareFFOutput, 1274642688 (494912)
-        GVL.g_FastFaultOutput2.q_xFastFaultOut, BOOL, 1274642952 (8)
-        GVL.g_fbArbiter1, FB_Arbiter, 1273672512 (473472)
-        GVL.g_rTestingVelocity, LREAL, 1275137600 (64)
-        GVL.MAX_FAST_FAULTS, UINT, 1274147744 (16)
-        GVL.MaxDuration, REAL, 1275137664 (32)
-        GVL.nBeamIntensity, INT, 1274147760 (16)
+        GVL.AttemptReset, BOOL, 1273621672 (8)
+        GVL.g_FastFaultOutput1, FB_HardwareFFOutput, 1274097664 (494912)
+        GVL.g_FastFaultOutput1.q_xFastFaultOut, BOOL, 1274097928 (8)
+        GVL.g_FastFaultOutput2, FB_HardwareFFOutput, 1274592576 (494912)
+        GVL.g_FastFaultOutput2.q_xFastFaultOut, BOOL, 1274592840 (8)
+        GVL.g_fbArbiter1, FB_Arbiter, 1273622400 (473472)
+        GVL.g_rTestingVelocity, LREAL, 1275087488 (64)
+        GVL.MAX_FAST_FAULTS, UINT, 1273621680 (16)
+        GVL.MaxDuration, REAL, 1274097632 (32)
+        GVL.nBeamIntensity, INT, 1273622368 (16)
         GVL.nLangId_OnlineMonitoring, DINT, 4391264 (32)
-        GVL.ReqBP, ST_BeamParams, 1274145984 (1760)
+        GVL.ReqBP, ST_BeamParams, 1274095872 (1760)
 
 .. raw:: html
 
@@ -675,9 +674,9 @@ GVL_CheckBounds
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        GVL_CheckBounds.nDivByZero, UDINT, 1275137760 (32)
-        GVL_CheckBounds.nTooHigh, UDINT, 1275137728 (32)
-        GVL_CheckBounds.nTooLow, UDINT, 1275137696 (32)
+        GVL_CheckBounds.nDivByZero, UDINT, 1275087616 (32)
+        GVL_CheckBounds.nTooHigh, UDINT, 1275087584 (32)
+        GVL_CheckBounds.nTooLow, UDINT, 1275087552 (32)
 
 
 GVL_INTERNAL
@@ -804,7 +803,7 @@ MachineSimulation
     :align: center
 
         MachineSimulation.fbeVSimulator, FB_eVSimulator, 1272577856 (9088)
-        MachineSimulation.fbMachine, FB_MachineSimulator, 1272575456 (2368)
+        MachineSimulation.fbMachine, FB_MachineSimulator, 1272575488 (2368)
 
 
 MAIN
@@ -854,27 +853,27 @@ P_AT1K0_SL1K0
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        P_AT1K0_SL1K0.bApplyJF, BOOL, 1273467592 (8)
-        P_AT1K0_SL1K0.bCancelJF, BOOL, 1273467600 (8)
-        P_AT1K0_SL1K0.bSimApt, BOOL, 1273467584 (8)
-        P_AT1K0_SL1K0.ffKFEGattConnection, FB_FastFault, 1273442496 (25088)
-        P_AT1K0_SL1K0.ffKFEMotConnection, FB_FastFault, 1273417408 (25088)
-        P_AT1K0_SL1K0.i_bWcStateIn_AT1K0, BOOL, 1272587576 (8)
-        P_AT1K0_SL1K0.i_bWcStateIn_KFEMOT, BOOL, 1273416600 (8)
-        P_AT1K0_SL1K0.i_bWcStateOut_AT1K0, BOOL, 1272587568 (8)
-        P_AT1K0_SL1K0.i_bWcStateOut_KFEMOT, BOOL, 1273416592 (8)
-        P_AT1K0_SL1K0.i_nState_AT1K0, UINT, 1273416576 (16)
-        P_AT1K0_SL1K0.i_nState_KFEMOT, UINT, 1273417376 (16)
+        P_AT1K0_SL1K0.bApplyJF, BOOL, 1273417432 (8)
+        P_AT1K0_SL1K0.bCancelJF, BOOL, 1273467648 (8)
+        P_AT1K0_SL1K0.bSimApt, BOOL, 1273417424 (8)
+        P_AT1K0_SL1K0.ffKFEGattConnection, FB_FastFault, 1273442528 (25088)
+        P_AT1K0_SL1K0.ffKFEMotConnection, FB_FastFault, 1273417440 (25088)
+        P_AT1K0_SL1K0.i_bWcStateIn_AT1K0, BOOL, 1273416584 (8)
+        P_AT1K0_SL1K0.i_bWcStateIn_KFEMOT, BOOL, 1273417384 (8)
+        P_AT1K0_SL1K0.i_bWcStateOut_AT1K0, BOOL, 1273416576 (8)
+        P_AT1K0_SL1K0.i_bWcStateOut_KFEMOT, BOOL, 1273417376 (8)
+        P_AT1K0_SL1K0.i_nState_AT1K0, UINT, 1273416592 (16)
+        P_AT1K0_SL1K0.i_nState_KFEMOT, UINT, 1273417392 (16)
         P_AT1K0_SL1K0.i_nTranToAT1K0Stat, ST_PMPS_Attenuator_IO, 1273416512 (64)
         P_AT1K0_SL1K0.i_stAptArrayStat, ST_PMPS_Aperture_IO, 1273416992 (384)
-        P_AT1K0_SL1K0.idx, UINT, 1273417392 (16)
+        P_AT1K0_SL1K0.idx, UINT, 1273417408 (16)
         P_AT1K0_SL1K0.nBeamIntensityJF, REAL, 1273467616 (32)
         P_AT1K0_SL1K0.q_nTranToAT1K0Req, ST_PMPS_Attenuator_IO, 1273416448 (64)
         P_AT1K0_SL1K0.q_stAptArrayReq, ST_PMPS_Aperture_IO, 1273416608 (384)
-        P_AT1K0_SL1K0.rDurationJF, REAL, 1273467648 (32)
-        P_AT1K0_SL1K0.rTimeRemainJF, REAL, 1273467680 (32)
-        P_AT1K0_SL1K0.tDuration, TIME, 1273467712 (32)
-        P_AT1K0_SL1K0.tonDuration, TON, 1273467744 (224)
+        P_AT1K0_SL1K0.rDurationJF, REAL, 1273467680 (32)
+        P_AT1K0_SL1K0.rTimeRemainJF, REAL, 1273467712 (32)
+        P_AT1K0_SL1K0.tDuration, TIME, 1273467744 (32)
+        P_AT1K0_SL1K0.tonDuration, TON, 1273467776 (224)
 
 .. raw:: html
 
@@ -894,17 +893,17 @@ P_SATT
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        P_SATT.ffkfeConnection, FB_FastFault, 1273471104 (25088)
-        P_SATT.ffRixConnection, FB_FastFault, 1273496192 (25088)
-        P_SATT.i_bWcStateIn_kfe_mot, BOOL, 1273471040 (8)
-        P_SATT.i_bWcStateIn_rix_mot, BOOL, 1273471072 (8)
-        P_SATT.i_bWcStateOut_kfe_mot, BOOL, 1273467608 (8)
-        P_SATT.i_bWcStateOut_rix_mot, BOOL, 1273471048 (8)
-        P_SATT.i_nState_kfe_mot, UINT, 1273471056 (16)
-        P_SATT.i_nState_rix_mot, UINT, 1273471088 (16)
-        P_SATT.i_SattArrayStatus_KFE, ST_PMPS_Attenuator_IO, 1273468992 (1024)
-        P_SATT.i_SattArrayStatus_RIX, ST_PMPS_Attenuator_IO, 1273470016 (1024)
-        P_SATT.q_SattArrayReq, ST_PMPS_Attenuator_IO, 1273467968 (1024)
+        P_SATT.ffkfeConnection, FB_FastFault, 1273471136 (25088)
+        P_SATT.ffRixConnection, FB_FastFault, 1273496224 (25088)
+        P_SATT.i_bWcStateIn_kfe_mot, BOOL, 1273467664 (8)
+        P_SATT.i_bWcStateIn_rix_mot, BOOL, 1273471088 (8)
+        P_SATT.i_bWcStateOut_kfe_mot, BOOL, 1273467656 (8)
+        P_SATT.i_bWcStateOut_rix_mot, BOOL, 1273467672 (8)
+        P_SATT.i_nState_kfe_mot, UINT, 1273471072 (16)
+        P_SATT.i_nState_rix_mot, UINT, 1273471104 (16)
+        P_SATT.i_SattArrayStatus_KFE, ST_PMPS_Attenuator_IO, 1273469024 (1024)
+        P_SATT.i_SattArrayStatus_RIX, ST_PMPS_Attenuator_IO, 1273470048 (1024)
+        P_SATT.q_SattArrayReq, ST_PMPS_Attenuator_IO, 1273468000 (1024)
 
 .. raw:: html
 
@@ -934,9 +933,9 @@ PMPS_Arbiter
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        PMPS_Arbiter.ar1, BOOL, 1272151064 (8)
-        PMPS_Arbiter.ar2, BOOL, 1272587552 (8)
-        PMPS_Arbiter.bRemove, BOOL, 1272587560 (8)
+        PMPS_Arbiter.ar1, BOOL, 1272405352 (8)
+        PMPS_Arbiter.ar2, BOOL, 1272405360 (8)
+        PMPS_Arbiter.bRemove, BOOL, 1272405368 (8)
         PMPS_Arbiter.count, CTU, 1273102912 (128)
         PMPS_Arbiter.fbBeamClassWatcher, FB_BeamClassWatcher, 1272720000 (128512)
         PMPS_Arbiter.fbBPRequestor, FB_BPRequestor, 1272587584 (3904)
@@ -945,7 +944,7 @@ PMPS_Arbiter
         PMPS_Arbiter.fbMPSInterface, FB_BeamClassOutputs_BCD, 1272848512 (1920)
         PMPS_Arbiter.fbMPSInterface.q_BC_ASSERTION_LINES, BOOL, 1272850368 (32)
         PMPS_Arbiter.fbPhotonEnergyWatcher, FB_PhotonEnergyWatcher, 1272591488 (128512)
-        PMPS_Arbiter.fbSetPE, PE_Ranges, 1272577824 (32)
+        PMPS_Arbiter.fbSetPE, PE_Ranges, 1272587552 (32)
         PMPS_Arbiter.nReqID, UDINT, 1273416320 (32)
         PMPS_Arbiter.nReqRM, UDINT, 1273416352 (32)
         PMPS_Arbiter.plc_crix_mot_PMPS_IO, FB_ArbiterToSubSys_IO, 1273197024 (31328)
@@ -1154,12 +1153,12 @@ TC_EVENT_CLASSES
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        TC_EVENT_CLASSES.LCLSGeneralEventClass, GUID, 1275156992 (128)
-        TC_EVENT_CLASSES.TcGeneralAdsEventClass, GUID, 1275156480 (128)
-        TC_EVENT_CLASSES.TcRouterEventClass, GUID, 1275156608 (128)
-        TC_EVENT_CLASSES.TcRTimeEventClass, GUID, 1275156736 (128)
-        TC_EVENT_CLASSES.TcSystemEventClass, GUID, 1275156352 (128)
-        TC_EVENT_CLASSES.Win32EventClass, GUID, 1275156864 (128)
+        TC_EVENT_CLASSES.LCLSGeneralEventClass, GUID, 1275106848 (128)
+        TC_EVENT_CLASSES.TcGeneralAdsEventClass, GUID, 1275106336 (128)
+        TC_EVENT_CLASSES.TcRouterEventClass, GUID, 1275106464 (128)
+        TC_EVENT_CLASSES.TcRTimeEventClass, GUID, 1275106592 (128)
+        TC_EVENT_CLASSES.TcSystemEventClass, GUID, 1275106208 (128)
+        TC_EVENT_CLASSES.Win32EventClass, GUID, 1275106720 (128)
 
 
 TC_EVENTS
@@ -1169,7 +1168,7 @@ TC_EVENTS
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        TC_EVENTS.LCLSGeneralEventClass, LCLSGeneralEventClass, 1275187328 (960)
+        TC_EVENTS.LCLSGeneralEventClass, LCLSGeneralEventClass, 1275137184 (960)
 
 
 TwinCAT_SystemInfoVarList
@@ -1179,13 +1178,13 @@ TwinCAT_SystemInfoVarList
     :header: Symbol, Type, Offset/Size
     :align: center
 
-        TwinCAT_SystemInfoVarList.__FFOTask, _Implicit_Task_Info, 1275142272 (704)
-        TwinCAT_SystemInfoVarList.__PlcTask, _Implicit_Task_Info, 1275142976 (704)
-        TwinCAT_SystemInfoVarList._AppInfo, PlcAppSystemInfo, 1275138048 (2048)
-        TwinCAT_SystemInfoVarList._TaskInfo, PlcTaskSystemInfo, 1275140096 (2048)
-        TwinCAT_SystemInfoVarList._TaskOid_FFOTask, OTCID, 1275142176 (32)
-        TwinCAT_SystemInfoVarList._TaskOid_PlcTask, OTCID, 1275142240 (32)
-        TwinCAT_SystemInfoVarList._TaskPouOid_FFOTask, OTCID, 1275142144 (32)
-        TwinCAT_SystemInfoVarList._TaskPouOid_PlcTask, OTCID, 1275142208 (32)
+        TwinCAT_SystemInfoVarList.__FFOTask, _Implicit_Task_Info, 1275092128 (704)
+        TwinCAT_SystemInfoVarList.__PlcTask, _Implicit_Task_Info, 1275092832 (704)
+        TwinCAT_SystemInfoVarList._AppInfo, PlcAppSystemInfo, 1275087904 (2048)
+        TwinCAT_SystemInfoVarList._TaskInfo, PlcTaskSystemInfo, 1275089984 (2048)
+        TwinCAT_SystemInfoVarList._TaskOid_FFOTask, OTCID, 1275092032 (32)
+        TwinCAT_SystemInfoVarList._TaskOid_PlcTask, OTCID, 1275092096 (32)
+        TwinCAT_SystemInfoVarList._TaskPouOid_FFOTask, OTCID, 1275089952 (32)
+        TwinCAT_SystemInfoVarList._TaskPouOid_PlcTask, OTCID, 1275092064 (32)
 
 
