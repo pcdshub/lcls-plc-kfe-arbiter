@@ -1,0 +1,30 @@
+lcls-plc-kfe-arbiter
+--------------------
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Arbiter
+
+    Arbiter_pragmas
+    Arbiter_nc
+    Arbiter_ethercat
+    Arbiter_boxes
+    Arbiter_links
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: KFEArbiter
+
+    Arbiter_KFEArbiter_summary
+    Arbiter_KFEArbiter_epics
+    Arbiter_KFEArbiter_source
+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
