@@ -15036,6 +15036,182 @@ PMPS.FB_KPhotonEnergy
         | link: [None, 'BEND:DMPS:400:BACT', '']
 
 
+    * - $(PREFIX):UND:21:Active_RBV
+      - bi
+      - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '2150:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2150:', None]
+
+
+    * - $(PREFIX):UND:21:eVAct
+      - ao
+      - Calculated photon energy; Linked to PV: [None, 'USEG:UNDS:', '2150:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2150:', None]
+
+
+    * - $(PREFIX):UND:21:eVAct_RBV
+      - ai
+      - Calculated photon energy; Linked to PV: [None, 'USEG:UNDS:', '2150:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2150:', None]
+
+
+    * - $(PREFIX):UND:21:eVDes
+      - ao
+      - Calculated desired photon energy; Linked to PV: [None, 'USEG:UNDS:', '2150:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2150:', None]
+
+
+    * - $(PREFIX):UND:21:eVDes_RBV
+      - ai
+      - Calculated desired photon energy; Linked to PV: [None, 'USEG:UNDS:', '2150:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2150:', None]
+
+
+    * - $(PREFIX):UND:21:KAct:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2150:', 'KAct', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2150:', 'KAct', '']
+
+
+    * - $(PREFIX):UND:21:KAct:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2150:', 'KAct', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2150:', 'KAct', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:21:KAct:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2150:', 'KAct', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2150:', 'KAct', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:21:KAct:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2150:', 'KAct', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2150:', 'KAct', '']
+
+
+    * - $(PREFIX):UND:21:KAct_RBV
+      - ai
+      - Current K; Linked to PV: [None, 'USEG:UNDS:', '2150:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2150:', None]
+
+
+    * - $(PREFIX):UND:21:KActValid_RBV
+      - bi
+      - Current K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2150:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2150:', None]
+
+
+    * - $(PREFIX):UND:21:KDes:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2150:', 'KDes', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2150:', 'KDes', '']
+
+
+    * - $(PREFIX):UND:21:KDes:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2150:', 'KDes', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2150:', 'KDes', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:21:KDes:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2150:', 'KDes', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2150:', 'KDes', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:21:KDes:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2150:', 'KDes', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2150:', 'KDes', '']
+
+
+    * - $(PREFIX):UND:21:KDes_RBV
+      - ai
+      - Target K; Linked to PV: [None, 'USEG:UNDS:', '2150:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2150:', None]
+
+
+    * - $(PREFIX):UND:21:KDesValid_RBV
+      - bi
+      - Target K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2150:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2150:', None]
+
+
+    * - $(PREFIX):UND:21:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2150:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2150:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:21:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2150:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2150:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:21:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2150:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2150:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:21:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2150:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2150:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:21:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '2150:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2150:', None]
+
+
+    * - $(PREFIX):UND:21:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2150:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2150:', None]
+
+
+    * - $(PREFIX):UND:21:TargetActive_RBV
+      - bi
+      - Target K would make und active; Linked to PV: [None, 'USEG:UNDS:', '2150:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2150:', None]
+
+
     * - $(PREFIX):UND:22:Active_RBV
       - bi
       - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '2250:', None]
@@ -15159,6 +15335,48 @@ PMPS.FB_KPhotonEnergy
     * - $(PREFIX):UND:22:KDesValid_RBV
       - bi
       - Target K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2250:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2250:', None]
+
+
+    * - $(PREFIX):UND:22:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2250:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2250:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:22:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2250:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2250:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:22:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2250:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2250:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:22:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2250:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2250:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:22:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '2250:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2250:', None]
+
+
+    * - $(PREFIX):UND:22:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2250:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '2250:', None]
 
@@ -15297,6 +15515,48 @@ PMPS.FB_KPhotonEnergy
         | link: [None, 'USEG:UNDS:', '2350:', None]
 
 
+    * - $(PREFIX):UND:23:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2350:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2350:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:23:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2350:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2350:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:23:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2350:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2350:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:23:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2350:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2350:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:23:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '2350:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2350:', None]
+
+
+    * - $(PREFIX):UND:23:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2350:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2350:', None]
+
+
     * - $(PREFIX):UND:23:TargetActive_RBV
       - bi
       - Target K would make und active; Linked to PV: [None, 'USEG:UNDS:', '2350:', None]
@@ -15427,6 +15687,48 @@ PMPS.FB_KPhotonEnergy
     * - $(PREFIX):UND:24:KDesValid_RBV
       - bi
       - Target K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2450:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2450:', None]
+
+
+    * - $(PREFIX):UND:24:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2450:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2450:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:24:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2450:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2450:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:24:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2450:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2450:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:24:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2450:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2450:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:24:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '2450:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2450:', None]
+
+
+    * - $(PREFIX):UND:24:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2450:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '2450:', None]
 
@@ -15565,6 +15867,48 @@ PMPS.FB_KPhotonEnergy
         | link: [None, 'USEG:UNDS:', '2550:', None]
 
 
+    * - $(PREFIX):UND:25:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2550:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2550:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:25:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2550:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2550:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:25:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2550:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2550:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:25:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2550:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2550:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:25:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '2550:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2550:', None]
+
+
+    * - $(PREFIX):UND:25:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2550:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2550:', None]
+
+
     * - $(PREFIX):UND:25:TargetActive_RBV
       - bi
       - Target K would make und active; Linked to PV: [None, 'USEG:UNDS:', '2550:', None]
@@ -15695,6 +16039,48 @@ PMPS.FB_KPhotonEnergy
     * - $(PREFIX):UND:26:KDesValid_RBV
       - bi
       - Target K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2650:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2650:', None]
+
+
+    * - $(PREFIX):UND:26:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2650:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2650:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:26:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2650:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2650:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:26:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2650:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2650:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:26:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2650:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2650:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:26:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '2650:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2650:', None]
+
+
+    * - $(PREFIX):UND:26:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2650:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '2650:', None]
 
@@ -15833,6 +16219,48 @@ PMPS.FB_KPhotonEnergy
         | link: [None, 'USEG:UNDS:', '2750:', None]
 
 
+    * - $(PREFIX):UND:27:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2750:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2750:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:27:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2750:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2750:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:27:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2750:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2750:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:27:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2750:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2750:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:27:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '2750:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2750:', None]
+
+
+    * - $(PREFIX):UND:27:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2750:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2750:', None]
+
+
     * - $(PREFIX):UND:27:TargetActive_RBV
       - bi
       - Target K would make und active; Linked to PV: [None, 'USEG:UNDS:', '2750:', None]
@@ -15963,6 +16391,48 @@ PMPS.FB_KPhotonEnergy
     * - $(PREFIX):UND:28:KDesValid_RBV
       - bi
       - Target K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2850:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2850:', None]
+
+
+    * - $(PREFIX):UND:28:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2850:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2850:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:28:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2850:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2850:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:28:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2850:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2850:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:28:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2850:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2850:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:28:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '2850:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2850:', None]
+
+
+    * - $(PREFIX):UND:28:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2850:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '2850:', None]
 
@@ -16101,6 +16571,48 @@ PMPS.FB_KPhotonEnergy
         | link: [None, 'USEG:UNDS:', '2950:', None]
 
 
+    * - $(PREFIX):UND:29:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2950:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2950:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:29:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2950:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2950:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:29:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2950:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2950:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:29:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2950:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2950:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:29:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '2950:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2950:', None]
+
+
+    * - $(PREFIX):UND:29:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2950:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2950:', None]
+
+
     * - $(PREFIX):UND:29:TargetActive_RBV
       - bi
       - Target K would make und active; Linked to PV: [None, 'USEG:UNDS:', '2950:', None]
@@ -16231,6 +16743,48 @@ PMPS.FB_KPhotonEnergy
     * - $(PREFIX):UND:30:KDesValid_RBV
       - bi
       - Target K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '3050:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3050:', None]
+
+
+    * - $(PREFIX):UND:30:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3050:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3050:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:30:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3050:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3050:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:30:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3050:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3050:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:30:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3050:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3050:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:30:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '3050:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3050:', None]
+
+
+    * - $(PREFIX):UND:30:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '3050:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '3050:', None]
 
@@ -16369,6 +16923,48 @@ PMPS.FB_KPhotonEnergy
         | link: [None, 'USEG:UNDS:', '3150:', None]
 
 
+    * - $(PREFIX):UND:31:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3150:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3150:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:31:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3150:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3150:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:31:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3150:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3150:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:31:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3150:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3150:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:31:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '3150:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3150:', None]
+
+
+    * - $(PREFIX):UND:31:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '3150:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3150:', None]
+
+
     * - $(PREFIX):UND:31:TargetActive_RBV
       - bi
       - Target K would make und active; Linked to PV: [None, 'USEG:UNDS:', '3150:', None]
@@ -16499,6 +17095,48 @@ PMPS.FB_KPhotonEnergy
     * - $(PREFIX):UND:32:KDesValid_RBV
       - bi
       - Target K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '3250:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3250:', None]
+
+
+    * - $(PREFIX):UND:32:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3250:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3250:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:32:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3250:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3250:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:32:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3250:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3250:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:32:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3250:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3250:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:32:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '3250:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3250:', None]
+
+
+    * - $(PREFIX):UND:32:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '3250:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '3250:', None]
 
@@ -16637,6 +17275,48 @@ PMPS.FB_KPhotonEnergy
         | link: [None, 'USEG:UNDS:', '3350:', None]
 
 
+    * - $(PREFIX):UND:33:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3350:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3350:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:33:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3350:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3350:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:33:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3350:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3350:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:33:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3350:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3350:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:33:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '3350:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3350:', None]
+
+
+    * - $(PREFIX):UND:33:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '3350:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3350:', None]
+
+
     * - $(PREFIX):UND:33:TargetActive_RBV
       - bi
       - Target K would make und active; Linked to PV: [None, 'USEG:UNDS:', '3350:', None]
@@ -16767,6 +17447,48 @@ PMPS.FB_KPhotonEnergy
     * - $(PREFIX):UND:34:KDesValid_RBV
       - bi
       - Target K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '3450:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3450:', None]
+
+
+    * - $(PREFIX):UND:34:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3450:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3450:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:34:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3450:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3450:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:34:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3450:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3450:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:34:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3450:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3450:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:34:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '3450:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3450:', None]
+
+
+    * - $(PREFIX):UND:34:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '3450:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '3450:', None]
 
@@ -16905,6 +17627,48 @@ PMPS.FB_KPhotonEnergy
         | link: [None, 'USEG:UNDS:', '3650:', None]
 
 
+    * - $(PREFIX):UND:36:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3650:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3650:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:36:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3650:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3650:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:36:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3650:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3650:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:36:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3650:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3650:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:36:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '3650:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3650:', None]
+
+
+    * - $(PREFIX):UND:36:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '3650:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3650:', None]
+
+
     * - $(PREFIX):UND:36:TargetActive_RBV
       - bi
       - Target K would make und active; Linked to PV: [None, 'USEG:UNDS:', '3650:', None]
@@ -17035,6 +17799,48 @@ PMPS.FB_KPhotonEnergy
     * - $(PREFIX):UND:37:KDesValid_RBV
       - bi
       - Target K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '3750:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3750:', None]
+
+
+    * - $(PREFIX):UND:37:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3750:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3750:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:37:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3750:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3750:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:37:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3750:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3750:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:37:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3750:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3750:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:37:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '3750:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3750:', None]
+
+
+    * - $(PREFIX):UND:37:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '3750:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '3750:', None]
 
@@ -17173,6 +17979,48 @@ PMPS.FB_KPhotonEnergy
         | link: [None, 'USEG:UNDS:', '3850:', None]
 
 
+    * - $(PREFIX):UND:38:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3850:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3850:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:38:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3850:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3850:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:38:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3850:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3850:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:38:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3850:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3850:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:38:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '3850:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3850:', None]
+
+
+    * - $(PREFIX):UND:38:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '3850:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3850:', None]
+
+
     * - $(PREFIX):UND:38:TargetActive_RBV
       - bi
       - Target K would make und active; Linked to PV: [None, 'USEG:UNDS:', '3850:', None]
@@ -17303,6 +18151,48 @@ PMPS.FB_KPhotonEnergy
     * - $(PREFIX):UND:39:KDesValid_RBV
       - bi
       - Target K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '3950:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3950:', None]
+
+
+    * - $(PREFIX):UND:39:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3950:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3950:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:39:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3950:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3950:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:39:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3950:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3950:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:39:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3950:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3950:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:39:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '3950:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3950:', None]
+
+
+    * - $(PREFIX):UND:39:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '3950:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '3950:', None]
 
@@ -17441,6 +18331,48 @@ PMPS.FB_KPhotonEnergy
         | link: [None, 'USEG:UNDS:', '4050:', None]
 
 
+    * - $(PREFIX):UND:40:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '4050:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4050:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:40:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4050:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4050:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:40:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4050:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4050:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:40:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '4050:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4050:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:40:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '4050:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '4050:', None]
+
+
+    * - $(PREFIX):UND:40:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '4050:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '4050:', None]
+
+
     * - $(PREFIX):UND:40:TargetActive_RBV
       - bi
       - Target K would make und active; Linked to PV: [None, 'USEG:UNDS:', '4050:', None]
@@ -17571,6 +18503,48 @@ PMPS.FB_KPhotonEnergy
     * - $(PREFIX):UND:41:KDesValid_RBV
       - bi
       - Target K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '4150:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '4150:', None]
+
+
+    * - $(PREFIX):UND:41:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '4150:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4150:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:41:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4150:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4150:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:41:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4150:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4150:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:41:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '4150:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4150:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:41:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '4150:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '4150:', None]
+
+
+    * - $(PREFIX):UND:41:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '4150:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '4150:', None]
 
@@ -17709,6 +18683,48 @@ PMPS.FB_KPhotonEnergy
         | link: [None, 'USEG:UNDS:', '4250:', None]
 
 
+    * - $(PREFIX):UND:42:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '4250:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4250:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:42:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4250:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4250:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:42:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4250:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4250:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:42:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '4250:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4250:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:42:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '4250:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '4250:', None]
+
+
+    * - $(PREFIX):UND:42:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '4250:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '4250:', None]
+
+
     * - $(PREFIX):UND:42:TargetActive_RBV
       - bi
       - Target K would make und active; Linked to PV: [None, 'USEG:UNDS:', '4250:', None]
@@ -17839,6 +18855,48 @@ PMPS.FB_KPhotonEnergy
     * - $(PREFIX):UND:43:KDesValid_RBV
       - bi
       - Target K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '4350:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '4350:', None]
+
+
+    * - $(PREFIX):UND:43:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '4350:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4350:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:43:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4350:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4350:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:43:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4350:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4350:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:43:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '4350:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4350:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:43:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '4350:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '4350:', None]
+
+
+    * - $(PREFIX):UND:43:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '4350:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '4350:', None]
 
@@ -17977,6 +19035,48 @@ PMPS.FB_KPhotonEnergy
         | link: [None, 'USEG:UNDS:', '4450:', None]
 
 
+    * - $(PREFIX):UND:44:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '4450:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4450:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:44:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4450:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4450:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:44:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4450:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4450:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:44:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '4450:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4450:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:44:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '4450:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '4450:', None]
+
+
+    * - $(PREFIX):UND:44:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '4450:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '4450:', None]
+
+
     * - $(PREFIX):UND:44:TargetActive_RBV
       - bi
       - Target K would make und active; Linked to PV: [None, 'USEG:UNDS:', '4450:', None]
@@ -18107,6 +19207,48 @@ PMPS.FB_KPhotonEnergy
     * - $(PREFIX):UND:45:KDesValid_RBV
       - bi
       - Target K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '4550:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '4550:', None]
+
+
+    * - $(PREFIX):UND:45:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '4550:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4550:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:45:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4550:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4550:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:45:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4550:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4550:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:45:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '4550:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4550:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:45:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '4550:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '4550:', None]
+
+
+    * - $(PREFIX):UND:45:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '4550:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '4550:', None]
 
@@ -18245,6 +19387,48 @@ PMPS.FB_KPhotonEnergy
         | link: [None, 'USEG:UNDS:', '4650:', None]
 
 
+    * - $(PREFIX):UND:46:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '4650:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4650:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:46:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4650:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4650:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:46:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4650:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4650:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:46:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '4650:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4650:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:46:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '4650:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '4650:', None]
+
+
+    * - $(PREFIX):UND:46:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '4650:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '4650:', None]
+
+
     * - $(PREFIX):UND:46:TargetActive_RBV
       - bi
       - Target K would make und active; Linked to PV: [None, 'USEG:UNDS:', '4650:', None]
@@ -18379,6 +19563,48 @@ PMPS.FB_KPhotonEnergy
         | link: [None, 'USEG:UNDS:', '4750:', None]
 
 
+    * - $(PREFIX):UND:47:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '4750:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4750:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:47:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4750:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4750:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:47:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4750:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4750:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):UND:47:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '4750:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4750:', 'lambda_U', '']
+
+
+    * - $(PREFIX):UND:47:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '4750:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '4750:', None]
+
+
+    * - $(PREFIX):UND:47:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '4750:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '4750:', None]
+
+
     * - $(PREFIX):UND:47:TargetActive_RBV
       - bi
       - Target K would make und active; Linked to PV: [None, 'USEG:UNDS:', '4750:', None]
@@ -18494,6 +19720,182 @@ PMPS.FB_SXU
       - Type
       - Description
       - Pragma
+    * - $(PREFIX):21:Active_RBV
+      - bi
+      - Undulator is considered active; Linked to PV: [None, '2150:', None]
+      - | io: input
+        | link: [None, '2150:', None]
+
+
+    * - $(PREFIX):21:eVAct
+      - ao
+      - Calculated photon energy; Linked to PV: [None, '2150:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, '2150:', None]
+
+
+    * - $(PREFIX):21:eVAct_RBV
+      - ai
+      - Calculated photon energy; Linked to PV: [None, '2150:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, '2150:', None]
+
+
+    * - $(PREFIX):21:eVDes
+      - ao
+      - Calculated desired photon energy; Linked to PV: [None, '2150:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, '2150:', None]
+
+
+    * - $(PREFIX):21:eVDes_RBV
+      - ai
+      - Calculated desired photon energy; Linked to PV: [None, '2150:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, '2150:', None]
+
+
+    * - $(PREFIX):21:KAct:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2150:', 'KAct', '']
+      - | io: output
+        | link: [None, '2150:', 'KAct', '']
+
+
+    * - $(PREFIX):21:KAct:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2150:', 'KAct', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2150:', 'KAct', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):21:KAct:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2150:', 'KAct', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2150:', 'KAct', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):21:KAct:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2150:', 'KAct', '']
+      - | io: output
+        | link: [None, '2150:', 'KAct', '']
+
+
+    * - $(PREFIX):21:KAct_RBV
+      - ai
+      - Current K; Linked to PV: [None, '2150:', None]
+      - | io: input
+        | link: [None, '2150:', None]
+
+
+    * - $(PREFIX):21:KActValid_RBV
+      - bi
+      - Current K Readback Valid; Linked to PV: [None, '2150:', None]
+      - | io: input
+        | link: [None, '2150:', None]
+
+
+    * - $(PREFIX):21:KDes:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2150:', 'KDes', '']
+      - | io: output
+        | link: [None, '2150:', 'KDes', '']
+
+
+    * - $(PREFIX):21:KDes:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2150:', 'KDes', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2150:', 'KDes', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):21:KDes:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2150:', 'KDes', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2150:', 'KDes', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):21:KDes:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2150:', 'KDes', '']
+      - | io: output
+        | link: [None, '2150:', 'KDes', '']
+
+
+    * - $(PREFIX):21:KDes_RBV
+      - ai
+      - Target K; Linked to PV: [None, '2150:', None]
+      - | io: input
+        | link: [None, '2150:', None]
+
+
+    * - $(PREFIX):21:KDesValid_RBV
+      - bi
+      - Target K Readback Valid; Linked to PV: [None, '2150:', None]
+      - | io: input
+        | link: [None, '2150:', None]
+
+
+    * - $(PREFIX):21:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2150:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '2150:', 'lambda_U', '']
+
+
+    * - $(PREFIX):21:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2150:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2150:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):21:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2150:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2150:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):21:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2150:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '2150:', 'lambda_U', '']
+
+
+    * - $(PREFIX):21:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, '2150:', None]
+      - | io: input
+        | link: [None, '2150:', None]
+
+
+    * - $(PREFIX):21:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, '2150:', None]
+      - | io: input
+        | link: [None, '2150:', None]
+
+
+    * - $(PREFIX):21:TargetActive_RBV
+      - bi
+      - Target K would make und active; Linked to PV: [None, '2150:', None]
+      - | io: input
+        | link: [None, '2150:', None]
+
+
     * - $(PREFIX):22:Active_RBV
       - bi
       - Undulator is considered active; Linked to PV: [None, '2250:', None]
@@ -18617,6 +20019,48 @@ PMPS.FB_SXU
     * - $(PREFIX):22:KDesValid_RBV
       - bi
       - Target K Readback Valid; Linked to PV: [None, '2250:', None]
+      - | io: input
+        | link: [None, '2250:', None]
+
+
+    * - $(PREFIX):22:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2250:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '2250:', 'lambda_U', '']
+
+
+    * - $(PREFIX):22:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2250:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2250:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):22:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2250:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2250:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):22:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2250:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '2250:', 'lambda_U', '']
+
+
+    * - $(PREFIX):22:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, '2250:', None]
+      - | io: input
+        | link: [None, '2250:', None]
+
+
+    * - $(PREFIX):22:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, '2250:', None]
       - | io: input
         | link: [None, '2250:', None]
 
@@ -18755,6 +20199,48 @@ PMPS.FB_SXU
         | link: [None, '2350:', None]
 
 
+    * - $(PREFIX):23:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2350:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '2350:', 'lambda_U', '']
+
+
+    * - $(PREFIX):23:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2350:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2350:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):23:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2350:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2350:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):23:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2350:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '2350:', 'lambda_U', '']
+
+
+    * - $(PREFIX):23:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, '2350:', None]
+      - | io: input
+        | link: [None, '2350:', None]
+
+
+    * - $(PREFIX):23:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, '2350:', None]
+      - | io: input
+        | link: [None, '2350:', None]
+
+
     * - $(PREFIX):23:TargetActive_RBV
       - bi
       - Target K would make und active; Linked to PV: [None, '2350:', None]
@@ -18885,6 +20371,48 @@ PMPS.FB_SXU
     * - $(PREFIX):24:KDesValid_RBV
       - bi
       - Target K Readback Valid; Linked to PV: [None, '2450:', None]
+      - | io: input
+        | link: [None, '2450:', None]
+
+
+    * - $(PREFIX):24:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2450:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '2450:', 'lambda_U', '']
+
+
+    * - $(PREFIX):24:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2450:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2450:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):24:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2450:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2450:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):24:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2450:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '2450:', 'lambda_U', '']
+
+
+    * - $(PREFIX):24:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, '2450:', None]
+      - | io: input
+        | link: [None, '2450:', None]
+
+
+    * - $(PREFIX):24:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, '2450:', None]
       - | io: input
         | link: [None, '2450:', None]
 
@@ -19023,6 +20551,48 @@ PMPS.FB_SXU
         | link: [None, '2550:', None]
 
 
+    * - $(PREFIX):25:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2550:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '2550:', 'lambda_U', '']
+
+
+    * - $(PREFIX):25:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2550:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2550:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):25:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2550:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2550:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):25:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2550:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '2550:', 'lambda_U', '']
+
+
+    * - $(PREFIX):25:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, '2550:', None]
+      - | io: input
+        | link: [None, '2550:', None]
+
+
+    * - $(PREFIX):25:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, '2550:', None]
+      - | io: input
+        | link: [None, '2550:', None]
+
+
     * - $(PREFIX):25:TargetActive_RBV
       - bi
       - Target K would make und active; Linked to PV: [None, '2550:', None]
@@ -19153,6 +20723,48 @@ PMPS.FB_SXU
     * - $(PREFIX):26:KDesValid_RBV
       - bi
       - Target K Readback Valid; Linked to PV: [None, '2650:', None]
+      - | io: input
+        | link: [None, '2650:', None]
+
+
+    * - $(PREFIX):26:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2650:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '2650:', 'lambda_U', '']
+
+
+    * - $(PREFIX):26:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2650:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2650:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):26:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2650:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2650:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):26:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2650:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '2650:', 'lambda_U', '']
+
+
+    * - $(PREFIX):26:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, '2650:', None]
+      - | io: input
+        | link: [None, '2650:', None]
+
+
+    * - $(PREFIX):26:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, '2650:', None]
       - | io: input
         | link: [None, '2650:', None]
 
@@ -19291,6 +20903,48 @@ PMPS.FB_SXU
         | link: [None, '2750:', None]
 
 
+    * - $(PREFIX):27:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2750:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '2750:', 'lambda_U', '']
+
+
+    * - $(PREFIX):27:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2750:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2750:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):27:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2750:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2750:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):27:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2750:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '2750:', 'lambda_U', '']
+
+
+    * - $(PREFIX):27:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, '2750:', None]
+      - | io: input
+        | link: [None, '2750:', None]
+
+
+    * - $(PREFIX):27:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, '2750:', None]
+      - | io: input
+        | link: [None, '2750:', None]
+
+
     * - $(PREFIX):27:TargetActive_RBV
       - bi
       - Target K would make und active; Linked to PV: [None, '2750:', None]
@@ -19421,6 +21075,48 @@ PMPS.FB_SXU
     * - $(PREFIX):28:KDesValid_RBV
       - bi
       - Target K Readback Valid; Linked to PV: [None, '2850:', None]
+      - | io: input
+        | link: [None, '2850:', None]
+
+
+    * - $(PREFIX):28:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2850:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '2850:', 'lambda_U', '']
+
+
+    * - $(PREFIX):28:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2850:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2850:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):28:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2850:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2850:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):28:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2850:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '2850:', 'lambda_U', '']
+
+
+    * - $(PREFIX):28:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, '2850:', None]
+      - | io: input
+        | link: [None, '2850:', None]
+
+
+    * - $(PREFIX):28:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, '2850:', None]
       - | io: input
         | link: [None, '2850:', None]
 
@@ -19559,6 +21255,48 @@ PMPS.FB_SXU
         | link: [None, '2950:', None]
 
 
+    * - $(PREFIX):29:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2950:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '2950:', 'lambda_U', '']
+
+
+    * - $(PREFIX):29:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2950:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2950:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):29:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '2950:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '2950:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):29:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '2950:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '2950:', 'lambda_U', '']
+
+
+    * - $(PREFIX):29:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, '2950:', None]
+      - | io: input
+        | link: [None, '2950:', None]
+
+
+    * - $(PREFIX):29:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, '2950:', None]
+      - | io: input
+        | link: [None, '2950:', None]
+
+
     * - $(PREFIX):29:TargetActive_RBV
       - bi
       - Target K would make und active; Linked to PV: [None, '2950:', None]
@@ -19689,6 +21427,48 @@ PMPS.FB_SXU
     * - $(PREFIX):30:KDesValid_RBV
       - bi
       - Target K Readback Valid; Linked to PV: [None, '3050:', None]
+      - | io: input
+        | link: [None, '3050:', None]
+
+
+    * - $(PREFIX):30:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '3050:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '3050:', 'lambda_U', '']
+
+
+    * - $(PREFIX):30:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '3050:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '3050:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):30:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '3050:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '3050:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):30:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '3050:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '3050:', 'lambda_U', '']
+
+
+    * - $(PREFIX):30:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, '3050:', None]
+      - | io: input
+        | link: [None, '3050:', None]
+
+
+    * - $(PREFIX):30:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, '3050:', None]
       - | io: input
         | link: [None, '3050:', None]
 
@@ -19827,6 +21607,48 @@ PMPS.FB_SXU
         | link: [None, '3150:', None]
 
 
+    * - $(PREFIX):31:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '3150:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '3150:', 'lambda_U', '']
+
+
+    * - $(PREFIX):31:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '3150:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '3150:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):31:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '3150:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '3150:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):31:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '3150:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '3150:', 'lambda_U', '']
+
+
+    * - $(PREFIX):31:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, '3150:', None]
+      - | io: input
+        | link: [None, '3150:', None]
+
+
+    * - $(PREFIX):31:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, '3150:', None]
+      - | io: input
+        | link: [None, '3150:', None]
+
+
     * - $(PREFIX):31:TargetActive_RBV
       - bi
       - Target K would make und active; Linked to PV: [None, '3150:', None]
@@ -19957,6 +21779,48 @@ PMPS.FB_SXU
     * - $(PREFIX):32:KDesValid_RBV
       - bi
       - Target K Readback Valid; Linked to PV: [None, '3250:', None]
+      - | io: input
+        | link: [None, '3250:', None]
+
+
+    * - $(PREFIX):32:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '3250:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '3250:', 'lambda_U', '']
+
+
+    * - $(PREFIX):32:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '3250:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '3250:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):32:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '3250:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '3250:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):32:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '3250:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '3250:', 'lambda_U', '']
+
+
+    * - $(PREFIX):32:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, '3250:', None]
+      - | io: input
+        | link: [None, '3250:', None]
+
+
+    * - $(PREFIX):32:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, '3250:', None]
       - | io: input
         | link: [None, '3250:', None]
 
@@ -20095,6 +21959,48 @@ PMPS.FB_SXU
         | link: [None, '3350:', None]
 
 
+    * - $(PREFIX):33:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '3350:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '3350:', 'lambda_U', '']
+
+
+    * - $(PREFIX):33:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '3350:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '3350:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):33:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '3350:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '3350:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):33:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '3350:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '3350:', 'lambda_U', '']
+
+
+    * - $(PREFIX):33:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, '3350:', None]
+      - | io: input
+        | link: [None, '3350:', None]
+
+
+    * - $(PREFIX):33:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, '3350:', None]
+      - | io: input
+        | link: [None, '3350:', None]
+
+
     * - $(PREFIX):33:TargetActive_RBV
       - bi
       - Target K would make und active; Linked to PV: [None, '3350:', None]
@@ -20225,6 +22131,48 @@ PMPS.FB_SXU
     * - $(PREFIX):34:KDesValid_RBV
       - bi
       - Target K Readback Valid; Linked to PV: [None, '3450:', None]
+      - | io: input
+        | link: [None, '3450:', None]
+
+
+    * - $(PREFIX):34:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '3450:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '3450:', 'lambda_U', '']
+
+
+    * - $(PREFIX):34:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '3450:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '3450:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):34:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '3450:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '3450:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):34:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '3450:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '3450:', 'lambda_U', '']
+
+
+    * - $(PREFIX):34:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, '3450:', None]
+      - | io: input
+        | link: [None, '3450:', None]
+
+
+    * - $(PREFIX):34:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, '3450:', None]
       - | io: input
         | link: [None, '3450:', None]
 
@@ -20363,6 +22311,48 @@ PMPS.FB_SXU
         | link: [None, '3650:', None]
 
 
+    * - $(PREFIX):36:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '3650:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '3650:', 'lambda_U', '']
+
+
+    * - $(PREFIX):36:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '3650:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '3650:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):36:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '3650:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '3650:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):36:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '3650:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '3650:', 'lambda_U', '']
+
+
+    * - $(PREFIX):36:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, '3650:', None]
+      - | io: input
+        | link: [None, '3650:', None]
+
+
+    * - $(PREFIX):36:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, '3650:', None]
+      - | io: input
+        | link: [None, '3650:', None]
+
+
     * - $(PREFIX):36:TargetActive_RBV
       - bi
       - Target K would make und active; Linked to PV: [None, '3650:', None]
@@ -20493,6 +22483,48 @@ PMPS.FB_SXU
     * - $(PREFIX):37:KDesValid_RBV
       - bi
       - Target K Readback Valid; Linked to PV: [None, '3750:', None]
+      - | io: input
+        | link: [None, '3750:', None]
+
+
+    * - $(PREFIX):37:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '3750:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '3750:', 'lambda_U', '']
+
+
+    * - $(PREFIX):37:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '3750:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '3750:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):37:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '3750:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '3750:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):37:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '3750:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '3750:', 'lambda_U', '']
+
+
+    * - $(PREFIX):37:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, '3750:', None]
+      - | io: input
+        | link: [None, '3750:', None]
+
+
+    * - $(PREFIX):37:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, '3750:', None]
       - | io: input
         | link: [None, '3750:', None]
 
@@ -20631,6 +22663,48 @@ PMPS.FB_SXU
         | link: [None, '3850:', None]
 
 
+    * - $(PREFIX):38:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '3850:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '3850:', 'lambda_U', '']
+
+
+    * - $(PREFIX):38:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '3850:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '3850:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):38:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '3850:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '3850:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):38:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '3850:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '3850:', 'lambda_U', '']
+
+
+    * - $(PREFIX):38:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, '3850:', None]
+      - | io: input
+        | link: [None, '3850:', None]
+
+
+    * - $(PREFIX):38:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, '3850:', None]
+      - | io: input
+        | link: [None, '3850:', None]
+
+
     * - $(PREFIX):38:TargetActive_RBV
       - bi
       - Target K would make und active; Linked to PV: [None, '3850:', None]
@@ -20761,6 +22835,48 @@ PMPS.FB_SXU
     * - $(PREFIX):39:KDesValid_RBV
       - bi
       - Target K Readback Valid; Linked to PV: [None, '3950:', None]
+      - | io: input
+        | link: [None, '3950:', None]
+
+
+    * - $(PREFIX):39:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '3950:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '3950:', 'lambda_U', '']
+
+
+    * - $(PREFIX):39:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '3950:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '3950:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):39:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '3950:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '3950:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):39:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '3950:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '3950:', 'lambda_U', '']
+
+
+    * - $(PREFIX):39:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, '3950:', None]
+      - | io: input
+        | link: [None, '3950:', None]
+
+
+    * - $(PREFIX):39:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, '3950:', None]
       - | io: input
         | link: [None, '3950:', None]
 
@@ -20899,6 +23015,48 @@ PMPS.FB_SXU
         | link: [None, '4050:', None]
 
 
+    * - $(PREFIX):40:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '4050:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '4050:', 'lambda_U', '']
+
+
+    * - $(PREFIX):40:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '4050:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '4050:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):40:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '4050:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '4050:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):40:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '4050:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '4050:', 'lambda_U', '']
+
+
+    * - $(PREFIX):40:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, '4050:', None]
+      - | io: input
+        | link: [None, '4050:', None]
+
+
+    * - $(PREFIX):40:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, '4050:', None]
+      - | io: input
+        | link: [None, '4050:', None]
+
+
     * - $(PREFIX):40:TargetActive_RBV
       - bi
       - Target K would make und active; Linked to PV: [None, '4050:', None]
@@ -21029,6 +23187,48 @@ PMPS.FB_SXU
     * - $(PREFIX):41:KDesValid_RBV
       - bi
       - Target K Readback Valid; Linked to PV: [None, '4150:', None]
+      - | io: input
+        | link: [None, '4150:', None]
+
+
+    * - $(PREFIX):41:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '4150:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '4150:', 'lambda_U', '']
+
+
+    * - $(PREFIX):41:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '4150:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '4150:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):41:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '4150:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '4150:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):41:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '4150:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '4150:', 'lambda_U', '']
+
+
+    * - $(PREFIX):41:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, '4150:', None]
+      - | io: input
+        | link: [None, '4150:', None]
+
+
+    * - $(PREFIX):41:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, '4150:', None]
       - | io: input
         | link: [None, '4150:', None]
 
@@ -21167,6 +23367,48 @@ PMPS.FB_SXU
         | link: [None, '4250:', None]
 
 
+    * - $(PREFIX):42:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '4250:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '4250:', 'lambda_U', '']
+
+
+    * - $(PREFIX):42:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '4250:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '4250:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):42:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '4250:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '4250:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):42:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '4250:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '4250:', 'lambda_U', '']
+
+
+    * - $(PREFIX):42:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, '4250:', None]
+      - | io: input
+        | link: [None, '4250:', None]
+
+
+    * - $(PREFIX):42:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, '4250:', None]
+      - | io: input
+        | link: [None, '4250:', None]
+
+
     * - $(PREFIX):42:TargetActive_RBV
       - bi
       - Target K would make und active; Linked to PV: [None, '4250:', None]
@@ -21297,6 +23539,48 @@ PMPS.FB_SXU
     * - $(PREFIX):43:KDesValid_RBV
       - bi
       - Target K Readback Valid; Linked to PV: [None, '4350:', None]
+      - | io: input
+        | link: [None, '4350:', None]
+
+
+    * - $(PREFIX):43:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '4350:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '4350:', 'lambda_U', '']
+
+
+    * - $(PREFIX):43:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '4350:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '4350:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):43:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '4350:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '4350:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):43:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '4350:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '4350:', 'lambda_U', '']
+
+
+    * - $(PREFIX):43:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, '4350:', None]
+      - | io: input
+        | link: [None, '4350:', None]
+
+
+    * - $(PREFIX):43:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, '4350:', None]
       - | io: input
         | link: [None, '4350:', None]
 
@@ -21435,6 +23719,48 @@ PMPS.FB_SXU
         | link: [None, '4450:', None]
 
 
+    * - $(PREFIX):44:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '4450:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '4450:', 'lambda_U', '']
+
+
+    * - $(PREFIX):44:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '4450:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '4450:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):44:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '4450:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '4450:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):44:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '4450:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '4450:', 'lambda_U', '']
+
+
+    * - $(PREFIX):44:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, '4450:', None]
+      - | io: input
+        | link: [None, '4450:', None]
+
+
+    * - $(PREFIX):44:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, '4450:', None]
+      - | io: input
+        | link: [None, '4450:', None]
+
+
     * - $(PREFIX):44:TargetActive_RBV
       - bi
       - Target K would make und active; Linked to PV: [None, '4450:', None]
@@ -21565,6 +23891,48 @@ PMPS.FB_SXU
     * - $(PREFIX):45:KDesValid_RBV
       - bi
       - Target K Readback Valid; Linked to PV: [None, '4550:', None]
+      - | io: input
+        | link: [None, '4550:', None]
+
+
+    * - $(PREFIX):45:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '4550:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '4550:', 'lambda_U', '']
+
+
+    * - $(PREFIX):45:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '4550:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '4550:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):45:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '4550:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '4550:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):45:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '4550:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '4550:', 'lambda_U', '']
+
+
+    * - $(PREFIX):45:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, '4550:', None]
+      - | io: input
+        | link: [None, '4550:', None]
+
+
+    * - $(PREFIX):45:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, '4550:', None]
       - | io: input
         | link: [None, '4550:', None]
 
@@ -21703,6 +24071,48 @@ PMPS.FB_SXU
         | link: [None, '4650:', None]
 
 
+    * - $(PREFIX):46:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '4650:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '4650:', 'lambda_U', '']
+
+
+    * - $(PREFIX):46:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '4650:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '4650:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):46:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '4650:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '4650:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):46:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '4650:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '4650:', 'lambda_U', '']
+
+
+    * - $(PREFIX):46:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, '4650:', None]
+      - | io: input
+        | link: [None, '4650:', None]
+
+
+    * - $(PREFIX):46:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, '4650:', None]
+      - | io: input
+        | link: [None, '4650:', None]
+
+
     * - $(PREFIX):46:TargetActive_RBV
       - bi
       - Target K would make und active; Linked to PV: [None, '4650:', None]
@@ -21833,6 +24243,48 @@ PMPS.FB_SXU
     * - $(PREFIX):47:KDesValid_RBV
       - bi
       - Target K Readback Valid; Linked to PV: [None, '4750:', None]
+      - | io: input
+        | link: [None, '4750:', None]
+
+
+    * - $(PREFIX):47:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '4750:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '4750:', 'lambda_U', '']
+
+
+    * - $(PREFIX):47:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '4750:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '4750:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):47:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '4750:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '4750:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):47:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '4750:', 'lambda_U', '']
+      - | io: output
+        | link: [None, '4750:', 'lambda_U', '']
+
+
+    * - $(PREFIX):47:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, '4750:', None]
+      - | io: input
+        | link: [None, '4750:', None]
+
+
+    * - $(PREFIX):47:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, '4750:', None]
       - | io: input
         | link: [None, '4750:', None]
 
@@ -22037,6 +24489,46 @@ PMPS.FB_UndulatorSegment
     * - $(PREFIX):KDesValid_RBV
       - bi
       - Target K Readback Valid
+      - | io: input
+
+
+    * - $(PREFIX):lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'lambda_U', '']
+      - | io: output
+        | link: [None, 'lambda_U', '']
+
+
+    * - $(PREFIX):lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'lambda_U', '']
+      - | io: output
+        | link: [None, 'lambda_U', '']
+
+
+    * - $(PREFIX):Lambda_U_RBV
+      - ai
+      - Period in m
+      - | io: input
+
+
+    * - $(PREFIX):lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid
       - | io: input
 
 
@@ -22979,6 +25471,182 @@ Database Records
         | link: [None, 'USEG:UNDS:', None]
 
 
+    * - $(PREFIX)PE:UND:21:KActValid_RBV
+      - bi
+      - Current K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2150:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2150:', None]
+
+
+    * - $(PREFIX)PE:UND:21:KDesValid_RBV
+      - bi
+      - Target K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2150:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2150:', None]
+
+
+    * - $(PREFIX)PE:UND:21:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2150:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2150:', None]
+
+
+    * - $(PREFIX)PE:UND:21:KAct_RBV
+      - ai
+      - Current K; Linked to PV: [None, 'USEG:UNDS:', '2150:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2150:', None]
+
+
+    * - $(PREFIX)PE:UND:21:KDes_RBV
+      - ai
+      - Target K; Linked to PV: [None, 'USEG:UNDS:', '2150:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2150:', None]
+
+
+    * - $(PREFIX)PE:UND:21:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '2150:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2150:', None]
+
+
+    * - $(PREFIX)PE:UND:21:eVAct_RBV
+      - ai
+      - Calculated photon energy; Linked to PV: [None, 'USEG:UNDS:', '2150:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2150:', None]
+
+
+    * - $(PREFIX)PE:UND:21:eVAct
+      - ao
+      - Calculated photon energy; Linked to PV: [None, 'USEG:UNDS:', '2150:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2150:', None]
+
+
+    * - $(PREFIX)PE:UND:21:eVDes_RBV
+      - ai
+      - Calculated desired photon energy; Linked to PV: [None, 'USEG:UNDS:', '2150:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2150:', None]
+
+
+    * - $(PREFIX)PE:UND:21:eVDes
+      - ao
+      - Calculated desired photon energy; Linked to PV: [None, 'USEG:UNDS:', '2150:', None]
+      - | field: EGU eV
+        | field: PREC 3
+        | io: output
+        | link: [None, 'USEG:UNDS:', '2150:', None]
+
+
+    * - $(PREFIX)PE:UND:21:KAct:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2150:', 'KAct', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2150:', 'KAct', '']
+
+
+    * - $(PREFIX)PE:UND:21:KAct:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2150:', 'KAct', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2150:', 'KAct', '']
+
+
+    * - $(PREFIX)PE:UND:21:KAct:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2150:', 'KAct', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2150:', 'KAct', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:21:KAct:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2150:', 'KAct', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2150:', 'KAct', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:21:KDes:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2150:', 'KDes', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2150:', 'KDes', '']
+
+
+    * - $(PREFIX)PE:UND:21:KDes:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2150:', 'KDes', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2150:', 'KDes', '']
+
+
+    * - $(PREFIX)PE:UND:21:KDes:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2150:', 'KDes', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2150:', 'KDes', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:21:KDes:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2150:', 'KDes', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2150:', 'KDes', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:21:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2150:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2150:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:21:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2150:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2150:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:21:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2150:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2150:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:21:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2150:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2150:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:21:Active_RBV
+      - bi
+      - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '2150:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2150:', None]
+
+
+    * - $(PREFIX)PE:UND:21:TargetActive_RBV
+      - bi
+      - Target K would make und active; Linked to PV: [None, 'USEG:UNDS:', '2150:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2150:', None]
+
+
     * - $(PREFIX)PE:UND:22:KActValid_RBV
       - bi
       - Current K Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2250:', None]
@@ -22993,6 +25661,13 @@ Database Records
         | link: [None, 'USEG:UNDS:', '2250:', None]
 
 
+    * - $(PREFIX)PE:UND:22:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2250:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2250:', None]
+
+
     * - $(PREFIX)PE:UND:22:KAct_RBV
       - ai
       - Current K; Linked to PV: [None, 'USEG:UNDS:', '2250:', None]
@@ -23003,6 +25678,13 @@ Database Records
     * - $(PREFIX)PE:UND:22:KDes_RBV
       - ai
       - Target K; Linked to PV: [None, 'USEG:UNDS:', '2250:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2250:', None]
+
+
+    * - $(PREFIX)PE:UND:22:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '2250:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '2250:', None]
 
@@ -23099,6 +25781,34 @@ Database Records
         | link: [None, 'USEG:UNDS:', '2250:', 'KDes', '*EPICSLink.SEVR']
 
 
+    * - $(PREFIX)PE:UND:22:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2250:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2250:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:22:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2250:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2250:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:22:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2250:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2250:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:22:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2250:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2250:', 'lambda_U', '*EPICSLink.SEVR']
+
+
     * - $(PREFIX)PE:UND:22:Active_RBV
       - bi
       - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '2250:', None]
@@ -23127,6 +25837,13 @@ Database Records
         | link: [None, 'USEG:UNDS:', '2350:', None]
 
 
+    * - $(PREFIX)PE:UND:23:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2350:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2350:', None]
+
+
     * - $(PREFIX)PE:UND:23:KAct_RBV
       - ai
       - Current K; Linked to PV: [None, 'USEG:UNDS:', '2350:', None]
@@ -23137,6 +25854,13 @@ Database Records
     * - $(PREFIX)PE:UND:23:KDes_RBV
       - ai
       - Target K; Linked to PV: [None, 'USEG:UNDS:', '2350:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2350:', None]
+
+
+    * - $(PREFIX)PE:UND:23:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '2350:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '2350:', None]
 
@@ -23233,6 +25957,34 @@ Database Records
         | link: [None, 'USEG:UNDS:', '2350:', 'KDes', '*EPICSLink.SEVR']
 
 
+    * - $(PREFIX)PE:UND:23:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2350:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2350:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:23:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2350:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2350:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:23:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2350:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2350:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:23:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2350:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2350:', 'lambda_U', '*EPICSLink.SEVR']
+
+
     * - $(PREFIX)PE:UND:23:Active_RBV
       - bi
       - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '2350:', None]
@@ -23261,6 +26013,13 @@ Database Records
         | link: [None, 'USEG:UNDS:', '2450:', None]
 
 
+    * - $(PREFIX)PE:UND:24:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2450:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2450:', None]
+
+
     * - $(PREFIX)PE:UND:24:KAct_RBV
       - ai
       - Current K; Linked to PV: [None, 'USEG:UNDS:', '2450:', None]
@@ -23271,6 +26030,13 @@ Database Records
     * - $(PREFIX)PE:UND:24:KDes_RBV
       - ai
       - Target K; Linked to PV: [None, 'USEG:UNDS:', '2450:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2450:', None]
+
+
+    * - $(PREFIX)PE:UND:24:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '2450:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '2450:', None]
 
@@ -23367,6 +26133,34 @@ Database Records
         | link: [None, 'USEG:UNDS:', '2450:', 'KDes', '*EPICSLink.SEVR']
 
 
+    * - $(PREFIX)PE:UND:24:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2450:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2450:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:24:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2450:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2450:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:24:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2450:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2450:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:24:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2450:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2450:', 'lambda_U', '*EPICSLink.SEVR']
+
+
     * - $(PREFIX)PE:UND:24:Active_RBV
       - bi
       - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '2450:', None]
@@ -23395,6 +26189,13 @@ Database Records
         | link: [None, 'USEG:UNDS:', '2550:', None]
 
 
+    * - $(PREFIX)PE:UND:25:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2550:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2550:', None]
+
+
     * - $(PREFIX)PE:UND:25:KAct_RBV
       - ai
       - Current K; Linked to PV: [None, 'USEG:UNDS:', '2550:', None]
@@ -23405,6 +26206,13 @@ Database Records
     * - $(PREFIX)PE:UND:25:KDes_RBV
       - ai
       - Target K; Linked to PV: [None, 'USEG:UNDS:', '2550:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2550:', None]
+
+
+    * - $(PREFIX)PE:UND:25:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '2550:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '2550:', None]
 
@@ -23501,6 +26309,34 @@ Database Records
         | link: [None, 'USEG:UNDS:', '2550:', 'KDes', '*EPICSLink.SEVR']
 
 
+    * - $(PREFIX)PE:UND:25:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2550:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2550:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:25:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2550:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2550:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:25:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2550:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2550:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:25:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2550:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2550:', 'lambda_U', '*EPICSLink.SEVR']
+
+
     * - $(PREFIX)PE:UND:25:Active_RBV
       - bi
       - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '2550:', None]
@@ -23529,6 +26365,13 @@ Database Records
         | link: [None, 'USEG:UNDS:', '2650:', None]
 
 
+    * - $(PREFIX)PE:UND:26:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2650:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2650:', None]
+
+
     * - $(PREFIX)PE:UND:26:KAct_RBV
       - ai
       - Current K; Linked to PV: [None, 'USEG:UNDS:', '2650:', None]
@@ -23539,6 +26382,13 @@ Database Records
     * - $(PREFIX)PE:UND:26:KDes_RBV
       - ai
       - Target K; Linked to PV: [None, 'USEG:UNDS:', '2650:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2650:', None]
+
+
+    * - $(PREFIX)PE:UND:26:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '2650:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '2650:', None]
 
@@ -23635,6 +26485,34 @@ Database Records
         | link: [None, 'USEG:UNDS:', '2650:', 'KDes', '*EPICSLink.SEVR']
 
 
+    * - $(PREFIX)PE:UND:26:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2650:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2650:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:26:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2650:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2650:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:26:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2650:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2650:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:26:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2650:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2650:', 'lambda_U', '*EPICSLink.SEVR']
+
+
     * - $(PREFIX)PE:UND:26:Active_RBV
       - bi
       - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '2650:', None]
@@ -23663,6 +26541,13 @@ Database Records
         | link: [None, 'USEG:UNDS:', '2750:', None]
 
 
+    * - $(PREFIX)PE:UND:27:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2750:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2750:', None]
+
+
     * - $(PREFIX)PE:UND:27:KAct_RBV
       - ai
       - Current K; Linked to PV: [None, 'USEG:UNDS:', '2750:', None]
@@ -23673,6 +26558,13 @@ Database Records
     * - $(PREFIX)PE:UND:27:KDes_RBV
       - ai
       - Target K; Linked to PV: [None, 'USEG:UNDS:', '2750:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2750:', None]
+
+
+    * - $(PREFIX)PE:UND:27:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '2750:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '2750:', None]
 
@@ -23769,6 +26661,34 @@ Database Records
         | link: [None, 'USEG:UNDS:', '2750:', 'KDes', '*EPICSLink.SEVR']
 
 
+    * - $(PREFIX)PE:UND:27:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2750:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2750:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:27:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2750:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2750:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:27:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2750:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2750:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:27:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2750:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2750:', 'lambda_U', '*EPICSLink.SEVR']
+
+
     * - $(PREFIX)PE:UND:27:Active_RBV
       - bi
       - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '2750:', None]
@@ -23797,6 +26717,13 @@ Database Records
         | link: [None, 'USEG:UNDS:', '2850:', None]
 
 
+    * - $(PREFIX)PE:UND:28:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2850:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2850:', None]
+
+
     * - $(PREFIX)PE:UND:28:KAct_RBV
       - ai
       - Current K; Linked to PV: [None, 'USEG:UNDS:', '2850:', None]
@@ -23807,6 +26734,13 @@ Database Records
     * - $(PREFIX)PE:UND:28:KDes_RBV
       - ai
       - Target K; Linked to PV: [None, 'USEG:UNDS:', '2850:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2850:', None]
+
+
+    * - $(PREFIX)PE:UND:28:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '2850:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '2850:', None]
 
@@ -23903,6 +26837,34 @@ Database Records
         | link: [None, 'USEG:UNDS:', '2850:', 'KDes', '*EPICSLink.SEVR']
 
 
+    * - $(PREFIX)PE:UND:28:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2850:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2850:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:28:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2850:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2850:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:28:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2850:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2850:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:28:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2850:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2850:', 'lambda_U', '*EPICSLink.SEVR']
+
+
     * - $(PREFIX)PE:UND:28:Active_RBV
       - bi
       - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '2850:', None]
@@ -23931,6 +26893,13 @@ Database Records
         | link: [None, 'USEG:UNDS:', '2950:', None]
 
 
+    * - $(PREFIX)PE:UND:29:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '2950:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2950:', None]
+
+
     * - $(PREFIX)PE:UND:29:KAct_RBV
       - ai
       - Current K; Linked to PV: [None, 'USEG:UNDS:', '2950:', None]
@@ -23941,6 +26910,13 @@ Database Records
     * - $(PREFIX)PE:UND:29:KDes_RBV
       - ai
       - Target K; Linked to PV: [None, 'USEG:UNDS:', '2950:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '2950:', None]
+
+
+    * - $(PREFIX)PE:UND:29:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '2950:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '2950:', None]
 
@@ -24037,6 +27013,34 @@ Database Records
         | link: [None, 'USEG:UNDS:', '2950:', 'KDes', '*EPICSLink.SEVR']
 
 
+    * - $(PREFIX)PE:UND:29:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2950:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2950:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:29:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '2950:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2950:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:29:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2950:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2950:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:29:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '2950:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '2950:', 'lambda_U', '*EPICSLink.SEVR']
+
+
     * - $(PREFIX)PE:UND:29:Active_RBV
       - bi
       - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '2950:', None]
@@ -24065,6 +27069,13 @@ Database Records
         | link: [None, 'USEG:UNDS:', '3050:', None]
 
 
+    * - $(PREFIX)PE:UND:30:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '3050:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3050:', None]
+
+
     * - $(PREFIX)PE:UND:30:KAct_RBV
       - ai
       - Current K; Linked to PV: [None, 'USEG:UNDS:', '3050:', None]
@@ -24075,6 +27086,13 @@ Database Records
     * - $(PREFIX)PE:UND:30:KDes_RBV
       - ai
       - Target K; Linked to PV: [None, 'USEG:UNDS:', '3050:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3050:', None]
+
+
+    * - $(PREFIX)PE:UND:30:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '3050:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '3050:', None]
 
@@ -24171,6 +27189,34 @@ Database Records
         | link: [None, 'USEG:UNDS:', '3050:', 'KDes', '*EPICSLink.SEVR']
 
 
+    * - $(PREFIX)PE:UND:30:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3050:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3050:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:30:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3050:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3050:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:30:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3050:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3050:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:30:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3050:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3050:', 'lambda_U', '*EPICSLink.SEVR']
+
+
     * - $(PREFIX)PE:UND:30:Active_RBV
       - bi
       - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '3050:', None]
@@ -24199,6 +27245,13 @@ Database Records
         | link: [None, 'USEG:UNDS:', '3150:', None]
 
 
+    * - $(PREFIX)PE:UND:31:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '3150:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3150:', None]
+
+
     * - $(PREFIX)PE:UND:31:KAct_RBV
       - ai
       - Current K; Linked to PV: [None, 'USEG:UNDS:', '3150:', None]
@@ -24209,6 +27262,13 @@ Database Records
     * - $(PREFIX)PE:UND:31:KDes_RBV
       - ai
       - Target K; Linked to PV: [None, 'USEG:UNDS:', '3150:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3150:', None]
+
+
+    * - $(PREFIX)PE:UND:31:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '3150:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '3150:', None]
 
@@ -24305,6 +27365,34 @@ Database Records
         | link: [None, 'USEG:UNDS:', '3150:', 'KDes', '*EPICSLink.SEVR']
 
 
+    * - $(PREFIX)PE:UND:31:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3150:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3150:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:31:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3150:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3150:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:31:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3150:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3150:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:31:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3150:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3150:', 'lambda_U', '*EPICSLink.SEVR']
+
+
     * - $(PREFIX)PE:UND:31:Active_RBV
       - bi
       - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '3150:', None]
@@ -24333,6 +27421,13 @@ Database Records
         | link: [None, 'USEG:UNDS:', '3250:', None]
 
 
+    * - $(PREFIX)PE:UND:32:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '3250:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3250:', None]
+
+
     * - $(PREFIX)PE:UND:32:KAct_RBV
       - ai
       - Current K; Linked to PV: [None, 'USEG:UNDS:', '3250:', None]
@@ -24343,6 +27438,13 @@ Database Records
     * - $(PREFIX)PE:UND:32:KDes_RBV
       - ai
       - Target K; Linked to PV: [None, 'USEG:UNDS:', '3250:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3250:', None]
+
+
+    * - $(PREFIX)PE:UND:32:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '3250:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '3250:', None]
 
@@ -24439,6 +27541,34 @@ Database Records
         | link: [None, 'USEG:UNDS:', '3250:', 'KDes', '*EPICSLink.SEVR']
 
 
+    * - $(PREFIX)PE:UND:32:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3250:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3250:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:32:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3250:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3250:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:32:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3250:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3250:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:32:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3250:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3250:', 'lambda_U', '*EPICSLink.SEVR']
+
+
     * - $(PREFIX)PE:UND:32:Active_RBV
       - bi
       - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '3250:', None]
@@ -24467,6 +27597,13 @@ Database Records
         | link: [None, 'USEG:UNDS:', '3350:', None]
 
 
+    * - $(PREFIX)PE:UND:33:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '3350:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3350:', None]
+
+
     * - $(PREFIX)PE:UND:33:KAct_RBV
       - ai
       - Current K; Linked to PV: [None, 'USEG:UNDS:', '3350:', None]
@@ -24477,6 +27614,13 @@ Database Records
     * - $(PREFIX)PE:UND:33:KDes_RBV
       - ai
       - Target K; Linked to PV: [None, 'USEG:UNDS:', '3350:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3350:', None]
+
+
+    * - $(PREFIX)PE:UND:33:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '3350:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '3350:', None]
 
@@ -24573,6 +27717,34 @@ Database Records
         | link: [None, 'USEG:UNDS:', '3350:', 'KDes', '*EPICSLink.SEVR']
 
 
+    * - $(PREFIX)PE:UND:33:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3350:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3350:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:33:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3350:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3350:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:33:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3350:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3350:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:33:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3350:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3350:', 'lambda_U', '*EPICSLink.SEVR']
+
+
     * - $(PREFIX)PE:UND:33:Active_RBV
       - bi
       - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '3350:', None]
@@ -24601,6 +27773,13 @@ Database Records
         | link: [None, 'USEG:UNDS:', '3450:', None]
 
 
+    * - $(PREFIX)PE:UND:34:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '3450:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3450:', None]
+
+
     * - $(PREFIX)PE:UND:34:KAct_RBV
       - ai
       - Current K; Linked to PV: [None, 'USEG:UNDS:', '3450:', None]
@@ -24611,6 +27790,13 @@ Database Records
     * - $(PREFIX)PE:UND:34:KDes_RBV
       - ai
       - Target K; Linked to PV: [None, 'USEG:UNDS:', '3450:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3450:', None]
+
+
+    * - $(PREFIX)PE:UND:34:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '3450:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '3450:', None]
 
@@ -24707,6 +27893,34 @@ Database Records
         | link: [None, 'USEG:UNDS:', '3450:', 'KDes', '*EPICSLink.SEVR']
 
 
+    * - $(PREFIX)PE:UND:34:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3450:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3450:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:34:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3450:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3450:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:34:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3450:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3450:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:34:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3450:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3450:', 'lambda_U', '*EPICSLink.SEVR']
+
+
     * - $(PREFIX)PE:UND:34:Active_RBV
       - bi
       - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '3450:', None]
@@ -24735,6 +27949,13 @@ Database Records
         | link: [None, 'USEG:UNDS:', '3650:', None]
 
 
+    * - $(PREFIX)PE:UND:36:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '3650:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3650:', None]
+
+
     * - $(PREFIX)PE:UND:36:KAct_RBV
       - ai
       - Current K; Linked to PV: [None, 'USEG:UNDS:', '3650:', None]
@@ -24745,6 +27966,13 @@ Database Records
     * - $(PREFIX)PE:UND:36:KDes_RBV
       - ai
       - Target K; Linked to PV: [None, 'USEG:UNDS:', '3650:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3650:', None]
+
+
+    * - $(PREFIX)PE:UND:36:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '3650:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '3650:', None]
 
@@ -24841,6 +28069,34 @@ Database Records
         | link: [None, 'USEG:UNDS:', '3650:', 'KDes', '*EPICSLink.SEVR']
 
 
+    * - $(PREFIX)PE:UND:36:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3650:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3650:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:36:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3650:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3650:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:36:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3650:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3650:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:36:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3650:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3650:', 'lambda_U', '*EPICSLink.SEVR']
+
+
     * - $(PREFIX)PE:UND:36:Active_RBV
       - bi
       - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '3650:', None]
@@ -24869,6 +28125,13 @@ Database Records
         | link: [None, 'USEG:UNDS:', '3750:', None]
 
 
+    * - $(PREFIX)PE:UND:37:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '3750:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3750:', None]
+
+
     * - $(PREFIX)PE:UND:37:KAct_RBV
       - ai
       - Current K; Linked to PV: [None, 'USEG:UNDS:', '3750:', None]
@@ -24879,6 +28142,13 @@ Database Records
     * - $(PREFIX)PE:UND:37:KDes_RBV
       - ai
       - Target K; Linked to PV: [None, 'USEG:UNDS:', '3750:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3750:', None]
+
+
+    * - $(PREFIX)PE:UND:37:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '3750:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '3750:', None]
 
@@ -24975,6 +28245,34 @@ Database Records
         | link: [None, 'USEG:UNDS:', '3750:', 'KDes', '*EPICSLink.SEVR']
 
 
+    * - $(PREFIX)PE:UND:37:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3750:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3750:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:37:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3750:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3750:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:37:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3750:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3750:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:37:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3750:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3750:', 'lambda_U', '*EPICSLink.SEVR']
+
+
     * - $(PREFIX)PE:UND:37:Active_RBV
       - bi
       - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '3750:', None]
@@ -25003,6 +28301,13 @@ Database Records
         | link: [None, 'USEG:UNDS:', '3850:', None]
 
 
+    * - $(PREFIX)PE:UND:38:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '3850:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3850:', None]
+
+
     * - $(PREFIX)PE:UND:38:KAct_RBV
       - ai
       - Current K; Linked to PV: [None, 'USEG:UNDS:', '3850:', None]
@@ -25013,6 +28318,13 @@ Database Records
     * - $(PREFIX)PE:UND:38:KDes_RBV
       - ai
       - Target K; Linked to PV: [None, 'USEG:UNDS:', '3850:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3850:', None]
+
+
+    * - $(PREFIX)PE:UND:38:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '3850:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '3850:', None]
 
@@ -25109,6 +28421,34 @@ Database Records
         | link: [None, 'USEG:UNDS:', '3850:', 'KDes', '*EPICSLink.SEVR']
 
 
+    * - $(PREFIX)PE:UND:38:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3850:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3850:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:38:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3850:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3850:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:38:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3850:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3850:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:38:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3850:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3850:', 'lambda_U', '*EPICSLink.SEVR']
+
+
     * - $(PREFIX)PE:UND:38:Active_RBV
       - bi
       - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '3850:', None]
@@ -25137,6 +28477,13 @@ Database Records
         | link: [None, 'USEG:UNDS:', '3950:', None]
 
 
+    * - $(PREFIX)PE:UND:39:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '3950:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3950:', None]
+
+
     * - $(PREFIX)PE:UND:39:KAct_RBV
       - ai
       - Current K; Linked to PV: [None, 'USEG:UNDS:', '3950:', None]
@@ -25147,6 +28494,13 @@ Database Records
     * - $(PREFIX)PE:UND:39:KDes_RBV
       - ai
       - Target K; Linked to PV: [None, 'USEG:UNDS:', '3950:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '3950:', None]
+
+
+    * - $(PREFIX)PE:UND:39:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '3950:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '3950:', None]
 
@@ -25243,6 +28597,34 @@ Database Records
         | link: [None, 'USEG:UNDS:', '3950:', 'KDes', '*EPICSLink.SEVR']
 
 
+    * - $(PREFIX)PE:UND:39:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3950:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3950:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:39:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '3950:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3950:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:39:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3950:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3950:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:39:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '3950:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '3950:', 'lambda_U', '*EPICSLink.SEVR']
+
+
     * - $(PREFIX)PE:UND:39:Active_RBV
       - bi
       - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '3950:', None]
@@ -25271,6 +28653,13 @@ Database Records
         | link: [None, 'USEG:UNDS:', '4050:', None]
 
 
+    * - $(PREFIX)PE:UND:40:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '4050:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '4050:', None]
+
+
     * - $(PREFIX)PE:UND:40:KAct_RBV
       - ai
       - Current K; Linked to PV: [None, 'USEG:UNDS:', '4050:', None]
@@ -25281,6 +28670,13 @@ Database Records
     * - $(PREFIX)PE:UND:40:KDes_RBV
       - ai
       - Target K; Linked to PV: [None, 'USEG:UNDS:', '4050:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '4050:', None]
+
+
+    * - $(PREFIX)PE:UND:40:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '4050:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '4050:', None]
 
@@ -25377,6 +28773,34 @@ Database Records
         | link: [None, 'USEG:UNDS:', '4050:', 'KDes', '*EPICSLink.SEVR']
 
 
+    * - $(PREFIX)PE:UND:40:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '4050:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4050:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:40:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '4050:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4050:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:40:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4050:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4050:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:40:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4050:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4050:', 'lambda_U', '*EPICSLink.SEVR']
+
+
     * - $(PREFIX)PE:UND:40:Active_RBV
       - bi
       - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '4050:', None]
@@ -25405,6 +28829,13 @@ Database Records
         | link: [None, 'USEG:UNDS:', '4150:', None]
 
 
+    * - $(PREFIX)PE:UND:41:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '4150:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '4150:', None]
+
+
     * - $(PREFIX)PE:UND:41:KAct_RBV
       - ai
       - Current K; Linked to PV: [None, 'USEG:UNDS:', '4150:', None]
@@ -25415,6 +28846,13 @@ Database Records
     * - $(PREFIX)PE:UND:41:KDes_RBV
       - ai
       - Target K; Linked to PV: [None, 'USEG:UNDS:', '4150:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '4150:', None]
+
+
+    * - $(PREFIX)PE:UND:41:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '4150:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '4150:', None]
 
@@ -25511,6 +28949,34 @@ Database Records
         | link: [None, 'USEG:UNDS:', '4150:', 'KDes', '*EPICSLink.SEVR']
 
 
+    * - $(PREFIX)PE:UND:41:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '4150:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4150:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:41:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '4150:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4150:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:41:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4150:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4150:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:41:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4150:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4150:', 'lambda_U', '*EPICSLink.SEVR']
+
+
     * - $(PREFIX)PE:UND:41:Active_RBV
       - bi
       - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '4150:', None]
@@ -25539,6 +29005,13 @@ Database Records
         | link: [None, 'USEG:UNDS:', '4250:', None]
 
 
+    * - $(PREFIX)PE:UND:42:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '4250:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '4250:', None]
+
+
     * - $(PREFIX)PE:UND:42:KAct_RBV
       - ai
       - Current K; Linked to PV: [None, 'USEG:UNDS:', '4250:', None]
@@ -25549,6 +29022,13 @@ Database Records
     * - $(PREFIX)PE:UND:42:KDes_RBV
       - ai
       - Target K; Linked to PV: [None, 'USEG:UNDS:', '4250:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '4250:', None]
+
+
+    * - $(PREFIX)PE:UND:42:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '4250:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '4250:', None]
 
@@ -25645,6 +29125,34 @@ Database Records
         | link: [None, 'USEG:UNDS:', '4250:', 'KDes', '*EPICSLink.SEVR']
 
 
+    * - $(PREFIX)PE:UND:42:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '4250:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4250:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:42:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '4250:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4250:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:42:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4250:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4250:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:42:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4250:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4250:', 'lambda_U', '*EPICSLink.SEVR']
+
+
     * - $(PREFIX)PE:UND:42:Active_RBV
       - bi
       - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '4250:', None]
@@ -25673,6 +29181,13 @@ Database Records
         | link: [None, 'USEG:UNDS:', '4350:', None]
 
 
+    * - $(PREFIX)PE:UND:43:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '4350:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '4350:', None]
+
+
     * - $(PREFIX)PE:UND:43:KAct_RBV
       - ai
       - Current K; Linked to PV: [None, 'USEG:UNDS:', '4350:', None]
@@ -25683,6 +29198,13 @@ Database Records
     * - $(PREFIX)PE:UND:43:KDes_RBV
       - ai
       - Target K; Linked to PV: [None, 'USEG:UNDS:', '4350:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '4350:', None]
+
+
+    * - $(PREFIX)PE:UND:43:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '4350:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '4350:', None]
 
@@ -25779,6 +29301,34 @@ Database Records
         | link: [None, 'USEG:UNDS:', '4350:', 'KDes', '*EPICSLink.SEVR']
 
 
+    * - $(PREFIX)PE:UND:43:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '4350:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4350:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:43:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '4350:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4350:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:43:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4350:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4350:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:43:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4350:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4350:', 'lambda_U', '*EPICSLink.SEVR']
+
+
     * - $(PREFIX)PE:UND:43:Active_RBV
       - bi
       - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '4350:', None]
@@ -25807,6 +29357,13 @@ Database Records
         | link: [None, 'USEG:UNDS:', '4450:', None]
 
 
+    * - $(PREFIX)PE:UND:44:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '4450:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '4450:', None]
+
+
     * - $(PREFIX)PE:UND:44:KAct_RBV
       - ai
       - Current K; Linked to PV: [None, 'USEG:UNDS:', '4450:', None]
@@ -25817,6 +29374,13 @@ Database Records
     * - $(PREFIX)PE:UND:44:KDes_RBV
       - ai
       - Target K; Linked to PV: [None, 'USEG:UNDS:', '4450:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '4450:', None]
+
+
+    * - $(PREFIX)PE:UND:44:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '4450:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '4450:', None]
 
@@ -25913,6 +29477,34 @@ Database Records
         | link: [None, 'USEG:UNDS:', '4450:', 'KDes', '*EPICSLink.SEVR']
 
 
+    * - $(PREFIX)PE:UND:44:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '4450:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4450:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:44:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '4450:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4450:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:44:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4450:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4450:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:44:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4450:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4450:', 'lambda_U', '*EPICSLink.SEVR']
+
+
     * - $(PREFIX)PE:UND:44:Active_RBV
       - bi
       - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '4450:', None]
@@ -25941,6 +29533,13 @@ Database Records
         | link: [None, 'USEG:UNDS:', '4550:', None]
 
 
+    * - $(PREFIX)PE:UND:45:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '4550:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '4550:', None]
+
+
     * - $(PREFIX)PE:UND:45:KAct_RBV
       - ai
       - Current K; Linked to PV: [None, 'USEG:UNDS:', '4550:', None]
@@ -25951,6 +29550,13 @@ Database Records
     * - $(PREFIX)PE:UND:45:KDes_RBV
       - ai
       - Target K; Linked to PV: [None, 'USEG:UNDS:', '4550:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '4550:', None]
+
+
+    * - $(PREFIX)PE:UND:45:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '4550:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '4550:', None]
 
@@ -26047,6 +29653,34 @@ Database Records
         | link: [None, 'USEG:UNDS:', '4550:', 'KDes', '*EPICSLink.SEVR']
 
 
+    * - $(PREFIX)PE:UND:45:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '4550:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4550:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:45:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '4550:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4550:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:45:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4550:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4550:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:45:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4550:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4550:', 'lambda_U', '*EPICSLink.SEVR']
+
+
     * - $(PREFIX)PE:UND:45:Active_RBV
       - bi
       - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '4550:', None]
@@ -26075,6 +29709,13 @@ Database Records
         | link: [None, 'USEG:UNDS:', '4650:', None]
 
 
+    * - $(PREFIX)PE:UND:46:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '4650:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '4650:', None]
+
+
     * - $(PREFIX)PE:UND:46:KAct_RBV
       - ai
       - Current K; Linked to PV: [None, 'USEG:UNDS:', '4650:', None]
@@ -26085,6 +29726,13 @@ Database Records
     * - $(PREFIX)PE:UND:46:KDes_RBV
       - ai
       - Target K; Linked to PV: [None, 'USEG:UNDS:', '4650:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '4650:', None]
+
+
+    * - $(PREFIX)PE:UND:46:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '4650:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '4650:', None]
 
@@ -26181,6 +29829,34 @@ Database Records
         | link: [None, 'USEG:UNDS:', '4650:', 'KDes', '*EPICSLink.SEVR']
 
 
+    * - $(PREFIX)PE:UND:46:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '4650:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4650:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:46:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '4650:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4650:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:46:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4650:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4650:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:46:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4650:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4650:', 'lambda_U', '*EPICSLink.SEVR']
+
+
     * - $(PREFIX)PE:UND:46:Active_RBV
       - bi
       - Undulator is considered active; Linked to PV: [None, 'USEG:UNDS:', '4650:', None]
@@ -26209,6 +29885,13 @@ Database Records
         | link: [None, 'USEG:UNDS:', '4750:', None]
 
 
+    * - $(PREFIX)PE:UND:47:lambdaValid_RBV
+      - bi
+      - lambda_U Readback Valid; Linked to PV: [None, 'USEG:UNDS:', '4750:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '4750:', None]
+
+
     * - $(PREFIX)PE:UND:47:KAct_RBV
       - ai
       - Current K; Linked to PV: [None, 'USEG:UNDS:', '4750:', None]
@@ -26219,6 +29902,13 @@ Database Records
     * - $(PREFIX)PE:UND:47:KDes_RBV
       - ai
       - Target K; Linked to PV: [None, 'USEG:UNDS:', '4750:', None]
+      - | io: input
+        | link: [None, 'USEG:UNDS:', '4750:', None]
+
+
+    * - $(PREFIX)PE:UND:47:Lambda_U_RBV
+      - ai
+      - Period in m; Linked to PV: [None, 'USEG:UNDS:', '4750:', None]
       - | io: input
         | link: [None, 'USEG:UNDS:', '4750:', None]
 
@@ -26313,6 +30003,34 @@ Database Records
       - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4750:', 'KDes', '*EPICSLink.SEVR']
       - | io: output
         | link: [None, 'USEG:UNDS:', '4750:', 'KDes', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:47:lambda_U:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '4750:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4750:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:47:lambda_U:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'USEG:UNDS:', '4750:', 'lambda_U', '']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4750:', 'lambda_U', '']
+
+
+    * - $(PREFIX)PE:UND:47:lambda_U:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4750:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4750:', 'lambda_U', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX)PE:UND:47:lambda_U:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'USEG:UNDS:', '4750:', 'lambda_U', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, 'USEG:UNDS:', '4750:', 'lambda_U', '*EPICSLink.SEVR']
 
 
     * - $(PREFIX)PE:UND:47:Active_RBV

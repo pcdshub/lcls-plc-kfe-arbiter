@@ -37,7 +37,7 @@ Libraries
     :align: center
 
         LCLS General, SLAC, , 2.8.2
-        PMPS, SLAC - LCLS, Unset, 3.4.1
+        PMPS, SLAC - LCLS, Unset, 3.5.0
         SysDir, System, , 3.5.8.0
         SysFile, System, , 3.5.9.0
         Tc2_EtherCAT, Beckhoff Automation GmbH, , 3.3.15.0
@@ -113,7 +113,7 @@ CurrentBPUpdate
         CurrentBPUpdate.fbEPICS_KRate, FB_RateFromEPICS, 1271760192 (25280)
         CurrentBPUpdate.fbEPICSKBeamClass, FB_BeamClassFromEPICS, 1271786432 (25280)
         CurrentBPUpdate.fbEPICSLMachineMode, FB_MachineModeFromEPICS, 1271812672 (25280)
-        CurrentBPUpdate.fbKPhotonEnergy, FB_KPhotonEnergy, 1280098176 (70080)
+        CurrentBPUpdate.fbKPhotonEnergy, FB_KPhotonEnergy, 1280489728 (99392)
         CurrentBPUpdate.fbMPS_BeamClass, FB_LREALFromEPICS, 1271785472 (960)
         CurrentBPUpdate.fbMR1K1VetoDevice, FB_KVetoDevice, 1272151104 (84672)
         CurrentBPUpdate.fbMR1K3VetoDevice, FB_KVetoDevice, 1272320512 (84672)
